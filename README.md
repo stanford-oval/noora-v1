@@ -1,3 +1,3 @@
 # noora-website
 
-Next.js app with Firebase and Tailwind.
+Next.js, Tailwind, Firebase.
