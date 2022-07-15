@@ -5,7 +5,8 @@ import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <div>
-      <h1>Noora</h1>
+      <h1>noora - powered by Genie</h1>
+      <h3>Stanford OVAL</h3>
     </div>
   )
 }
