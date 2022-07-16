@@ -1,14 +1,16 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import React from "react";
+import Page from "../components/utility/Page";
 
-const Home: NextPage = () => {
+export default function index() {
   return (
-    <div>
-      <h1>noora - powered by Genie</h1>
-      <h3>Stanford OVAL</h3>
-    </div>
-  )
+    <Page
+      fullTitle="Noora"
+      desc="A platform utilizing conversational AI to improve the social skills of individuals with ASD."
+    >
+      <div>
+        <h1>noora - powered by Genie</h1>
+        <h3>Stanford OVAL</h3>
+      </div>
+    </Page>
+  );
 }
-
-export default Home
