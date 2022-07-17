@@ -30,7 +30,7 @@ export default function NavItem({
 
   if (href.includes("http"))
     return (
-      <a href={href} target="_blank" rel="noreferrer" className={navItemStyle}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={navItemStyle}>
         {name}
       </a>
     );

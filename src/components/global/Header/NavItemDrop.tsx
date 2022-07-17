@@ -29,14 +29,12 @@ export default function NavItemDrop({
       <Popover.Panel className="absolute z-10 bg-white shadow">
         <div className="flex flex-col">
           {dropRoutes.map((r: any) => {
-            if (href == null) href = "/";
-            let fullHref = href + (r.href == "/" ? "" : r.href);
             return (
               <DropdownItem
-                key={fullHref}
-                href={fullHref}
+                key={r.href}
+                href={r.href}
                 name={r.name}
-                active={fullHref == currPath}
+                active={r.href == currPath}
               />
             );
           })}
@@ -73,7 +71,7 @@ function DropdownItem({ href, name, active }: any) {
       <a
         href={href}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className={clsx(navItemStyle, "pr-7")}
       >
         {name}{" "}

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clsx } from "clsx";
 
@@ -41,14 +44,12 @@ export default function MobileNavItem({
 
         <div className={expanded ? "block" : "hidden"}>
           {dropRoutes.map((r: any) => {
-            if (href == null) href = "/";
-            let fullHref = href + (r.href == "/" ? "" : r.href);
             return (
               <NestedItem
-                key={fullHref}
-                href={fullHref}
+                key={r.href}
+                href={r.href}
                 name={r.name}
-                active={fullHref == currPath}
+                active={r.href == currPath}
               />
             );
           })}
@@ -71,6 +72,22 @@ function NestedItem({ href, name, active }: NestedItemProps) {
   const navItemStyle = `trans-300 block pl-8 pr-4 py-2 border-l-4 text-base font-medium sm:pr-6 ${
     active ? activeStyles : defaultStyles
   }`;
+
+  if (href.includes("http"))
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={navItemStyle}
+      >
+        {name}{" "}
+        <FontAwesomeIcon
+          className="-mr-1 ml-1 h-4 w-4 inline-block -mt-1"
+          icon={faArrowUpRightFromSquare}
+        />
+      </a>
+    );
 
   return (
     <Link href={href}>

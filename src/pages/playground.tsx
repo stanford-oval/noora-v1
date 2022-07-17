@@ -9,6 +9,7 @@ export default function index() {
     >
       <div className="pt-16">
         Playground
+        <a href="https://google.com" target="_blank" rel="noopener noreferrer">Google</a>
       </div>
     </Page>
   );
