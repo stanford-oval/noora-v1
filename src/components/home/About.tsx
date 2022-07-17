@@ -4,44 +4,28 @@ import DoubleGridBg from "./../utility/DoubleGridBg";
 
 export default function About() {
   return (
-    <div className="relative z-30 bg-gray-50 overflow-hidden">
+    <div className="relative bg-gray-50 overflow-hidden">
       <DoubleGridBg />
-      <div className="relative pt-6 pb-16 sm:pb-24">
-        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+      <div className="relative py-12 md:py-16">
+        <main className="mx-auto max-w-8xl px-4">
           <div className="text-center">
-            <h1 className="tracking-tight font-bold text-gray-900  text-5xl md:text-6xl">
-              <span className="block xl:inline">noora </span>
-              <span className="block text-noora-primary-main xl:inline">
-                EconClubs
-              </span>
+            <h1 className="tracking-tight font-medium text-gray-900  text-4xl">
+              <span className="inline">About </span>
+              <span className="inline text-noora-primary-main">Noora</span>
             </h1>
-            <p className="mt-3 max-w-md mx-auto text-gray-500 text-xl md:text-2xl md:mt-5 md:max-w-3xl">
-              <b>
-                EconClubs is noora’s signature program and is designed to help
-                students launch economics clubs at their own schools.
-              </b>{" "}
-              Every noora EconClub is provided with our custom-designed AP/IB
-              curriculum, mentorship from our global leadership team, exclusive
-              access to certain noora events, noora brand recognition, and support
-              from an international community of aspiring economists. Existing
-              economics clubs are also welcome to join the EconClubs program.
+            <p className="mt-2 max-w-lg mx-auto text-gray-500 text-lg font-light md:text-xl md:mt-3 md:max-w-3xl">
+              <span className="font-medium">
+                Noora is a conversational AI designed to help improve the social
+                skills of people with Autism Spectrum Disorder (ASD).
+              </span>{" "}
+              Dr. Lynn Koegel’s intervention method, pivotal response training, has
+              been shown to help individuals make friends, have romantic
+              relationships, collaborate in the workplace, and engage in leisure
+              activities. However, its applicability is restricted by the lack
+              of trained professionals. This project is to automate the
+              intervention, the success of which can have a great impact on
+              society, as 1 in 54 children is currently diagnosed with ASD.
             </p>
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-              <div className="rounded-md shadow">
-                <Link href="/clubs">
-                  <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-noora-primary-main hover:bg-noora-primary-darker md:py-4 md:text-lg md:px-10 trans-300">
-                    Learn More
-                  </a>
-                </Link>
-              </div>
-              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <Link href="/clubs/current-clubs">
-                  <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-noora-primary-main bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 trans-300">
-                    Current Clubs
-                  </a>
-                </Link>
-              </div>
-            </div>
           </div>
         </main>
       </div>
