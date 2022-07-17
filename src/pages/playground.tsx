@@ -1,4 +1,5 @@
 import React from "react";
+import NooraReplies from "../components/playground/noora-replies/NooraReplies";
 import Page from "../components/utility/Page";
 
 export default function index() {
@@ -8,8 +9,7 @@ export default function index() {
       desc="Experiment with Noora, a conversational AI to improve the social skills of individuals with ASD."
     >
       <div className="container pt-16">
-        <h1>Playground</h1>
-        <b>[TODO]</b>
+        <NooraReplies />
       </div>
     </Page>
   );

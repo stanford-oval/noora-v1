@@ -13,7 +13,7 @@
 
 #homeHero {
     background-image: url('/img/page-bg/home.png');
-    box-shadow: inset 0 0 0 2000px #3a216922;
+    box-shadow: inset 0 0 0 2000px #341b5031;
 }
 
 @media only screen and (max-width: 768px) {
