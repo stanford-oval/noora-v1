@@ -10,6 +10,7 @@ export default function index() {
       <div className="container pt-16">
         Playground
       </div>
+      <b>[TODO]</b>
     </Page>
   );
 }

@@ -10,6 +10,7 @@ export default function index() {
       <div className="pt-16 container">
         <h1>noora - powered by Genie</h1>
         <h3>Stanford OVAL</h3>
+        <b>[TODO]</b>
       </div>
     </Page>
   );
