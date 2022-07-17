@@ -41,6 +41,7 @@ export default function MobileNavItem({
 
         <div className={expanded ? "block" : "hidden"}>
           {dropRoutes.map((r: any) => {
+            if (href == null) href = "/";
             let fullHref = href + (r.href == "/" ? "" : r.href);
             return (
               <NestedItem

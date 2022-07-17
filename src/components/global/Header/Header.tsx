@@ -1,13 +1,17 @@
 import React from "react";
 import routes from "../../../data/routes";
 import { useRouter } from "next/router";
-import { faComment, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faComment,
+  faBars,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import { clsx } from "clsx";
 import NavItem from "./NavItem";
 import Image from "next/image";
+import MobileNavItem from "./MobileNavItem";
 
 export default function Header() {
   const currPath = useRouter().pathname;
@@ -76,7 +80,26 @@ export default function Header() {
                       />
                     </Disclosure.Button>
 
-                    <Disclosure.Panel>{/* ... */}</Disclosure.Panel>
+                    <Disclosure.Panel className="absolute top-16 left-0 w-screen bg-white">
+                      <div className={`${open ? "block" : "hidden"} lg:hidden`}>
+                        <div className="pb-2 space-y-1 shadow-md">
+                          {routes.map((r: any) => (
+                            <MobileNavItem
+                              key={r.name}
+                              name={r.name}
+                              href={r.href}
+                              dropRoutes={r.dropRoutes}
+                              currPath={currPath}
+                              active={
+                                r.href !== "/"
+                                  ? currPath.startsWith(r.href)
+                                  : r.href == currPath
+                              }
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </Disclosure.Panel>
                   </>
                 )}
               </Disclosure>
