@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { clsx } from "clsx";
 
 export default function MobileNavItem({
   name,
@@ -29,9 +30,10 @@ export default function MobileNavItem({
         <div onClick={toggle} className={navItemStyle}>
           {name}
           <FontAwesomeIcon
-            className={`trans-150 ml-auto h-5 w-5 mr-4 inline-block ${
+            className={clsx(
+              "trans-150 ml-auto h-5 w-5 mr-4 inline-block",
               expanded ? "transform rotate-180" : "transform rotate-0"
-            }`}
+            )}
             style={{ marginTop: "-0.1rem" }}
             icon={faAngleDown}
           />

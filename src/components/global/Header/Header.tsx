@@ -1,14 +1,13 @@
 import React from "react";
 import routes from "../../../data/routes";
 import { useRouter } from "next/router";
-
-import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-
+import { clsx } from "clsx";
 import NavItem from "./NavItem";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Header() {
   const currPath = useRouter().pathname;
@@ -26,10 +25,13 @@ export default function Header() {
                 src="/img/noora-logo-full.png"
                 alt="Noora logo"
               />
-              <span className="font-bold tracking-wide text-xl text-noora-primary-main">NOORA</span>
+              <span className="font-bold tracking-wide text-xl text-noora-primary-main">
+                NOORA
+              </span>
             </a>
           </Link>
           <div className="flex">
+            {/* desktop navigation */}
             <div className="hidden md:ml-6 md:flex md:space-x-6 lg:space-x-8">
               {routes.map((r: any) => (
                 <NavItem
@@ -61,6 +63,23 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
+            </div>
+            {/* mobile navigation */}
+            <div className="-ml-2 mr-2 flex items-center md:hidden">
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="toggle inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+                      <FontAwesomeIcon
+                        icon={open ? faClose : faBars}
+                        className="toggle h-6 w-6"
+                      />
+                    </Disclosure.Button>
+
+                    <Disclosure.Panel>{/* ... */}</Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
             </div>
           </div>
         </div>
