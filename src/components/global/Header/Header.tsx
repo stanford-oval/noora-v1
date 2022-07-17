@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 import NavItem from "./NavItem";
+import Image from 'next/image';
 
 export default function Header() {
   const currPath = useRouter().pathname;
@@ -18,8 +19,10 @@ export default function Header() {
         <div className="flex justify-between h-16">
           <Link href="/">
             <a className="flex-shrink-0 flex items-center">
-              <img
+              <Image
                 className="block h-12 w-auto mr-1"
+                width="52px"
+                height="52px"
                 src="/img/noora-logo-full.png"
                 alt="Noora logo"
               />

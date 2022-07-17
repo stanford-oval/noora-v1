@@ -1,5 +1,8 @@
 import React from "react";
-import { faAngleDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popover } from "@headlessui/react";
 
@@ -75,6 +78,8 @@ function DropdownItem({ href, name, active }: any) {
         />
       </a>
     );
+
+  console.log(href);
 
   return (
     <Link href={href}>
