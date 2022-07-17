@@ -10,7 +10,7 @@ export default function CTA() {
         <h2 className="text-2xl font-bold tracking-tight leading-tight text-gray-900 sm:text-3xl">
           <span className="block mb-0.5">Ready to try it out?</span>
           <span className="block text-noora-primary-main">
-            See what Noora can do for yourself.
+            See what Noora can do.
           </span>
         </h2>
         <div className="mt-7 flex lg:mt-0 lg:flex-shrink-0">
