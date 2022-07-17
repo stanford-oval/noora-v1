@@ -49,7 +49,7 @@ export default function Footer() {
           at Stanford University.
         </p>
         <div className="mt-7 text-center text-base text-gray-300">
-          <Image src="/powered-by-vercel.svg" height="30" width="200" />
+          <Image src="/powered-by-vercel.svg" height="38" width="200" />
         </div>
       </div>
     </footer>
