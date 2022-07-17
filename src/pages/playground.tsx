@@ -9,8 +9,8 @@ export default function index() {
     >
       <div className="container pt-16">
         Playground
+        <b>[TODO]</b>
       </div>
-      <b>[TODO]</b>
     </Page>
   );
 }
