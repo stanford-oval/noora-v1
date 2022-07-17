@@ -3,15 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.button {
+    @apply rounded-full py-2 px-4 outline-none;
+}
+
+.button-light {
+    @apply bg-sky-300 active:bg-sky-500 hover:bg-sky-200 text-slate-900;
+}
+
 #homeHero {
     background-image: url('/img/page-bg/home.png');
-    box-shadow: inset 0 0 0 2000px #0d142b22;
+    box-shadow: inset 0 0 0 2000px #3a216922;
 }
 
 @media only screen and (max-width: 768px) {
     #homeHero {
         background-image: url('/img/page-bg/home-mobile.png');
-        background-position: center;
     }
 }
 
