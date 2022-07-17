@@ -16,7 +16,7 @@ export default function Hero() {
               Improve your social skills using AI.
             </p>
             <p className="mt-3 text-2xl tracking-tight text-slate-400">
-              Designed by Stanford&apos;s Open Virtual Assistant Lab, Noora is a
+              Developed by Stanford&apos;s Open Virtual Assistant Lab, Noora is a
               chatbot who guides you through a diverse set of social scenarios.
             </p>
             <div className="mt-6 mb-2 flex gap-4 justify-start flex-wrap">

@@ -2,6 +2,7 @@ import React from "react";
 import Page from "../components/utility/Page";
 import Hero from '../components/home/Hero';
 import About from "../components/home/About";
+import CTA from "../components/home/CTA";
 
 export default function index() {
   return (
@@ -11,6 +12,7 @@ export default function index() {
     >
       <Hero />
       <About />
+      <CTA />
     </Page>
   );
 }
