@@ -17,12 +17,11 @@ export default function Hero() {
             </p>
             <p className="mt-3 text-2xl tracking-tight text-slate-400">
               Designed by Stanford's Open Virtual Assistant Lab, Noora is a
-             chatbot who guides you through a diverse set of social
-              scenarios.
+              chatbot who guides you through a diverse set of social scenarios.
             </p>
-            <div className="mt-6 flex gap-4 justify-start">
+            <div className="mt-6 mb-2 flex gap-4 justify-start flex-wrap">
               <Link href="/playground">
-                <button className="button button-light font-semibold">
+                <button className="button button-light font-medium">
                   Visit Playground
                 </button>
               </Link>
