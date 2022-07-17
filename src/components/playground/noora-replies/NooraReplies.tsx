@@ -1,7 +1,16 @@
 import React, { useState } from "react";
+import InputForm from "./InputForm";
 
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
+  const [results, updateResults] = useState([
+    {
+      statement: "Example Statement",
+      replies: [
+        { reply: "Example reply", category: "Sarcastic", rating: "Bad reply" },
+      ],
+    },
+  ]);
   return (
     <div>
       <div>
@@ -9,13 +18,16 @@ export default function NooraReplies() {
         <h2>
           Tell Noora anything, and she will give you some good and bad replies.
         </h2>
-        <input
-          type="text"
-          onChange={(e) => {
-            updateQuery(e.target.value);
-          }}
+        <InputForm
+          query={query}
+          updateQuery={updateQuery}
+          results={results}
+          updateResults={updateResults}
         />
         <p>Your query: {query}</p>
+        <div className="bg-gray-100">
+            <pre>Results: {JSON.stringify(results, null, 2)}</pre>
+        </div>
       </div>
     </div>
   );
