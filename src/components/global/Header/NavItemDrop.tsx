@@ -68,12 +68,12 @@ function DropdownItem({ href, name, active }: any) {
     active ? activeStyles : defaultStyles
   }`;
 
-  if (href.startsWith("http"))
+  if (href.includes("http"))
     return (
-      <a href={href} target="_blank" className={navItemStyle}>
+      <a href={href} target="_blank" className={clsx(navItemStyle, "pr-7")}>
         {name}{" "}
         <FontAwesomeIcon
-          className="-mr-1 ml-1 h-4 w-4 inline-block"
+          className="-mr-1 ml-1 h-4 w-4 inline-block -mt-1"
           icon={faArrowUpRightFromSquare}
         />
       </a>
