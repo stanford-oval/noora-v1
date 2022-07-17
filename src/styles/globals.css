@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+#homeHero {
+    background-image: url('/img/page-bg/home.png');
+    box-shadow: inset 0 0 0 2000px #0d142b22;
+}
+
+@media only screen and (max-width: 768px) {
+    #homeHero {
+        background-image: url('/img/page-bg/home-mobile.png');
+        background-position: center;
+    }
+}
+
 .blue-link {
     @apply text-noora-secondary-bright hover:text-noora-secondary-main font-semibold;
 }
@@ -34,6 +46,12 @@ input {
 }
 
 /*-------------------------------*/
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 body {
     overscroll-behavior: contain;
