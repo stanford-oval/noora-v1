@@ -29,6 +29,8 @@ export default function NavItemDrop({
       <Popover.Panel className="absolute z-10 bg-white shadow">
         <div className="flex flex-col">
           {dropRoutes.map((r: any) => {
+            if (!r.href && !r.href.includes("http"))
+              r.href = href + r.href;
             return (
               <DropdownItem
                 key={r.href}
