@@ -1,4 +1,5 @@
 import React from "react";
+import generateResult from "../../../scripts/noora-replies-playground";
 
 export default function InputForm({
   query,
@@ -6,6 +7,14 @@ export default function InputForm({
   results,
   updateResults,
 }: InputFieldProps) {
+  let handleSubmit = (e: any) => {
+    e.preventDefault();
+    let result = generateResult(query);
+    
+    updateResults([...results, result]);
+    updateQuery("");
+  };
+
   return (
     <form>
       <input
@@ -19,11 +28,7 @@ export default function InputForm({
       <button
         type="submit"
         className="border-2"
-        onClick={(e) => {
-          e.preventDefault();
-          updateResults([...results, { statement: query }]);
-          updateQuery("");
-        }}
+        onClick={(e) => handleSubmit(e)}
       >
         Submit
       </button>

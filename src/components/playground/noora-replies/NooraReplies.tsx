@@ -24,9 +24,11 @@ export default function NooraReplies() {
           results={results}
           updateResults={updateResults}
         />
-        <p>Your query: {query}</p>
+        <div className="bg-gray-100 mb-2">
+          <pre>Your query: {query}</pre>
+        </div>
         <div className="bg-gray-100">
-            <pre>Results: {JSON.stringify(results, null, 2)}</pre>
+          <pre>Results: {JSON.stringify(results, null, 2)}</pre>
         </div>
       </div>
     </div>
