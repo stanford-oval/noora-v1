@@ -28,7 +28,7 @@ export default function NavItem({
 
   if (href == null) return <div className={navItemStyle}>{name}</div>;
 
-  if (href.startsWith("https"))
+  if (href.includes("http"))
     return (
       <a href={href} target="_blank" rel="noreferrer" className={navItemStyle}>
         {name}

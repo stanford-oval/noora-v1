@@ -15,37 +15,37 @@ export default function NavItemDrop({
   dropRoutes,
   itemStyle,
   currPath,
-}: any) {
-  if (href == null)
-    return (
-      <Popover className="h-full">
-        <Popover.Button className={clsx(itemStyle, "h-full")}>
-          {name}{" "}
-          <FontAwesomeIcon
-            className="-mr-1 ml-1 h-4 w-4 inline-block"
-            icon={faAngleDown}
-          />
-        </Popover.Button>
+}: NavItemDropProps) {
+  return (
+    <Popover className="h-full">
+      <Popover.Button className={clsx(itemStyle, "h-full")}>
+        {name}{" "}
+        <FontAwesomeIcon
+          className="-mr-1 ml-1 h-4 w-4 inline-block"
+          icon={faAngleDown}
+        />
+      </Popover.Button>
 
-        <Popover.Panel className="absolute z-10 bg-white shadow">
-          <div className="flex flex-col">
-            {dropRoutes.map((r: any) => {
-              let fullHref = href + (r.href == "/" ? "" : r.href);
-              return (
-                <DropdownItem
-                  key={fullHref}
-                  href={fullHref}
-                  name={r.name}
-                  active={fullHref == currPath}
-                />
-              );
-            })}
-          </div>
+      <Popover.Panel className="absolute z-10 bg-white shadow">
+        <div className="flex flex-col">
+          {dropRoutes.map((r: any) => {
+            if (href == null) href = "/";
+            let fullHref = href + (r.href == "/" ? "" : r.href);
+            return (
+              <DropdownItem
+                key={fullHref}
+                href={fullHref}
+                name={r.name}
+                active={fullHref == currPath}
+              />
+            );
+          })}
+        </div>
 
-          <img src="/solutions.jpg" alt="" />
-        </Popover.Panel>
-      </Popover>
-    );
+        <img src="/solutions.jpg" alt="" />
+      </Popover.Panel>
+    </Popover>
+  );
 
   return (
     <Link href={href}>
@@ -70,7 +70,12 @@ function DropdownItem({ href, name, active }: any) {
 
   if (href.includes("http"))
     return (
-      <a href={href} target="_blank" className={clsx(navItemStyle, "pr-7")}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={clsx(navItemStyle, "pr-7")}
+      >
         {name}{" "}
         <FontAwesomeIcon
           className="-mr-1 ml-1 h-4 w-4 inline-block -mt-1"
@@ -78,8 +83,6 @@ function DropdownItem({ href, name, active }: any) {
         />
       </a>
     );
-
-  console.log(href);
 
   return (
     <Link href={href}>
@@ -89,3 +92,11 @@ function DropdownItem({ href, name, active }: any) {
     </Link>
   );
 }
+
+type NavItemDropProps = {
+  name: string;
+  href: string;
+  dropRoutes: any[];
+  itemStyle: string;
+  currPath: string;
+};

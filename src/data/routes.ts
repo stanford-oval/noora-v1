@@ -4,6 +4,7 @@ const routes = [
   {
     name: "Other",
     dropRoutes: [
+      { href: "/", name: "Home" },
       { href: "https://oval.cs.stanford.edu/", name: "Stanford OVAL" },
       {
         href: "https://genie.stanford.edu/",
