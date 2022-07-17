@@ -1,15 +1,15 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import routes from "../../../data/routes";
 import { useRouter } from "next/router";
 
-import { faPlus, faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Link from "next/link";
 
 import NavItem from "./NavItem";
 
-export default function Navbar() {
+export default function Header() {
   const currPath = useRouter().pathname;
 
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
           <Link href="/">
             <a className="flex-shrink-0 flex items-center">
               <img
-                className="block h-12 w-auto mr-2"
+                className="block h-12 w-auto mr-1"
                 src="/img/noora-logo-full.png"
                 alt="Noora logo"
               />
@@ -27,7 +27,7 @@ export default function Navbar() {
             </a>
           </Link>
           <div className="flex">
-            <div className="hidden lg:ml-6 lg:flex lg:space-x-6 xl:space-x-8">
+            <div className="hidden md:ml-6 md:flex md:space-x-6 lg:space-x-8">
               {routes.map((r: any) => (
                 <NavItem
                   key={r.name}
@@ -44,16 +44,16 @@ export default function Navbar() {
               ))}
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <Link href="/clubs/register">
+                  <Link href="/playground">
                     <a
                       type="button"
                       className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-noora-primary-main shadow-sm hover:bg-primary-primary-darker"
                     >
                       <FontAwesomeIcon
-                        icon={faPlus}
+                        icon={faComment}
                         className="-ml-1 mr-2 h-3 w-3"
                       />
-                      <span>Register a Club</span>
+                      <span>Try It Out</span>
                     </a>
                   </Link>
                 </div>

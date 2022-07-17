@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../global/Header/Navbar";
+import Header from "../global/Header/Header";
 import Footer from "../global/Footer/Footer";
 import Head from "next/head";
 
@@ -50,7 +50,7 @@ export default function Page({ fullTitle, title, desc, children }: PageProps) {
         />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Navbar />
+      <Header />
       {children}
       <Footer />
     </>
