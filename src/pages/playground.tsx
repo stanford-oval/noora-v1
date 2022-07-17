@@ -8,7 +8,7 @@ export default function index() {
       desc="Experiment with Noora, a conversational AI to improve the social skills of individuals with ASD."
     >
       <div className="container pt-16">
-        Playground
+        <h1>Playground</h1>
         <b>[TODO]</b>
       </div>
     </Page>
