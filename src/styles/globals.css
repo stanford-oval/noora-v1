@@ -1,3 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blue-link {
+    @apply text-noora-secondary-bright hover:text-noora-secondary-main font-semibold;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.trans {
+    @apply transition ease-in-out;
+}
+
+.trans-150 {
+    @apply transition ease-in-out duration-150;
+}
+
+.trans-300,
+a,
+button {
+    @apply transition ease-in-out duration-300;
+}
+
+input {
+    @apply placeholder-gray-400;
+}
+
+.formik-error {
+    @apply text-red-500 font-bold mt-1;
+}
+
+/*-------------------------------*/
+
+body {
+    overscroll-behavior: contain;
+    font-family: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lexend {
+    font-family: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+*::selection {
+    background-color: #6940b629;
+}
+
+button,
+img {
+    user-select: none;
+}
+
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+    outline: none !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222b4d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6940b6;
+    transition: all 0.55s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7447c9;
+}
