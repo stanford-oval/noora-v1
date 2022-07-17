@@ -19,11 +19,11 @@ export default function Navbar() {
           <Link href="/">
             <a className="flex-shrink-0 flex items-center">
               <img
-                className="block h-9 w-auto"
+                className="block h-12 w-auto mr-2"
                 src="/img/noora-logo-full.png"
                 alt="Noora logo"
               />
-              NOORA
+              <span className="font-bold tracking-wide text-xl text-noora-primary-main">NOORA</span>
             </a>
           </Link>
           <div className="flex">
@@ -47,7 +47,7 @@ export default function Navbar() {
                   <Link href="/clubs/register">
                     <a
                       type="button"
-                      className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yei-primary-main shadow-sm hover:bg-yei-primary-darker"
+                      className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-noora-primary-main shadow-sm hover:bg-primary-primary-darker"
                     >
                       <FontAwesomeIcon
                         icon={faPlus}
