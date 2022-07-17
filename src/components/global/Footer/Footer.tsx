@@ -1,5 +1,7 @@
 import React from "react";
 import routes from "../../../data/routes";
+import socials from "../../../data/socials";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
   return (
@@ -9,7 +11,7 @@ export default function Footer() {
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
         >
-          {routes.map((r: any) => (
+          {routes.map((r: any) => {if (r.href) return (
             <div key={r.name} className="px-5 py-2">
               <a
                 href={r.href}
@@ -18,19 +20,16 @@ export default function Footer() {
                 {r.name}
               </a>
             </div>
-          ))}
+          )})}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          {["s", "s"].map((r: any) => (
-            // <a
-            //   key={r.name}
-            //   href={r.href}
-            //   className="text-gray-400 hover:text-gray-500"
-            // >
-            //   <span className="sr-only">{item.name}</span>
-            //   b
-            // </a>
-            <div>b</div>
+          {socials.map((s: any) => (
+            <a key={s.name} href={s.href} >
+              <FontAwesomeIcon
+                icon={s.icon}
+                className="text-gray-400 hover:text-gray-500 h-6 w-6 trans-150"
+              />
+            </a>
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
@@ -39,7 +38,7 @@ export default function Footer() {
             href="https://oval.cs.stanford.edu"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold"
+            className="font-bold" 
           >
             Open Virtual Assistant Lab
           </a>{" "}
