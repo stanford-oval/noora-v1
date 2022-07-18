@@ -18,13 +18,21 @@ export default function About() {
                 Noora is a conversational AI designed to help improve the social
                 skills of people with Autism Spectrum Disorder (ASD).
               </span>{" "}
-              Dr. Lynn Koegel&apos;s intervention method, pivotal response
-              training, has been shown to help individuals make friends, have
-              romantic relationships, collaborate in the workplace, and engage
-              in leisure activities. However, its applicability is restricted by
-              the lack of trained professionals. This project is to automate the
-              intervention, the success of which can have a great impact on
-              society, as 1 in 54 children is currently diagnosed with ASD.
+              <a
+                href="https://profiles.stanford.edu/lynn-koegel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-slate-700"
+              >
+                Dr. Lynn Koegel&apos;s
+              </a>{" "}
+              intervention method, pivotal response training, has been shown to
+              help individuals make friends, have romantic relationships,
+              collaborate in the workplace, and engage in leisure activities.
+              However, its applicability is restricted by the lack of trained
+              professionals. This project is to automate the intervention, the
+              success of which can have a great impact on society, as 1 in 54
+              children is currently diagnosed with ASD.
             </p>
           </div>
         </main>

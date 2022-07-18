@@ -122,7 +122,7 @@ function Reply({ reply, explanation, category, good_reply }: ReplyProps) {
         </span>
       </p>
       <div className="text-slate-600 mt-2 font-light">
-        <p>If you replied with this:</p>
+        <p>If you replied with the above:</p>
         <p>
           <i>{explanation}</i>
         </p>
