@@ -35,7 +35,7 @@ export default async function generateResult(statement: string) {
   };
 }
 
-export function generateIntermediateExamples(statement: string) {
+export async function generateIntermediateExamples(statement: string) {
   // 1. randomly pick categories
   let index1 = Math.floor(Math.random() * categoryPrompts.length);
   let index2 = index1;
@@ -43,5 +43,25 @@ export function generateIntermediateExamples(statement: string) {
     index2 = Math.floor(Math.random() * categoryPrompts.length);
   let categories = [categoryPrompts[index1], categoryPrompts[index2]];
 
-  // 2. 
+  let intermediateExamples = ["", ""];
+  // 2. create few-shot examples for the final prompt
+  categories.forEach((c, idx) => {
+    intermediateExamples[idx] = getIntermediate(
+      statement,
+      c.category,
+      c.prompt
+    );
+  });
+
+  console.log(intermediateExamples)
+
+  return intermediateExamples;
+}
+
+function getIntermediate(
+  statement: string,
+  category: string,
+  template: string
+) {
+  return statement + category;
 }
