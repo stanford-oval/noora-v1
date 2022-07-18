@@ -5,10 +5,23 @@ export default function Result({
   statement,
   good_replies,
   bad_replies,
+  id,
+  results,
+  updateResults,
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5 relative">
-      <button className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700">&#x2715;</button>
+      <button
+        onClick={() => {
+          // remove
+          console.log(id)
+          let newResults = results.filter((r) => r.id !== id);
+          updateResults(newResults);
+        }}
+        className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700"
+      >
+        &#x2715;
+      </button>
       <div className="w-full border-b-2 mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl text-center px-5">
         &ldquo;{statement}&rdquo;
       </div>
@@ -109,6 +122,9 @@ type ResultProps = {
   statement: string;
   good_replies: any[];
   bad_replies: any[];
+  id: number;
+  results: any[];
+  updateResults: any;
 };
 
 type ReplyProps = {

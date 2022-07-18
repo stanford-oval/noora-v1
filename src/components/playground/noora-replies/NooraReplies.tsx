@@ -82,9 +82,12 @@ export default function NooraReplies() {
             .map((result, idx) => (
               <li key={result.id}>
                 <Result
+                  id={result.id}
                   statement={result.statement}
                   good_replies={result.good_replies}
                   bad_replies={result.bad_replies}
+                  results={results}
+                  updateResults={updateResults}
                 />
               </li>
             ))}
