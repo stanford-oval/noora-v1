@@ -45,23 +45,36 @@ export async function generateIntermediateExamples(statement: string) {
 
   let intermediateExamples = ["", ""];
   // 2. create few-shot examples for the final prompt
-  categories.forEach((c, idx) => {
-    intermediateExamples[idx] = getIntermediate(
-      statement,
-      c.category,
-      c.prompt
-    );
-  });
-
-  console.log(intermediateExamples)
+  for (const [idx, c] of categories.entries()) {
+    let intermediate = await getIntermediate(statement, c.category, c.prompt);
+    intermediateExamples[idx] = intermediate;
+  }
 
   return intermediateExamples;
 }
 
-function getIntermediate(
+async function getIntermediate(
   statement: string,
   category: string,
   template: string
 ) {
-  return statement + category;
+  let prompt = template.replace("{s}", statement);
+
+  let intermediate = "";
+
+  let reply = await Completion({
+    model: "text-davinci-002",
+    prompt: prompt,
+    temperature: 0.95,
+    max_tokens: 200,
+    frequency_penalty: 0.5,
+    presence_penalty: 0.25,
+  });
+
+  intermediate = capitalizeFirst(category) + ": " + capitalizeFirst(reply);
+  return intermediate;
+}
+
+function capitalizeFirst(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }

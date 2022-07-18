@@ -19,7 +19,8 @@ export default function NooraReplies() {
     e.preventDefault();
     // let result = await generateResult(query);
 
-    generateIntermediateExamples("I just finished a really good book!");
+    let examples = await generateIntermediateExamples("I just finished a really good book!");
+    console.log(examples)
   };
 
   return (
