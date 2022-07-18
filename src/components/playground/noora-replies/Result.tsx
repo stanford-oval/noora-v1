@@ -8,47 +8,49 @@ export default function Result({
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
-      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-700 text-2xl">
+      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-800 text-xl md:text-2xl">
         &ldquo;{statement}&rdquo;
       </div>
       <ul>
-        {good_replies ? (
-          good_replies.map((reply, idx) => (
-            <li key={idx}>
-              {reply.rating && reply.reply && reply.explanation && (
-                <Reply
-                  rating={reply.rating}
-                  reply={reply.reply}
-                  explanation={reply.explanation}
-                  category={reply.category}
-                  good_reply={true}
-                />
-              )}
-            </li>
-          ))
+        {good_replies || bad_replies ? (
+          <>
+            {good_replies &&
+              good_replies.map((reply, idx) => (
+                <li key={idx}>
+                  {reply.rating && reply.reply && reply.explanation && (
+                    <Reply
+                      rating={reply.rating}
+                      reply={reply.reply}
+                      explanation={reply.explanation}
+                      category={reply.category}
+                      good_reply={true}
+                    />
+                  )}
+                </li>
+              ))}
+            {bad_replies &&
+              bad_replies.map((reply, idx) => (
+                <li key={idx}>
+                  {reply.rating &&
+                    reply.reply &&
+                    reply.explanation &&
+                    reply && (
+                      <Reply
+                        rating={reply.rating}
+                        reply={reply.reply}
+                        explanation={reply.explanation}
+                        category={reply.category}
+                        good_reply={false}
+                      />
+                    )}
+                </li>
+              ))}
+          </>
         ) : (
-          <p className="font-bold text-xl">
-            This will take around 25 seconds...
-          </p>
-        )}
-        {bad_replies ? (
-          bad_replies.map((reply, idx) => (
-            <li key={idx}>
-              {reply.rating && reply.reply && reply.explanation && reply && (
-                <Reply
-                  rating={reply.rating}
-                  reply={reply.reply}
-                  explanation={reply.explanation}
-                  category={reply.category}
-                  good_reply={false}
-                />
-              )}
-            </li>
-          ))
-        ) : (
-          <p className="font-bold text-xl">
-            This will take around 25 seconds...
-          </p>
+          <div className="text-center text-slate-500">
+            Generating responses takes around 25 seconds. Feel free to
+            submit more statements while you're waiting.
+          </div>
         )}
       </ul>
     </div>
