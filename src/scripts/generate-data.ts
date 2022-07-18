@@ -75,6 +75,126 @@ async function getIntermediate(
   return intermediate;
 }
 
+export function isProperFormat(exStr: string, strict: boolean) {
+  // strict is for generating intermediate examples
+  // intermediate examples are the few-shot examples for the final generation prompt, so must follow one format
+  let dialoguePhrase = null;
+  let acceptablePhrases = strict
+    ? ["So you reply,"]
+    : [
+        "So you reply,",
+        ", so you reply,",
+        "so you reply",
+        "So you reply",
+        ", so you say,",
+        "so you say,",
+        "So you say,",
+        ", and you reply,",
+        "and you reply,",
+        "So youreply,",
+        "You reply,",
+        "You reply with,",
+      ];
+  acceptablePhrases.every((dialogueStr) => {
+    if (exStr.includes(dialogueStr)) {
+      dialoguePhrase = dialogueStr;
+      return false;
+    }
+    return true;
+  });
+
+  if (!dialoguePhrase) {
+    console.log(
+      "Generated example does not contain proper dialogue phrase:\n" + exStr
+    );
+    return false;
+  }
+
+  let ratingStr = null;
+  let rating = "";
+  acceptablePhrases = strict
+    ? ["Good answer."]
+    : [
+        "Good answer.",
+        "Good answer!",
+        "Good answer;",
+        "This is a good reply because",
+        "This is a good answer because",
+        "This is a good answer.",
+      ];
+  acceptablePhrases.every((positiveRatingStr) => {
+    if (exStr.includes(positiveRatingStr)) {
+      ratingStr = positiveRatingStr;
+      rating = "Good answer.";
+      return false;
+    }
+    return true;
+  });
+
+  acceptablePhrases = strict
+    ? ["Bad answer."]
+    : [
+        "Bad answer.",
+        "Bad answer;",
+        "Bad answer!",
+        "Wrong answer.",
+        "Not a good answer.",
+        "This is a bad reply because",
+        "This is a bad answer because",
+        "This is a bad answer.",
+      ];
+  acceptablePhrases.every((negativeRatingStr) => {
+    if (exStr.includes(negativeRatingStr)) {
+      ratingStr = negativeRatingStr;
+      rating = "Bad answer.";
+      return false;
+    }
+    return true;
+  });
+
+  if (!ratingStr) {
+    console.log(
+      "Generated example does not contain a proper answer rating:\n" + exStr
+    );
+    return false;
+  }
+
+  let ratingIdx = exStr.indexOf(ratingStr);
+  let explanation = exStr.slice(ratingIdx + rating.length, exStr.length).trim();
+  if (explanation === "") {
+    console.log(
+      "Generated example does not contain an explanation for the reply rating:\n" +
+        exStr
+    );
+    return false;
+  }
+
+  return {
+    proper_format: true,
+    dialoguePhrase: dialoguePhrase,
+    rating: rating,
+    ratingStr: ratingStr,
+  };
+}
+
+export function parseExStr(
+  category: string,
+  statement: string,
+  ex_str: string
+) {
+  let example = {
+    statement_category: category,
+    statement: statement,
+    category: "",
+    reasoning: "",
+    reply: "",
+    rating: "",
+    explanation: "",
+  };
+
+  return "";
+}
+
 function capitalizeFirst(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
