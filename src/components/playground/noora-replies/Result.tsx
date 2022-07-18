@@ -2,14 +2,15 @@ import React from "react";
 import { clsx } from "clsx";
 
 export default function Result({
-  index,
   statement,
   good_replies,
   bad_replies,
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
-      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-700 text-2xl">&ldquo;{statement}&rdquo;</div>
+      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-700 text-2xl">
+        &ldquo;{statement}&rdquo;
+      </div>
       <ul>
         {good_replies ? (
           good_replies.map((reply, idx) => (
@@ -19,6 +20,7 @@ export default function Result({
                   rating={reply.rating}
                   reply={reply.reply}
                   explanation={reply.explanation}
+                  category={reply.category}
                   good_reply={true}
                 />
               )}
@@ -37,6 +39,7 @@ export default function Result({
                   rating={reply.rating}
                   reply={reply.reply}
                   explanation={reply.explanation}
+                  category={reply.category}
                   good_reply={false}
                 />
               )}
@@ -71,7 +74,6 @@ function Reply({ rating, reply, explanation, good_reply }: ReplyProps) {
 }
 
 type ResultProps = {
-  index: number;
   statement: string;
   good_replies: any[];
   bad_replies: any[];
@@ -80,6 +82,7 @@ type ResultProps = {
 type ReplyProps = {
   rating: string;
   reply: string;
+  category: string;
   explanation: string;
   good_reply: boolean;
 };
