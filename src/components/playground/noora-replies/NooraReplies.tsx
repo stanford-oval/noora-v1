@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
-import {
-  generateIntermediateExamples,
-  isProperFormat,
-} from "../../../scripts/generate-data";
+import generateResult from "../../../scripts/generate-data";
 
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
@@ -20,11 +17,9 @@ export default function NooraReplies() {
 
   let testingFunction = async (e: any) => {
     e.preventDefault();
-    // let result = await generateResult(query);
+    let result = await generateResult(query);
 
-    let examples = await generateIntermediateExamples("I just finished a really good book!");
-    console.log(examples)
-    console.log(isProperFormat(examples[0]))
+    console.log(result);
   };
 
   return (

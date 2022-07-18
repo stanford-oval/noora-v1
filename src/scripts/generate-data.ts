@@ -9,30 +9,26 @@ const presPenalty = 0.25;
 
 export default async function generateResult(statement: string) {
   // 1. generate intermediate examples
+  let intermediates = await generateIntermediateExamples(statement);
+  intermediates.forEach((intermediate, idx) => {
+    intermediates[idx] = `(${idx + 1}) ` + intermediate
+  })
   // 2. construct final prompt
   // 3. parse examples
   // 4. return data
-  let reply = await Completion({
-    model: "text-davinci-002",
-    prompt: statement,
-    temperature: 0.95,
-    max_tokens: 200,
-    frequency_penalty: 0.5,
-    presence_penalty: 0.25,
-  });
+  
+  return intermediates
 
-  console.log(reply);
-
-  return {
-    statement: statement,
-    replies: [
-      {
-        reply: reply,
-        category: "example category",
-        good_answer: true,
-      },
-    ],
-  };
+  // return {
+  //   statement: statement,
+  //   replies: [
+  //     {
+  //       reply: reply,
+  //       category: "example category",
+  //       good_answer: true,
+  //     },
+  //   ],
+  // };
 }
 
 export async function generateIntermediateExamples(statement: string) {
