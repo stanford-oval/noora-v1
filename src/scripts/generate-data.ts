@@ -7,7 +7,7 @@ const temp = 0.9;
 const freqPenalty = 0.5;
 const presPenalty = 0.25;
 
-export default async function generateResult(statement: string, uuid:string) {
+export default async function generateResult(statement: string, uuid: string) {
   // 1. generate intermediate examples
   let intermediates = await generateIntermediateExamples(statement);
   intermediates.forEach((intermediate, idx) => {
@@ -40,10 +40,19 @@ export default async function generateResult(statement: string, uuid:string) {
   });
 
   // 5. return data
+  let good_replies: any[] = [];
+  let bad_replies: any[] = [];
+
+  responses.forEach((r) => {
+    if (r.rating == "Good answer.") good_replies.push(r);
+    else bad_replies.push(r);
+  });
+
   return {
     id: uuid,
     statement: statement,
-    replies: responses,
+    good_replies: good_replies,
+    bad_replies: bad_replies,
   };
 }
 

@@ -8,7 +8,7 @@ export default function NooraReplies() {
     {
       id: 1,
       statement: "Example statement",
-      replies: [
+      good_replies: [
         {
           statement: "Example statement",
           category: "Example category",
@@ -17,6 +17,8 @@ export default function NooraReplies() {
           rating: "Good answer.",
           explanation: "Example explanation",
         },
+      ],
+      bad_replies: [
         {
           statement: "Example statement 2",
           category: "Example category ",
@@ -47,7 +49,7 @@ export default function NooraReplies() {
   return (
     <div>
       <div
-        className="pt-16 bg-noora-secondary-main bg-cover bg-no-repeat bg-center overflow-hidden"
+        className="pt-16 bg-cover bg-no-repeat bg-center overflow-hidden"
         id="nooraRepliesHero"
       >
         <div className="pt-12 pb-32">
@@ -79,7 +81,8 @@ export default function NooraReplies() {
                 <Result
                   index={results.length - idx}
                   statement={result.statement}
-                  replies={result.replies}
+                  good_replies={result.good_replies}
+                  bad_replies={result.bad_replies}
                 />
               </li>
             ))}
