@@ -11,13 +11,17 @@ export default async function generateResult(statement: string) {
   // 1. generate intermediate examples
   let intermediates = await generateIntermediateExamples(statement);
   intermediates.forEach((intermediate, idx) => {
-    intermediates[idx] = `(${idx + 1}) ` + intermediate
-  })
+    intermediates[idx] = `(${idx + 1}) ` + intermediate;
+  });
   // 2. construct final prompt
+  let prompt = generateDataPrompt.replace(
+    "{intermediate_examples_formatted}",
+    intermediates.join("\r\n")
+  );
   // 3. parse examples
   // 4. return data
-  
-  return intermediates
+
+  return prompt;
 
   // return {
   //   statement: statement,
