@@ -17,23 +17,8 @@ export default async function handler(
   console.log(configuration);
 
   const openai = new OpenAIApi(configuration);
-  //   const response = await openai.createCompletion({
-  //     model: model,
-  //     prompt: prompt,
-  //     temperature: temperature,
-  //     max_tokens: max_tokens,
-  //     frequency_penalty: frequency_penalty,
-  //     presence_penalty: presence_penalty,
-  //   });
 
-  const response = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: "Give me a fun fact.",
-    temperature: 0.95,
-    max_tokens: 200,
-    frequency_penalty: 0.5,
-    presence_penalty: 0.25,
-  });
+  const response = await openai.createCompletion(req.body);
 
   console.log(response);
   let text = "";

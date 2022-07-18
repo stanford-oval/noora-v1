@@ -1,17 +1,16 @@
+import Completion from "./Completion";
+
 export default async function generateResult(statement: string) {
-  //   let reply = await Completion(
-  //     "text-davinci-002",
-  //     "Write a tagline for an ice cream shop.",
-  //     0.95,
-  //     200,
-  //     0.5,
-  //     0.25
-  //   );
+  let reply = await Completion({
+    model: "text-davinci-002",
+    prompt: statement,
+    temperature: 0.95,
+    max_tokens: 200,
+    frequency_penalty: 0.5,
+    presence_penalty: 0.25,
+  });
 
-  let reply = await fetch("/api/openai").then((res) => res.json());
   console.log(reply);
-
-  if (reply) reply = reply.text;
 
   return {
     statement: statement,
