@@ -6,6 +6,7 @@ export default function NooraReplies() {
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
     {
+      id: 1,
       statement: "Example statement",
       replies: [
         {
@@ -33,7 +34,7 @@ export default function NooraReplies() {
     // on queue change, update the right element
     resultsQueue.forEach((result) => {
       const newResults: any[] = results.map((r) => {
-        if (r.statement == result.statement) return result;
+        if (r.id == result.id) return result;
         else return r;
       });
 
@@ -62,7 +63,7 @@ export default function NooraReplies() {
             .slice(0)
             .reverse()
             .map((result, idx) => (
-              <li key={idx}>
+              <li key={result.id}>
                 <Result
                   index={results.length - idx}
                   statement={result.statement}

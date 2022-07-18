@@ -7,7 +7,7 @@ const temp = 0.9;
 const freqPenalty = 0.5;
 const presPenalty = 0.25;
 
-export default async function generateResult(statement: string) {
+export default async function generateResult(statement: string, uuid:string) {
   // 1. generate intermediate examples
   let intermediates = await generateIntermediateExamples(statement);
   intermediates.forEach((intermediate, idx) => {
@@ -41,6 +41,7 @@ export default async function generateResult(statement: string) {
 
   // 5. return data
   return {
+    id: uuid,
     statement: statement,
     replies: responses,
   };

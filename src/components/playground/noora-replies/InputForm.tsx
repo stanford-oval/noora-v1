@@ -1,5 +1,6 @@
 import React from "react";
 import generateResult from "../../../scripts/generate-data";
+import { v4 as uuidv4, v4 } from 'uuid';
 
 export default function InputForm({
   query,
@@ -11,11 +12,12 @@ export default function InputForm({
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     let statement = query;
+    let id = uuidv4()
     console.log("We have " + statement);
-    updateResults([...results, { statement: statement }]);
+    updateResults([...results, { id: id, statement: statement }]);
     updateQuery("");
 
-    let result = await generateResult(statement);
+    let result = await generateResult(statement, id);
     console.log("RESULT for " + statement);
     updateResultsQueue([result]);
     console.log("updated result");
