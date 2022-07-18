@@ -65,10 +65,10 @@ async function getIntermediate(
   let reply = await Completion({
     model: "text-davinci-002",
     prompt: prompt,
-    temperature: 0.95,
+    temperature: temp,
     max_tokens: 200,
-    frequency_penalty: 0.5,
-    presence_penalty: 0.25,
+    frequency_penalty: freqPenalty,
+    presence_penalty: presPenalty,
   });
 
   intermediate = capitalizeFirst(category) + ": " + capitalizeFirst(reply);
