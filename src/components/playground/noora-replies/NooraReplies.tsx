@@ -45,43 +45,46 @@ export default function NooraReplies() {
   }, [resultsQueue]);
 
   return (
-    <div
-      className="pt-16 bg-noora-secondary-main bg-cover bg-no-repeat bg-center overflow-hidden"
-      id="nooraRepliesHero"
-    >
-      <div className="py-12">
-        <div className="container text-center justify-center">
-          <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary-bright bg-clip-text font-bold text-5xl tracking-tight text-transparent">
-            Ask Noora
-          </p>
-          <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">
-            Tell Noora anything, and she will give you some good and bad
-            replies.
-          </h2>
-
-          <InputForm
-            query={query}
-            updateQuery={updateQuery}
-            results={results}
-            updateResults={updateResults}
-            updateResultsQueue={updateResultsQueue}
-          />
+    <div>
+      <div
+        className="pt-16 bg-noora-secondary-main bg-cover bg-no-repeat bg-center overflow-hidden"
+        id="nooraRepliesHero"
+      >
+        <div className="pt-12 pb-32">
+          <div className="container text-center justify-center">
+            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary-bright bg-clip-text font-bold text-5xl tracking-tight text-transparent">
+              Ask Noora
+            </p>
+            <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">
+              Tell Noora anything, and she will give you some good and bad
+              replies.
+            </h2>
+            <InputForm
+              query={query}
+              updateQuery={updateQuery}
+              results={results}
+              updateResults={updateResults}
+              updateResultsQueue={updateResultsQueue}
+            />
+          </div>
         </div>
       </div>
-      <ul>
-        {results
-          .slice(0)
-          .reverse()
-          .map((result, idx) => (
-            <li key={result.id}>
-              <Result
-                index={results.length - idx}
-                statement={result.statement}
-                replies={result.replies}
-              />
-            </li>
-          ))}
-      </ul>
+      <div className="container -mt-32 py-6">
+        <ul>
+          {results
+            .slice(0)
+            .reverse()
+            .map((result, idx) => (
+              <li key={result.id}>
+                <Result
+                  index={results.length - idx}
+                  statement={result.statement}
+                  replies={result.replies}
+                />
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
