@@ -7,15 +7,16 @@ export default function Result({
   bad_replies,
 }: ResultProps) {
   return (
-    <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
-      <div className="w-full border-b-2 text-center mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl">
+    <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5 relative">
+      <button className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700">&#x2715;</button>
+      <div className="w-full border-b-2 mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl text-center px-5">
         &ldquo;{statement}&rdquo;
       </div>
       {good_replies || bad_replies ? (
         <div className="grid md:grid-cols-2 gap-3 mt-3">
           {good_replies && (
             <div>
-              <h1 className="text-lg md:text-xl text-green-700 font-medium">
+              <h1 className="text-lg md:text-xl text-green-700 font-medium text-center md:text-left">
                 Good Replies
               </h1>
               <ul className="col-span-1 space-y-1 mt-1">
@@ -42,7 +43,7 @@ export default function Result({
           )}
           {bad_replies && (
             <div>
-              <h1 className="text-lg md:text-xl text-red-700 font-medium">
+              <h1 className="text-lg md:text-xl text-red-700 font-mediumm text-center md:text-left font-medium">
                 Bad Replies
               </h1>
               <ul className="col-span-1 space-y-1 mt-1">
