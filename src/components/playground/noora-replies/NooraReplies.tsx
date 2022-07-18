@@ -2,25 +2,11 @@ import React, { useState } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
-import generateResult from "../../../scripts/generate-data";
-
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
-    {
-      statement: "Example Statement",
-      replies: [
-        { reply: "Example reply", category: "Sarcastic", good_answer: false },
-      ],
-    },
+    { statement: "Example statement", replies: [] },
   ]);
-
-  let testingFunction = async (e: any) => {
-    e.preventDefault();
-    let result = await generateResult("I love walking my dog.");
-
-    console.log(result);
-  };
 
   return (
     <div>
@@ -29,12 +15,6 @@ export default function NooraReplies() {
         <h2>
           Tell Noora anything, and she will give you some good and bad replies.
         </h2>
-        <button
-          onClick={(e) => testingFunction(e)}
-          className="text-white bg-red-800 px-4 py-2 rounded-full"
-        >
-          TESTING
-        </button>
         <InputForm
           query={query}
           updateQuery={updateQuery}
@@ -45,10 +25,10 @@ export default function NooraReplies() {
           {results
             .slice(0)
             .reverse()
-            .map((result, index) => (
-              <li key={index}>
+            .map((result, idx) => (
+              <li key={idx}>
                 <Result
-                  index={results.length - index}
+                  index={results.length - idx}
                   statement={result.statement}
                   replies={result.replies}
                 />

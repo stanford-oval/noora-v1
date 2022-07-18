@@ -38,19 +38,12 @@ export default async function generateResult(statement: string) {
     }
     responses.push(example);
   });
-  // 5. return data
-  return responses;
 
-  // return {
-  //   statement: statement,
-  //   replies: [
-  //     {
-  //       reply: reply,
-  //       category: "example category",
-  //       good_answer: true,
-  //     },
-  //   ],
-  // };
+  // 5. return data
+  return {
+    statement: statement,
+    replies: responses,
+  };
 }
 
 export async function generateIntermediateExamples(statement: string) {

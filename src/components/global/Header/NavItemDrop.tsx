@@ -46,18 +46,6 @@ export default function NavItemDrop({
       </Popover.Panel>
     </Popover>
   );
-
-  return (
-    <Link href={href}>
-      <a className={itemStyle}>
-        {name}
-        <FontAwesomeIcon
-          className="-mr-1 ml-1 h-4 w-4 inline-block"
-          icon={faAngleDown}
-        />
-      </a>
-    </Link>
-  );
 }
 
 function DropdownItem({ href, name, active }: any) {
