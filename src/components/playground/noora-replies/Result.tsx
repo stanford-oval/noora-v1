@@ -12,7 +12,7 @@ export default function Result({
         &ldquo;{statement}&rdquo;
       </div>
       {good_replies || bad_replies ? (
-        <div className="grid md:grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3 mt-3">
           {good_replies && (
             <ul className="col-span-1">
               {good_replies.map((reply, idx) => (
@@ -56,7 +56,7 @@ export default function Result({
   );
 }
 
-function Reply({ reply, explanation, good_reply }: ReplyProps) {
+function Reply({ reply, explanation, category, good_reply }: ReplyProps) {
   return (
     <div
       className={clsx(
@@ -66,7 +66,12 @@ function Reply({ reply, explanation, good_reply }: ReplyProps) {
           : "border-red-500 bg-red-100"
       )}
     >
-      <p className="text-slate-800 text-lg">{reply}</p>
+      <p className="text-slate-800 text-lg">
+        {reply}
+        <span className="inline-block ml-2 border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-800 text-gray-800">
+          {category}
+        </span>
+      </p>
       <div className="text-slate-600 mt-2 font-light">
         <p>If you replied with this:</p>
         <p>
