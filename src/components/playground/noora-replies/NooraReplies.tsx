@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
+import { generateIntermediateExamples } from "../../../scripts/generate-data";
+
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
@@ -18,20 +20,7 @@ export default function NooraReplies() {
     console.log("IN TESTING FUNCTION");
     // let result = await generateResult(query);
 
-    const data = {
-      prompt: "this is my prompt\n",
-    };
-
-    console.log(JSON.stringify(data));
-
-    let reply = await fetch("/api/hello", {
-      method: "POST",
-      body: JSON.stringify(data),
-    }).then((res) => res.json());
-    console.log(reply);
-    if (reply) reply = reply.name;
-
-    updateQuery(reply);
+    generateIntermediateExamples("I just finished a really good book!");
   };
 
   return (
