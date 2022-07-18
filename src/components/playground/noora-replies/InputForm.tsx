@@ -7,10 +7,10 @@ export default function InputForm({
   results,
   updateResults,
 }: InputFieldProps) {
-  let handleSubmit = (e: any) => {
+  let handleSubmit = async (e: any) => {
     e.preventDefault();
-    let result = generateResult(query);
-    
+    let result = await generateResult(query);
+
     updateResults([...results, result]);
     updateQuery("");
   };
