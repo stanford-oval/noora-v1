@@ -45,7 +45,8 @@ export default function Footer() {
             className="font-bold hover:text-gray-200 trans-150"
           >
             Open Virtual Assistant Lab
-          </a>.
+          </a>
+          .
         </p>
         <div className="mt-7 text-center text-base text-gray-300">
           <Image src="/powered-by-vercel.svg" height="38" width="200" />
