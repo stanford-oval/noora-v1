@@ -10,7 +10,12 @@ export default function Result({
   updateResults,
 }: ResultProps) {
   return (
-    <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5 relative">
+    <div
+      className={clsx(
+        "mb-2 rounded-md border-2 p-5 relative",
+        id == -1 ? "bg-gray-100 border-gray-400" : "bg-white border-gray-300"
+      )}
+    >
       {id != -1 && (
         <button
           onClick={() => {
@@ -24,10 +29,15 @@ export default function Result({
           &#x2715;
         </button>
       )}
-      <div className="w-full border-b-2 mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl text-center px-5">
+      <div
+        className={clsx(
+          "w-full border-b-2 mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl text-center px-5",
+          id == -1 ? "border-gray-400" : "border-gray-300"
+        )}
+      >
         &ldquo;{statement}&rdquo;
         {id == -1 && (
-          <span className="inline-flex relative ml-3 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark">
+          <span className="inline-flex relative ml-3 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark border-1 border-noora-primary-dark">
             EXAMPLE
           </span>
         )}
@@ -42,18 +52,16 @@ export default function Result({
               <ul className="col-span-1 space-y-1 mt-1">
                 {good_replies.map((reply, idx) => (
                   <li key={idx}>
-                    {reply.reply && reply.explanation && (
-                      <Reply
-                        reply={reply.reply}
-                        explanation={reply.explanation}
-                        category={reply.category}
-                        good_reply={true}
-                      />
-                    )}
+                    <Reply
+                      reply={reply.reply}
+                      explanation={reply.explanation}
+                      category={reply.category}
+                      good_reply={true}
+                    />
                   </li>
                 ))}{" "}
                 {good_replies.length == 0 && (
-                  <div className="text-center text-slate-500">
+                  <div className="text-center md:text-left text-slate-500">
                     Oops! Noora didn't generate any good replies. Please try
                     again.
                   </div>
@@ -69,18 +77,16 @@ export default function Result({
               <ul className="col-span-1 space-y-1 mt-1">
                 {bad_replies.map((reply, idx) => (
                   <li key={idx}>
-                    {reply.reply && reply.explanation && (
-                      <Reply
-                        reply={reply.reply}
-                        explanation={reply.explanation}
-                        category={reply.category}
-                        good_reply={false}
-                      />
-                    )}
+                    <Reply
+                      reply={reply.reply}
+                      explanation={reply.explanation}
+                      category={reply.category}
+                      good_reply={false}
+                    />
                   </li>
                 ))}
                 {bad_replies.length == 0 && (
-                  <div className="text-center text-slate-500">
+                  <div className="text-center md:text-left text-slate-500">
                     Oops! Noora didn't generate any bad replies. Please try
                     again.
                   </div>

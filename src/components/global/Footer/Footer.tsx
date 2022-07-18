@@ -2,7 +2,7 @@ import React from "react";
 import routes from "../../../data/routes";
 import socials from "../../../data/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-300">
-          Noora is part of a research project of the{" "}
+          Noora is part of a research project at Stanford University's{" "}
           <a
             href="https://oval.cs.stanford.edu"
             target="_blank"
@@ -45,8 +45,7 @@ export default function Footer() {
             className="font-bold hover:text-gray-200 trans-150"
           >
             Open Virtual Assistant Lab
-          </a>{" "}
-          at Stanford University.
+          </a>.
         </p>
         <div className="mt-7 text-center text-base text-gray-300">
           <Image src="/powered-by-vercel.svg" height="38" width="200" />

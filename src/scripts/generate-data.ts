@@ -44,8 +44,9 @@ export default async function generateResult(statement: string, uuid: string) {
   let bad_replies: any[] = [];
 
   responses.forEach((r) => {
-    if (r.rating == "Good answer.") good_replies.push(r);
-    else bad_replies.push(r);
+    if (r.rating && r.reply && r.explanation)
+      if (r.rating == "Good answer.") good_replies.push(r);
+      else bad_replies.push(r);
   });
 
   return {
