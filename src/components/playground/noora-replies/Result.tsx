@@ -11,19 +11,26 @@ export default function Result({
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5 relative">
-      <button
-        onClick={() => {
-          // remove
-          console.log(id)
-          let newResults = results.filter((r) => r.id !== id);
-          updateResults(newResults);
-        }}
-        className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700"
-      >
-        &#x2715;
-      </button>
+      {id != -1 && (
+        <button
+          onClick={() => {
+            // remove
+            console.log(id);
+            let newResults = results.filter((r) => r.id !== id);
+            updateResults(newResults);
+          }}
+          className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700"
+        >
+          &#x2715;
+        </button>
+      )}
       <div className="w-full border-b-2 mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl text-center px-5">
         &ldquo;{statement}&rdquo;
+        {id == -1 && (
+          <span className="inline-flex relative ml-3 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark">
+            EXAMPLE
+          </span>
+        )}
       </div>
       {good_replies || bad_replies ? (
         <div className="grid md:grid-cols-2 gap-3 mt-3">
