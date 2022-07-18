@@ -62,8 +62,8 @@ input {
     @apply placeholder-slate-400;
 }
 
-.formik-error {
-    @apply text-red-500 font-bold mt-1;
+.border-1 {
+    border-width: 1px;
 }
 
 /*-------------------------------*/

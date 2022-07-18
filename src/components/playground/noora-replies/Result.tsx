@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Result({ index, statement, replies }: ResultProps) {
   return (
-    <div className="bg-gray-100 mb-2">
+    <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
       {index}: {statement}
       <ul>
         {replies ? (
