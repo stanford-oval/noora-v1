@@ -1,5 +1,5 @@
 import React from "react";
-import generateResult from "../../../scripts/noora-replies-playground";
+import generateResult from "../../../scripts/generate-data";
 
 export default function InputForm({
   query,
