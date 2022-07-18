@@ -28,10 +28,18 @@ export default async function generateResult(statement: string) {
     presence_penalty: presPenalty,
   });
   // 4. parse examples
+  let responses: any[] = [];
+  reply.split("\n").forEach((r: string) => {
+    let example = {};
+    try {
+      example = parseExStr(statement, r);
+    } catch (err) {
+      console.error(err);
+    }
+    responses.push(example);
+  });
   // 5. return data
-
-  console.log(prompt);
-  return reply;
+  return responses;
 
   // return {
   //   statement: statement,
@@ -195,9 +203,8 @@ export function isProperFormat(exStr: string, strict: boolean) {
   };
 }
 
-export function parseExStr(category: string, statement: string, exStr: string) {
+export function parseExStr(statement: string, exStr: string) {
   let example = {
-    statement_category: category,
     statement: statement,
     category: "",
     reasoning: "",

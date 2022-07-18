@@ -17,7 +17,7 @@ export default function NooraReplies() {
 
   let testingFunction = async (e: any) => {
     e.preventDefault();
-    let result = await generateResult(query);
+    let result = await generateResult("I love walking my dog.");
 
     console.log(result);
   };
