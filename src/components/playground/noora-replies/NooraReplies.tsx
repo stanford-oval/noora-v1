@@ -25,9 +25,6 @@ export default function NooraReplies() {
           results={results}
           updateResults={updateResults}
         />
-        <div className="bg-gray-100 mb-2">
-          <pre>Your query: {query}</pre>
-        </div>
         {results
           .slice(0)
           .reverse()
