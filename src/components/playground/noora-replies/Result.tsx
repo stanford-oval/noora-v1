@@ -8,18 +8,17 @@ export default function Result({
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
-      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-800 text-xl md:text-2xl">
+      <div className="w-full border-b-2 text-center mb-2 pb-2 font-medium text-slate-800 text-xl md:text-2xl">
         &ldquo;{statement}&rdquo;
       </div>
-      <ul>
-        {good_replies || bad_replies ? (
-          <>
-            {good_replies &&
-              good_replies.map((reply, idx) => (
+      {good_replies || bad_replies ? (
+        <div className="grid md:grid-cols-2 gap-3">
+          {good_replies && (
+            <ul className="col-span-1">
+              {good_replies.map((reply, idx) => (
                 <li key={idx}>
-                  {reply.rating && reply.reply && reply.explanation && (
+                  {reply.reply && reply.explanation && (
                     <Reply
-                      rating={reply.rating}
                       reply={reply.reply}
                       explanation={reply.explanation}
                       category={reply.category}
@@ -28,36 +27,36 @@ export default function Result({
                   )}
                 </li>
               ))}
-            {bad_replies &&
-              bad_replies.map((reply, idx) => (
+            </ul>
+          )}
+          {bad_replies && (
+            <ul className="col-span-1">
+              {bad_replies.map((reply, idx) => (
                 <li key={idx}>
-                  {reply.rating &&
-                    reply.reply &&
-                    reply.explanation &&
-                    reply && (
-                      <Reply
-                        rating={reply.rating}
-                        reply={reply.reply}
-                        explanation={reply.explanation}
-                        category={reply.category}
-                        good_reply={false}
-                      />
-                    )}
+                  {reply.reply && reply.explanation && (
+                    <Reply
+                      reply={reply.reply}
+                      explanation={reply.explanation}
+                      category={reply.category}
+                      good_reply={false}
+                    />
+                  )}
                 </li>
               ))}
-          </>
-        ) : (
-          <div className="text-center text-slate-500">
-            Generating responses takes around 25 seconds. Feel free to
-            submit more statements while you're waiting.
-          </div>
-        )}
-      </ul>
+            </ul>
+          )}
+        </div>
+      ) : (
+        <div className="text-center text-slate-500">
+          Generating responses takes around 25 seconds. Feel free to submit more
+          statements while you're waiting.
+        </div>
+      )}
     </div>
   );
 }
 
-function Reply({ rating, reply, explanation, good_reply }: ReplyProps) {
+function Reply({ reply, explanation, good_reply }: ReplyProps) {
   return (
     <div
       className={clsx(
@@ -67,10 +66,13 @@ function Reply({ rating, reply, explanation, good_reply }: ReplyProps) {
           : "border-red-500 bg-red-100"
       )}
     >
-      <p>{reply}</p>
-      <p>{rating}</p>
-      <p>If you replied with this:</p>
-      <p>{explanation}</p>
+      <p className="text-slate-800 text-lg">{reply}</p>
+      <div className="text-slate-600 mt-2 font-light">
+        <p>If you replied with this:</p>
+        <p>
+          <i>{explanation}</i>
+        </p>
+      </div>
     </div>
   );
 }
@@ -82,7 +84,6 @@ type ResultProps = {
 };
 
 type ReplyProps = {
-  rating: string;
   reply: string;
   category: string;
   explanation: string;
