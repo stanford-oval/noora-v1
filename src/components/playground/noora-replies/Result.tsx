@@ -4,12 +4,13 @@ export default function Result({ index, statement, replies }: ResultProps) {
   return (
     <div className="bg-gray-100 mb-2">
       {index}: {statement}
-      {replies.map((reply) => (
-        <div>
-          {reply.good_answer ? "good answer" : "bad answer"}: {reply.reply} (
-          {reply.category})
-        </div>
-      ))}
+      {replies &&
+        replies.map((reply) => (
+          <div key={reply}>
+            {reply.good_answer ? "good answer" : "bad answer"}: {reply.reply} (
+            {reply.category})
+          </div>
+        ))}
     </div>
   );
 }

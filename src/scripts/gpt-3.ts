@@ -8,9 +8,12 @@ export default async function Completion(
   frequency_penalty: number,
   presence_penalty: number
 ) {
+  console.log("here");
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
+
+  console.log(configuration);
 
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion({
@@ -21,6 +24,8 @@ export default async function Completion(
     frequency_penalty: frequency_penalty,
     presence_penalty: presence_penalty,
   });
+
+  console.log(response);
 
   if (response && response.data && response.data.choices)
     return response.data.choices[0].text;

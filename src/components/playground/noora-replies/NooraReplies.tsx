@@ -8,7 +8,7 @@ export default function NooraReplies() {
     {
       statement: "Example Statement",
       replies: [
-        { reply: "Example reply", category: "Sarcastic", good_answer: false},
+        { reply: "Example reply", category: "Sarcastic", good_answer: false },
       ],
     },
   ]);
@@ -33,6 +33,7 @@ export default function NooraReplies() {
               index={results.length - index}
               statement={result.statement}
               replies={result.replies}
+              key={index}
             />
           ))}
       </div>
