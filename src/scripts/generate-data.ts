@@ -32,7 +32,7 @@ export default async function generateResult(statement: string, uuid: string) {
   reply.split("\n").forEach((r: string) => {
     let example = {};
     try {
-      example = parseExStr(statement, r);
+      example = parseExStr(r);
       responses.push(example);
     } catch (err) {
       console.error(err);
@@ -206,9 +206,8 @@ export function isProperFormat(exStr: string, strict: boolean) {
   };
 }
 
-export function parseExStr(statement: string, exStr: string) {
+export function parseExStr(exStr: string) {
   let example = {
-    statement: statement,
     category: "",
     reasoning: "",
     reply: "",

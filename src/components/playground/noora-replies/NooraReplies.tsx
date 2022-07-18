@@ -10,7 +10,6 @@ export default function NooraReplies() {
       statement: "Example statement",
       good_replies: [
         {
-          statement: "Example statement",
           category: "Example category",
           reasoning: "Example reasoning",
           reply: '"Example reply"',
@@ -20,7 +19,6 @@ export default function NooraReplies() {
       ],
       bad_replies: [
         {
-          statement: "Example statement 2",
           category: "Example category ",
           reasoning: "Example reasoning 2",
           reply: '"Example reply 2"',

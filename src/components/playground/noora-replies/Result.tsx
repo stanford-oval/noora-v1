@@ -9,12 +9,12 @@ export default function Result({
 }: ResultProps) {
   return (
     <div className="bg-white mb-2 rounded-md border-2 border-gray-300 p-5">
-      {index}: {statement}
+      <div className="w-full border-b-2 text-center mb-2 pb-2 text-slate-700 text-2xl">&ldquo;{statement}&rdquo;</div>
       <ul>
         {good_replies ? (
           good_replies.map((reply, idx) => (
             <li key={idx}>
-              {reply && (
+              {reply.rating && reply.reply && reply.explanation && (
                 <Reply
                   rating={reply.rating}
                   reply={reply.reply}
@@ -32,7 +32,7 @@ export default function Result({
         {bad_replies ? (
           bad_replies.map((reply, idx) => (
             <li key={idx}>
-              {reply && (
+              {reply.rating && reply.reply && reply.explanation && reply && (
                 <Reply
                   rating={reply.rating}
                   reply={reply.reply}
@@ -58,8 +58,8 @@ function Reply({ rating, reply, explanation, good_reply }: ReplyProps) {
       className={clsx(
         "p-3 border-2 rounded-lg",
         good_reply
-          ? "border-green-800 bg-green-200"
-          : "border-red-800 bg-red-200"
+          ? "border-green-500 bg-green-100"
+          : "border-red-500 bg-red-100"
       )}
     >
       <p>{reply}</p>
