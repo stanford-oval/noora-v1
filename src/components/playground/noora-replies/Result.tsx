@@ -12,7 +12,7 @@ export default function Result({
   return (
     <div
       className={clsx(
-        "mb-2 rounded-md border-2 p-5 relative",
+        "mb-2 rounded-md border-2 p-5 relative shadow-md",
         id == -1 ? "bg-gray-100 border-gray-400" : "bg-white border-gray-300"
       )}
     >
