@@ -12,6 +12,28 @@ export default function NooraReplies() {
       ],
     },
   ]);
+
+  let testingFunction = async (e: any) => {
+    e.preventDefault();
+    console.log("IN TESTING FUNCTION");
+    // let result = await generateResult(query);
+
+    const data = {
+      prompt: "this is my prompt\n",
+    };
+
+    console.log(JSON.stringify(data));
+
+    let reply = await fetch("/api/hello", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }).then((res) => res.json());
+    console.log(reply);
+    if (reply) reply = reply.name;
+
+    updateQuery(reply);
+  };
+
   return (
     <div>
       <div>
@@ -19,23 +41,32 @@ export default function NooraReplies() {
         <h2>
           Tell Noora anything, and she will give you some good and bad replies.
         </h2>
+        <button
+          onClick={(e) => testingFunction(e)}
+          className="text-white bg-red-800 px-4 py-2 rounded-full"
+        >
+          TESTING
+        </button>
         <InputForm
           query={query}
           updateQuery={updateQuery}
           results={results}
           updateResults={updateResults}
         />
-        {results
-          .slice(0)
-          .reverse()
-          .map((result, index) => (
-            <Result
-              index={results.length - index}
-              statement={result.statement}
-              replies={result.replies}
-              key={index}
-            />
-          ))}
+        <ul>
+          {results
+            .slice(0)
+            .reverse()
+            .map((result, index) => (
+              <li key={index}>
+                <Result
+                  index={results.length - index}
+                  statement={result.statement}
+                  replies={result.replies}
+                />
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

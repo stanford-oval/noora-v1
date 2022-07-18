@@ -28,7 +28,7 @@ export default async function handler(
 
   const response = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: "Write a tagline for an ice cream shop.",
+    prompt: "Give me a fun fact.",
     temperature: 0.95,
     max_tokens: 200,
     frequency_penalty: 0.5,
