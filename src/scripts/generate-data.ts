@@ -61,15 +61,23 @@ async function getIntermediate(
   let prompt = template.replace("{s}", statement);
 
   let intermediate = "";
+  let reply = "";
+  while (true) {
+    reply = await Completion({
+      model: "text-davinci-002",
+      prompt: prompt,
+      temperature: temp,
+      max_tokens: 200,
+      frequency_penalty: freqPenalty,
+      presence_penalty: presPenalty,
+    });
 
-  let reply = await Completion({
-    model: "text-davinci-002",
-    prompt: prompt,
-    temperature: temp,
-    max_tokens: 200,
-    frequency_penalty: freqPenalty,
-    presence_penalty: presPenalty,
-  });
+    if (isProperFormat(reply, true)) break;
+    else
+      console.log(
+        "Regenerating intermediate response because format is incorrect."
+      );
+  }
 
   intermediate = capitalizeFirst(category) + ": " + capitalizeFirst(reply);
   return intermediate;

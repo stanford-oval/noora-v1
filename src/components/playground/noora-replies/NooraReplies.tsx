@@ -22,13 +22,9 @@ export default function NooraReplies() {
     e.preventDefault();
     // let result = await generateResult(query);
 
-    // let examples = await generateIntermediateExamples("I just finished a really good book!");
-    // console.log(examples)
-    let x = isProperFormat(
-      `Dismissive:  you are not interested in my good experience. So you say, “That’s nice.” Not a good answer. This is not good if you are trying to be a good friend to me.`,
-      false
-    );
-    console.log(x);
+    let examples = await generateIntermediateExamples("I just finished a really good book!");
+    console.log(examples)
+    console.log(isProperFormat(examples[0]))
   };
 
   return (
