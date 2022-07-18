@@ -1,5 +1,7 @@
 import Completion from "./Completion";
+
 import categoryPrompts from "../data/prompts/category-specific";
+import generateDataPrompt from "../data/prompts/generate-data";
 
 const temp = 0.9;
 const freqPenalty = 0.5;
@@ -34,7 +36,12 @@ export default async function generateResult(statement: string) {
 }
 
 export function generateIntermediateExamples(statement: string) {
-  console.log("Generating 2 intermediate examples for: " + statement);
+  // 1. randomly pick categories
+  let index1 = Math.floor(Math.random() * categoryPrompts.length);
+  let index2 = index1;
+  while (index2 == index1)
+    index2 = Math.floor(Math.random() * categoryPrompts.length);
+  let categories = [categoryPrompts[index1], categoryPrompts[index2]];
 
-  console.log(categoryPrompts);
+  // 2. 
 }

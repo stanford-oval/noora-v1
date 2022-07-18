@@ -17,7 +17,6 @@ export default function NooraReplies() {
 
   let testingFunction = async (e: any) => {
     e.preventDefault();
-    console.log("IN TESTING FUNCTION");
     // let result = await generateResult(query);
 
     generateIntermediateExamples("I just finished a really good book!");
