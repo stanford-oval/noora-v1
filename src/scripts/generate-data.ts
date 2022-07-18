@@ -33,10 +33,10 @@ export default async function generateResult(statement: string) {
     let example = {};
     try {
       example = parseExStr(statement, r);
+      responses.push(example);
     } catch (err) {
       console.error(err);
     }
-    responses.push(example);
   });
 
   // 5. return data

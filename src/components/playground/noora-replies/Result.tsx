@@ -12,7 +12,7 @@ export default function Result({ index, statement, replies }: ResultProps) {
             </li>
           ))
         ) : (
-          <p>This will take around 20 seconds...</p>
+          <p className="font-bold text-xl">This will take around 25 seconds...</p>
         )}
       </ul>
     </div>

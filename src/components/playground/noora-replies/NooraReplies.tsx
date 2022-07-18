@@ -5,7 +5,19 @@ import Result from "./Result";
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
-    { statement: "Example statement", replies: [] },
+    {
+      statement: "Example statement",
+      replies: [
+        {
+          statement: "Example statement",
+          category: "Example category",
+          reasoning: "Example reasoning",
+          reply: '"Example reply"',
+          rating: "Good answer.",
+          explanation: "Example explanation",
+        },
+      ],
+    },
   ]);
 
   return (

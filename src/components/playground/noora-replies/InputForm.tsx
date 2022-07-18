@@ -9,8 +9,11 @@ export default function InputForm({
 }: InputFieldProps) {
   let handleSubmit = async (e: any) => {
     e.preventDefault();
-    let result = await generateResult(query);
+    let statement = query
+    updateResults([...results, { statement: statement }]);
+    updateQuery("");
 
+    let result = await generateResult(statement);
     updateResults([...results, result]);
     updateQuery("");
   };
