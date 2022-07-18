@@ -62,8 +62,8 @@ export default function Result({
                 ))}{" "}
                 {good_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Oops! Noora didn't generate any good replies. Please try
-                    again.
+                    Oops! Noora didn&apos;t generate any good replies. Please
+                    try again.
                   </div>
                 )}
               </ul>
@@ -87,7 +87,7 @@ export default function Result({
                 ))}
                 {bad_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Oops! Noora didn't generate any bad replies. Please try
+                    Oops! Noora didn&apos;t generate any bad replies. Please try
                     again.
                   </div>
                 )}
