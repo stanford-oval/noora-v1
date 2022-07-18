@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
-import { generateIntermediateExamples } from "../../../scripts/generate-data";
+import {
+  generateIntermediateExamples,
+  isProperFormat,
+} from "../../../scripts/generate-data";
 
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
@@ -19,8 +22,13 @@ export default function NooraReplies() {
     e.preventDefault();
     // let result = await generateResult(query);
 
-    let examples = await generateIntermediateExamples("I just finished a really good book!");
-    console.log(examples)
+    // let examples = await generateIntermediateExamples("I just finished a really good book!");
+    // console.log(examples)
+    let x = isProperFormat(
+      `Dismissive:  you are not interested in my good experience. So you say, “That’s nice.” Not a good answer. This is not good if you are trying to be a good friend to me.`,
+      false
+    );
+    console.log(x);
   };
 
   return (
