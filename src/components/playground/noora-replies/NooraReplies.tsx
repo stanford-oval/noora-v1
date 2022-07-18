@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
@@ -16,9 +16,32 @@ export default function NooraReplies() {
           rating: "Good answer.",
           explanation: "Example explanation",
         },
+        {
+          statement: "Example statement 2",
+          category: "Example category ",
+          reasoning: "Example reasoning 2",
+          reply: '"Example reply 2"',
+          rating: "Bad answer.",
+          explanation: "Example explanation 2",
+        },
       ],
     },
   ]);
+  const [resultsQueue, updateResultsQueue] = useState<any[]>([]);
+
+  useEffect(() => {
+    // on queue change, update the right element
+    resultsQueue.forEach((result) => {
+      const newResults: any[] = results.map((r) => {
+        if (r.statement == result.statement) return result;
+        else return r;
+      });
+
+      updateResults(newResults);
+
+      updateResultsQueue([]); // empty queue
+    });
+  }, [resultsQueue]);
 
   return (
     <div>
@@ -32,6 +55,7 @@ export default function NooraReplies() {
           updateQuery={updateQuery}
           results={results}
           updateResults={updateResults}
+          updateResultsQueue={updateResultsQueue}
         />
         <ul>
           {results

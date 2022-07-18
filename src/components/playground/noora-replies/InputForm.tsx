@@ -6,16 +6,19 @@ export default function InputForm({
   updateQuery,
   results,
   updateResults,
+  updateResultsQueue,
 }: InputFieldProps) {
   let handleSubmit = async (e: any) => {
     e.preventDefault();
-    let statement = query
+    let statement = query;
+    console.log("We have " + statement);
     updateResults([...results, { statement: statement }]);
     updateQuery("");
 
     let result = await generateResult(statement);
-    updateResults([...results, result]);
-    updateQuery("");
+    console.log("RESULT for " + statement);
+    updateResultsQueue([result]);
+    console.log("updated result");
   };
 
   return (
@@ -44,4 +47,5 @@ type InputFieldProps = {
   updateQuery: any;
   results: any[];
   updateResults: any;
+  updateResultsQueue: any;
 };
