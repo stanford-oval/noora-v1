@@ -18,10 +18,20 @@ export default async function generateResult(statement: string) {
     "{intermediate_examples_formatted}",
     intermediates.join("\r\n")
   );
-  // 3. parse examples
-  // 4. return data
+  // 3. call GPT-3
+  let reply = await Completion({
+    model: "text-davinci-002",
+    prompt: prompt,
+    temperature: temp,
+    max_tokens: 1000,
+    frequency_penalty: freqPenalty,
+    presence_penalty: presPenalty,
+  });
+  // 4. parse examples
+  // 5. return data
 
-  return prompt;
+  console.log(prompt);
+  return reply;
 
   // return {
   //   statement: statement,
@@ -185,11 +195,7 @@ export function isProperFormat(exStr: string, strict: boolean) {
   };
 }
 
-export function parseExStr(
-  category: string,
-  statement: string,
-  ex_str: string
-) {
+export function parseExStr(category: string, statement: string, exStr: string) {
   let example = {
     statement_category: category,
     statement: statement,
@@ -200,7 +206,35 @@ export function parseExStr(
     explanation: "",
   };
 
-  return "";
+  let formatCheck = isProperFormat(exStr, false);
+
+  if (!formatCheck) return {};
+
+  // parse into [category, reasoning, reply, rating, explanation]
+  // 1. category
+  // "(n) category here: ..." -> .split(':')[0] -> "(n) category here" -> .split(')')[1] -> "category here"
+  example["category"] = exStr.split(":")[0].split(")")[1].trim().toLowerCase();
+
+  // 2. reasoning: before the dialogue phrase but after the :
+  example["reasoning"] = capitalizeFirst(
+    exStr.split(formatCheck["dialoguePhrase"])[0].split(":")[1].trim()
+  );
+  // punctuate reasoning
+  if (example["reasoning"][example["reasoning"].length - 1] != ".")
+    example["reasoning"] += ".";
+  // 3. reply: after dialogue phrase but before rating
+  example["reply"] = exStr
+    .split(formatCheck["dialoguePhrase"])[1]
+    .split(formatCheck["ratingStr"])[0]
+    .trim();
+  // 4. rating
+  example["rating"] = formatCheck["rating"];
+  // 5. explanation: after ratingStr
+  example["explanation"] = capitalizeFirst(
+    exStr.split(formatCheck["ratingStr"])[1].trim()
+  );
+
+  return example;
 }
 
 function capitalizeFirst(str: string) {
