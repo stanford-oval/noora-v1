@@ -14,7 +14,7 @@ export default function Result({
       {good_replies || bad_replies ? (
         <div className="grid md:grid-cols-2 gap-3 mt-3">
           {good_replies && (
-            <ul className="col-span-1">
+            <ul className="col-span-1 space-y-1">
               {good_replies.map((reply, idx) => (
                 <li key={idx}>
                   {reply.reply && reply.explanation && (
@@ -30,7 +30,7 @@ export default function Result({
             </ul>
           )}
           {bad_replies && (
-            <ul className="col-span-1">
+            <ul className="col-span-1 space-y-1">
               {bad_replies.map((reply, idx) => (
                 <li key={idx}>
                   {reply.reply && reply.explanation && (
@@ -49,7 +49,7 @@ export default function Result({
       ) : (
         <div className="text-center text-slate-500">
           Generating responses takes around 25 seconds. Feel free to submit more
-          statements while you're waiting.
+          statements while you&apos;re waiting.
         </div>
       )}
     </div>
