@@ -42,7 +42,8 @@ export default function InputForm({
         <button
           type="submit"
           onClick={(e) => handleSubmit(e)}
-          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-light focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+          disabled={query.length == 0}
+          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark disabled:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Go
         </button>

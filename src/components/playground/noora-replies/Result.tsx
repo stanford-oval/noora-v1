@@ -14,36 +14,58 @@ export default function Result({
       {good_replies || bad_replies ? (
         <div className="grid md:grid-cols-2 gap-3 mt-3">
           {good_replies && (
-            <ul className="col-span-1 space-y-1">
-              {good_replies.map((reply, idx) => (
-                <li key={idx}>
-                  {reply.reply && reply.explanation && (
-                    <Reply
-                      reply={reply.reply}
-                      explanation={reply.explanation}
-                      category={reply.category}
-                      good_reply={true}
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h1 className="text-lg md:text-xl text-green-700 font-medium">
+                Good Replies
+              </h1>
+              <ul className="col-span-1 space-y-1 mt-1">
+                {good_replies.map((reply, idx) => (
+                  <li key={idx}>
+                    {reply.reply && reply.explanation && (
+                      <Reply
+                        reply={reply.reply}
+                        explanation={reply.explanation}
+                        category={reply.category}
+                        good_reply={true}
+                      />
+                    )}
+                  </li>
+                ))}{" "}
+                {good_replies.length == 0 && (
+                  <div className="text-center text-slate-500">
+                    Oops! Noora didn't generate any good replies. Please try
+                    again.
+                  </div>
+                )}
+              </ul>
+            </div>
           )}
           {bad_replies && (
-            <ul className="col-span-1 space-y-1">
-              {bad_replies.map((reply, idx) => (
-                <li key={idx}>
-                  {reply.reply && reply.explanation && (
-                    <Reply
-                      reply={reply.reply}
-                      explanation={reply.explanation}
-                      category={reply.category}
-                      good_reply={false}
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h1 className="text-lg md:text-xl text-red-700 font-medium">
+                Bad Replies
+              </h1>
+              <ul className="col-span-1 space-y-1 mt-1">
+                {bad_replies.map((reply, idx) => (
+                  <li key={idx}>
+                    {reply.reply && reply.explanation && (
+                      <Reply
+                        reply={reply.reply}
+                        explanation={reply.explanation}
+                        category={reply.category}
+                        good_reply={false}
+                      />
+                    )}
+                  </li>
+                ))}
+                {bad_replies.length == 0 && (
+                  <div className="text-center text-slate-500">
+                    Oops! Noora didn't generate any bad replies. Please try
+                    again.
+                  </div>
+                )}
+              </ul>
+            </div>
           )}
         </div>
       ) : (
@@ -62,8 +84,8 @@ function Reply({ reply, explanation, category, good_reply }: ReplyProps) {
       className={clsx(
         "p-3 border-2 rounded-lg",
         good_reply
-          ? "border-green-500 bg-green-100"
-          : "border-red-500 bg-red-100"
+          ? "border-green-700 bg-green-100"
+          : "border-red-700 bg-red-100"
       )}
     >
       <p className="text-slate-800 text-lg">
