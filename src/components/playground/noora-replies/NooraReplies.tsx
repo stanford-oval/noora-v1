@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputForm from "./InputForm";
+import Result from "./Result";
 
 export default function NooraReplies() {
   const [query, updateQuery] = useState("");
@@ -7,7 +8,7 @@ export default function NooraReplies() {
     {
       statement: "Example Statement",
       replies: [
-        { reply: "Example reply", category: "Sarcastic", rating: "Bad reply" },
+        { reply: "Example reply", category: "Sarcastic", good_answer: false},
       ],
     },
   ]);
@@ -27,9 +28,16 @@ export default function NooraReplies() {
         <div className="bg-gray-100 mb-2">
           <pre>Your query: {query}</pre>
         </div>
-        <div className="bg-gray-100">
-          <pre>Results: {JSON.stringify(results, null, 2)}</pre>
-        </div>
+        {results
+          .slice(0)
+          .reverse()
+          .map((result, index) => (
+            <Result
+              index={results.length - index}
+              statement={result.statement}
+              replies={result.replies}
+            />
+          ))}
       </div>
     </div>
   );
