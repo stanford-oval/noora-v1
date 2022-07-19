@@ -13,12 +13,12 @@ export default function InputForm() {
     e.preventDefault();
     let statement = query.value;
     let id = uuidv4();
-    results.updateValue([...results.value, { id: id, statement: statement }]);
-    query.updateValue("");
+    results.setValue([...results.value, { id: id, statement: statement }]);
+    query.setValue("");
 
     console.log("Generating result for: " + statement);
     let result = await generateResult(statement, id);
-    resultsQueue.updateValue([result]);
+    resultsQueue.setValue([result]);
   };
 
   return (
@@ -31,7 +31,7 @@ export default function InputForm() {
         <input
           type="text"
           onChange={(e) => {
-            query.updateValue(e.target.value);
+            query.setValue(e.target.value);
           }}
           value={query.value}
           placeholder="I finished great book today!"

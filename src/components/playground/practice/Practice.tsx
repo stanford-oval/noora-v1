@@ -1,14 +1,9 @@
-import React, { useEffect, useContext } from "react";
-import { PlaygroundContext } from "../Playground";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 
 export default function Practice() {
-  const router = useRouter();
-
-//   useEffect(() => {
-//     router.push("/playground?page=practice", undefined, { shallow: true });
-//   }, []);
-
+    const router = useRouter();
+    
 //   const { askNoora } = useContext(PlaygroundContext);
 //   const { results, resultsQueue } = askNoora;
 

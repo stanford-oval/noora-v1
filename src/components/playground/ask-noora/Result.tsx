@@ -24,7 +24,7 @@ export default function Result({
             // remove
             console.log(id);
             let newResults = results.value.filter((r: any) => r.id !== id);
-            results.updateValue(newResults);
+            results.setValue(newResults);
           }}
           className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700"
         >

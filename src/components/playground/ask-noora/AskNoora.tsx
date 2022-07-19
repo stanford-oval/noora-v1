@@ -2,11 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { PlaygroundContext } from "../Playground";
 import InputForm from "./InputForm";
 import Result from "./Result";
-import { useRouter } from "next/router";
 
 export default function AskNoora() {
-  const router = useRouter();
-
   const { askNoora } = useContext(PlaygroundContext);
   const { results, resultsQueue } = askNoora;
 
@@ -18,9 +15,9 @@ export default function AskNoora() {
         else return r;
       });
 
-      results.updateValue(newResults);
+      results.setValue(newResults);
 
-      resultsQueue.updateValue([]); // empty queue
+      resultsQueue.setValue([]); // empty queue
     });
   }, [resultsQueue.value]);
 
