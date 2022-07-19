@@ -4,6 +4,7 @@ import React, {
   useState,
   useEffect,
   useMemo,
+  CSSProperties,
 } from "react";
 import AskNoora from "./ask-noora/AskNoora";
 import { Tab } from "@headlessui/react";
@@ -35,13 +36,16 @@ export default function Playground() {
   ); // tabs and routing
 
   useEffect(() => {
-    console.log("in");
-    console.log(router.query.page);
-    if (router.query.page == "practice") {
+    const page: any =
+      router.query.page ||
+      router.asPath.match(new RegExp(`[&?]page=(.*)(&|$)`));
+    console.log(router);
+    console.log(router.query);
+    if (page == "practice") {
       setSelectedIndex(0);
-    } else if (router.query.page == "ask-noora") {
+    } else if (page == "ask-noora") {
       setSelectedIndex(1);
-    } else if (router.query !== undefined && !router.query) {
+    } else if (!page) {
       router.push("/playground?page=practice", undefined, {
         shallow: true,
       }); // default if no path
