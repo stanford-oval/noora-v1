@@ -3,7 +3,7 @@ import generateResult from "../../../scripts/generate-data";
 import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import { PlaygroundContext } from "../../../pages/playground";
+import { PlaygroundContext } from "../Playground";
 
 export default function InputForm() {
   const { askNoora } = useContext(PlaygroundContext);

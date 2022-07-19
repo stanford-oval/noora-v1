@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { clsx } from "clsx";
-import { PlaygroundContext } from "../../../pages/playground";
+import { PlaygroundContext } from "../Playground";
 
 export default function Result({
   statement,

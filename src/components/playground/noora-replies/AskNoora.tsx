@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { PlaygroundContext } from "../../../pages/playground";
+import { PlaygroundContext } from "../Playground";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
