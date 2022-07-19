@@ -1,20 +1,25 @@
-import React, { Fragment, createContext, useState, useMemo } from "react";
+import React, {
+  Fragment,
+  createContext,
+  useState,
+  useMemo,
+} from "react";
 import AskNoora from "../components/playground/noora-replies/AskNoora";
 import Page from "../components/utility/Page";
 import { Tab } from "@headlessui/react";
 
-const PlaygroundContext = createContext<any>({
+export const PlaygroundContext = createContext<any>({
   askNoora: {
     query: {
       value: "",
       updateValue: () => {},
     },
     results: {
-      value: [],
+      value: "",
       updateValue: () => {},
     },
     resultsQueue: {
-      value: [],
+      value: "",
       updateValue: () => {},
     },
   },
@@ -89,17 +94,27 @@ export default function index() {
                     selected ? "bg-blue-500 text-white" : "bg-white text-black"
                   }
                 >
-                  Tab 1
+                  Practice
                 </button>
               )}
             </Tab>
-            <Tab>Tab 2</Tab>
+            <Tab as={Fragment}>
+              {({ selected }) => (
+                <button
+                  className={
+                    selected ? "bg-blue-500 text-white" : "bg-white text-black"
+                  }
+                >
+                  Ask Noora
+                </button>
+              )}
+            </Tab>
           </Tab.List>
           <Tab.Panels>
+            <Tab.Panel>[PRACTICE PAGE]</Tab.Panel>
             <Tab.Panel>
               <AskNoora />
             </Tab.Panel>
-            <Tab.Panel>X</Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
       </PlaygroundContext.Provider>

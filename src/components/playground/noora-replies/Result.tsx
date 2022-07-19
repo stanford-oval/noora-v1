@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { clsx } from "clsx";
+import { PlaygroundContext } from "../../../pages/playground";
 
 export default function Result({
   statement,
   good_replies,
   bad_replies,
   id,
-  results,
-  updateResults,
 }: ResultProps) {
+  const { askNoora } = useContext(PlaygroundContext);
+  const { results } = askNoora;
+
   return (
     <div
       className={clsx(
@@ -21,8 +23,8 @@ export default function Result({
           onClick={() => {
             // remove
             console.log(id);
-            let newResults = results.filter((r) => r.id !== id);
-            updateResults(newResults);
+            let newResults = results.value.filter((r: any) => r.id !== id);
+            results.updateValue(newResults);
           }}
           className="absolute top-2 right-2.5 text-gray-500 rounded-full h-6 w-6 focus:bg-gray-200 bg-white focus:text-gray-700"
         >
@@ -136,8 +138,6 @@ type ResultProps = {
   good_replies: any[];
   bad_replies: any[];
   id: number;
-  results: any[];
-  updateResults: any;
 };
 
 type ReplyProps = {

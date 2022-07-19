@@ -1,26 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import generateResult from "../../../scripts/generate-data";
-import { v4 as uuidv4, v4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { PlaygroundContext } from "../../../pages/playground";
 
-export default function InputForm({
-  query,
-  updateQuery,
-  results,
-  updateResults,
-  updateResultsQueue,
-}: InputFieldProps) {
+export default function InputForm() {
+  const { askNoora } = useContext(PlaygroundContext);
+  const { query, results, resultsQueue } = askNoora;
+
   let handleSubmit = async (e: any) => {
     e.preventDefault();
-    let statement = query;
+    let statement = query.value;
     let id = uuidv4();
-    updateResults([...results, { id: id, statement: statement }]);
-    updateQuery("");
+    results.updateValue([...results.value, { id: id, statement: statement }]);
+    query.updateValue("");
 
     console.log("Generating result for: " + statement);
     let result = await generateResult(statement, id);
-    updateResultsQueue([result]);
+    resultsQueue.updateValue([result]);
   };
 
   return (
@@ -33,16 +31,16 @@ export default function InputForm({
         <input
           type="text"
           onChange={(e) => {
-            updateQuery(e.target.value);
+            query.updateValue(e.target.value);
           }}
-          value={query}
+          value={query.value}
           placeholder="I finished great book today!"
           className="block p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm focus:border-noora-primary-main sm:text-sm rounded-full text-slate-800"
         />
         <button
           type="submit"
           onClick={(e) => handleSubmit(e)}
-          disabled={query.length == 0}
+          disabled={query.value.length == 0}
           className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark disabled:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Go
@@ -51,11 +49,3 @@ export default function InputForm({
     </form>
   );
 }
-
-type InputFieldProps = {
-  query: string;
-  updateQuery: any;
-  results: any[];
-  updateResults: any;
-  updateResultsQueue: any;
-};
