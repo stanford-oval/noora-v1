@@ -37,7 +37,7 @@ export default function Result({
       >
         &ldquo;{statement}&rdquo;
         {id == -1 && (
-          <span className="inline-flex relative ml-3 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark border-1 border-noora-primary-dark">
+          <span className="block mt-3 mx-auto max-w-fit md:inline-flex relative md:ml-3 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark border-1 border-noora-primary-dark">
             EXAMPLE
           </span>
         )}

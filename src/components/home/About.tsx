@@ -22,7 +22,7 @@ export default function About() {
                 href="https://profiles.stanford.edu/lynn-koegel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-slate-700"
+                className="underline font-medium text-gray-700"
               >
                 Dr. Lynn Koegel&apos;s
               </a>{" "}

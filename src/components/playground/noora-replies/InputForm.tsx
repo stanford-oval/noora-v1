@@ -26,7 +26,7 @@ export default function InputForm({
   return (
     <form className="mt-5 mx-auto max-w-2xl">
       <div className="relative">
-        <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none text-slate-400">
+        <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none text-slate-400 z-10">
           <FontAwesomeIcon icon={faComment} className="w-4 h-4" />
         </div>
 
