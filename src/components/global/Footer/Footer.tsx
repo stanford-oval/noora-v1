@@ -36,6 +36,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
+
         <p className="mt-8 text-center text-base text-gray-300">
           Noora is part of a research project at Stanford University&apos;s{" "}
           <a
@@ -49,7 +50,13 @@ export default function Footer() {
           .
         </p>
         <div className="mt-7 text-center text-base text-gray-300">
-          <Image src="/powered-by-vercel.svg" height="38" width="200" />
+          <a
+            href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src="/powered-by-vercel.svg" height="38" width="200" />
+          </a>
         </div>
       </div>
     </footer>
