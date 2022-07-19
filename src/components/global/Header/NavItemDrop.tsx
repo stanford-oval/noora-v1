@@ -41,8 +41,6 @@ export default function NavItemDrop({
             );
           })}
         </div>
-
-        <img src="/solutions.jpg" alt="" />
       </Popover.Panel>
     </Popover>
   );
