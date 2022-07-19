@@ -1,8 +1,15 @@
-import React, { Fragment, createContext, useState, useMemo } from "react";
+import React, {
+  Fragment,
+  createContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 import AskNoora from "./ask-noora/AskNoora";
 import { Tab } from "@headlessui/react";
 import { clsx } from "clsx";
 import Practice from "./practice/Practice";
+import { useRouter } from "next/router";
 
 export const PlaygroundContext = createContext<any>({
   askNoora: {
@@ -22,6 +29,20 @@ export const PlaygroundContext = createContext<any>({
 });
 
 export default function Playground() {
+  const router = useRouter();
+  const [selectedIndex, setSelectedIndex] = useState(
+    router.query.page == "ask-noora" ? 1 : 0
+  ); // tabs and routing
+
+  useEffect(() => {
+    console.log("in");
+    if (router.query.page == "practice") {
+      setSelectedIndex(0);
+    } else if (router.query.page == "ask-noora") {
+      setSelectedIndex(1);
+    }
+  }, [router.query]);
+
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
     {
@@ -78,7 +99,7 @@ export default function Playground() {
     <PlaygroundContext.Provider value={value}>
       <div className="pt-16"></div>
 
-      <Tab.Group>
+      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List>
           <nav
             className="fixed w-screen z-20 flex divide-x divide-gray-200"

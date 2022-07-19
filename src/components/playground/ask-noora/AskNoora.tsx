@@ -8,7 +8,6 @@ export default function AskNoora() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(router)
     router.push("/playground?page=ask-noora", undefined, { shallow: true });
   }, []);
 

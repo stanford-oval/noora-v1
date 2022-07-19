@@ -6,7 +6,6 @@ export default function Practice() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(router);
     router.push("/playground?page=practice", undefined, { shallow: true });
   }, []);
 
