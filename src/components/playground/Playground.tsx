@@ -1,6 +1,7 @@
 import React, { Fragment, createContext, useState, useMemo } from "react";
 import AskNoora from "./noora-replies/AskNoora";
 import { Tab } from "@headlessui/react";
+import { clsx } from "clsx";
 
 export const PlaygroundContext = createContext<any>({
   askNoora: {
@@ -75,30 +76,34 @@ export default function Playground() {
   return (
     <PlaygroundContext.Provider value={value}>
       <div className="pt-16"></div>
+
       <Tab.Group>
         <Tab.List>
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <button
-                className={
-                  selected ? "bg-blue-500 text-white" : "bg-white text-black"
-                }
-              >
-                Practice
-              </button>
-            )}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <button
-                className={
-                  selected ? "bg-blue-500 text-white" : "bg-white text-black"
-                }
-              >
-                Ask Noora
-              </button>
-            )}
-          </Tab>
+          <nav
+            className="fixed w-screen z-20 flex divide-x divide-gray-200"
+            aria-label="Tabs"
+          >
+            {["Practice", "Ask Noora"].map((title) => {
+              return (
+                <Tab as={Fragment}>
+                  {({ selected }) => (
+                    <button
+                      className={clsx(
+                        "text-gray-900 group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-sm font-medium text-center focus:z-10",
+                        selected ? "bg-gray-100" : "hover:bg-gray-50 bg-white"
+                      )}
+                    >
+                      <span>{title}</span>
+                      <span
+                        aria-hidden="true"
+                        className={clsx("absolute inset-x-0 bottom-0 h-1", selected ? "bg-noora-primary-main" : "bg-gray-100")}
+                      />
+                    </button>
+                  )}
+                </Tab>
+              );
+            })}
+          </nav>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>[PRACTICE PAGE]</Tab.Panel>
