@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
-export default function NooraReplies() {
+export default function AskNoora() {
   const [query, updateQuery] = useState("");
   const [results, updateResults] = useState([
     {
