@@ -85,7 +85,7 @@ export default function Playground() {
           >
             {["Practice", "Ask Noora"].map((title) => {
               return (
-                <Tab as={Fragment}>
+                <Tab as={Fragment} key={title}>
                   {({ selected }) => (
                     <button
                       className={clsx(
@@ -93,10 +93,10 @@ export default function Playground() {
                         selected ? "bg-gray-100" : "hover:bg-gray-50 bg-white"
                       )}
                     >
-                      <span>{title}</span>
+                      <span className={clsx("text-lg", selected ? "text-noora-primary-main font-bold" : "text-gray-700")}>{title}</span>
                       <span
-                        aria-hidden="true"
-                        className={clsx("absolute inset-x-0 bottom-0 h-1", selected ? "bg-noora-primary-main" : "bg-gray-100")}
+                        aria-hidden={true}
+                        className={clsx("absolute inset-x-0 bottom-0 h-1", selected ? "bg-noora-primary-main" : "bg-gray-300")}
                       />
                     </button>
                   )}
