@@ -1,7 +1,8 @@
 import React, { Fragment, createContext, useState, useMemo } from "react";
-import AskNoora from "./noora-replies/AskNoora";
+import AskNoora from "./ask-noora/AskNoora";
 import { Tab } from "@headlessui/react";
 import { clsx } from "clsx";
+import Practice from "./practice/Practice";
 
 export const PlaygroundContext = createContext<any>({
   askNoora: {
@@ -93,10 +94,22 @@ export default function Playground() {
                         selected ? "bg-gray-100" : "hover:bg-gray-50 bg-white"
                       )}
                     >
-                      <span className={clsx("text-lg", selected ? "text-noora-primary-main font-bold" : "text-gray-700")}>{title}</span>
+                      <span
+                        className={clsx(
+                          "text-lg",
+                          selected
+                            ? "text-noora-primary-main font-bold"
+                            : "text-gray-700"
+                        )}
+                      >
+                        {title}
+                      </span>
                       <span
                         aria-hidden={true}
-                        className={clsx("absolute inset-x-0 bottom-0 h-1", selected ? "bg-noora-primary-main" : "bg-gray-300")}
+                        className={clsx(
+                          "absolute inset-x-0 bottom-0 h-1",
+                          selected ? "bg-noora-primary-main" : "bg-gray-300"
+                        )}
                       />
                     </button>
                   )}
@@ -106,7 +119,9 @@ export default function Playground() {
           </nav>
         </Tab.List>
         <Tab.Panels>
-          <Tab.Panel>[PRACTICE PAGE]</Tab.Panel>
+          <Tab.Panel>
+            <Practice />
+          </Tab.Panel>
           <Tab.Panel>
             <AskNoora />
           </Tab.Panel>

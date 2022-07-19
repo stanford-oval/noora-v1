@@ -2,8 +2,16 @@ import React, { useEffect, useContext } from "react";
 import { PlaygroundContext } from "../Playground";
 import InputForm from "./InputForm";
 import Result from "./Result";
+import { useRouter } from "next/router";
 
 export default function AskNoora() {
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(router)
+    router.push("/playground?page=ask-noora", undefined, { shallow: true });
+  }, []);
+
   const { askNoora } = useContext(PlaygroundContext);
   const { results, resultsQueue } = askNoora;
 
