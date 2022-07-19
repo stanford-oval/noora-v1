@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 export default function Practice() {
   const router = useRouter();
 
-  useEffect(() => {
-    router.push("/playground?page=practice", undefined, { shallow: true });
-  }, []);
+//   useEffect(() => {
+//     router.push("/playground?page=practice", undefined, { shallow: true });
+//   }, []);
 
 //   const { askNoora } = useContext(PlaygroundContext);
 //   const { results, resultsQueue } = askNoora;

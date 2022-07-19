@@ -7,10 +7,6 @@ import { useRouter } from "next/router";
 export default function AskNoora() {
   const router = useRouter();
 
-  useEffect(() => {
-    router.push("/playground?page=ask-noora", undefined, { shallow: true });
-  }, []);
-
   const { askNoora } = useContext(PlaygroundContext);
   const { results, resultsQueue } = askNoora;
 

@@ -36,10 +36,15 @@ export default function Playground() {
 
   useEffect(() => {
     console.log("in");
+    console.log(router.query.page);
     if (router.query.page == "practice") {
       setSelectedIndex(0);
     } else if (router.query.page == "ask-noora") {
       setSelectedIndex(1);
+    } else if (router.query !== undefined && !router.query) {
+      router.push("/playground?page=practice", undefined, {
+        shallow: true,
+      }); // default if no path
     }
   }, [router.query]);
 
@@ -106,10 +111,16 @@ export default function Playground() {
             aria-label="Tabs"
           >
             {["Practice", "Ask Noora"].map((title) => {
+              let pageId = title.toLowerCase().replace(" ", "-");
               return (
                 <Tab as={Fragment} key={title}>
                   {({ selected }) => (
                     <button
+                      onClick={() => {
+                        router.push("/playground?page=" + pageId, undefined, {
+                          shallow: true,
+                        });
+                      }}
                       className={clsx(
                         "text-gray-900 group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-sm font-medium text-center focus:z-10",
                         selected ? "bg-gray-100" : "hover:bg-gray-50 bg-white"
@@ -139,14 +150,17 @@ export default function Playground() {
             })}
           </nav>
         </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>
-            <Practice />
-          </Tab.Panel>
-          <Tab.Panel>
-            <AskNoora />
-          </Tab.Panel>
-        </Tab.Panels>
+        {router.query.page && (
+          <Tab.Panels>
+            <Tab.Panel>
+              <Practice />
+            </Tab.Panel>
+            <Tab.Panel>
+              <AskNoora />
+            </Tab.Panel>
+          </Tab.Panels>
+        )}
+        {!router.query.page && <div className="h-screen"></div>}
       </Tab.Group>
     </PlaygroundContext.Provider>
   );
