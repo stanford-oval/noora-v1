@@ -7,8 +7,6 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   corePlugins: {
-    ringWidth: false,
-    outline: false,
   },
   theme: {
     extend: {

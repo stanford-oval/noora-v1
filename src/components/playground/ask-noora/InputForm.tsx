@@ -39,7 +39,7 @@ export default function InputForm() {
           }}
           value={query.value}
           placeholder="I finished great book today!"
-          className="block p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm focus:border-noora-primary-main sm:text-sm rounded-full text-slate-800"
+          className="block p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm focus:ring-0 focus:border-noora-primary-main sm:text-sm rounded-full text-slate-800"
         />
         <button
           type="submit"

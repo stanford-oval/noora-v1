@@ -90,7 +90,7 @@ button {
 }
 
 input {
-    @apply placeholder-slate-400;
+    @apply placeholder-slate-400 ring-0 focus:ring-0;
 }
 
 .border-1 {

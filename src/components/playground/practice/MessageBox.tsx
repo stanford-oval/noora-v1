@@ -1,14 +1,16 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import getReply from "../../../scripts/get-reply";
-import { PlaygroundContext } from "../Playground";
 import { v4 as uuidv4 } from "uuid";
 
-export default function InputForm() {
-  const { practice } = useContext(PlaygroundContext);
-  const { draft, history, historyQueue, convoState, inputBoxRef } = practice;
-
+export default function MessageBox({
+  draft,
+  history,
+  historyQueue,
+  convoState,
+  inputBoxRef,
+}: any) {
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     const message = draft.value;
@@ -35,7 +37,7 @@ export default function InputForm() {
     if (convoState.value.turn == "user-answer") {
       if (inputBoxRef.value.current) inputBoxRef.value.current.focus();
     }
-  }, [convoState.value])
+  }, [convoState.value]);
 
   return (
     <form
@@ -61,7 +63,7 @@ export default function InputForm() {
               : "Please wait for Noora..."
           }
           disabled={convoState.value.turn != "user-answer"}
-          className="block p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
+          className="block focus:border-gray-400 focus:ring-0 p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
         />
         <button
           type="submit"

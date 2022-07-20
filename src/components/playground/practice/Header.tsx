@@ -8,9 +8,9 @@ export default function Header() {
         Noora
       </div>
       <div className="text-center">
-        <span className="inline-block border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal relative bg-gray-200 border-gray-500 text-gray-600">
+        <button className="inline-block border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal relative bg-gray-200 border-gray-500 text-gray-600">
           general
-        </span>
+        </button>
       </div>
     </div>
   );
