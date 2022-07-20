@@ -7,8 +7,14 @@ export default function Messages({ history, historyQueue, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (history.value.length > 0) return; // only run this on first render
     history.setValue([
       ...history.value,
+      {
+        id: -1,
+        fromNoora: true,
+        text: "Hi! I'm Noora.",
+      },
       {
         id: -2,
         fromNoora: true,
@@ -21,13 +27,9 @@ export default function Messages({ history, historyQueue, convoState }: any) {
       },
     ]);
 
-    // getReply(
-    //   "",
-    //   historyQueue.value,
-    //   historyQueue.setValue,
-    //   convoState.value,
-    //   convoState.setValue
-    // );
+    // INITIATE
+    convoState.setValue({ ...convoState, turn: "get-statement" });
+    getReply("", historyQueue, convoState);
   }, []);
 
   // scrolling

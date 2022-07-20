@@ -3,27 +3,30 @@ import { v4 as uuidv4 } from "uuid";
 export default async function getReply(
   message: string,
   historyQueue: any,
-  setHistoryQueue: any,
-  convoState: any,
-  setConvoState: any
+  convoState: any
 ) {
   const id = uuidv4();
   const turn = convoState.turn;
-  setConvoState({ ...convoState, turn: "noora-reply" });
-  setHistoryQueue([...historyQueue, { id: id, fromNoora: true, typing: true }]);
+  convoState.setValue({ ...convoState.value, turn: "noora-reply" });
+  historyQueue.setValue([
+    ...historyQueue.value,
+    { id: id, fromNoora: true, typing: true },
+  ]);
 
-  let reply = message;
   await timeout(1000);
-  return {
+  let reply = {
     id: id,
     fromNoora: true,
-    text: `message: ${reply}; modules: [${convoState.modules
+    text: `message: ${message}; modules: [${convoState.value.modules
       .map((m: any) => {
         if (m.active) return m.title;
         else return false;
       })
       .join(", ")}]`,
   };
+
+  convoState.setValue({ ...convoState.value, turn: "user-answer" });
+  historyQueue.setValue([...historyQueue.value, reply]);
 }
 
 function timeout(ms: number) {

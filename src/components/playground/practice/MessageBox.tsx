@@ -23,15 +23,7 @@ export default function MessageBox({
     ]);
     draft.setValue("");
 
-    let reply = await getReply(
-      message,
-      historyQueue.value,
-      historyQueue.setValue,
-      convoState.value,
-      convoState.setValue
-    );
-    convoState.setValue({ ...convoState.value, turn: "user-answer" });
-    historyQueue.setValue([...historyQueue.value, reply]);
+    await getReply(message, historyQueue, convoState);
   };
 
   useEffect(() => {

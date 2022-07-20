@@ -36,20 +36,13 @@ export default function Playground() {
 
   // PRACTICE
   const [draft, setDraft] = useState("");
-  const [history, setHistory] = useState([
-    {
-      id: -1,
-      fromNoora: true,
-      text: "Hi! I'm Noora.",
-    },
-  ]);
+  const [history, setHistory] = useState([]);
   const [historyQueue, setHistoryQueue] = useState([]);
   const [convoState, setConvoState] = useState({
     turn: "user-answer",
     modules: [
       { title: "general", active: true },
       { title: "work", active: true },
-      { title: "demo", active: false },
     ],
   });
 
