@@ -24,30 +24,32 @@ export default function Practice() {
   return (
     <div className="bg-gray-100">
       <div className="pt-16 container">
-        <div
-          className="bg-white rounded-md border-2 border-gray-400 max-w-2xl mx-auto h-3/4 relative p-2 m-2"
-          id="chat"
-        >
-          <ul>
-            {history.value.map((message: any, i: number) => (
-              <li key={i}>
-                {message && (
-                  <div>
-                    <span className="text-gray-600">
-                      {message.fromNoora ? "Noora: " : "You: "}
-                    </span>
-                    {message.typing ? (
+        <div className="max-w-2xl mx-auto py-4">
+          <div
+            className="bg-white rounded-t-md border-2 border-b-0 border-gray-400 p-2"
+            id="chat"
+          >
+            <ul>
+              {history.value.map((message: any, i: number) => (
+                <li key={i}>
+                  {message && (
+                    <div>
                       <span className="text-gray-600">
-                        <i>(typing animation)</i>
+                        {message.fromNoora ? "Noora: " : "You: "}
                       </span>
-                    ) : (
-                      message.text
-                    )}
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
+                      {message.typing ? (
+                        <span className="text-gray-600">
+                          <i>(typing animation)</i>
+                        </span>
+                      ) : (
+                        message.text
+                      )}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
           <MessageBox />
         </div>
       </div>

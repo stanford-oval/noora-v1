@@ -32,10 +32,6 @@
     background: #dbd9df;
 }
 
-#messageBox {
-    width: calc(100% - 1rem);
-}
-
 #nooraRepliesHero {
     background-color: #BEBFD5;
     background-image: url('/img/page-bg/noora-replies.png');

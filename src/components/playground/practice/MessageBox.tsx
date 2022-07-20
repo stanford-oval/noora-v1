@@ -27,13 +27,15 @@ export default function InputForm() {
       convoState.value,
       convoState.setValue
     );
-    console.log(reply);
     historyQueue.setValue([...historyQueue.value, reply]);
     convoState.setValue({ turn: "user-answer" });
   };
 
   return (
-    <form className="mx-auto absolute bottom-2" id="messageBox">
+    <form
+      className="px-2 bg-white rounded-b-md py-2 border-gray-400 border-2"
+      id="messageBox"
+    >
       <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none text-slate-400 z-10">
           <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
