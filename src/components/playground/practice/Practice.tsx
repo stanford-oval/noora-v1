@@ -48,7 +48,7 @@ export default function Practice() {
                   {message && (
                     <div
                       className={clsx(
-                        "rounded-xl w-fit px-4 py-3 mb-1 max-w-xs break-words",
+                        "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words",
                         message.fromNoora
                           ? "bg-gray-200 mr-auto"
                           : "bg-noora-primary-main text-white ml-auto"
@@ -69,8 +69,8 @@ export default function Practice() {
                   )}
                 </li>
               ))}
-              <div ref={messagesBottom}></div>
             </ul>
+            <div className="-mb-20 invisible text-xs" ref={messagesBottom}>.</div>
           </div>
           <MessageBox />
         </div>
