@@ -14,6 +14,7 @@ export default async function getReply(
     text: `message: ${reply}; modules: [${convoState.modules
       .map((m: any) => {
         if (m.active) return m.title;
+        else return false;
       })
       .join(", ")}]`,
   };
