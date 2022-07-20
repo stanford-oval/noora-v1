@@ -30,12 +30,12 @@ export default function MessageBox({
       convoState.value,
       convoState.setValue
     );
-    console.log(convoState)
-    convoState.setValue({ ...convoState, turn: "user-answer" });
+    convoState.setValue({ ...convoState.value, turn: "user-answer" });
     historyQueue.setValue([...historyQueue.value, reply]);
   };
 
   useEffect(() => {
+    console.log(convoState.value);
     if (convoState.value.turn == "user-answer") {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }

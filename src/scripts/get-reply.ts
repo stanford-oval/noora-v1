@@ -7,13 +7,15 @@ export default async function getReply(
   const turn = convoState.turn;
   setConvoState({ ...convoState, turn: "noora-reply" });
   let reply = message;
-  await timeout(2000);
+  await timeout(1000);
   return {
     id: id,
     fromNoora: true,
-    text: `message: ${reply}; modules: [${convoState.modules.join(
-      ", "
-    )}]; turn: ${turn}`,
+    text: `message: ${reply}; modules: [${convoState.modules
+      .map((m: any) => {
+        if (m.active) return m.title;
+      })
+      .join(", ")}]`,
   };
 }
 
