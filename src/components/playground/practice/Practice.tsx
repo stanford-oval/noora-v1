@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import { PlaygroundContext } from "../Playground";
 import MessageBox from "./MessageBox";
 import { clsx } from "clsx";
+import Header from "./Header";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
@@ -35,12 +36,7 @@ export default function Practice() {
     <div className="bg-gray-100">
       <div className="pt-16 container">
         <div className="max-w-2xl mx-auto py-4">
-          <div className="w-full bg-white p-2 pt-3 border-2 border-gray-400 rounded-t-md">
-            <div className="h-16 w-16 mx-auto rounded-full bg-gradient-to-br from-noora-primary-light via-noora-primary-dark to-noora-primary-dark2"></div>
-            <div className="text-2xl text-center font-bold text-noora-primary-dark2">
-              Noora
-            </div>
-          </div>
+          <Header />
           <div className="bg-white border-x-2 border-gray-400 p-2" id="chat">
             <ul>
               {history.value.map((message: any, i: number) => (
@@ -70,7 +66,9 @@ export default function Practice() {
                 </li>
               ))}
             </ul>
-            <div className="-mb-20 invisible text-xs" ref={messagesBottom}>.</div>
+            <div className="-mb-20 invisible text-xs" ref={messagesBottom}>
+              .
+            </div>
           </div>
           <MessageBox />
         </div>

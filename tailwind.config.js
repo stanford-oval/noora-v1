@@ -35,6 +35,7 @@ module.exports = {
       cursor: ["disabled"],
     },
   },
+  plugins: [require('@tailwindcss/forms')],
   style: {
     postcss: {
       plugins: [require('tailwindcss'), require('autoprefixer')],
