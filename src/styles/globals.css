@@ -6,8 +6,8 @@
 /* PLAYGROUND */
 
 #chat {
-    height: 60vh;
-    max-height: 60vh;
+    height: 55vh;
+    max-height: 55vh;
     overflow-y: scroll;
 }
 
@@ -18,13 +18,14 @@
 
 /* Track */
 #chat::-webkit-scrollbar-track {
-    background: #9e9ea0;
+    background: #eaeaea;
 }
 
 /* Handle */
 #chat::-webkit-scrollbar-thumb {
     background: #d2d0d6;
     transition: all 0.55s ease;
+    border-radius: 50px;
 }
 
 /* Handle on hover */
