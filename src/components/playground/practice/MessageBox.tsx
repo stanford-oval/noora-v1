@@ -33,7 +33,7 @@ export default function InputForm() {
 
   useEffect(() => {
     if (convoState.value.turn == "user-answer") {
-      if (inputBoxRef.current) inputBoxRef.current.focus();
+      if (inputBoxRef.value.current) inputBoxRef.value.current.focus();
     }
   }, [convoState.value])
 
