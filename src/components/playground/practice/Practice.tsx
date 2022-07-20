@@ -6,7 +6,7 @@ import Messages from "./Messages";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
-  const { draft, history, historyQueue, convoState, inputBoxRef } = practice;
+  const { draft, history, historyQueue, convoState } = practice;
 
   useEffect(() => {
     // on queue change, update the right element
@@ -33,7 +33,6 @@ export default function Practice() {
             history={history}
             historyQueue={historyQueue}
             convoState={convoState}
-            inputBoxRef={inputBoxRef}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import getReply from "../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,8 +9,10 @@ export default function MessageBox({
   history,
   historyQueue,
   convoState,
-  inputBoxRef,
 }: any) {
+
+  const inputBoxRef = useRef<HTMLInputElement>(null)
+
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     const message = draft.value;
@@ -35,7 +37,7 @@ export default function MessageBox({
 
   useEffect(() => {
     if (convoState.value.turn == "user-answer") {
-      if (inputBoxRef.value.current) inputBoxRef.value.current.focus();
+      if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);
 
@@ -50,7 +52,7 @@ export default function MessageBox({
         </div>
 
         <input
-          ref={inputBoxRef.value}
+          ref={inputBoxRef}
           autoFocus
           type="text"
           onChange={(e) => {

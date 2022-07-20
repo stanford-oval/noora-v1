@@ -4,7 +4,7 @@ import React, {
   useState,
   useEffect,
   useMemo,
-  useRef
+  useRef,
 } from "react";
 import AskNoora from "./ask-noora/AskNoora";
 import { Tab } from "@headlessui/react";
@@ -45,9 +45,6 @@ export default function Playground() {
   ]);
   const [historyQueue, setHistoryQueue] = useState([]);
   const [convoState, setConvoState] = useState({ turn: "user-answer" });
-  const [inputBoxRef, setInputBoxRef] = useState(
-    useRef<HTMLInputElement>(null)
-  );
 
   // ASK NOORA
   const [query, setQuery] = useState("");
@@ -101,10 +98,6 @@ export default function Playground() {
           value: convoState,
           setValue: setConvoState,
         },
-        inputBoxRef: {
-          value: inputBoxRef,
-          setValue: setInputBoxRef,
-        },
       },
       askNoora: {
         query: {
@@ -134,8 +127,6 @@ export default function Playground() {
       setHistory,
       historyQueue,
       setHistoryQueue,
-      inputBoxRef,
-      setInputBoxRef,
     ]
   );
 
@@ -205,49 +196,4 @@ export default function Playground() {
   );
 }
 
-export const PlaygroundContext = createContext<any>({
-  practice: {
-    draft: {
-      value: "",
-      setValue: () => {},
-    },
-    history: {
-      value: [
-        {
-          fromNoora: false,
-          text: "",
-        },
-      ],
-      setValue: () => {},
-    },
-    historyQueue: {
-      value: [
-        {
-          fromNoora: false,
-          text: "",
-        },
-      ],
-      setValue: () => {},
-    },
-    convoState: {
-      value: {
-        turn: "",
-      },
-      setValue: () => {},
-    },
-  },
-  askNoora: {
-    query: {
-      value: "",
-      setValue: () => {},
-    },
-    results: {
-      value: "",
-      setValue: () => {},
-    },
-    resultsQueue: {
-      value: "",
-      setValue: () => {},
-    },
-  },
-});
+export const PlaygroundContext = createContext<any>({});
