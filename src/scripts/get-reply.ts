@@ -4,11 +4,10 @@ export default async function getReply(
   message: string,
   historyQueue: any,
   convoState: any,
-  turn: string,
+  command: string,
   delay = 1000
 ) {
   const id = uuidv4();
-  console.log(turn);
   // response loading
   convoState.setValue({ ...convoState.value, turn: "noora-reply" });
   historyQueue.setValue([
@@ -17,8 +16,8 @@ export default async function getReply(
   ]);
 
   let reply = "Oops! Something went wrong.";
-  console.log(turn);
-  if (turn == "get-statement") reply = await getStatement(delay);
+  console.log(command);
+  if (command == "get-statement") reply = await getStatement(delay);
 
   let replyObj = {
     id: id,
