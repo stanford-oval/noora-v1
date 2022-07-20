@@ -10,8 +10,7 @@ export default function MessageBox({
   historyQueue,
   convoState,
 }: any) {
-
-  const inputBoxRef = useRef<HTMLInputElement>(null)
+  const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -31,7 +30,8 @@ export default function MessageBox({
       convoState.value,
       convoState.setValue
     );
-    convoState.setValue({ turn: "user-answer" });
+    console.log(convoState)
+    convoState.setValue({ ...convoState, turn: "user-answer" });
     historyQueue.setValue([...historyQueue.value, reply]);
   };
 

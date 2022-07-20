@@ -5,13 +5,15 @@ export default async function getReply(
   setConvoState: any
 ) {
   const turn = convoState.turn;
-  setConvoState({ turn: "noora-reply" });
+  setConvoState({ ...convoState, turn: "noora-reply" });
   let reply = message;
   await timeout(2000);
   return {
     id: id,
     fromNoora: true,
-    text: `message: ${reply}; turn: ${turn}`,
+    text: `message: ${reply}; modules: [${convoState.modules.join(
+      ", "
+    )}]; turn: ${turn}`,
   };
 }
 

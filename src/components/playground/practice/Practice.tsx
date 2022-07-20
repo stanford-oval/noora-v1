@@ -8,6 +8,7 @@ export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
   const { draft, history, historyQueue, convoState } = practice;
 
+
   useEffect(() => {
     // on queue change, update the right element
     historyQueue.value.forEach((reply: any) => {
@@ -26,7 +27,7 @@ export default function Practice() {
     <div className="bg-gray-100">
       <div className="pt-16 container">
         <div className="max-w-2xl mx-auto py-4">
-          <Header />
+          <Header convoState={convoState} />
           <Messages history={history} />
           <MessageBox
             draft={draft}

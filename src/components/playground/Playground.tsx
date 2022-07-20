@@ -44,7 +44,14 @@ export default function Playground() {
     },
   ]);
   const [historyQueue, setHistoryQueue] = useState([]);
-  const [convoState, setConvoState] = useState({ turn: "user-answer" });
+  const [convoState, setConvoState] = useState({
+    turn: "user-answer",
+    modules: [
+      { title: "general", active: true },
+      { title: "work", active: true },
+      { title: "demo", active: false },
+    ],
+  });
 
   // ASK NOORA
   const [query, setQuery] = useState("");
@@ -127,6 +134,8 @@ export default function Playground() {
       setHistory,
       historyQueue,
       setHistoryQueue,
+      convoState,
+      setConvoState,
     ]
   );
 
