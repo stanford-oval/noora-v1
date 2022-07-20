@@ -11,38 +11,6 @@ import { clsx } from "clsx";
 import Practice from "./practice/Practice";
 import { useRouter } from "next/router";
 
-export const PlaygroundContext = createContext<any>({
-  practice: {
-    draft: {
-      value: "",
-      setValue: () => {},
-    },
-    history: {
-      value: [
-        {
-          from_noora: false,
-          text: "",
-        },
-      ],
-      setValue: () => {},
-    },
-  },
-  askNoora: {
-    query: {
-      value: "",
-      setValue: () => {},
-    },
-    results: {
-      value: "",
-      setValue: () => {},
-    },
-    resultsQueue: {
-      value: "",
-      setValue: () => {},
-    },
-  },
-});
-
 export default function Playground() {
   const router = useRouter();
 
@@ -65,7 +33,101 @@ export default function Playground() {
     }
   }, [router.query]);
 
-  const value = initialContext();
+  // PRACTICE
+  const [draft, setDraft] = useState("");
+  const [history, setHistory] = useState([
+    {
+      id: -1,
+      fromNoora: true,
+      text: "Hi! I'm Noora.",
+    },
+  ]);
+  const [historyQueue, setHistoryQueue] = useState([]);
+  const [convoState, setConvoState] = useState({ turn: "user-answer" });
+
+  // ASK NOORA
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([
+    {
+      id: -1,
+      statement: "I just finished a really good book!",
+      good_replies: [
+        {
+          category: "curious",
+          reasoning: "You want to know more about the good book I read.",
+          reply:
+            "“What book did you read? What was your favorite part of the book?”",
+          rating: "Good answer.",
+          explanation:
+            "You showed me you are interested in my experiences and you asked about my book.",
+        },
+      ],
+      bad_replies: [
+        {
+          category: "know-it-all",
+          reasoning:
+            "You feel the need to tell me the benefits of reading and why it's important.",
+          reply:
+            "“Reading is good for your brain and helps you understand the world better. You should read more.”",
+          rating: "Bad answer.",
+          explanation:
+            "To be a good friend, you should not say that because you do not acknowledge my happiness and tell me what to do.",
+        },
+      ],
+    },
+  ]);
+  const [resultsQueue, setResultsQueue] = useState<any[]>([]);
+
+  const value = useMemo(
+    () => ({
+      practice: {
+        draft: {
+          value: draft,
+          setValue: setDraft,
+        },
+        history: {
+          value: history,
+          setValue: setHistory,
+        },
+        historyQueue: {
+          value: historyQueue,
+          setValue: setHistoryQueue,
+        },
+        convoState: {
+          value: convoState,
+          setValue: setConvoState,
+        },
+      },
+      askNoora: {
+        query: {
+          value: query,
+          setValue: setQuery,
+        },
+        results: {
+          value: results,
+          setValue: setResults,
+        },
+        resultsQueue: {
+          value: resultsQueue,
+          setValue: setResultsQueue,
+        },
+      },
+    }),
+    [
+      query,
+      setQuery,
+      results,
+      setResults,
+      resultsQueue,
+      setResultsQueue,
+      draft,
+      setDraft,
+      history,
+      setHistory,
+      historyQueue,
+      setHistoryQueue,
+    ]
+  );
 
   return (
     <PlaygroundContext.Provider value={value}>
@@ -133,58 +195,49 @@ export default function Playground() {
   );
 }
 
-function initialContext() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([
-    {
-      id: -1,
-      statement: "I just finished a really good book!",
-      good_replies: [
-        {
-          category: "curious",
-          reasoning: "You want to know more about the good book I read.",
-          reply:
-            "“What book did you read? What was your favorite part of the book?”",
-          rating: "Good answer.",
-          explanation:
-            "You showed me you are interested in my experiences and you asked about my book.",
-        },
-      ],
-      bad_replies: [
-        {
-          category: "know-it-all",
-          reasoning:
-            "You feel the need to tell me the benefits of reading and why it's important.",
-          reply:
-            "“Reading is good for your brain and helps you understand the world better. You should read more.”",
-          rating: "Bad answer.",
-          explanation:
-            "To be a good friend, you should not say that because you do not acknowledge my happiness and tell me what to do.",
-        },
-      ],
+export const PlaygroundContext = createContext<any>({
+  practice: {
+    draft: {
+      value: "",
+      setValue: () => {},
     },
-  ]);
-  const [resultsQueue, setResultsQueue] = useState<any[]>([]);
-
-  const value = useMemo(
-    () => ({
-      askNoora: {
-        query: {
-          value: query,
-          setValue: setQuery,
+    history: {
+      value: [
+        {
+          fromNoora: false,
+          text: "",
         },
-        results: {
-          value: results,
-          setValue: setResults,
+      ],
+      setValue: () => {},
+    },
+    historyQueue: {
+      value: [
+        {
+          fromNoora: false,
+          text: "",
         },
-        resultsQueue: {
-          value: resultsQueue,
-          setValue: setResultsQueue,
-        },
+      ],
+      setValue: () => {},
+    },
+    convoState: {
+      value: {
+        turn: "",
       },
-    }),
-    [query, setQuery, results, setResults, resultsQueue, setResultsQueue]
-  );
-
-  return value;
-}
+      setValue: () => {},
+    },
+  },
+  askNoora: {
+    query: {
+      value: "",
+      setValue: () => {},
+    },
+    results: {
+      value: "",
+      setValue: () => {},
+    },
+    resultsQueue: {
+      value: "",
+      setValue: () => {},
+    },
+  },
+});
