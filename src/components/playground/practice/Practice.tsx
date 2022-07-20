@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { PlaygroundContext } from "../Playground";
 import MessageBox from "./MessageBox";
+import { clsx } from 'clsx';
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
@@ -36,14 +37,22 @@ export default function Practice() {
               {history.value.map((message: any, i: number) => (
                 <li key={i}>
                   {message && (
-                    <div>
-                      <span className="text-gray-600">
-                        {message.fromNoora ? "Noora: " : "You: "}
-                      </span>
+                    <div
+                      className={clsx(
+                        "rounded-xl w-fit px-4 py-3 mb-1 max-w-xs",
+                        message.fromNoora
+                          ? "bg-gray-200 mr-auto"
+                          : "bg-noora-primary-main text-white ml-auto"
+                      )}
+                    >
                       {message.typing ? (
-                        <span className="text-gray-600">
-                          <i>(typing animation)</i>
-                        </span>
+                        <div className="px-3 py-1">
+                          <div className="snippet" data-title=".dot-flashing">
+                            <div className="stage">
+                              <div className="dot-flashing" />
+                            </div>
+                          </div>
+                        </div>
                       ) : (
                         message.text
                       )}

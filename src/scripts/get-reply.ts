@@ -6,7 +6,7 @@ export default async function getReply(
 ) {
   setConvoState({ turn: "noora-reply" });
   let reply = message;
-  await timeout(1000);
+  await timeout(5000);
   return {
     id: id,
     fromNoora: true,
