@@ -16,17 +16,17 @@ export default function MessageBox({
     e.preventDefault();
     const message = draft.value;
     let userMsgId = uuidv4();
-    let replyId = uuidv4();
+
     history.setValue([
       ...history.value,
       { id: userMsgId, fromNoora: false, text: message },
-      { id: replyId, fromNoora: true, typing: true },
     ]);
     draft.setValue("");
 
     let reply = await getReply(
       message,
-      replyId,
+      historyQueue.value,
+      historyQueue.setValue,
       convoState.value,
       convoState.setValue
     );
@@ -35,7 +35,6 @@ export default function MessageBox({
   };
 
   useEffect(() => {
-    console.log(convoState.value);
     if (convoState.value.turn == "user-answer") {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }

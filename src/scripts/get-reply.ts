@@ -1,11 +1,17 @@
+import { v4 as uuidv4 } from "uuid";
+
 export default async function getReply(
   message: string,
-  id: string,
+  historyQueue: any,
+  setHistoryQueue: any,
   convoState: any,
   setConvoState: any
 ) {
+  const id = uuidv4();
   const turn = convoState.turn;
   setConvoState({ ...convoState, turn: "noora-reply" });
+  setHistoryQueue([...historyQueue, { id: id, fromNoora: true, typing: true }]);
+
   let reply = message;
   await timeout(1000);
   return {
