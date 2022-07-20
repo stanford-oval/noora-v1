@@ -6,9 +6,9 @@
 /* PLAYGROUND */
 
 #chat {
-    height: 80vh;
-    max-height: 80vh;
-        overflow-y: scroll;
+    height: 60vh;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 /* Scrollbar */
