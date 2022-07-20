@@ -23,7 +23,7 @@ export default function MessageBox({
     ]);
     draft.setValue("");
 
-    await getReply(message, historyQueue, convoState);
+    await getReply(message, historyQueue, convoState, "get-statement");
   };
 
   useEffect(() => {

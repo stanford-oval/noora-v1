@@ -12,7 +12,7 @@ export default function InputForm() {
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
-    let statement = query.value;
+    let statement = query.value.slice();
     query.setValue("");
     if (inputBox.current) inputBox.current.focus();
     let id = uuidv4();

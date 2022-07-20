@@ -26,10 +26,9 @@ export default function Messages({ history, historyQueue, convoState }: any) {
         text: "Let's start!",
       },
     ]);
-
-    // INITIATE
-    convoState.setValue({ ...convoState, turn: "get-statement" });
-    getReply("", historyQueue, convoState);
+    
+      // INITIATE
+    getReply("", historyQueue, convoState, "get-statement");
   }, []);
 
   // scrolling
