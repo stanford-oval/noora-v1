@@ -1,13 +1,13 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import getReply from "../../../scripts/get-reply";
 import { PlaygroundContext } from "../Playground";
 import { v4 as uuidv4 } from "uuid";
 
 export default function InputForm() {
   const { practice } = useContext(PlaygroundContext);
-  const { draft, history, historyQueue, convoState } = practice;
+  const { draft, history, historyQueue, convoState, inputBoxRef } = practice;
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -27,9 +27,15 @@ export default function InputForm() {
       convoState.value,
       convoState.setValue
     );
-    historyQueue.setValue([...historyQueue.value, reply]);
     convoState.setValue({ turn: "user-answer" });
+    historyQueue.setValue([...historyQueue.value, reply]);
   };
+
+  useEffect(() => {
+    if (convoState.value.turn == "user-answer") {
+      if (inputBoxRef.current) inputBoxRef.current.focus();
+    }
+  }, [convoState.value])
 
   return (
     <form
@@ -42,6 +48,8 @@ export default function InputForm() {
         </div>
 
         <input
+          ref={inputBoxRef.value}
+          autoFocus
           type="text"
           onChange={(e) => {
             draft.setValue(e.target.value);

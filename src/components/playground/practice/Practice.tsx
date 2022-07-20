@@ -1,16 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { PlaygroundContext } from "../Playground";
 import MessageBox from "./MessageBox";
-import { clsx } from 'clsx';
+import { clsx } from "clsx";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
-  const { history, historyQueue } = practice;
+  const { history, historyQueue, inputBoxRef } = practice;
+  const messagesBottom = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // on queue change, update the right element
     historyQueue.value.forEach((reply: any) => {
-      console.log(historyQueue);
       const newHistory: any[] = history.value.map((r: any) => {
         if (r.id == reply.id) return reply;
         else return r;
@@ -21,6 +21,15 @@ export default function Practice() {
       historyQueue.setValue([]); // empty queue
     });
   }, [historyQueue.value]);
+
+  // scrolling
+  useEffect(() => {
+    if (messagesBottom.current)
+      messagesBottom.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+  }, [history.value]);
 
   return (
     <div className="bg-gray-100">
@@ -39,7 +48,7 @@ export default function Practice() {
                   {message && (
                     <div
                       className={clsx(
-                        "rounded-xl w-fit px-4 py-3 mb-1 max-w-xs",
+                        "rounded-xl w-fit px-4 py-3 mb-1 max-w-xs break-words",
                         message.fromNoora
                           ? "bg-gray-200 mr-auto"
                           : "bg-noora-primary-main text-white ml-auto"
@@ -60,6 +69,7 @@ export default function Practice() {
                   )}
                 </li>
               ))}
+              <div ref={messagesBottom}></div>
             </ul>
           </div>
           <MessageBox />

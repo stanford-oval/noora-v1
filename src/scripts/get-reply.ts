@@ -4,13 +4,14 @@ export default async function getReply(
   convoState: any,
   setConvoState: any
 ) {
+  const turn = convoState.turn;
   setConvoState({ turn: "noora-reply" });
   let reply = message;
-  await timeout(5000);
+  await timeout(2000);
   return {
     id: id,
     fromNoora: true,
-    text: "I currently only echo you. Here was your message: " + reply,
+    text: `message: ${reply}; turn: ${turn}`,
   };
 }
 

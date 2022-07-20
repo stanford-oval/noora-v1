@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import generateResult from "../../../scripts/generate-data";
 import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,13 +8,15 @@ import { PlaygroundContext } from "../Playground";
 export default function InputForm() {
   const { askNoora } = useContext(PlaygroundContext);
   const { query, results, resultsQueue } = askNoora;
+  const inputBox = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     let statement = query.value;
+    query.setValue("");
+    if (inputBox.current) inputBox.current.focus();
     let id = uuidv4();
     results.setValue([...results.value, { id: id, statement: statement }]);
-    query.setValue("");
 
     console.log("Generating result for: " + statement);
     let result = await generateResult(statement, id);
@@ -29,6 +31,8 @@ export default function InputForm() {
         </div>
 
         <input
+          autoFocus
+          ref={inputBox}
           type="text"
           onChange={(e) => {
             query.setValue(e.target.value);
