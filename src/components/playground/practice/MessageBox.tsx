@@ -4,11 +4,7 @@ import React, { useEffect, useRef } from "react";
 import getReply from "../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
-export default function MessageBox({
-  draft,
-  history,
-  convoState,
-}: any) {
+export default function MessageBox({ draft, history, convoState }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
@@ -16,14 +12,17 @@ export default function MessageBox({
     const message = draft.value;
     let userMsgId = uuidv4();
 
-    history.setValue([
+    const historyWithUserMsg = [
       ...history.value,
       { id: userMsgId, fromNoora: false, text: message },
-    ]);
+    ];
+
+    history.setValue(historyWithUserMsg);
     draft.setValue("");
-    
+
     const command = convoState.value.statement ? "rate-reply" : "get-statement";
-    await getReply(message, convoState, command);
+    const reply = await getReply(message, convoState, command);
+    history.setValue([...historyWithUserMsg, reply]);
   };
 
   useEffect(() => {
