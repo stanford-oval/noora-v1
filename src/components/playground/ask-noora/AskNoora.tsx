@@ -16,7 +16,6 @@ export default function AskNoora() {
       });
 
       results.setValue(newResults);
-
       resultsQueue.setValue([]); // empty queue
     });
   }, [resultsQueue.value]);
