@@ -8,12 +8,11 @@
 #chat {
     height: 55vh;
     max-height: 55vh;
-    overflow-y: scroll;
 }
 
 /* Scrollbar */
 #chat::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 /* Track */

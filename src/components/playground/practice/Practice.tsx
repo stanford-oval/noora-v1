@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { PlaygroundContext } from "../Playground";
-import NooraChat from "./NooraChat";
-import Progress from "./Progress";
+import NooraChat from "./chat/NooraChat";
+import Menu from "./menu/Menu";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
@@ -14,7 +14,7 @@ export default function Practice() {
           <NooraChat draft={draft} history={history} convoState={convoState} />
         </div>
         <div className="basis-auto md:basis-1/4 lg:basis-1/4 w-full mx-auto md:min-h-full">
-          <Progress />
+          <Menu />
         </div>
       </div>
     </div>

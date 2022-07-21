@@ -1,7 +1,7 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
-import getReply from "../../../scripts/get-reply";
+import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
 export default function MessageBox({ draft, history, convoState }: any) {
