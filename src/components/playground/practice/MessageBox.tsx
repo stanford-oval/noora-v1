@@ -19,8 +19,8 @@ export default function MessageBox({ draft, history, convoState }: any) {
     draft.setValue("");
 
     const command = convoState.value.statement ? "rate-reply" : "get-statement";
-    const reply = await getReply(message, convoState, command);
-    history.setValue((h: any) => [...h, reply]);
+    const replies = await getReply(message, convoState, command);
+    history.setValue((h: any) => [...h, ...replies]);
   };
 
   useEffect(() => {

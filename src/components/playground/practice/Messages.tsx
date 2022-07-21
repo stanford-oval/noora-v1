@@ -11,12 +11,13 @@ export default function Messages({ history, convoState }: any) {
       ...h,
       ...[
         "Hi! I am Noora.",
-        "Imagine that I am your friend. Let's start chattting.",
+        "Imagine that I am your friend. Let's start chatting.",
         getStatement(convoState),
       ].map((m, i) => ({
         id: -1 - i,
         fromNoora: true,
         text: m,
+        statement: i == 2,
       })),
     ]);
   }, []);
@@ -44,7 +45,16 @@ export default function Messages({ history, convoState }: any) {
                     : "bg-noora-primary-main text-white ml-auto"
                 )}
               >
-                {message.text}
+                {message.statement ? (
+                  <span>
+                    <span className="font-bold text-noora-primary-dark">
+                      &ldquo;{message.text}&rdquo;
+                    </span>{" "}
+                    What would you say?
+                  </span>
+                ) : (
+                  message.text
+                )}
               </div>
             )}
           </li>

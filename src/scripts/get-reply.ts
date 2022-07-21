@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
 import Completion from "./Completion";
@@ -14,21 +13,31 @@ const module_statements = {
 export default async function getReply(
   message: string,
   convoState: any,
-  command: string,
-  delay = 1000
+  command: string
 ) {
-  const id = uuidv4();
   // response loading
   convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
-  let reply = "Oops! Something went wrong.";
-  if (command == "get-statement") reply = await getStatement(convoState);
-  else if (command == "rate-reply") {
+  let replies = [
+    {
+      fromNoora: true,
+      text: "Oops! Something went wrong.",
+    },
+  ];
+
+  if (command == "get-statement") {
+    replies = [{ fromNoora: true, text: await getStatement(convoState) }];
+  } else if (command == "rate-reply") {
     convoState.setValue((cs: any) => ({
       ...cs,
       statement: null,
     }));
-    reply = await getRating(message, [...convoState.value.statement]);
+    let answers = await getRating(message, [...convoState.value.statement]);
+    console.log(answers);
+    replies = answers.map((a: any) => ({
+      fromNoora: true,
+      text: a,
+    }));
   }
 
   convoState.setValue((cs: any) => ({
@@ -36,12 +45,7 @@ export default async function getReply(
     turn: "user-answer",
   }));
 
-  return {
-    id: id,
-    fromNoora: true,
-    text: reply,
-    statement: command == "get-statement",
-  };
+  return replies;
 }
 
 async function getRating(message: string, statementObj: any) {
@@ -68,19 +72,17 @@ async function getRating(message: string, statementObj: any) {
     presence_penalty: 0.2,
   }).then((output) => parseResponse(output));
 
-  let answer = "";
-  if (goodAnswer) answer = "Good answer!\n\n" + explanation;
-  else
-    answer =
-      "Not quite!\n\n" +
-      explanation +
-      "\n\nA better answer might've been: \"" +
-      target +
-      '"';
+  let answers = [];
+  if (goodAnswer) {
+    answers.push("Good answer!");
+    answers.push(explanation);
+  } else {
+    answers.push("Not quite!");
+    answers.push(explanation);
+    answers.push("A better answer might've been: \"" + target + '"');
+  }
 
-  answer += "\n\n Say anything to continue practicing.";
-
-  return answer;
+  return answers;
 }
 
 function parseResponse(output: any) {
