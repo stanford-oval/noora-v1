@@ -39,7 +39,11 @@ export default async function getReply(
       ...cs,
       statement: null,
     }));
-    let answers = await getRating(message, [...convoState.value.statement]);
+    let answers = await getRating(
+      message,
+      [...convoState.value.statement],
+      convoState
+    );
 
     replies = answers.map((a: any) => ({
       fromNoora: true,
@@ -56,7 +60,7 @@ export default async function getReply(
   return replies;
 }
 
-async function getRating(message: string, statementObj: any) {
+async function getRating(message: string, statementObj: any, convoState: any) {
   let prompt = '"' + statementObj[1] + '"\nYou reply, "' + message + '"';
   let target = statementObj[2];
   console.log("### Prompt: " + prompt);
@@ -89,6 +93,15 @@ async function getRating(message: string, statementObj: any) {
     answers.push(explanation);
     answers.push("A better answer might've been: “" + target.trim() + "”");
   }
+
+  // SET PROGRESS
+  convoState.setValue((cs: any) => ({
+    ...cs,
+    progress: [
+      ...cs.progress,
+      { statement: statementObj[1], reply: message, goodAnswer: goodAnswer },
+    ],
+  }));
 
   return answers;
 }

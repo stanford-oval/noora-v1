@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
-export default function MessageBox({ draft, history, convoState }: any) {
+export default function MessageBox({ draft, history, convoState, progress }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
