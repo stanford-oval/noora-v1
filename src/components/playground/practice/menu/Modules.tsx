@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 
 export default function Modules({ convoState }: any) {
   return (
-    <div className="text-center">
+    <div className="space-x-1 pt-3 pb-1 px-1">
       {convoState.value.modules.map((module: any) => {
         return (
           <button
@@ -25,7 +25,7 @@ export default function Modules({ convoState }: any) {
             }}
             key={module.title}
             className={clsx(
-              "group inline-block mx-0.5 border-1 items-center px-2 py-0.5 rounded-full text-xs relative",
+              "group inline-block border-1 items-center px-2 py-0.5 rounded-full text-xs relative",
               module.active
                 ? "bg-purple-100 text-noora-primary-dark border-noora-primary-dark font-bold"
                 : "bg-gray-200 border-gray-500 text-gray-600"

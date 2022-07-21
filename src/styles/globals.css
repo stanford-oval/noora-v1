@@ -11,24 +11,24 @@
 }
 
 /* Scrollbar */
-#chat::-webkit-scrollbar {
+.pretty-scroll::-webkit-scrollbar {
     width: 8px;
 }
 
 /* Track */
-#chat::-webkit-scrollbar-track {
+.pretty-scroll::-webkit-scrollbar-track {
     background: #eaeaea;
 }
 
 /* Handle */
-#chat::-webkit-scrollbar-thumb {
+.pretty-scroll::-webkit-scrollbar-thumb {
     background: #d2d0d6;
     transition: all 0.55s ease;
     border-radius: 50px;
 }
 
 /* Handle on hover */
-#chat::-webkit-scrollbar-thumb:hover {
+.pretty-scroll::-webkit-scrollbar-thumb:hover {
     background: #dbd9df;
 }
 

@@ -10,11 +10,11 @@ export default function Practice() {
   return (
     <div className="bg-gray-100 pt-14">
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
-        <div className="basis-auto md:basis-3/4 lg:basis-3/4 w-full mx-auto">
+        <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
           <NooraChat draft={draft} history={history} convoState={convoState} />
         </div>
-        <div className="basis-auto md:basis-1/4 lg:basis-1/4 w-full mx-auto md:min-h-full">
-          <Menu />
+        <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-full mx-auto md:min-h-full">
+          <Menu convoState={convoState} />
         </div>
       </div>
     </div>

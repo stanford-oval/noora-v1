@@ -33,7 +33,7 @@ export default function MessageBox({ draft, history, convoState }: any) {
   };
 
   useEffect(() => {
-    if (convoState.value.turn == "user-answer") {
+    if (convoState.value.turn == "user-answer" && history.length > 3) {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);
@@ -50,7 +50,6 @@ export default function MessageBox({ draft, history, convoState }: any) {
 
         <input
           ref={inputBoxRef}
-          autoFocus
           type="text"
           onChange={(e) => {
             draft.setValue(e.target.value);

@@ -31,7 +31,6 @@ export default function InputForm() {
         </div>
 
         <input
-          autoFocus
           ref={inputBox}
           type="text"
           onChange={(e) => {

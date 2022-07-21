@@ -34,7 +34,7 @@ export default function Messages({ history, convoState }: any) {
   }, [history.value, convoState.value.turn]);
 
   return (
-    <div className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto" id="chat">
+    <div className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll" id="chat">
       <ul>
         {history.value.map((message: any, i: number) => (
           <li key={i}>
