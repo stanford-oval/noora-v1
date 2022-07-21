@@ -22,7 +22,7 @@ export default function Progress({ convoState }: any) {
             denom: convoState.value.progress.length,
           },
         ].map((x) => (
-          <div className="mx-1">
+          <div className="mx-1" key={x.units}>
             <span className="font-bold text-3xl text-noora-primary-main">
               {x.num}
             </span>
@@ -61,7 +61,7 @@ function CheckMarks({ convoState }: any) {
         }
 
         return (
-          <div className="p-1">
+          <div className="p-1" key={i}>
             <div className={clsx(baseStyles, addedStyles)}>{icon}</div>
           </div>
         );

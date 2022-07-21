@@ -4,7 +4,12 @@ import React, { useEffect, useRef } from "react";
 import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
-export default function MessageBox({ draft, history, convoState, progress }: any) {
+export default function MessageBox({
+  draft,
+  history,
+  convoState,
+  progress,
+}: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
@@ -18,18 +23,37 @@ export default function MessageBox({ draft, history, convoState, progress }: any
     ]);
     draft.setValue("");
 
-    if (convoState.value.statement) {
-      // rate reply if statement was given
-      const replies = await getReply(message, convoState, "rate-reply");
-      history.setValue((h: any) => [...h, ...replies]);
+    if (convoState.value.progress.length < convoState.value.numProblems) {
+      if (convoState.value.statement) {
+        // rate reply if statement was given
+        const replies = await getReply(message, convoState, "rate-reply");
+        history.setValue((h: any) => [...h, ...replies]);
+      }
+
+      // get statement if still need to practice
+      // note that progress state has not updated yet, so we use (length + 1)
+      if (convoState.value.progress.length + 1 < convoState.value.numProblems) {
+        const replies = await getReply(message, convoState, "get-statement");
+        history.setValue((h: any) => [
+          ...h,
+          { fromNoora: true, text: "Let's try another one." },
+          ...replies,
+        ]);
+      } else {
+        history.setValue((h: any) => [
+          ...h,
+          {
+            fromNoora: true,
+            text: `Good job! You practiced ${convoState.value.numProblems} scenarios.`,
+          },
+        ]);
+      }
+    } else {
+      history.setValue((h: any) => [
+        ...h,
+        { fromNoora: true, text: "That's all for now! Good job." },
+      ]);
     }
-    // always get statement at end
-    const replies = await getReply(message, convoState, "get-statement");
-    history.setValue((h: any) => [
-      ...h,
-      { fromNoora: true, text: "Let's try another one." },
-      ...replies,
-    ]);
   };
 
   useEffect(() => {
