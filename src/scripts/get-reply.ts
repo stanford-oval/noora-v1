@@ -66,7 +66,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   console.log("### Prompt: " + prompt);
 
   // first get good/bad answer
-  let { goodAnswer } = await Completion({
+  let { goodAnswer, classificationText } = await Completion({
     model: model,
     prompt: prompt,
     temperature: 0,
@@ -77,7 +77,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
   let { explanation } = await Completion({
     model: model,
-    prompt: prompt,
+    prompt: prompt + " " + classificationText,
     temperature: 0.8,
     max_tokens: 100,
     frequency_penalty: 0.4,
@@ -141,7 +141,11 @@ function parseResponse(output: any) {
       .trim();
   }
 
-  return { goodAnswer: goodAnswer, explanation: explanation };
+  return {
+    goodAnswer: goodAnswer,
+    classificationText: classification,
+    explanation: explanation,
+  };
 }
 
 export function getStatement(convoState: any) {

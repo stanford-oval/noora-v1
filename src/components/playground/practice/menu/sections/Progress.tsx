@@ -8,7 +8,7 @@ export default function Progress({ convoState }: any) {
     <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
       <CheckMarks convoState={convoState} />
       <div className="border-1 border-gray-300 w-10/12 mx-auto"></div>
-      <div className="flex flex-col md:flex-row justify-center py-2 text-center">
+      <div className="flex flex-row justify-center py-2 text-center">
         {[
           {
             units: "scenarios",
@@ -22,7 +22,7 @@ export default function Progress({ convoState }: any) {
             denom: convoState.value.progress.length,
           },
         ].map((x) => (
-          <div className="mx-1" key={x.units}>
+          <div className="px-3" key={x.units}>
             <span className="font-bold text-3xl text-noora-primary-main">
               {x.num}
             </span>
