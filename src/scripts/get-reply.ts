@@ -40,7 +40,7 @@ export default async function getReply(
       statement: null,
     }));
     let answers = await getRating(message, [...convoState.value.statement]);
-    console.log(answers);
+
     replies = answers.map((a: any) => ({
       fromNoora: true,
       text: a,

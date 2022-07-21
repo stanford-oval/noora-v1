@@ -24,11 +24,13 @@ export default function Messages({ history, convoState }: any) {
 
   // scrolling
   useEffect(() => {
-    if (messagesBottom.current)
-      messagesBottom.current.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
+    setTimeout(() => {
+      if (messagesBottom.current)
+        messagesBottom.current.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+    }, 5);
   }, [history.value, convoState.value.turn]);
 
   return (
