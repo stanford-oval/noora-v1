@@ -87,7 +87,7 @@ async function getRating(message: string, statementObj: any) {
   } else {
     answers.push("Not quite!");
     answers.push(explanation);
-    answers.push("A better answer might've been: \"" + target + '"');
+    answers.push("A better answer might've been: “" + target.trim() + "”");
   }
 
   return answers;

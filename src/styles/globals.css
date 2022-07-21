@@ -6,8 +6,8 @@
 /* PLAYGROUND */
 
 #chat {
-    height: 52vh;
-    max-height: 52vh;
+    height: 55vh;
+    max-height: 55vh;
     overflow-y: scroll;
 }
 
