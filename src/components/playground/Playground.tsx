@@ -43,6 +43,10 @@ export default function Playground() {
       { title: "general", active: true },
       { title: "work", active: true },
     ],
+    progress: [
+      { statement: "I love dogs.", reply: "I hate your dog.", goodAnswer: false },
+    ],
+    numProblems: 10,
   });
 
   // ASK NOORA
