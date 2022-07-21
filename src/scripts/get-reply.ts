@@ -16,15 +16,18 @@ export default async function getReply(
 ) {
   const id = uuidv4();
   // response loading
-  convoState.setValue({ ...convoState.value, turn: "noora-reply" });
+  convoState.setValue({ ...convoState.value, turn: command });
   historyQueue.setValue([
     ...historyQueue.value,
     { id: id, fromNoora: true, typing: true },
   ]);
 
   let reply = "Oops! Something went wrong.";
-  console.log(command);
   if (command == "get-statement") reply = await getStatement(convoState, delay);
+  else if (command == "rate-reply") {
+    convoState.setValue({ ...convoState.value, statement: null });
+    reply = await getRating(message, [...convoState.value.statement]);
+  }
 
   let replyObj = {
     id: id,
@@ -32,12 +35,17 @@ export default async function getReply(
     text: reply,
   };
 
-  // finish + push
-  convoState.setValue({ ...convoState.value, turn: "user-answer" });
   historyQueue.setValue([...historyQueue.value, replyObj]);
 }
 
+async function getRating(message: string, convoState: any) {
+  await timeout(1000);
+  return "Here is the rating";
+}
+
 async function getStatement(convoState: any, delay: number) {
+  await timeout(delay);
+
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
   const module: string = getRandomItem(modules).title;
@@ -47,11 +55,10 @@ async function getStatement(convoState: any, delay: number) {
   let statement = getRandomItem(
     module_statements[module as keyof typeof module_statements]
   );
-  convoState.setValue({ ...convoState.value, statement: statement });
+  convoState.setValue({ ...convoState.value, statement: statement, turn: "user-answer"  });
   console.log("Selected statement: ");
   console.log(statement);
 
-  // await timeout(delay);
   return statement[1];
 }
 

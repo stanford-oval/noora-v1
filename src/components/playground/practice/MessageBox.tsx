@@ -22,8 +22,9 @@ export default function MessageBox({
       { id: userMsgId, fromNoora: false, text: message },
     ]);
     draft.setValue("");
-
-    await getReply(message, historyQueue, convoState, "get-statement");
+    
+    const command = convoState.value.statement ? "rate-reply" : "get-statement";
+    await getReply(message, historyQueue, convoState, command);
   };
 
   useEffect(() => {
