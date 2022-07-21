@@ -1,6 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
+import Completion from "./Completion";
+
+const model =
+  "curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49";
 
 const module_statements = {
   general: general_statements,
@@ -38,9 +42,81 @@ export default async function getReply(
   historyQueue.setValue([...historyQueue.value, replyObj]);
 }
 
-async function getRating(message: string, convoState: any) {
-  await timeout(1000);
-  return "Here is the rating";
+async function getRating(message: string, statementObj: any) {
+  let prompt = '"' + statementObj[1] + '"\nYou reply, "' + message + '"';
+  let target = statementObj[2];
+  console.log("### Prompt: " + prompt);
+
+  // first get good/bad answer
+  let { goodAnswer } = await Completion({
+    model: model,
+    prompt: prompt,
+    temperature: 0,
+    max_tokens: 50,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  }).then((output) => parseResponse(output));
+
+  let { explanation } = await Completion({
+    model: model,
+    prompt: prompt,
+    temperature: 0.8,
+    max_tokens: 100,
+    frequency_penalty: 0.4,
+    presence_penalty: 0.2,
+  }).then((output) => parseResponse(output));
+
+  let answer = "";
+  if (goodAnswer) answer = "Good answer!\n\n" + explanation;
+  else
+    answer =
+      "Not quite!\n\n" +
+      explanation +
+      "\n\nA better answer might've been: \"" +
+      target +
+      '"';
+
+  answer += "\n\n Say anything to continue practicing.";
+
+  return answer;
+}
+
+function parseResponse(output: any) {
+  if (output.includes("END")) output = output.slice(0, output.indexOf("END"));
+  console.log("### Output text: " + output);
+
+  let goodAnswer = false;
+  let explanation = "";
+  // if (
+  //   !(
+  //     output.includes("This was a good answer.") ||
+  //     output.includes("This was a bad answer.")
+  //   )
+  // ) {
+  //   return { good_answer: null, explanation: null };
+  // }
+  let classification = "This was a good answer.";
+  if (output.includes(classification)) {
+    goodAnswer = true;
+    explanation = output
+      .slice(
+        output.indexOf(classification) + classification.length,
+        output.length
+      )
+      .trim();
+  }
+  classification = "This was a bad answer.";
+  if (output.includes(classification)) {
+    goodAnswer = false;
+    explanation = output
+      .slice(
+        output.indexOf(classification) + classification.length,
+        output.length
+      )
+      .trim();
+  }
+
+  return { goodAnswer: goodAnswer, explanation: explanation };
 }
 
 async function getStatement(convoState: any, delay: number) {
@@ -55,7 +131,11 @@ async function getStatement(convoState: any, delay: number) {
   let statement = getRandomItem(
     module_statements[module as keyof typeof module_statements]
   );
-  convoState.setValue({ ...convoState.value, statement: statement, turn: "user-answer"  });
+  convoState.setValue({
+    ...convoState.value,
+    statement: statement,
+    turn: "user-answer",
+  });
   console.log("Selected statement: ");
   console.log(statement);
 

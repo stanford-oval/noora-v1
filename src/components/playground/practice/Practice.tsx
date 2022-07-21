@@ -12,7 +12,7 @@ export default function Practice() {
     // on queue change, update the right element
     historyQueue.value.forEach((reply: any) => {
       let inHistory = false;
-      const newHistory: any[] = history.value.map((r: any, idx: number) => {
+      const newHistory: any[] = history.value.map((r: any) => {
         if (r.id == reply.id) {
           inHistory = true;
           return reply; // replace the object

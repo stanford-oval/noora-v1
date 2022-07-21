@@ -9,6 +9,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  console.log("In api/openai handler...");
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -25,5 +26,6 @@ export default async function handler(
     response.data.choices[0].text
   )
     text = response.data.choices[0].text;
+  
   res.status(200).json({ text: text });
 }
