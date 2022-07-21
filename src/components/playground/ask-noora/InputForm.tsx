@@ -16,7 +16,7 @@ export default function InputForm() {
     query.setValue("");
     if (inputBox.current) inputBox.current.focus();
     let id = uuidv4();
-    results.setValue([...results.value, { id: id, statement: statement }]);
+    results.setValue((r:any) => ([...r, { id: id, statement: statement }]));
 
     console.log("Generating result for: " + statement);
     let result = await generateResult(statement, id);

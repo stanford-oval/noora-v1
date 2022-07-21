@@ -23,10 +23,10 @@ export default function Header({ convoState }: any) {
                     return { title: m.title, active: !m.active };
                   else return m;
                 });
-                convoState.setValue({
-                  ...convoState.value,
+                convoState.setValue((cs: any) => ({
+                  ...cs,
                   modules: newModules,
-                });
+                }));
               }}
               key={module.title}
               className={clsx(

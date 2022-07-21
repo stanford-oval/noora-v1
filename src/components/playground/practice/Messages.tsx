@@ -7,13 +7,12 @@ export default function Messages({ history, convoState }: any) {
 
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
-    history.setValue([
-      ...history.value,
+    history.setValue((h: any) => [
+      ...h,
       ...[
-        "Hi! I'm Noora.",
-        "After I give you a statement or scenario, try your best to reply to me.",
-        "Let's start!",
-        getStatement(convoState, -1),
+        "Hi! I am Noora.",
+        "Imagine that I am your friend. Let's start chattting.",
+        getStatement(convoState),
       ].map((m, i) => ({
         id: -1 - i,
         fromNoora: true,
@@ -45,21 +44,26 @@ export default function Messages({ history, convoState }: any) {
                     : "bg-noora-primary-main text-white ml-auto"
                 )}
               >
-                {message.typing ? (
-                  <div className="px-3 py-1">
-                    <div className="snippet" data-title=".dot-flashing">
-                      <div className="stage">
-                        <div className="dot-flashing" />
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  message.text
-                )}
+                {message.text}
               </div>
             )}
           </li>
         ))}
+        {convoState.value.turn != "user-answer" && (
+          <div
+            className={
+              "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
+            }
+          >
+            <div className="px-3 py-1">
+              <div className="snippet" data-title=".dot-flashing">
+                <div className="stage">
+                  <div className="dot-flashing" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </ul>
       <div className="-mb-20 invisible text-xs" ref={messagesBottom}>
         .

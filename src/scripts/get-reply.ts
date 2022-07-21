@@ -19,19 +19,28 @@ export default async function getReply(
 ) {
   const id = uuidv4();
   // response loading
-  convoState.setValue({ ...convoState.value, turn: command });
+  convoState.setValue((cs: any) => ({ ...cs, turn: command }));
 
   let reply = "Oops! Something went wrong.";
-  if (command == "get-statement") reply = await getStatement(convoState, delay);
+  if (command == "get-statement") reply = await getStatement(convoState);
   else if (command == "rate-reply") {
-    convoState.setValue({ ...convoState.value, statement: null });
+    convoState.setValue((cs: any) => ({
+      ...cs,
+      statement: null,
+    }));
     reply = await getRating(message, [...convoState.value.statement]);
   }
+
+  convoState.setValue((cs: any) => ({
+    ...cs,
+    turn: "user-answer",
+  }));
 
   return {
     id: id,
     fromNoora: true,
     text: reply,
+    statement: command == "get-statement",
   };
 }
 
@@ -112,7 +121,7 @@ function parseResponse(output: any) {
   return { goodAnswer: goodAnswer, explanation: explanation };
 }
 
-export function getStatement(convoState: any, delay: number) {
+export function getStatement(convoState: any) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
   const module: string = getRandomItem(modules).title;
@@ -122,11 +131,10 @@ export function getStatement(convoState: any, delay: number) {
   let statement = getRandomItem(
     module_statements[module as keyof typeof module_statements]
   );
-  convoState.setValue({
-    ...convoState.value,
+  convoState.setValue((cs: any) => ({
+    ...cs,
     statement: statement,
-    turn: "user-answer",
-  });
+  }));
   console.log("Selected statement: ");
   console.log(statement);
 
