@@ -1,8 +1,8 @@
 import React from "react";
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
-import Modules from "./Modules";
-import Progress from "./Progress";
+import Modules from "./sections/Modules";
+import Progress from "./sections/Progress";
 
 export default function Menu({ convoState }: any) {
   const sections = [

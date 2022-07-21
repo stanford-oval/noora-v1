@@ -5,7 +5,41 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Progress({ convoState }: any) {
   return (
-    <div className="mx-auto mt-2 flex flex-row flex-wrap justify-center bg-gray-100 py-1 rounded-lg">
+    <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
+      <CheckMarks convoState={convoState} />
+      <div className="border-1 border-gray-300 w-10/12 mx-auto"></div>
+      <div className="flex flex-col md:flex-row justify-center py-2 text-center">
+        {[
+          {
+            units: "scenarios",
+            num: convoState.value.progress.length,
+            denom: convoState.value.numProblems,
+          },
+          {
+            units: "correct",
+            num: convoState.value.progress.filter((p: any) => p.goodAnswer)
+              .length,
+            denom: convoState.value.progress.length,
+          },
+        ].map((x) => (
+          <div className="mx-1">
+            <span className="font-bold text-3xl text-noora-primary-main">
+              {x.num}
+            </span>
+            <span className="font-normal text-sm text-gray-400">
+              /{x.denom}
+            </span>
+            <div className="text-gray-400 -mt-1">{x.units}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CheckMarks({ convoState }: any) {
+  return (
+    <div className="mx-auto flex flex-row flex-wrap justify-center py-2">
       {[...Array(convoState.value.numProblems).keys()].map((i: number) => {
         const baseStyles =
           "h-10 w-10 rounded-full flex items-center justify-center border-2";

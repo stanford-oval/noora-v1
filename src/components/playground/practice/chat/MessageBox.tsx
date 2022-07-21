@@ -33,7 +33,7 @@ export default function MessageBox({ draft, history, convoState, progress }: any
   };
 
   useEffect(() => {
-    if (convoState.value.turn == "user-answer" && history.length > 3) {
+    if (convoState.value.turn == "user-answer" && history.value.length > 3) {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);
