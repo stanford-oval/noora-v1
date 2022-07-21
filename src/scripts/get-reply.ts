@@ -22,11 +22,18 @@ export default async function getReply(
     {
       fromNoora: true,
       text: "Oops! Something went wrong.",
+      statement: false,
     },
   ];
 
   if (command == "get-statement") {
-    replies = [{ fromNoora: true, text: await getStatement(convoState) }];
+    replies = [
+      {
+        fromNoora: true,
+        text: await getStatement(convoState),
+        statement: true,
+      },
+    ];
   } else if (command == "rate-reply") {
     convoState.setValue((cs: any) => ({
       ...cs,
@@ -37,6 +44,7 @@ export default async function getReply(
     replies = answers.map((a: any) => ({
       fromNoora: true,
       text: a,
+      statement: false,
     }));
   }
 

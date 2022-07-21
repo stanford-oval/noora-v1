@@ -29,7 +29,7 @@ export default function Messages({ history, convoState }: any) {
         behavior: "smooth",
         block: "nearest",
       });
-  }, [history.value]);
+  }, [history.value, convoState.value.turn]);
 
   return (
     <div className="bg-white border-x-2 border-gray-400 p-2" id="chat">

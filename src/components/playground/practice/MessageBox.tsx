@@ -18,9 +18,18 @@ export default function MessageBox({ draft, history, convoState }: any) {
     ]);
     draft.setValue("");
 
-    const command = convoState.value.statement ? "rate-reply" : "get-statement";
-    const replies = await getReply(message, convoState, command);
-    history.setValue((h: any) => [...h, ...replies]);
+    if (convoState.value.statement) {
+      // rate reply if statement was given
+      const replies = await getReply(message, convoState, "rate-reply");
+      history.setValue((h: any) => [...h, ...replies]);
+    }
+    // always get statement at end
+    const replies = await getReply(message, convoState, "get-statement");
+    history.setValue((h: any) => [
+      ...h,
+      { fromNoora: true, text: "Let's try another one." },
+      ...replies,
+    ]);
   };
 
   useEffect(() => {
