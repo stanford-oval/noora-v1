@@ -9,20 +9,18 @@ export default function MessageBox({ draft, history, convoState }: any) {
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
-    const message = draft.value;
+    const message = draft.value.slice();
     let userMsgId = uuidv4();
 
-    const historyWithUserMsg = [
-      ...history.value,
+    history.setValue((h: any) => [
+      ...h,
       { id: userMsgId, fromNoora: false, text: message },
-    ];
-
-    history.setValue(historyWithUserMsg);
+    ]);
     draft.setValue("");
 
     const command = convoState.value.statement ? "rate-reply" : "get-statement";
     const reply = await getReply(message, convoState, command);
-    history.setValue([...historyWithUserMsg, reply]);
+    history.setValue((h: any) => [...h, reply]);
   };
 
   useEffect(() => {
