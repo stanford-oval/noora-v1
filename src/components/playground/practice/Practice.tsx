@@ -6,24 +6,7 @@ import Messages from "./Messages";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
-  const { draft, history, historyQueue, convoState } = practice;
-
-  useEffect(() => {
-    // on queue change, update the right element
-    historyQueue.value.forEach((reply: any) => {
-      let inHistory = false;
-      const newHistory: any[] = history.value.map((r: any) => {
-        if (r.id == reply.id) {
-          inHistory = true;
-          return reply; // replace the object
-        } else return r;
-      });
-
-      if (inHistory) history.setValue(newHistory);
-      else history.setValue([...history.value, reply]);
-      historyQueue.setValue([]);
-    });
-  }, [historyQueue.value]);
+  const { draft, history, convoState } = practice;
 
   return (
     <div className="bg-gray-100">
@@ -32,13 +15,11 @@ export default function Practice() {
           <Header convoState={convoState} />
           <Messages
             history={history}
-            historyQueue={historyQueue}
             convoState={convoState}
           />
           <MessageBox
             draft={draft}
             history={history}
-            historyQueue={historyQueue}
             convoState={convoState}
           />
         </div>

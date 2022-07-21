@@ -13,7 +13,6 @@ const module_statements = {
 
 export default async function getReply(
   message: string,
-  historyQueue: any,
   convoState: any,
   command: string,
   delay = 1000
@@ -21,10 +20,6 @@ export default async function getReply(
   const id = uuidv4();
   // response loading
   convoState.setValue({ ...convoState.value, turn: command });
-  historyQueue.setValue([
-    ...historyQueue.value,
-    { id: id, fromNoora: true, typing: true },
-  ]);
 
   let reply = "Oops! Something went wrong.";
   if (command == "get-statement") reply = await getStatement(convoState, delay);
@@ -33,13 +28,11 @@ export default async function getReply(
     reply = await getRating(message, [...convoState.value.statement]);
   }
 
-  let replyObj = {
+  return {
     id: id,
     fromNoora: true,
     text: reply,
   };
-
-  historyQueue.setValue([...historyQueue.value, replyObj]);
 }
 
 async function getRating(message: string, statementObj: any) {
@@ -119,9 +112,7 @@ function parseResponse(output: any) {
   return { goodAnswer: goodAnswer, explanation: explanation };
 }
 
-async function getStatement(convoState: any, delay: number) {
-  await timeout(delay);
-
+export function getStatement(convoState: any, delay: number) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
   const module: string = getRandomItem(modules).title;

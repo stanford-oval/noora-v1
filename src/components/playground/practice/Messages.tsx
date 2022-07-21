@@ -1,34 +1,25 @@
 import React, { useRef, useEffect } from "react";
 import { clsx } from "clsx";
-import getReply from "../../../scripts/get-reply";
-import { v4 as uuidv4 } from "uuid";
+import { getStatement } from "../../../scripts/get-reply";
 
-export default function Messages({ history, historyQueue, convoState }: any) {
+export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
     history.setValue([
       ...history.value,
-      {
-        id: -1,
+      ...[
+        "Hi! I'm Noora.",
+        "After I give you a statement or scenario, try your best to reply to me.",
+        "Let's start!",
+        getStatement(convoState, -1),
+      ].map((m, i) => ({
+        id: -1 - i,
         fromNoora: true,
-        text: "Hi! I'm Noora.",
-      },
-      {
-        id: -2,
-        fromNoora: true,
-        text: "After I give you a statement or scenario, try your best to reply to me.",
-      },
-      {
-        id: -3,
-        fromNoora: true,
-        text: "Let's start!",
-      },
+        text: m,
+      })),
     ]);
-    
-      // INITIATE
-    getReply("", historyQueue, convoState, "get-statement");
   }, []);
 
   // scrolling

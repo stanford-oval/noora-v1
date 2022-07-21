@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 export default function MessageBox({
   draft,
   history,
-  historyQueue,
   convoState,
 }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
@@ -24,7 +23,7 @@ export default function MessageBox({
     draft.setValue("");
     
     const command = convoState.value.statement ? "rate-reply" : "get-statement";
-    await getReply(message, historyQueue, convoState, command);
+    await getReply(message, convoState, command);
   };
 
   useEffect(() => {

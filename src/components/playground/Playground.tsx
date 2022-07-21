@@ -37,7 +37,6 @@ export default function Playground() {
   // PRACTICE
   const [draft, setDraft] = useState("");
   const [history, setHistory] = useState([]);
-  const [historyQueue, setHistoryQueue] = useState([]);
   const [convoState, setConvoState] = useState({
     turn: "user-answer",
     modules: [
@@ -90,10 +89,6 @@ export default function Playground() {
           value: history,
           setValue: setHistory,
         },
-        historyQueue: {
-          value: historyQueue,
-          setValue: setHistoryQueue,
-        },
         convoState: {
           value: convoState,
           setValue: setConvoState,
@@ -125,8 +120,6 @@ export default function Playground() {
       setDraft,
       history,
       setHistory,
-      historyQueue,
-      setHistoryQueue,
       convoState,
       setConvoState,
     ]
