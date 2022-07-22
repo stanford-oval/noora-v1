@@ -27,11 +27,23 @@ export default function ReplyList({ convoState }: any) {
           </div>
           <div className="flex-grow">
             <div className="text-slate-600">
-              <p>I said, &ldquo;{problem.statement}&rdquo;</p>
+              <p>
+                <span className="inline-block mr-1">
+                  I said, &ldquo;{problem.statement}&rdquo;
+                </span>
+                {problem.statementCategory.split("/").map((x: string) => (
+                  <span className="inline-block ml-0.5 border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-600 text-gray-600">
+                    {x}
+                  </span>
+                ))}
+              </p>
               <p>
                 You replied,{" "}
                 <span className="text-slate-800 text-lg font-bold">
                   &ldquo;{problem.reply}&rdquo;
+                </span>
+                <span className="inline-block mt-2 mx-auto max-w-fit md:inline-flex relative md:ml-2 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark border-1 border-noora-primary-dark">
+                  {problem.replyCategory}
                 </span>
               </p>
             </div>

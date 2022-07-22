@@ -15,7 +15,12 @@ export default function Practice() {
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
         <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
           {summary.value.show ? (
-            <Summary draft={draft} history={history} convoState={convoState} />
+            <Summary
+              draft={draft}
+              history={history}
+              convoState={convoState}
+              summary={summary}
+            />
           ) : (
             <NooraChat
               draft={draft}
