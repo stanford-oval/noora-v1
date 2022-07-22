@@ -7,10 +7,15 @@ const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
 
 import { getTokenOrRefresh } from "../../../scripts/token_util";
 
-export default function Microphone({ className, setTurn, setText }: any) {
+export default function Microphone({
+  className,
+  setTurn,
+  setText,
+  currText,
+}: any) {
   const microphoneHandler = () => {
     console.log("In Microphone handler");
-    sttFromMic(setTurn, setText);
+    sttFromMic(setTurn, setText, currText);
   };
 
   return (
@@ -27,7 +32,7 @@ export default function Microphone({ className, setTurn, setText }: any) {
   );
 }
 
-async function sttFromMic(setTurn: any, setText: any) {
+async function sttFromMic(setTurn: any, setText: any, currText: string) {
   const tokenObj = await getTokenOrRefresh();
 
   const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(
@@ -43,12 +48,16 @@ async function sttFromMic(setTurn: any, setText: any) {
   else setText("Speak into your microphone...");
 
   recognizer.recognizeOnceAsync((result: any) => {
-    let displayText;
+    let transcribed;
     if (result.reason === ResultReason.RecognizedSpeech) {
-      displayText = `${result.text}`;
+      transcribed = `${result.text}`;
     } else return;
 
-    setText(displayText);
+    setText(
+      currText +
+        (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
+        transcribed
+    );
     if (setTurn) setTurn("user-answer-edit"); // to edit microphone text
   });
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 import Microphone from "../../../global/utility/Microphone";
+import { clsx } from "clsx";
 
 export default function MessageBox({ history, convoState }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
@@ -68,8 +69,15 @@ export default function MessageBox({ history, convoState }: any) {
       id="messageBox"
     >
       <div className="relative">
-        <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none text-slate-400 z-10">
-          <FontAwesomeIcon icon={faPen} className="w-4 h-4" />
+        <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
+          {convoState.value.turn.includes("microphone") ? (
+            <FontAwesomeIcon
+              icon={faMicrophone}
+              className="w-4 h-4 text-noora-primary-main"
+            />
+          ) : (
+            <FontAwesomeIcon icon={faPen} className="w-4 h-4 text-slate-400" />
+          )}
         </div>
 
         <input
@@ -89,8 +97,16 @@ export default function MessageBox({ history, convoState }: any) {
                 : "Send message..."
               : "Please wait for Noora..."
           }
-          disabled={!convoState.value.turn.startsWith("user-answer")}
-          className="block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
+          disabled={
+            !convoState.value.turn.startsWith("user-answer") ||
+            convoState.value.turn.includes("microphone")
+          }
+          className={clsx(
+            "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100",
+            convoState.value.turn.includes("microphone")
+              ? "border-noora-primary-main"
+              : "border-gray-400"
+          )}
         />
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10">
           <Microphone
@@ -107,12 +123,16 @@ export default function MessageBox({ history, convoState }: any) {
                 draft: str,
               }))
             }
+            currText={convoState.value.draft}
           />
         </div>
         <button
           type="submit"
           onClick={(e) => handleSubmit(e)}
-          disabled={convoState.value.draft.length == 0}
+          disabled={
+            convoState.value.draft.length == 0 ||
+            convoState.value.turn.includes("microphone")
+          }
           className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Send
