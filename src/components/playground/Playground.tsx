@@ -164,7 +164,7 @@ export default function Playground() {
                         className={clsx(
                           "text-lg",
                           selected
-                            ? "text-noora-primary-main font-bold"
+                            ? "text-noora-secondary-light font-bold"
                             : "text-gray-700"
                         )}
                       >
@@ -174,7 +174,7 @@ export default function Playground() {
                         aria-hidden={true}
                         className={clsx(
                           "absolute inset-x-0 bottom-0 h-1",
-                          selected ? "bg-noora-primary-main" : "bg-gray-300"
+                          selected ? "bg-noora-secondary-light" : "bg-gray-300"
                         )}
                       />
                     </button>

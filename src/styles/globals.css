@@ -67,7 +67,7 @@
 }
 
 .blue-link {
-    @apply text-noora-secondary-bright hover:text-noora-secondary-main font-semibold;
+    @apply text-noora-secondary-main hover:text-noora-secondary-main font-semibold;
 }
 
 .container {

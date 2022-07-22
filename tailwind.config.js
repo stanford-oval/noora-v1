@@ -20,9 +20,10 @@ module.exports = {
             dark2: "#2c1458",
           },
           secondary: {
-            main: "#0d142b",
-            bright: "#121c40",
-            dark: "#090f29",
+            bright: "#283975",
+            light: "#1f306b",
+            main: "#192245",
+            dark: "#0d142b",
           },
         },
       },
