@@ -35,7 +35,7 @@ export default function Playground() {
   }, [router.query]);
 
   // PRACTICE
-  const [summary, setSummary] = useState({ show: true });
+  const [summary, setSummary] = useState({ show: false });
   const [draft, setDraft] = useState("");
   const [history, setHistory] = useState([]);
   const [convoState, setConvoState] = useState({
