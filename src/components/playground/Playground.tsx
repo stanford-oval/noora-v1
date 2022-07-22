@@ -43,6 +43,12 @@ export default function Playground() {
       { title: "general", active: true },
       { title: "work", active: true },
     ],
+    model: {
+      name: "curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49",
+      temperature: 0.8,
+      frequencyPenalty: 0.4,
+      presencePenalty: 0.2,
+    },
     progress: [],
     numProblems: 3,
   });

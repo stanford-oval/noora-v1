@@ -2,9 +2,6 @@ import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
 import Completion from "./Completion";
 
-const model =
-  "curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49";
-
 const module_statements = {
   general: general_statements,
   work: work_statements,
@@ -67,12 +64,12 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
   // first get good/bad answer
   let { goodAnswer, replyCategory, explanation } = await Completion({
-    model: model,
+    model: convoState.value.model.name,
     prompt: prompt,
-    temperature: 0.8,
-    max_tokens: 50,
-    frequency_penalty: 0.4,
-    presence_penalty: 0.2,
+    temperature: convoState.value.model.temperature,
+    max_tokens: 55,
+    frequency_penalty: convoState.value.frequencyPenalty,
+    presence_penalty: convoState.value.model.presencePenalty,
   }).then((output) => parseResponse(output));
 
   let answers = [];
