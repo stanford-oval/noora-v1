@@ -46,12 +46,9 @@ async function sttFromMic(setTurn: any, setText: any) {
     let displayText;
     if (result.reason === ResultReason.RecognizedSpeech) {
       displayText = `${result.text}`;
-    } else {
-      displayText =
-        "ERROR: Speech was cancelled or could not be recognized. Ensure your microphone is working properly.";
-    }
+    } else return;
 
     setText(displayText);
-    if (setTurn) setTurn("user-answer");
+    if (setTurn) setTurn("user-answer-edit"); // to edit microphone text
   });
 }

@@ -52,9 +52,12 @@ export default function MessageBox({ history, convoState }: any) {
 
   useEffect(() => {
     if (
-      convoState.value.turn.startsWith("user-answer") &&
-      history.value.length > 3
+      (convoState.value.turn.startsWith("user-answer") &&
+        history.value.length > 3) ||
+      convoState.value.turn == "user-answer-edit"
     ) {
+      // don't autofocus on page load (especially for mobile)
+      // hence the history check, but we want to autofocus if microphone used
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);
@@ -86,8 +89,8 @@ export default function MessageBox({ history, convoState }: any) {
                 : "Send message..."
               : "Please wait for Noora..."
           }
-          disabled={convoState.value.turn != "user-answer"}
-          className="block focus:border-gray-400 focus:ring-0 p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
+          disabled={!convoState.value.turn.startsWith("user-answer")}
+          className="block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
         />
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10">
           <Microphone

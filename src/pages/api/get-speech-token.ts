@@ -7,7 +7,6 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   res.setHeader("Content-Type", "application/json");
-  console.log(process.env);
   const speechKey = process.env.SPEECH_KEY;
   const speechRegion = process.env.SPEECH_REGION;
 
@@ -26,7 +25,7 @@ export default async function handler(
     );
     res.send({ token: tokenResponse.data, region: speechRegion });
   } catch (err) {
-    // console.log(err)
+    console.error(err);
     res.status(401).send("There was an error authorizing your speech key.");
   }
 }
