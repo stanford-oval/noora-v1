@@ -7,7 +7,7 @@ export default function Progress({ convoState }: any) {
   return (
     <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
       <CheckMarks convoState={convoState} />
-      <div className="border-1 border-gray-300 w-10/12 mx-auto"></div>
+      <div className="border-1 border-gray-300 bg-gray-300 w-10/12 mx-auto"></div>
       <div className="flex flex-row justify-center py-2 text-center">
         {[
           {

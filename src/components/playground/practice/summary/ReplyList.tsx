@@ -53,7 +53,9 @@ export default function ReplyList({ convoState }: any) {
             <div
               className={clsx(
                 "border-1 mx-auto w-full my-2",
-                problem.goodAnswer ? "border-green-400" : "border-red-300"
+                problem.goodAnswer
+                  ? "bg-green-400 border-green-400"
+                  : "border-red-300 bg-red-300"
               )}
             ></div>
             <div className="text-slate-600 mt-2 font-light">
