@@ -4,12 +4,7 @@ import React, { useEffect, useRef } from "react";
 import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 
-export default function MessageBox({
-  draft,
-  history,
-  convoState,
-  summary,
-}: any) {
+export default function MessageBox({ draft, history, convoState }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
@@ -49,7 +44,7 @@ export default function MessageBox({
         ]);
       }
     } else {
-      summary.setValue({ show: true });
+      convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
     }
   };
 

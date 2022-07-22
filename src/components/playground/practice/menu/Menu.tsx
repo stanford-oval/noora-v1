@@ -3,17 +3,17 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import Modules from "./sections/Modules";
 import Progress from "./sections/Progress";
+import Technical from "./sections/Technical";
 
 export default function Menu({ convoState }: any) {
   const sections = [
     { title: "Modules", component: <Modules convoState={convoState} /> },
     { title: "Progress", component: <Progress convoState={convoState} /> },
+    { title: "Technical", component: <Technical convoState={convoState} /> },
   ];
 
   return (
-    <div
-      className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
-    >
+    <div className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll">
       <div className="border-b-2 border-gray-400 py-4">
         <div className="text-2xl text-center font-bold text-noora-secondary-main">
           Playground

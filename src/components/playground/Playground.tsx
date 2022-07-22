@@ -35,7 +35,6 @@ export default function Playground() {
   }, [router.query]);
 
   // PRACTICE
-  const [summary, setSummary] = useState({ show: false });
   const [draft, setDraft] = useState("");
   const [history, setHistory] = useState([]);
   const [convoState, setConvoState] = useState({
@@ -84,10 +83,6 @@ export default function Playground() {
   const value = useMemo(
     () => ({
       practice: {
-        summary: {
-          value: summary,
-          setValue: setSummary,
-        },
         draft: {
           value: draft,
           setValue: setDraft,
@@ -129,8 +124,6 @@ export default function Playground() {
       setHistory,
       convoState,
       setConvoState,
-      summary,
-      setSummary,
     ]
   );
 
