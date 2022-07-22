@@ -22,7 +22,6 @@ export default function Result({
         <button
           onClick={() => {
             // remove
-            console.log(id);
             let newResults = results.value.filter((r: any) => r.id !== id);
             results.setValue(newResults);
           }}
