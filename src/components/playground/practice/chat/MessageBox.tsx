@@ -1,4 +1,4 @@
-import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faMicrophone, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
 import getReply from "../../../../scripts/get-reply";
@@ -86,11 +86,25 @@ export default function MessageBox({ history, convoState }: any) {
           disabled={convoState.value.turn != "user-answer"}
           className="block focus:border-gray-400 focus:ring-0 p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100"
         />
+        <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("In Microphone handler");
+            }}
+            className="bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+          >
+            <FontAwesomeIcon
+              icon={faMicrophone}
+              className="w-4 h-4 text-white"
+            />
+          </button>
+        </div>
         <button
           type="submit"
           onClick={(e) => handleSubmit(e)}
           disabled={convoState.value.draft.length == 0}
-          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark disabled:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Send
         </button>
