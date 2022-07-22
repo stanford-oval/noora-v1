@@ -8,7 +8,7 @@ export default function MessageBox({
   draft,
   history,
   convoState,
-  progress,
+  summary,
 }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
@@ -44,15 +44,12 @@ export default function MessageBox({
           ...h,
           {
             fromNoora: true,
-            text: `Good job! You practiced ${convoState.value.numProblems} scenarios.`,
+            text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Say anything to see your results summary.`,
           },
         ]);
       }
     } else {
-      history.setValue((h: any) => [
-        ...h,
-        { fromNoora: true, text: "That's all for now! Good job." },
-      ]);
+      summary.setValue({ show: true });
     }
   };
 

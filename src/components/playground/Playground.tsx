@@ -44,25 +44,8 @@ export default function Playground() {
       { title: "general", active: true },
       { title: "work", active: true },
     ],
-    progress: [
-      {
-        statement: "I read a really good book.",
-        reply: "Yea, I don't care.",
-        statementCategory: "general/positive",
-        replyCategory: "dismissive",
-        explanation: "Explanation here",
-        goodAnswer: false,
-      },
-      {
-        statement: "My dog is all grown up now.",
-        statementCategory: "general/positive",
-        reply: "I'm happy to hear about your dog.",
-        explanation: "Explanation here",
-        replyCategory: "genuine",
-        goodAnswer: true,
-      },
-    ],
-    numProblems: 10,
+    progress: [],
+    numProblems: 3,
   });
 
   // ASK NOORA

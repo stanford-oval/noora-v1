@@ -26,6 +26,7 @@ export default function Practice() {
               draft={draft}
               history={history}
               convoState={convoState}
+              summary={summary}
             />
           )}
         </div>

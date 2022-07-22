@@ -7,6 +7,7 @@ export default function NooraChat({
   convoState,
   history,
   draft,
+  summary
 }: any) {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function NooraChat({
         draft={draft}
         history={history}
         convoState={convoState}
+        summary={summary}
       />
     </div>
   );

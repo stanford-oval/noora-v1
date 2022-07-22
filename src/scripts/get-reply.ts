@@ -66,20 +66,11 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   console.log("### Prompt: " + prompt);
 
   // first get good/bad answer
-  let { goodAnswer, classificationText } = await Completion({
+  let { goodAnswer, replyCategory, explanation } = await Completion({
     model: model,
     prompt: prompt,
-    temperature: 0,
-    max_tokens: 50,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-  }).then((output) => parseResponse(output));
-
-  let { explanation } = await Completion({
-    model: model,
-    prompt: prompt + " " + classificationText,
     temperature: 0.8,
-    max_tokens: 100,
+    max_tokens: 50,
     frequency_penalty: 0.4,
     presence_penalty: 0.2,
   }).then((output) => parseResponse(output));
@@ -99,7 +90,13 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     ...cs,
     progress: [
       ...cs.progress,
-      { statement: statementObj[1], reply: message, goodAnswer: goodAnswer },
+      {
+        statement: statementObj[1],
+        statementCategory: statementObj[0],
+        reply: message,
+        replyCategory: replyCategory,
+        goodAnswer: goodAnswer,
+      },
     ],
   }));
 
@@ -141,9 +138,11 @@ function parseResponse(output: any) {
       .trim();
   }
 
+  const replyCategory = output.split(":")[0];
+
   return {
     goodAnswer: goodAnswer,
-    classificationText: classification,
+    replyCategory: replyCategory,
     explanation: explanation,
   };
 }
