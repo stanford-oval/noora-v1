@@ -94,6 +94,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
         statement: statementObj[1],
         statementCategory: statementObj[0],
         reply: message,
+        explanation: explanation,
         replyCategory: replyCategory,
         goodAnswer: goodAnswer,
       },
