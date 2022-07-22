@@ -23,6 +23,10 @@
     background: #aaa;
 }
 
+.gray-slider-thumb:disabled::-webkit-slider-thumb {
+    background: #d1d5db;
+}
+
 /* Scrollbar */
 .pretty-scroll::-webkit-scrollbar {
     width: 8px;

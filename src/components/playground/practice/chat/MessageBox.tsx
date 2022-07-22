@@ -42,6 +42,7 @@ export default function MessageBox({ history, convoState }: any) {
             text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Say anything to see your results summary.`,
           },
         ]);
+        convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-end" }));
       }
     } else {
       convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
@@ -49,7 +50,10 @@ export default function MessageBox({ history, convoState }: any) {
   };
 
   useEffect(() => {
-    if (convoState.value.turn == "user-answer" && history.value.length > 3) {
+    if (
+      convoState.value.turn.startsWith("user-answer") &&
+      history.value.length > 3
+    ) {
       if (inputBoxRef.current) inputBoxRef.current.focus();
     }
   }, [convoState.value]);

@@ -64,7 +64,7 @@ export default function Messages({ history, convoState }: any) {
             )}
           </li>
         ))}
-        {convoState.value.turn != "user-answer" && (
+        {!convoState.value.turn.startsWith("user-answer") && (
           <div
             className={
               "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
