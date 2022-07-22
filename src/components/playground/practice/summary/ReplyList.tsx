@@ -42,7 +42,7 @@ export default function ReplyList({ convoState }: any) {
                 <span className="text-slate-800 text-lg font-bold">
                   &ldquo;{problem.reply}&rdquo;
                 </span>
-                <span className="inline-block mt-2 mx-auto max-w-fit md:inline-flex relative md:ml-2 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-noora-primary-dark border-1 border-noora-primary-dark">
+                <span className="inline-block mt-2 mx-auto max-w-fit md:inline-flex relative md:ml-2 -top-1 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-slate-200 text-noora-secondary-light border-1 border-noora-secondary-light">
                   {problem.replyCategory}
                 </span>
               </p>

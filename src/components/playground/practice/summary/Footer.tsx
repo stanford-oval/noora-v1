@@ -21,7 +21,7 @@ export default function Footer({ convoState, summary, history, draft }: any) {
             numProblems: 10,
           });
         }}
-        className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-full text-white bg-noora-primary-main hover:bg-noora-primary-dark"
+        className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-full text-white bg-noora-secondary-light hover:bg-noora-secondary-main"
       >
         Try Again
         <FontAwesomeIcon icon={faRepeat} className="ml-2 h-4 w-4" />
