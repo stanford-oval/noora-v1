@@ -32,7 +32,10 @@ export default function ReplyList({ convoState }: any) {
                   I said, &ldquo;{problem.statement}&rdquo;
                 </span>
                 {problem.statementCategory.split("/").map((x: string) => (
-                  <span className="inline-block ml-0.5 border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-600 text-gray-600">
+                  <span
+                    key={x}
+                    className="inline-block ml-0.5 border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-600 text-gray-600"
+                  >
                     {x}
                   </span>
                 ))}
