@@ -44,7 +44,24 @@ export default function Playground() {
       { title: "general", active: true },
       { title: "work", active: true },
     ],
-    progress: [],
+    progress: [
+      {
+        statement: "I read a really good book.",
+        reply: "Yea, I don't care.",
+        statementCategory: "general/positive",
+        category: "dismissive",
+        explanation: "Explanation here",
+        goodAnswer: false,
+      },
+      {
+        statement: "My dog is all grown up now.",
+        statementCategory: "general/positive",
+        reply: "I'm happy to hear about your dog.",
+        explanation: "Explanation here",
+        category: "genuine",
+        goodAnswer: true,
+      },
+    ],
     numProblems: 10,
   });
 
