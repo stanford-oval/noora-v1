@@ -8,10 +8,10 @@ export default function Footer({ convoState, history, draft }: any) {
       <button
         onClick={() => {
           // reset
-          draft.setValue("");
           history.setValue([]);
           convoState.setValue((cs: any) => ({
             ...cs,
+            draft: "",
             turn: "user-answer",
             modules: [
               { title: "general", active: true },

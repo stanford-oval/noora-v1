@@ -35,9 +35,9 @@ export default function Playground() {
   }, [router.query]);
 
   // PRACTICE
-  const [draft, setDraft] = useState("");
   const [history, setHistory] = useState([]);
   const [convoState, setConvoState] = useState({
+    draft: "",
     turn: "user-answer",
     modules: [
       { title: "general", active: true },
@@ -83,10 +83,6 @@ export default function Playground() {
   const value = useMemo(
     () => ({
       practice: {
-        draft: {
-          value: draft,
-          setValue: setDraft,
-        },
         history: {
           value: history,
           setValue: setHistory,
@@ -118,8 +114,6 @@ export default function Playground() {
       setResults,
       resultsQueue,
       setResultsQueue,
-      draft,
-      setDraft,
       history,
       setHistory,
       convoState,

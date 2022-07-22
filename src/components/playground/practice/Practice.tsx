@@ -6,7 +6,7 @@ import Summary from "./summary/Summary";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
-  const { draft, history, convoState } = practice;
+  const { history, convoState } = practice;
 
   // prop drilling beyond this point is intentional (for the re-usability of components)
 
@@ -15,10 +15,9 @@ export default function Practice() {
       <div className="py-4 container flex items-stretch flex-col md:flex-row justify-center md:space-x-2 space-y-2 md:space-y-0">
         <div className="basis-auto md:basis-7/12  lg:basis-3/4 w-full mx-auto">
           {convoState.value.turn == "summary" ? (
-            <Summary draft={draft} history={history} convoState={convoState} />
+            <Summary history={history} convoState={convoState} />
           ) : (
             <NooraChat
-              draft={draft}
               history={history}
               convoState={convoState}
             />
