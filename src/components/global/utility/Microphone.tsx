@@ -9,13 +9,14 @@ import { getTokenOrRefresh } from "../../../scripts/token_util";
 
 export default function Microphone({
   className,
+  turn,
   setTurn,
   setText,
   currText,
 }: any) {
   const microphoneHandler = () => {
     console.log("In Microphone handler");
-    sttFromMic(setTurn, setText, currText);
+    sttFromMic(turn, setTurn, setText, currText);
   };
 
   return (
@@ -32,7 +33,12 @@ export default function Microphone({
   );
 }
 
-async function sttFromMic(setTurn: any, setText: any, currText: string) {
+async function sttFromMic(
+  turn: string,
+  setTurn: any,
+  setText: any,
+  currText: string
+) {
   const tokenObj = await getTokenOrRefresh();
 
   const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(
@@ -44,8 +50,9 @@ async function sttFromMic(setTurn: any, setText: any, currText: string) {
   const audioConfig = speechsdk.AudioConfig.fromDefaultMicrophoneInput();
   const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
 
-  if (setTurn) setTurn("user-answer-microphone");
-  else setText("Speak into your microphone...");
+  if (setTurn) {
+    if (turn.startsWith("user-answer")) setTurn("user-answer-microphone");
+  } else setText("Speak into your microphone...");
 
   recognizer.recognizeOnceAsync((result: any) => {
     let transcribed;

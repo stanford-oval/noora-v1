@@ -111,6 +111,7 @@ export default function MessageBox({ history, convoState }: any) {
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10">
           <Microphone
             className="bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+            turn={convoState.value.turn}
             setTurn={(str: string) =>
               convoState.setValue((cs: any) => ({
                 ...cs,
