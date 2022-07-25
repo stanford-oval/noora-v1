@@ -21,33 +21,18 @@ export default function MessageBox({ history, convoState }: any) {
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
     if (convoState.value.progress.length < convoState.value.numProblems) {
-      if (convoState.value.statement) {
-        // rate reply if statement was given
-        const replies = await getReply(message, convoState, "rate-reply");
-        history.setValue((h: any) => [...h, ...replies]);
-      }
-
-      // get statement if still need to practice
-      // note that progress state has not updated yet, so we use (length + 1)
-      if (convoState.value.progress.length + 1 < convoState.value.numProblems) {
-        const replies = await getReply(message, convoState, "get-statement");
-        history.setValue((h: any) => [
-          ...h,
-          { fromNoora: true, text: "Let's try another one." },
-          ...replies,
-        ]);
-      } else {
-        history.setValue((h: any) => [
-          ...h,
-          {
-            fromNoora: true,
-            text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Say anything to see your results summary.`,
-          },
-        ]);
-        convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-end" }));
-      }
+      await noorasTurn(message, convoState, history);
     } else {
-      convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
+      let m = message.trim().toLowerCase();
+      if (m.includes("ye") || m.includes("i want to")) {
+        convoState.setValue((cs: any) => ({
+          ...cs,
+          numProblems: cs.numProblems + 3,
+        }));
+        await noorasTurn(message, convoState, history, true);
+      } else {
+        convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
+      }
     }
   };
 
@@ -141,4 +126,40 @@ export default function MessageBox({ history, convoState }: any) {
       </div>
     </form>
   );
+}
+
+async function noorasTurn(
+  message: string,
+  convoState: any,
+  history: any,
+  noorasTurn = false
+) {
+  if (convoState.value.statement) {
+    // rate reply if statement was given
+    const replies = await getReply(message, convoState, "rate-reply");
+    history.setValue((h: any) => [...h, ...replies]);
+  }
+
+  // get statement if still need to practice
+  // note that progress state has not updated yet, so we use (length + 1)
+  if (
+    convoState.value.progress.length + 1 < convoState.value.numProblems ||
+    noorasTurn
+  ) {
+    const replies = await getReply(message, convoState, "get-statement");
+    history.setValue((h: any) => [
+      ...h,
+      { fromNoora: true, text: "Let's try another one." },
+      ...replies,
+    ]);
+  } else {
+    history.setValue((h: any) => [
+      ...h,
+      {
+        fromNoora: true,
+        text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Do you want to continue practicing?`,
+      },
+    ]);
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-end" }));
+  }
 }
