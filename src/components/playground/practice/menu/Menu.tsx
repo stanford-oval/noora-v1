@@ -9,7 +9,7 @@ export default function Menu({ convoState }: any) {
   const sections = [
     { title: "Modules", component: <Modules convoState={convoState} /> },
     { title: "Progress", component: <Progress convoState={convoState} /> },
-    { title: "Technical", component: <Technical convoState={convoState} /> },
+    { title: "Technical", component: <Technical convoState={convoState} />, defaultHide: true },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function Menu({ convoState }: any) {
       </div>
       <div className="px-2 py-1">
         {sections.map((section) => (
-          <Disclosure key={section.title} defaultOpen>
+          <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
             {({ open }) => (
               <div className="mx-auto w-full rounded-2xl bg-white py-1">
                 <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-200 px-4 py-2 text-left text-sm font-medium text-noora-secondary-main hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">

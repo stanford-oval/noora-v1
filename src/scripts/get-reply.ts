@@ -136,7 +136,8 @@ function parseResponse(output: any) {
       .trim();
   }
 
-  const replyCategory = output.split(":")[0];
+  let replyCategory = output.split(":")[0];
+  replyCategory = replyCategory.split(" ").slice(0, 4).join(" "); // limits words in category
 
   return {
     goodAnswer: goodAnswer,

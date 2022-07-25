@@ -10,6 +10,8 @@ export default function Technical({ convoState }: any) {
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
 
+      <NoorasMessageDetails convoState={convoState} />
+
       <div className="mt-1">
         <div>
           <div className="flex items-stretch mt-1">
@@ -65,6 +67,29 @@ export default function Technical({ convoState }: any) {
           convoState={convoState}
         />
       ))}
+    </div>
+  );
+}
+
+function NoorasMessageDetails({ convoState }: any) {
+  if (convoState.value.progress.length == 0) return <div></div>;
+  let lastProblem =
+    convoState.value.progress[convoState.value.progress.length - 1];
+  return (
+    <div>
+      <div>
+        <b>Problem {convoState.value.progress.length} Categories:</b>
+      </div>
+      <div>
+        <span className="font-bold">Statement: </span>
+        {lastProblem.statementCategory}
+      </div>
+      <div>
+        <span className="font-bold">Reply: </span>
+        {lastProblem.replyCategory}
+      </div>
+
+      <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
     </div>
   );
 }
