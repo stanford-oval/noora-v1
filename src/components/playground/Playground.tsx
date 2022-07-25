@@ -50,7 +50,7 @@ export default function Playground() {
       presencePenalty: 0.2,
     },
     progress: [],
-    numProblems: 3,
+    numProblems: 5,
   });
 
   // ASK NOORA

@@ -80,14 +80,8 @@ function NoorasMessageDetails({ convoState }: any) {
       <div>
         <b>Problem {convoState.value.progress.length} Categories:</b>
       </div>
-      <div>
-        <span className="font-bold">Statement: </span>
-        {lastProblem.statementCategory}
-      </div>
-      <div>
-        <span className="font-bold">Reply: </span>
-        {lastProblem.replyCategory}
-      </div>
+      <div>Statement: {lastProblem.statementCategory}</div>
+      <div>Reply: {lastProblem.replyCategory}</div>
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
     </div>
