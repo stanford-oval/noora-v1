@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="relative bg-gray-50 overflow-hidden">
       <DoubleGridBg />
-      <div className="relative py-12 md:py-16">
+      <div className="relative py-10 md:py-14">
         <main className="mx-auto max-w-8xl px-4">
           <div className="text-center">
             <h1 className="tracking-tight font-medium text-gray-900  text-4xl">
