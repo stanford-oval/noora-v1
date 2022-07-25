@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Hero() {
   return (
@@ -16,15 +17,16 @@ export default function Hero() {
               Improve your social skills using AI.
             </p>
             <p className="mt-3 text-2xl tracking-tight text-slate-400">
-              Developed by Stanford&apos;s Open Virtual Assistant Lab, Noora is a
-              chatbot who guides you through a diverse set of social scenarios.
+              Developed by Stanford&apos;s Open Virtual Assistant Lab, Noora is
+              a chatbot who guides you through a diverse set of social
+              scenarios.
             </p>
             <div className="mt-6 mb-2 flex gap-4 justify-start flex-wrap">
-              <Link href="/playground">
+              <AnchorLink href="#homeChat" offset={63}>
                 <button className="button button-light font-medium">
-                  Visit Playground
+                  Meet Noora
                 </button>
-              </Link>
+              </AnchorLink>
               <a
                 href="https://oval.cs.stanford.edu"
                 target="_blank"

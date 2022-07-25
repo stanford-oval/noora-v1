@@ -4,7 +4,7 @@ import DoubleGridBg from "./../utility/DoubleGridBg";
 
 export default function About() {
   return (
-    <div className="relative bg-gray-50 overflow-hidden">
+    <div className="relative overflow-hidden">
       <DoubleGridBg />
       <div className="relative py-10 md:py-14">
         <main className="mx-auto max-w-8xl px-4">
