@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { PlaygroundContext } from "../Playground";
-import NooraChat from "./chat/NooraChat";
-import Menu from "./menu/Menu";
-import Summary from "./summary/Summary";
+import NooraChat from "../../chat-interface/chat/NooraChat";
+import Menu from "../../chat-interface/menu/Menu";
+import Summary from "../../chat-interface/summary/Summary";
 
 export default function Practice() {
   const { practice } = useContext(PlaygroundContext);
@@ -17,10 +17,7 @@ export default function Practice() {
           {convoState.value.turn == "summary" ? (
             <Summary history={history} convoState={convoState} />
           ) : (
-            <NooraChat
-              history={history}
-              convoState={convoState}
-            />
+            <NooraChat history={history} convoState={convoState} />
           )}
         </div>
         <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-full mx-auto md:min-h-full">

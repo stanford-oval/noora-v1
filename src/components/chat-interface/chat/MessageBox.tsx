@@ -1,9 +1,9 @@
 import { faMicrophone, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
-import getReply from "../../../../scripts/get-reply";
+import getReply from "../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
-import Microphone from "../../../global/utility/Microphone";
+import Microphone from "../../global/utility/Microphone";
 import { clsx } from "clsx";
 
 export default function MessageBox({ history, convoState }: any) {

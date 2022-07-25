@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { clsx } from "clsx";
-import { getStatement } from "../../../../scripts/get-reply";
+import { getStatement } from "../../../scripts/get-reply";
 
 export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
