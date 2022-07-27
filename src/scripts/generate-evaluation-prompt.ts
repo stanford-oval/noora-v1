@@ -13,7 +13,7 @@ export default function formPrompt(
   const fewShotExamples = getFewShotExamples(category.split("/")[1], attitudes);
   // console.log(fewShotExamples);
 
-  const prompt = formEvalPrompt(statement, fewShotExamples);
+  const prompt = formEvalPrompt(statement, reply, fewShotExamples);
   console.log(prompt);
 
   return prompt;
@@ -54,7 +54,11 @@ function getFewShotExamples(sentiment: string, attitudes: string[]) {
   return fewShotExamples;
 }
 
-function formEvalPrompt(statement: string, fewShotExamples: any[]) {
+function formEvalPrompt(
+  statement: string,
+  reply: string,
+  fewShotExamples: any[]
+) {
   let prompt = "";
 
   fewShotExamples.forEach((ex) => {
@@ -71,7 +75,7 @@ function formEvalPrompt(statement: string, fewShotExamples: any[]) {
   });
 
   // unseen statement
-  prompt += `You said, "${statement}"\nFeedback:`;
+  prompt += `You said, "${statement}"\n(1) ${reply}\nFeedback:`;
   return prompt;
 }
 

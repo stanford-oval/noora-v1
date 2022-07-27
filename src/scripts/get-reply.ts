@@ -74,9 +74,12 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       presence_penalty: convoState.value.model.presencePenalty,
     });
 
+    let outputStartText = output.slice(0, 15);
+
     if (
-      (output.includes("Good reply.") || output.includes("Bad reply.")) &&
-      output.length >= 20
+      (outputStartText.includes("Good reply.") ||
+        outputStartText.includes("Bad reply.")) &&
+      output.trim().split("\n")[0].length >= 20
     )
       break;
     else {
@@ -94,7 +97,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   } else {
     answers.push("Not quite!");
     answers.push(explanation);
-    answers.push("A better answer might've been: “" + target.trim() + "”");
+    // answers.push("A better answer might've been: “" + target.trim() + "”");
   }
 
   // SET PROGRESS
@@ -117,7 +120,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 }
 
 function parseResponse(output: any) {
-  if (output.includes("END")) output = output.slice(0, output.indexOf("END"));
+  output = output.trim();
   console.log("### Output text: " + output);
 
   let goodAnswer = false;
@@ -130,15 +133,16 @@ function parseResponse(output: any) {
   // ) {
   //   return { good_answer: null, explanation: null };
   // }
+  let outputStartText = output.slice(0, 15);
   let classification = "Good reply.";
-  if (output.includes(classification)) {
+  if (outputStartText.includes(classification)) {
     goodAnswer = true;
-    explanation = output.split("\n")[0].split(classification)[1].trim();
+    explanation = output.split(classification)[1].split("\n")[0];
   }
   classification = "Bad reply.";
-  if (output.includes(classification)) {
+  if (outputStartText.includes(classification)) {
     goodAnswer = false;
-    explanation = output.split("\n")[0].split(classification)[1].trim();
+    explanation = output.split(classification)[1].split("\n")[0];
   }
 
   return {
