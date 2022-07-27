@@ -60,7 +60,7 @@ export default async function getReply(
 
 async function getRating(message: string, statementObj: any, convoState: any) {
   const prompt = formPrompt(statementObj[1], statementObj[0], message);
-  let target = statementObj[2];
+  // let target = statementObj[2];
 
   let output = "";
   let classification = "";
@@ -69,37 +69,36 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   let numCalls = 0;
   let answers = [];
 
-  // first get good/bad answer
-  while (numCalls <= 2) {
-    output = await Completion({
-      model: convoState.value.model.name,
-      prompt: prompt,
-      temperature: 0,
-      max_tokens: 5,
-      frequency_penalty: 0,
-      presence_penalty: 0,
-    });
-    numCalls++;
+  try {
+    // first get good/bad answer
+    while (numCalls <= 2) {
+      output = await Completion({
+        model: convoState.value.model.name,
+        prompt: prompt,
+        temperature: 0,
+        max_tokens: 5,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+      });
+      numCalls++;
 
-    if (output.includes("Good reply.")) {
-      classification = "Good reply.";
-      goodAnswer = true;
-      break;
-    } else if (output.includes("Bad reply.")) {
-      classification = "Bad reply.";
-      goodAnswer = false;
-      break;
+      if (output.includes("Good reply.")) {
+        classification = "Good reply.";
+        goodAnswer = true;
+        break;
+      } else if (output.includes("Bad reply.")) {
+        classification = "Bad reply.";
+        goodAnswer = false;
+        break;
+      }
+
+      console.log("Output: " + output);
+      console.log("Regenerating rating...");
     }
 
-    console.log("Output: " + output);
-    console.log("Regenerating rating...");
-  }
+    if (classification == "")
+      throw `Could not generate classification for "${message}"!`;
 
-  if (classification == "") {
-    console.error("Could not generate classification.");
-    let explanation = "This is not a proper reply.";
-    answers = [explanation];
-  } else {
     console.log("Classification: " + classification);
 
     output = await Completion({
@@ -111,7 +110,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       presence_penalty: convoState.value.model.presencePenalty,
     });
 
-    let explanation = output.split("\n")[0];
+    explanation = output.split("\n")[0];
     console.log("Explanation: " + explanation);
 
     if (goodAnswer) {
@@ -122,6 +121,10 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       answers.push(explanation);
       // answers.push("A better answer might've been: “" + target.trim() + "”");
     }
+  } catch (error) {
+    console.error(error);
+    explanation = "This is not a proper reply.";
+    answers = [explanation];
   }
 
   // SET PROGRESS
