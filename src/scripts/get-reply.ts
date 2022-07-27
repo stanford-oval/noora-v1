@@ -62,19 +62,34 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   const prompt = formPrompt(statementObj[1], statementObj[0], message);
   let target = statementObj[2];
 
+  let output = "";
   // first get good/bad answer
-  let { goodAnswer, explanation } = await Completion({
-    model: convoState.value.model.name,
-    prompt: prompt,
-    temperature: convoState.value.model.temperature,
-    max_tokens: 55,
-    frequency_penalty: convoState.value.frequencyPenalty,
-    presence_penalty: convoState.value.model.presencePenalty,
-  }).then((output) => parseResponse(output));
+  while (true) {
+    output = await Completion({
+      model: convoState.value.model.name,
+      prompt: prompt,
+      temperature: convoState.value.model.temperature,
+      max_tokens: 55,
+      frequency_penalty: convoState.value.frequencyPenalty,
+      presence_penalty: convoState.value.model.presencePenalty,
+    });
+
+    if (
+      (output.includes("Good reply.") || output.includes("Bad reply.")) &&
+      output.length >= 20
+    )
+      break;
+    else {
+      console.log("Regenerating evaluation...");
+      console.log(output);
+    }
+  }
+
+  let { goodAnswer, explanation } = parseResponse(output);
 
   let answers = [];
   if (goodAnswer) {
-    answers.push("Good answer!");
+    answers.push("Good reply!");
     answers.push(explanation);
   } else {
     answers.push("Not quite!");
