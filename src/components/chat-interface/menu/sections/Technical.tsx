@@ -12,33 +12,16 @@ export default function Technical({ convoState }: any) {
 
       <NoorasMessageDetails convoState={convoState} />
 
-      <div className="mt-1">
-        <div>
-          <div className="flex items-stretch mt-1">
-            <label htmlFor={"numProblems"} className="font-bold">
-              &#35; Problems:
-            </label>
-            <div className="ml-auto">{convoState.value.numProblems}</div>
-          </div>
-          <input
-            id={"numProblems"}
-            type="range"
-            min={convoState.value.progress.length + 1}
-            max={Math.max(convoState.value.progress.length + 1, 20)}
-            defaultValue={convoState.value.numProblems}
-            disabled={!convoState.value.turn.startsWith("user-answer")}
-            onChange={(e: any) => {
-              convoState.setValue((cs: any) => ({
-                ...cs,
-                numProblems: Number(e.target.value),
-              }));
-            }}
-            step="1"
-            className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 gray-slider-thumb"
-          />
-        </div>
-      </div>
-
+      <Slider
+        parameter={{
+          name: "Leniency",
+          description: "1 = most lenient",
+          min: 0,
+          max: 1,
+          propertyName: "goodAnswerThreshold",
+        }}
+        convoState={convoState}
+      />
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
 
       {[
@@ -78,10 +61,9 @@ function NoorasMessageDetails({ convoState }: any) {
   return (
     <div>
       <div>
-        <b>Problem {convoState.value.progress.length} Categories:</b>
+        <b>Statement {convoState.value.progress.length}: </b>
+        {lastProblem.statementCategory}
       </div>
-      <div>Statement: {lastProblem.statementCategory}</div>
-      <div>Reply: {lastProblem.replyCategory}</div>
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
     </div>
@@ -99,6 +81,9 @@ function Slider({ parameter, convoState }: any) {
           {convoState.value.model[parameter.propertyName]}
         </div>
       </div>
+      {parameter.description && (
+        <div className="text-gray-500 text-xs">({parameter.description})</div>
+      )}
       <input
         id={parameter.propertyName}
         type="range"

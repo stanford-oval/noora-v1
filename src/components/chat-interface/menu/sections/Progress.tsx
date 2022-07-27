@@ -5,33 +5,61 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Progress({ convoState }: any) {
   return (
-    <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
-      <CheckMarks convoState={convoState} />
-      <div className="border-1 border-gray-300 bg-gray-300 w-10/12 mx-auto"></div>
-      <div className="flex flex-row justify-center py-2 text-center">
-        {[
-          {
-            units: "scenarios",
-            num: convoState.value.progress.length,
-            denom: convoState.value.numProblems,
-          },
-          {
-            units: "correct",
-            num: convoState.value.progress.filter((p: any) => p.goodAnswer)
-              .length,
-            denom: convoState.value.progress.length,
-          },
-        ].map((x) => (
-          <div className="px-3" key={x.units}>
-            <span className="font-bold text-3xl text-noora-primary-main">
-              {x.num}
-            </span>
-            <span className="font-normal text-sm text-gray-400">
-              /{x.denom}
-            </span>
-            <div className="text-gray-400 -mt-1">{x.units}</div>
+    <div>
+      <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
+        <CheckMarks convoState={convoState} />
+        <div className="border-1 border-gray-300 bg-gray-300 w-10/12 mx-auto"></div>
+        <div className="flex flex-row justify-center py-2 text-center">
+          {[
+            {
+              units: "scenarios",
+              num: convoState.value.progress.length,
+              denom: convoState.value.numProblems,
+            },
+            {
+              units: "correct",
+              num: convoState.value.progress.filter((p: any) => p.goodAnswer)
+                .length,
+              denom: convoState.value.progress.length,
+            },
+          ].map((x) => (
+            <div className="px-3" key={x.units}>
+              <span className="font-bold text-3xl text-noora-primary-main">
+                {x.num}
+              </span>
+              <span className="font-normal text-sm text-gray-400">
+                /{x.denom}
+              </span>
+              <div className="text-gray-400 -mt-1">{x.units}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-1 text-gray-700 px-1">
+        <div>
+          <div className="flex items-stretch mt-1">
+            <label htmlFor={"numProblems"} className="font-bold">
+              &#35; Problems:
+            </label>
+            <div className="ml-auto">{convoState.value.numProblems}</div>
           </div>
-        ))}
+          <input
+            id={"numProblems"}
+            type="range"
+            min={convoState.value.progress.length + 1}
+            max={Math.max(convoState.value.progress.length + 1, 20)}
+            defaultValue={convoState.value.numProblems}
+            disabled={!convoState.value.turn.startsWith("user-answer")}
+            onChange={(e: any) => {
+              convoState.setValue((cs: any) => ({
+                ...cs,
+                numProblems: Number(e.target.value),
+              }));
+            }}
+            step="1"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 gray-slider-thumb"
+          />
+        </div>
       </div>
     </div>
   );
