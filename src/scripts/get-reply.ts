@@ -64,9 +64,13 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
   let output = "";
   let classification = "";
+  let explanation = "";
   let goodAnswer = false;
+  let numCalls = 0;
+  let answers = [];
+
   // first get good/bad answer
-  while (true) {
+  while (numCalls <= 2) {
     output = await Completion({
       model: convoState.value.model.name,
       prompt: prompt,
@@ -75,6 +79,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       frequency_penalty: 0,
       presence_penalty: 0,
     });
+    numCalls++;
 
     if (output.includes("Good reply.")) {
       classification = "Good reply.";
@@ -85,30 +90,38 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       goodAnswer = false;
       break;
     }
+
+    console.log("Output: " + output);
+    console.log("Regenerating rating...");
   }
 
-  console.log("Classification: " + classification);
-
-  output = await Completion({
-    model: convoState.value.model.name,
-    prompt: prompt + " " + classification,
-    temperature: convoState.value.model.temperature,
-    max_tokens: 40,
-    frequency_penalty: convoState.value.frequencyPenalty,
-    presence_penalty: convoState.value.model.presencePenalty,
-  });
-
-  let explanation = output.split("\n")[0];
-  console.log("Explanation: " + explanation);
-
-  let answers = [];
-  if (goodAnswer) {
-    answers.push("Good reply!");
-    answers.push(explanation);
+  if (classification == "") {
+    console.error("Could not generate classification.");
+    let explanation = "This is not a proper reply.";
+    answers = [explanation];
   } else {
-    answers.push("Not quite!");
-    answers.push(explanation);
-    // answers.push("A better answer might've been: “" + target.trim() + "”");
+    console.log("Classification: " + classification);
+
+    output = await Completion({
+      model: convoState.value.model.name,
+      prompt: prompt + " " + classification,
+      temperature: convoState.value.model.temperature,
+      max_tokens: 40,
+      frequency_penalty: convoState.value.frequencyPenalty,
+      presence_penalty: convoState.value.model.presencePenalty,
+    });
+
+    let explanation = output.split("\n")[0];
+    console.log("Explanation: " + explanation);
+
+    if (goodAnswer) {
+      answers.push("Good reply!");
+      answers.push(explanation);
+    } else {
+      answers.push("Not quite!");
+      answers.push(explanation);
+      // answers.push("A better answer might've been: “" + target.trim() + "”");
+    }
   }
 
   // SET PROGRESS
