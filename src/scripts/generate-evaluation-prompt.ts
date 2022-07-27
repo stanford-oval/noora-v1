@@ -8,11 +8,13 @@ export default function formPrompt(
   reply: string
 ) {
   const attitudes = selectAttitudes(all_attitudes.slice());
-
-  console.log(attitudes);
+  // console.log(attitudes);
 
   const fewShotExamples = getFewShotExamples(category.split("/")[1], attitudes);
-  console.log(fewShotExamples);
+  // console.log(fewShotExamples);
+
+  const evalPrompt = formEvalPrompt(statement, fewShotExamples);
+  console.log(evalPrompt);
 
   let prompt = '"' + statement + '"\nYou reply, "' + reply + '"';
 
@@ -56,4 +58,29 @@ function getFewShotExamples(sentiment: string, attitudes: string[]) {
   });
 
   return fewShotExamples;
+}
+
+function formEvalPrompt(statement: string, fewShotExamples: any[]) {
+  let prompt = "";
+
+  fewShotExamples.forEach((ex) => {
+    console.log(ex);
+    prompt += `You said, "${ex["statement"]}"\n`;
+    Object.values(ex["replies"]).forEach((reply: any, idx: number) => {
+      console.log(Object.keys(ex["replies"])[idx]);
+      prompt += `(${idx + 1}) I replied, "${reply["reply"]}"\n`;
+      prompt += `Feedback: ${capFirst(reply["rating"].trim())} reply. ${
+        reply["explanation"]
+      }\n`;
+    });
+    prompt += "\n";
+  });
+
+  // unseen statement
+  prompt += `You said, "${statement}"\nFeedback:`;
+  return prompt;
+}
+
+function capFirst(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }

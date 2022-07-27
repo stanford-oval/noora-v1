@@ -528,10 +528,10 @@ const examples = {
           "Oh my god. Your cubicle, that everyone else also has, is so amazing and beatiful. Breathtaking.",
       },
       "self-centered": {
-        explanation: "This makes me feel worse about myself and my cubicle.",
+        explanation:
+          "Although you might be trying to empathize with me, I am slightly upset you make the conversation only about yourself.",
         rating: "bad",
-        reply:
-          "What's so nice about a cubicle? Everyone in the office has the same one.",
+        reply: "I have a cubicle too, and it's on the third floor.",
       },
       statement: "This is my cubicle.",
       supportive: {
