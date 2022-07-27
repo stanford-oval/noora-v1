@@ -63,32 +63,43 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   let target = statementObj[2];
 
   let output = "";
+  let classification = "";
+  let goodAnswer = false;
   // first get good/bad answer
   while (true) {
     output = await Completion({
       model: convoState.value.model.name,
       prompt: prompt,
-      temperature: convoState.value.model.temperature,
-      max_tokens: 55,
-      frequency_penalty: convoState.value.frequencyPenalty,
-      presence_penalty: convoState.value.model.presencePenalty,
+      temperature: 0,
+      max_tokens: 5,
+      frequency_penalty: 0,
+      presence_penalty: 0,
     });
 
-    let outputStartText = output.slice(0, 15);
-
-    if (
-      (outputStartText.includes("Good reply.") ||
-        outputStartText.includes("Bad reply.")) &&
-      output.trim().split("\n")[0].length >= 20
-    )
+    if (output.includes("Good reply.")) {
+      classification = "Good reply.";
+      goodAnswer = true;
       break;
-    else {
-      console.log("Regenerating evaluation...");
-      console.log(output);
+    } else if (output.includes("Bad reply.")) {
+      classification = "Bad reply.";
+      goodAnswer = false;
+      break;
     }
   }
 
-  let { goodAnswer, explanation } = parseResponse(output);
+  console.log("Classification: " + classification);
+
+  output = await Completion({
+    model: convoState.value.model.name,
+    prompt: prompt + " " + classification,
+    temperature: convoState.value.model.temperature,
+    max_tokens: 40,
+    frequency_penalty: convoState.value.frequencyPenalty,
+    presence_penalty: convoState.value.model.presencePenalty,
+  });
+
+  let explanation = output.split("\n")[0];
+  console.log("Explanation: " + explanation);
 
   let answers = [];
   if (goodAnswer) {
@@ -110,45 +121,13 @@ async function getRating(message: string, statementObj: any, convoState: any) {
         statementCategory: statementObj[0],
         reply: message,
         explanation: explanation,
-        replyCategory: "NONE",
+        replyCategory: null,
         goodAnswer: goodAnswer,
       },
     ],
   }));
 
   return answers;
-}
-
-function parseResponse(output: any) {
-  output = output.trim();
-  console.log("### Output text: " + output);
-
-  let goodAnswer = false;
-  let explanation = "";
-  // if (
-  //   !(
-  //     output.includes("This was a good answer.") ||
-  //     output.includes("This was a bad answer.")
-  //   )
-  // ) {
-  //   return { good_answer: null, explanation: null };
-  // }
-  let outputStartText = output.slice(0, 15);
-  let classification = "Good reply.";
-  if (outputStartText.includes(classification)) {
-    goodAnswer = true;
-    explanation = output.split(classification)[1].split("\n")[0];
-  }
-  classification = "Bad reply.";
-  if (outputStartText.includes(classification)) {
-    goodAnswer = false;
-    explanation = output.split(classification)[1].split("\n")[0];
-  }
-
-  return {
-    goodAnswer: goodAnswer,
-    explanation: explanation,
-  };
 }
 
 export function getStatement(convoState: any) {
