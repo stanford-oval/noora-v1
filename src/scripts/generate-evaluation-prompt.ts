@@ -7,13 +7,12 @@ export default function formPrompt(
   category: string,
   reply: string
 ) {
-  // choose 10 attitudes randomly
   const attitudes = selectAttitudes(all_attitudes.slice());
+
   console.log(attitudes);
 
-  // replace one of those 10 with "inquiring"
-
-  // construct inital prompt with those attitudes
+  const fewShotExamples = getFewShotExamples(category.split("/")[1], attitudes);
+  console.log(fewShotExamples);
 
   let prompt = '"' + statement + '"\nYou reply, "' + reply + '"';
 
@@ -38,4 +37,23 @@ function selectAttitudes(all_attitudes_copy: string[]) {
 
   attitudes[Math.floor(Math.random() * 10)] = "inquiring";
   return attitudes;
+}
+
+function getFewShotExamples(sentiment: string, attitudes: string[]) {
+  // two objects in fewShotExamples: {statement: '', replies: [{attitude: '', reply: '', rating: '', explanation: ''}]}
+  let fewShotExamples: any[] = [];
+
+  let currExs = examples[sentiment as keyof typeof examples];
+
+  [currExs["general"], currExs["work"]].forEach((exs, i) => {
+    console.log(exs["statement"], i);
+    let selectedExs = Object.fromEntries(
+      Object.entries(exs).filter(
+        ([key]) => attitudes.slice(i * 5, 5 * (i + 1)).indexOf(key) != -1
+      )
+    );
+    fewShotExamples.push({ statement: exs["statement"], replies: selectedExs });
+  });
+
+  return fewShotExamples;
 }
