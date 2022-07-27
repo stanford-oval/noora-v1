@@ -13,14 +13,8 @@ export default function formPrompt(
   const fewShotExamples = getFewShotExamples(category.split("/")[1], attitudes);
   // console.log(fewShotExamples);
 
-  const evalPrompt = formEvalPrompt(statement, fewShotExamples);
-  console.log(evalPrompt);
-
-  let prompt = '"' + statement + '"\nYou reply, "' + reply + '"';
-
-  console.log("### Prompt: " + prompt);
-
-  console.log(category);
+  const prompt = formEvalPrompt(statement, fewShotExamples);
+  console.log(prompt);
 
   return prompt;
 }

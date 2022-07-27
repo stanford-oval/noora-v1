@@ -1,8 +1,7 @@
 import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
 import Completion from "./Completion";
-import formPrompt from './generate-evaluation-prompt';
-
+import formPrompt from "./generate-evaluation-prompt";
 
 const module_statements = {
   general: general_statements,
@@ -64,7 +63,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   let target = statementObj[2];
 
   // first get good/bad answer
-  let { goodAnswer, replyCategory, explanation } = await Completion({
+  let { goodAnswer, explanation } = await Completion({
     model: convoState.value.model.name,
     prompt: prompt,
     temperature: convoState.value.model.temperature,
@@ -93,7 +92,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
         statementCategory: statementObj[0],
         reply: message,
         explanation: explanation,
-        replyCategory: replyCategory,
+        replyCategory: "NONE",
         goodAnswer: goodAnswer,
       },
     ],
@@ -116,33 +115,19 @@ function parseResponse(output: any) {
   // ) {
   //   return { good_answer: null, explanation: null };
   // }
-  let classification = "This was a good answer.";
+  let classification = "Good reply.";
   if (output.includes(classification)) {
     goodAnswer = true;
-    explanation = output
-      .slice(
-        output.indexOf(classification) + classification.length,
-        output.length
-      )
-      .trim();
+    explanation = output.split("\n")[0].split(classification)[1].trim();
   }
-  classification = "This was a bad answer.";
+  classification = "Bad reply.";
   if (output.includes(classification)) {
     goodAnswer = false;
-    explanation = output
-      .slice(
-        output.indexOf(classification) + classification.length,
-        output.length
-      )
-      .trim();
+    explanation = output.split("\n")[0].split(classification)[1].trim();
   }
-
-  let replyCategory = output.split(":")[0];
-  replyCategory = replyCategory.split(" ").slice(0, 4).join(" "); // limits words in category
 
   return {
     goodAnswer: goodAnswer,
-    replyCategory: replyCategory,
     explanation: explanation,
   };
 }
