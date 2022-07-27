@@ -9,11 +9,18 @@ export default function Menu({ convoState }: any) {
   const sections = [
     { title: "Modules", component: <Modules convoState={convoState} /> },
     { title: "Progress", component: <Progress convoState={convoState} /> },
-    { title: "Technical", component: <Technical convoState={convoState} />, defaultHide: true },
+    {
+      title: "Technical",
+      component: <Technical convoState={convoState} />,
+      defaultHide: !convoState.value.showTechnical,
+    },
   ];
 
   return (
-    <div id="chat-window" className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll">
+    <div
+      id="chat-window"
+      className="w-full bg-white border-2 border-gray-400 rounded-md h-fit md:min-h-full overflow-y-auto pretty-scroll"
+    >
       <div className="border-b-2 border-gray-400 py-4">
         <div className="text-2xl text-center font-bold text-noora-secondary-main">
           Info
