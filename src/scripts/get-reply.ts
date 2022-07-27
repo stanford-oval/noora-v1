@@ -1,6 +1,8 @@
 import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
 import Completion from "./Completion";
+import formPrompt from './generate-evaluation-prompt';
+
 
 const module_statements = {
   general: general_statements,
@@ -58,9 +60,8 @@ export default async function getReply(
 }
 
 async function getRating(message: string, statementObj: any, convoState: any) {
-  let prompt = '"' + statementObj[1] + '"\nYou reply, "' + message + '"';
+  const prompt = formPrompt(statementObj[1], statementObj[0], message);
   let target = statementObj[2];
-  console.log("### Prompt: " + prompt);
 
   // first get good/bad answer
   let { goodAnswer, replyCategory, explanation } = await Completion({
