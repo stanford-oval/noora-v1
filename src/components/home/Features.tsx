@@ -91,7 +91,7 @@ export default function Features() {
                 rel="noopener noreferrer"
                 className="underline font-medium"
               >
-                Stanford's OVAL Lab
+                Stanford&apos;s OVAL Lab
               </a>{" "}
               in collaboration with{" "}
               <a

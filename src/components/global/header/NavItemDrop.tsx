@@ -26,7 +26,7 @@ export default function NavItemDrop({
         />
       </Popover.Button>
 
-      <Popover.Panel className="absolute z-10 bg-white shadow">
+      <Popover.Panel className="-mt-1 absolute z-10 bg-white shadow">
         <div className="flex flex-col">
           {dropRoutes.map((r: any) => {
             return (
