@@ -13,14 +13,15 @@ export default function InputForm() {
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     let statement = query.value.slice();
-    query.setValue("");
-    if (inputBox.current) inputBox.current.focus();
-    let id = uuidv4();
-    results.setValue((r:any) => ([...r, { id: id, statement: statement }]));
+    query.setValue("Noora is not available right now.");
+    return
+    // if (inputBox.current) inputBox.current.focus();
+    // let id = uuidv4();
+    // results.setValue((r:any) => ([...r, { id: id, statement: statement }]));
 
-    console.log("Generating result for: " + statement);
-    let result = await generateResult(statement, id);
-    resultsQueue.setValue([result]);
+    // console.log("Generating result for: " + statement);
+    // let result = await generateResult(statement, id);
+    // resultsQueue.setValue([result]);
   };
 
   return (
