@@ -30,7 +30,7 @@ const nooraFeatures = [
 
 export default function Features() {
   return (
-    <div className="py-16 bg-gray-50 overflow-hidden md:py-24">
+    <div className="py-14 bg-gray-50 overflow-hidden md:py-22">
       <div className="relative container">
         <svg
           className="hidden md:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
@@ -78,7 +78,7 @@ export default function Features() {
 
         <div className="relative md:grid md:grid-cols-2 md:gap-16 md:items-center">
           <div className="relative">
-            <h3 className="text-2xl font-bold text-gray-900 tracking-tight sm:text-3xl">
+            <h3 className="font-bold text-gray-900 tracking-tight text-3xl md:4xl">
               About <span className="text-noora-primary-main">Noora</span>
             </h3>
             <p className="mt-3 text-lg text-gray-500">

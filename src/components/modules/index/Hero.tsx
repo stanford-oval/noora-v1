@@ -6,7 +6,7 @@ import DisclosureTransition from "../../global/utility/DisclosureTransition";
 export default function Hero() {
   return (
     <div className="pt-16">
-      <div className="container pt-8">
+      <div className="container pt-6 md:pt-8">
         <p className="inline font-bold text-noora-primary-dark1 font-display text-4xl tracking-tight text-transparent">
           Practice with our{" "}
           <span className="special-underline">curated modules</span>.

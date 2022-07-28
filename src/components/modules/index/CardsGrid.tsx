@@ -4,10 +4,10 @@ import modules from "../../../data/modules";
 
 export default function CardsGrid() {
   return (
-    <div className="container pt-2 pb-10">
+    <div className="container pt-2 pb-8">
       <div className="flex flex-row items-stretch justify-center flex-wrap w-full">
         {modules.map((module) => (
-          <div key={module.title} className="group relative w-1/2 p-1">
+          <div key={module.title} className="group relative md:w-1/2 p-1">
             <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
               <div>
                 <span className="rounded-lg inline-flex bg-indigo-50 border-2 border-indigo-100 text-indigo-700 p-0.5">
