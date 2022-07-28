@@ -18,7 +18,7 @@ export default function Technical({ convoState }: any) {
           description: "1 = most lenient",
           min: 0,
           max: 1,
-          propertyName: "goodAnswerThreshold",
+          propertyName: "leniency",
         }}
         convoState={convoState}
       />

@@ -72,21 +72,40 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   try {
     // first get good/bad answer
     while (numCalls <= 2) {
-      output = await Completion({
-        model: convoState.value.model.name,
-        prompt: prompt,
-        temperature: 0,
-        max_tokens: 5,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-      });
+      throw "Noora is not available right now.";
+      let output = await fetch("/api/openai", {
+        method: "POST",
+        body: JSON.stringify({
+          model: convoState.value.model.name,
+          prompt: prompt,
+          temperature: 0,
+          max_tokens: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          logprobs: 5,
+        }),
+      }).then((res) => res.json());
+
       numCalls++;
 
-      if (output.includes("Good reply.")) {
+      output = output["text"];
+
+      // let probsObj = output["logprobs"]["top_logprobs"][0];
+      // let probs = softmax(Object.values(probsObj));
+      // let goodProb = 0.0001
+      // if (probsObj.indexOf(" Good") != -1)
+      //   goodProb = probs[probsObj.indexOf(" Good")]
+      // let badProb = 0.0001;
+      // if (probsObj.indexOf(" Bad") != -1)
+      //   badProb = probs[probsObj.indexOf(" Bad")];
+      // console.log("Good: ", goodProb)
+      // console.log("Bad: ", badProb);
+
+      if (output.includes("Good")) {
         classification = "Good reply.";
         goodAnswer = true;
         break;
-      } else if (output.includes("Bad reply.")) {
+      } else if (output.includes("Bad")) {
         classification = "Bad reply.";
         goodAnswer = false;
         break;
@@ -123,7 +142,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     }
   } catch (error) {
     console.error(error);
-    explanation = "This is not a proper reply.";
+    explanation = "Noora is not available right now.";
     answers = [explanation];
   }
 
@@ -166,11 +185,26 @@ export function getStatement(convoState: any) {
   return statement[1];
 }
 
-function timeout(ms: number) {
-  // for testing purposes
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// function timeout(ms: number) {
+//   // for testing purposes
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 
 function getRandomItem(items: any) {
   return items[Math.floor(Math.random() * items.length)];
+}
+
+function softmax(arr: any[]) {
+  return arr.map(function (value: any, index: any) {
+    return (
+      Math.exp(value) /
+      arr
+        .map(function (y /*value*/) {
+          return Math.exp(y);
+        })
+        .reduce(function (a, b) {
+          return a + b;
+        })
+    );
+  });
 }
