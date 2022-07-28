@@ -9,12 +9,8 @@ const routes = [
         name: "Overview",
       },
       {
-        href: "/modules/general",
-        name: "General",
-      },
-      {
-        href: "/modules/work",
-        name: "Work",
+        href: "/modules/noora",
+        name: "Noora",
       },
     ],
   },

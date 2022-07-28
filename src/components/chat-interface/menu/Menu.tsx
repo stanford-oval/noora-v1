@@ -1,9 +1,10 @@
 import React from "react";
-import { Disclosure, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import Modules from "./sections/Modules";
 import Progress from "./sections/Progress";
 import Technical from "./sections/Technical";
+import DisclosureTransition from "../../global/utility/DisclosureTransition";
 
 export default function Menu({ convoState }: any) {
   const sections = [
@@ -50,20 +51,5 @@ export default function Menu({ convoState }: any) {
         ))}
       </div>
     </div>
-  );
-}
-
-function DisclosureTransition({ children }: any) {
-  return (
-    <Transition
-      enter="transition duration-300 ease-out"
-      enterFrom="transform scale-80 opacity-0"
-      enterTo="transform scale-100 opacity-100"
-      leave="transition duration-200 ease-out"
-      leaveFrom="transform scale-100 opacity-100"
-      leaveTo="transform scale-80 opacity-0"
-    >
-      {children}
-    </Transition>
   );
 }

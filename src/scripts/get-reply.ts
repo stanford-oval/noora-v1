@@ -66,7 +66,6 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   let classification = "";
   let explanation = "";
   let goodAnswer = false;
-  let numCalls = 0;
   let answers = [];
 
   try {
