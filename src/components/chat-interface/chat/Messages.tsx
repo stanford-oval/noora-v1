@@ -26,10 +26,15 @@ export default function Messages({ history, convoState }: any) {
   useEffect(() => {
     setTimeout(() => {
       if (messagesBottom.current)
-        messagesBottom.current.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-        });
+        if (
+          history.value
+            .slice(0, Math.min(history.value.length, 5))
+            .filter((h: any) => !h.fromNoora).length > 0
+        )
+          messagesBottom.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+          });
     }, 5);
   }, [history.value, convoState.value.turn]);
 

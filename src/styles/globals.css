@@ -17,10 +17,12 @@
     height: 1rem;
     border-radius: 100%;
     transition: all 0.5s ease-out;
+    box-shadow: none;
 }
 
 .gray-slider-thumb::-webkit-slider-thumb:hover {
     background: #aaa;
+    box-shadow: none;
 }
 
 .gray-slider-thumb:disabled::-webkit-slider-thumb {
