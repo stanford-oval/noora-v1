@@ -4,7 +4,6 @@ import React, {
   useState,
   useEffect,
   useMemo,
-  useRef,
 } from "react";
 import AskNoora from "./ask-noora/AskNoora";
 import { Tab } from "@headlessui/react";
