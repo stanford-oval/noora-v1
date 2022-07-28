@@ -6,7 +6,7 @@ export default function RateLimitingTest() {
   );
 
   const makeRequest = async () => {
-    const res = await fetch("/api/hello");
+    const res = await fetch("/api/openai");
 
     setResponse({
       status: res.status,

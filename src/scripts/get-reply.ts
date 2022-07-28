@@ -71,52 +71,39 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
   try {
     // first get good/bad answer
-    while (numCalls <= 2) {
-      throw "Noora is not available right now.";
-      let output = await fetch("/api/openai", {
-        method: "POST",
-        body: JSON.stringify({
-          model: convoState.value.model.name,
-          prompt: prompt,
-          temperature: 0,
-          max_tokens: 1,
-          frequency_penalty: 0,
-          presence_penalty: 0,
-          logprobs: 5,
-        }),
-      }).then((res) => res.json());
+    throw "Noora is not available right now.";
+    let output = await fetch("/api/openai", {
+      method: "POST",
+      body: JSON.stringify({
+        model: convoState.value.model.name,
+        prompt: prompt,
+        temperature: 0,
+        max_tokens: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+        logprobs: 5,
+      }),
+    }).then((res) => res.json());
 
-      numCalls++;
+    output = output["text"];
 
-      output = output["text"];
+    let probsObj = output["logprobs"]["top_logprobs"][0];
+    let probs = softmax(Object.values(probsObj));
+    let goodProb = 0.0001;
+    if (probsObj.indexOf(" Good") != -1)
+      goodProb = probs[probsObj.indexOf(" Good")];
+    let badProb = 0.0001;
+    if (probsObj.indexOf(" Bad") != -1)
+      badProb = probs[probsObj.indexOf(" Bad")];
+    let percentage = goodProb / (goodProb + badProb);
 
-      // let probsObj = output["logprobs"]["top_logprobs"][0];
-      // let probs = softmax(Object.values(probsObj));
-      // let goodProb = 0.0001
-      // if (probsObj.indexOf(" Good") != -1)
-      //   goodProb = probs[probsObj.indexOf(" Good")]
-      // let badProb = 0.0001;
-      // if (probsObj.indexOf(" Bad") != -1)
-      //   badProb = probs[probsObj.indexOf(" Bad")];
-      // console.log("Good: ", goodProb)
-      // console.log("Bad: ", badProb);
-
-      if (output.includes("Good")) {
-        classification = "Good reply.";
-        goodAnswer = true;
-        break;
-      } else if (output.includes("Bad")) {
-        classification = "Bad reply.";
-        goodAnswer = false;
-        break;
-      }
-
-      console.log("Output: " + output);
-      console.log("Regenerating rating...");
+    if (percentage > 1 - convoState.value.model.leniency) {
+      classification = "Good reply.";
+      goodAnswer = true;
+    } else {
+      classification = "Bad reply.";
+      goodAnswer = false;
     }
-
-    if (classification == "")
-      throw `Could not generate classification for "${message}"!`;
 
     console.log("Classification: " + classification);
 
@@ -127,9 +114,10 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       max_tokens: 40,
       frequency_penalty: convoState.value.frequencyPenalty,
       presence_penalty: convoState.value.model.presencePenalty,
+      stop: "\n",
     });
 
-    explanation = output.split("\n")[0];
+    explanation = output.trim()
     console.log("Explanation: " + explanation);
 
     if (goodAnswer) {

@@ -23,17 +23,16 @@ export default async function handler(
 
     const response = await openai.createCompletion(req.body);
 
-    // let text = "";
-    // let logprobs = {};
-    // if (response && response.data && response.data.choices) {
-    //   if (response.data.choices[0].text) text = response.data.choices[0].text;
+    let text = "";
+    let logprobs = {};
+    if (response && response.data && response.data.choices) {
+      if (response.data.choices[0].text) text = response.data.choices[0].text;
 
-    //   if (response.data.choices[0].logprobs)
-    //     logprobs = response.data.choices[0].logprobs;
-    // }
+      if (response.data.choices[0].logprobs)
+        logprobs = response.data.choices[0].logprobs;
+    }
 
-    // res.status(200).json({ text: text, logprobs: logprobs });
-    res.status(400).json({ text: "ERROR", logprobs: {} });
+    res.status(200).json({ text: text, logprobs: logprobs });
   } catch {
     res.status(429).json({ error: "Rate limit exceeded" });
   }

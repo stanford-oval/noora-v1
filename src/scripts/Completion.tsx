@@ -16,4 +16,5 @@ type CompletionParameters = {
   max_tokens: number;
   frequency_penalty: number;
   presence_penalty: number;
+  stop?: string;
 };
