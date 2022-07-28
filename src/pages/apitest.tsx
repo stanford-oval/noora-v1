@@ -18,13 +18,9 @@ export default function apitest() {
 
   return (
     <main>
-      <h1>Next.js API Routes Rate Limiting</h1>
-      <p>
-        This example uses <code>lru-cache</code>{" "}
-        to implement a simple rate limiter for API routes (Serverless
-        Functions).
-      </p>
-      <button onClick={() => makeRequest()}>Make Request</button>
+      <button className="button bg-red-500 text-white" onClick={() => makeRequest()}>
+        Make Request
+      </button>
       {response && (
         <code>
           <pre>{JSON.stringify(response, null, 2)}</pre>
