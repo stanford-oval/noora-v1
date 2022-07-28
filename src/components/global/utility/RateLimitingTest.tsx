@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function apitest() {
+export default function RateLimitingTest() {
   const [response, setResponse] = useState<Record<string, unknown> | null>(
     null
   );
@@ -18,7 +18,10 @@ export default function apitest() {
 
   return (
     <main>
-      <button className="button bg-red-500 text-white" onClick={() => makeRequest()}>
+      <button
+        className="button bg-red-500 text-white"
+        onClick={() => makeRequest()}
+      >
         Make Request
       </button>
       {response && (
