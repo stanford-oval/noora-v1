@@ -6,7 +6,7 @@ export default function CardsGrid() {
   return (
     <div className="container pt-2 pb-8 md:pb-10">
       <div className="flex flex-row items-stretch justify-center flex-wrap w-full">
-        {Object.values(modules).map((module, idx) => (
+        {Object.values(modules).map((module) => (
           <div key={module.title} className="group relative md:w-1/2 p-1">
             <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
               <div>
@@ -16,9 +16,7 @@ export default function CardsGrid() {
               </div>
               <div className="mt-4">
                 <h3 className="text-2xl font-bold">
-                  <Link
-                    href={"/modules/noora?module=" + Object.keys(modules)[idx]}
-                  >
+                  <Link href={"/modules/noora?module=" + module.module}>
                     <a className="text-noora-secondary-light">
                       {/* Extend touch target to entire panel */}
                       <span className="absolute inset-0" aria-hidden="true" />

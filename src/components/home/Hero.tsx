@@ -26,7 +26,7 @@ export default function Hero() {
                   Meet Noora
                 </button>
               </AnchorLink> */}
-              <Link href="/modules">
+              <Link href="/modules/noora?module=all">
                 <button className="button button-light font-medium">
                   Meet Noora
                 </button>

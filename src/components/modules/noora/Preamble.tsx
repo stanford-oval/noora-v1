@@ -17,7 +17,7 @@ export default function Preamble({ module }: any) {
           {module.title == "All" ? "s" : ""}
         </p>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-2">
-          <p>{module.selected}</p>
+          <p>{module.selectedDesc}</p>
 
           <p>
             For example, if Noora says “

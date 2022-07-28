@@ -9,8 +9,9 @@ import {
 const modules = {
   general: {
     title: "General",
+    module: "general",
     desc: "Practice responding to positive, neutral, and negative statements in a general context. In this module, Noora is your friend and speaks on a variety of topics including family, weather, and school. ",
-    selected:
+    selectedDesc:
       "In this module, Noora is your friend and you will practice replying to statements of a variety of general topics.",
     example: {
       noora: "I had a great vacation",
@@ -23,8 +24,9 @@ const modules = {
   },
   work: {
     title: "Work",
+    module: "work",
     desc: "Practice responding to positive, neutral, and negative statements in the workplace. In this module, Noora is your co-worker and speaks on a variety of work-related topics such as promotions and job updates.",
-    selected:
+    selectedDesc:
       "In this module, Noora is your co-worker and you will practice replying to statements you might hear in a workplace.",
     example: {
       noora: "I’m way too busy right now",
@@ -37,8 +39,9 @@ const modules = {
   },
   all: {
     title: "All",
+    module: "all",
     desc: "Don't know which module to pick or want to try them all? Practice responding to positive, neutral, and negative statements in both the general and work settings.",
-    selected:
+    selectedDesc:
       "Here, you can practice topics of both the General and Work module, which consist of a variety of social scenarios.",
     example: {
       noora: "I had a great vacation",

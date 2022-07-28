@@ -3,16 +3,13 @@ import Page from "../../utility/Page";
 import { useRouter } from "next/router";
 import modules from "../../../data/modules";
 import Preamble from "./Preamble";
+import ModuleChat from "./ModuleChat";
 
 export default function Noora() {
   const router = useRouter();
 
   const [selectedModule, setSelectedModule] = useState(
-    modules[
-      Object.keys(modules).filter(
-        (m) => m == router.query.module
-      )[0] as keyof typeof modules
-    ]
+    modules[router.query.module as keyof typeof modules]
   );
 
   useEffect(() => {
@@ -43,6 +40,24 @@ export default function Noora() {
         {selectedModule && (
           <div>
             <Preamble module={selectedModule} />
+            <ModuleChat
+              modules={
+                selectedModule.module == "all"
+                  ? Object.values(modules).map((m: any) => {
+                      console.log(m.module);
+                      if (m.module == "all") return;
+                      return { title: m.module, active: true, fixed: true };
+                    })
+                  : Object.values(modules).map((m: any) => {
+                      if (m.module == "all") return;
+                      return {
+                        title: m.module,
+                        active: selectedModule.module == m.module,
+                        fixed: true,
+                      };
+                    })
+              }
+            />
           </div>
         )}
       </Page>
