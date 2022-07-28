@@ -3,6 +3,7 @@ const routes = [
   { href: "/playground", name: "Playground" },
   {
     name: "Modules",
+    href: "/modules",
     dropRoutes: [
       {
         href: "/modules",
