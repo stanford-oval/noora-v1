@@ -41,22 +41,21 @@ export default function Noora() {
           <div>
             <Preamble module={selectedModule} />
             <ModuleChat
-              modules={
-                selectedModule.module == "all"
-                  ? Object.values(modules).map((m: any) => {
-                      console.log(m.module);
-                      if (m.module == "all") return;
-                      return { title: m.module, active: true, fixed: true };
-                    })
-                  : Object.values(modules).map((m: any) => {
-                      if (m.module == "all") return;
-                      return {
-                        title: m.module,
-                        active: selectedModule.module == m.module,
-                        fixed: true,
-                      };
-                    })
-              }
+              modules={(selectedModule.module == "all"
+                ? Object.values(modules).map((m: any) => {
+                    console.log(m.module);
+                    if (m.module == "all") return;
+                    return { title: m.module, active: true, fixed: true };
+                  })
+                : Object.values(modules).map((m: any) => {
+                    if (m.module == "all") return;
+                    return {
+                      title: m.module,
+                      active: selectedModule.module == m.module,
+                      fixed: true,
+                    };
+                  })
+              ).filter((m: any) => m)}
             />
           </div>
         )}

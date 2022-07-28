@@ -116,7 +116,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       stop: "\n",
     });
 
-    explanation = output.trim()
+    explanation = output.trim();
     console.log("Explanation: " + explanation);
 
     if (goodAnswer) {

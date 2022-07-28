@@ -5,7 +5,6 @@ export default function Modules({ convoState }: any) {
   return (
     <div className="space-x-1 pt-3 pb-1 px-1">
       {convoState.value.modules
-        .filter((m: any) => m)
         .sort((m1: any, m2: any) => (m2.active && !m1.active ? 1 : -1))
         .map((module: any) => {
           return (
