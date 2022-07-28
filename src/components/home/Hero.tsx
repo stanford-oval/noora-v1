@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Hero() {
   return (
@@ -10,7 +9,7 @@ export default function Hero() {
       className="bg-noora-secondary-main pt-16 bg-cover bg-no-repeat bg-center overflow-hidden"
       id="homeHero"
     >
-      <div className="container py-12 md:py-16">
+      <div className="container py-14 md:py-18">
         <div className="grid grid-cols-12">
           <div className="col-span-12 sm:col-span-10 md:col-span-7 lg:col-span-8">
             <p className="inline leading-tight bg-gradient-to-r from-fuchsia-100 via-purple-300 to-violet-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
@@ -22,11 +21,16 @@ export default function Hero() {
               scenarios.
             </p>
             <div className="mt-6 mb-2 flex gap-4 justify-start flex-wrap">
-              <AnchorLink href="#homeChat" offset={63}>
+              {/* <AnchorLink href="#homeChat" offset={63}>
                 <button className="button button-light font-medium">
                   Meet Noora
                 </button>
-              </AnchorLink>
+              </AnchorLink> */}
+              <Link href="/modules">
+                <button className="button button-light font-medium">
+                  Meet Noora
+                </button>
+              </Link>
               <a
                 href="https://oval.cs.stanford.edu"
                 target="_blank"

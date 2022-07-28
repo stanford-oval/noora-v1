@@ -1,6 +1,5 @@
 const routes = [
   { href: "/", name: "Home" },
-  { href: "/playground", name: "Playground" },
   {
     name: "Modules",
     href: "/modules",
@@ -20,15 +19,20 @@ const routes = [
     ],
   },
   {
-    name: "Other",
+    name: "Links",
     dropRoutes: [
       { href: "https://oval.cs.stanford.edu/", name: "Stanford OVAL" },
       {
         href: "https://genie.stanford.edu/",
         name: "Genie",
       },
+      {
+        href: "https://profiles.stanford.edu/lynn-koegel",
+        name: "Dr. Koegel",
+      },
     ],
   },
+  { href: "/playground", name: "Playground" },
 ];
 
 export default routes;

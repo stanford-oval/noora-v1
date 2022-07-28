@@ -47,7 +47,7 @@ export default function Header() {
                   }
                 />
               ))}
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <Link href="/modules">
                     <a
@@ -62,7 +62,7 @@ export default function Header() {
                     </a>
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* mobile navigation */}
             <div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -93,7 +93,7 @@ export default function Header() {
                               }
                             />
                           ))}
-                          <div className="flex items-center mx-4 py-1">
+                          {/* <div className="flex items-center mx-4 py-1">
                             <Link href="/modules">
                               <a className="justify-center w-full inline-flex items-center px-4 py-2 border border-transparent text-md font-medium rounded-full text-white bg-noora-primary-main shadow-sm hover:bg-noora-primary-dark">
                                 <FontAwesomeIcon
@@ -103,7 +103,7 @@ export default function Header() {
                                 <span>Get Started</span>
                               </a>
                             </Link>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </Disclosure.Panel>

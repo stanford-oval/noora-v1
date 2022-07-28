@@ -10,12 +10,12 @@ export default function CTA() {
         <h2 className="text-2xl font-bold tracking-tight leading-tight text-gray-900 sm:text-3xl">
           <span className="block mb-0.5">Ready to try it out?</span>
           <span className="block text-noora-primary-main">
-            See what Noora can do.
+            Explore the modules you can practice.
           </span>
         </h2>
         <div className="mt-7 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex">
-            <Link href="/playground">
+            <Link href="/modules">
               <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium rounded-full text-white bg-noora-primary-main hover:bg-noora-primary-dark">
                 Get Started
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
