@@ -89,10 +89,10 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
     let probsObj = output["logprobs"]["top_logprobs"][0];
     let probs = softmax(Object.values(probsObj));
-    let goodProb = 0.0001;
+    let goodProb = 0.00001;
     if (probsObj.indexOf(" Good") != -1)
       goodProb = probs[probsObj.indexOf(" Good")];
-    let badProb = 0.0001;
+    let badProb = 0.00001;
     if (probsObj.indexOf(" Bad") != -1)
       badProb = probs[probsObj.indexOf(" Bad")];
     let percentage = goodProb / (goodProb + badProb);

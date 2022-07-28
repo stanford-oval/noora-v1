@@ -29,8 +29,6 @@ export default function NavItemDrop({
       <Popover.Panel className="absolute z-10 bg-white shadow">
         <div className="flex flex-col">
           {dropRoutes.map((r: any) => {
-            if (!r.href && !r.href.includes("http"))
-              r.href = href + r.href;
             return (
               <DropdownItem
                 key={r.href}
@@ -49,7 +47,7 @@ export default function NavItemDrop({
 function DropdownItem({ href, name, active }: any) {
   const activeStyles = "bg-gray-100 border-noora-primary-main text-gray-900";
   const defaultStyles =
-    "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700";
+    "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 pr-10";
   const navItemStyle = `trans-300 block px-4 py-2 text-lg border-l-4 text-base font-medium ${
     active ? activeStyles : defaultStyles
   }`;
