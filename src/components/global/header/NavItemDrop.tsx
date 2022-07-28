@@ -34,7 +34,7 @@ export default function NavItemDrop({
                 key={r.href}
                 href={r.href}
                 name={r.name}
-                active={r.href == currPath}
+                active={r.href.split("?")[0] == currPath.split("?")[0]}
               />
             );
           })}

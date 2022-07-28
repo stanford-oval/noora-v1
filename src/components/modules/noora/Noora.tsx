@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Page from "../../utility/Page";
 import { useRouter } from "next/router";
 import modules from "../../../data/modules";
+import Preamble from "./Preamble";
 
 export default function Noora() {
   const router = useRouter();
@@ -39,7 +40,11 @@ export default function Noora() {
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social skills of individuals with ASD."
       >
-        {selectedModule && <div className="pt-16">{selectedModule.title}</div>}
+        {selectedModule && (
+          <div>
+            <Preamble module={selectedModule} />
+          </div>
+        )}
       </Page>
     </div>
   );

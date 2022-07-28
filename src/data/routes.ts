@@ -9,7 +9,7 @@ const routes = [
         name: "Overview",
       },
       {
-        href: "/modules/noora",
+        href: "/modules/noora?modules=all",
         name: "Noora",
       },
     ],
@@ -28,7 +28,7 @@ const routes = [
       },
     ],
   },
-  { href: "/playground", name: "Playground" },
+  { href: "/playground?page=practice", name: "Playground" },
 ];
 
 export default routes;
