@@ -70,7 +70,6 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
   try {
     // first get good/bad answer
-    throw "Noora is not available right now.";
     let output = await fetch("/api/openai", {
       method: "POST",
       body: JSON.stringify({
@@ -95,6 +94,8 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     if (probsObj.indexOf(" Bad") != -1)
       badProb = probs[probsObj.indexOf(" Bad")];
     let percentage = goodProb / (goodProb + badProb);
+
+    console.log(goodProb, badProb, percentage, convoState.value.model.leniency);
 
     if (percentage > 1 - convoState.value.model.leniency) {
       classification = "Good reply.";

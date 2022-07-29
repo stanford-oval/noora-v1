@@ -20,7 +20,7 @@ export default async function handler(
     });
 
     const openai = new OpenAIApi(configuration);
-    
+
     const response = await openai.createCompletion(req.body);
 
     let text = "";

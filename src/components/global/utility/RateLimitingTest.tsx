@@ -6,7 +6,17 @@ export default function RateLimitingTest() {
   );
 
   const makeRequest = async () => {
-    const res = await fetch("/api/openai");
+    const res = await fetch("/api/openai", {
+      method: "POST",
+      body: JSON.stringify({
+        model: "text-davinci-002",
+        prompt: "Give me a name for a dog.",
+      temperature: 0.9,
+        max_tokens: 5,
+        frequency_penalty: 0.2,
+        presence_penalty: 0.3,
+      }),
+    });
 
     setResponse({
       status: res.status,

@@ -45,7 +45,7 @@ export default function Preamble({ module }: any) {
             <b className="text-noora-secondary-light special-underline">
               {module.example.badUser}
             </b>
-            ,” Noora would give you feedback.
+            ,” Noora would give you feedback for improving your reply.
           </p>
         </div>
       </div>
