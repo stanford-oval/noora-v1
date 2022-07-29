@@ -76,7 +76,7 @@
 
 #homeHero {
     background-image: url('/img/page-bg/home.png');
-    box-shadow: inset 0 0 0 2000px #341b5031;
+    box-shadow: inset 0 0 0 2000px #ffffffbd;
 }
 
 #modulesHero {
@@ -86,7 +86,8 @@
 
 @media only screen and (max-width: 768px) {
     #homeHero {
-        background-image: url('/img/page-bg/home-mobile.png');
+    background-position: 75% 60%;
+    box-shadow: inset 0 0 0 2000px #ffffffcd;
     }
 }
 

@@ -11,8 +11,8 @@ export default function index() {
       desc="A platform utilizing conversational AI to improve the social skills of individuals with ASD."
     >
       <Hero />
-      <Features />
-      <CTA />
+      {/* <Features />
+      <CTA /> */}
     </Page>
   );
 }
