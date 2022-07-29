@@ -22,7 +22,7 @@ export default function Header() {
                 className="block h-12 w-auto mr-1"
                 width="52px"
                 height="52px"
-                src="/img/noora-logo-full.png"
+                src="/img/logos/noora-logo-full.png"
                 alt="Noora logo"
               />
               <span className="font-bold tracking-wide text-xl text-noora-primary-main">

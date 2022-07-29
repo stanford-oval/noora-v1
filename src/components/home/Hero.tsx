@@ -1,48 +1,51 @@
 import React from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { ArrowSmRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 
 export default function Hero() {
   return (
-    <div
-      className="bg-noora-secondary-main pt-16 bg-cover bg-no-repeat bg-center overflow-hidden"
-      id="homeHero"
-    >
+    <div className="bg-gray-100 bg-cover bg-no-repeat bg-center overflow-hidden h-screen flex flex-col justify-center align-center">
       <div className="container py-14 md:py-18">
         <div className="grid grid-cols-12">
           <div className="col-span-12 sm:col-span-10 md:col-span-7 lg:col-span-8">
-            <p className="inline leading-tight bg-gradient-to-r from-fuchsia-100 via-purple-300 to-violet-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark via-noora-secondary-light to-noora-primary-dark1 bg-clip-text font-bold text-5xl tracking-tight text-transparent">
               Improve your social skills using AI.
             </p>
-            <p className="mt-3 text-2xl tracking-tight text-slate-400">
+            <p className="mt-3 text-2xl tracking-tight text-gray-600">
               Developed by Stanford&apos;s Open Virtual Assistant Lab, Noora is
               a chatbot who guides you through a diverse set of social
               scenarios.
             </p>
             <div className="mt-6 mb-2 flex gap-4 justify-start flex-wrap">
-              {/* <AnchorLink href="#homeChat" offset={63}>
-                <button className="button button-light font-medium">
-                  Meet Noora
-                </button>
-              </AnchorLink> */}
               <Link href="/modules/noora?module=all">
-                <button className="button button-light font-medium">
-                  Meet Noora
+                <button className="button flex text-lg text-white bg-noora-primary-main hover:bg-noora-primary-dark font-medium">
+                  Meet Noora{" "}
+                  <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-0.5" />
                 </button>
               </Link>
-              <a
-                href="https://oval.cs.stanford.edu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button bg-slate-800 font-light text-white hover:bg-slate-700 active:text-slate-400"
-              >
-                Stanford OVAL
-                <FontAwesomeIcon
-                  className="-mr-1 ml-2 h-4 w-4 inline-block -mt-1 text-gray-400"
-                  icon={faArrowUpRightFromSquare}
-                />
+              <a href="">
+                <button className="button flex text-lg text-gray-600 bg-gray-300 hover:bg-[#C9CDD4] font-light">
+                  Stanford OVAL{" "}
+                  <ExternalLinkIcon className="h-4 w-4 mt-1.5 ml-1 stroke-1" />
+                </button>
               </a>
+            </div>
+            <div className="mt-6 w-full grid grid-cols-12">
+              <h2 className="uppercase text-gray-500 col-span-12">
+                Designed By
+              </h2>
+              <div className="col-span-6 mt-2 w-full grid grid-cols-12 gap-x-5 items-center">
+                <img
+                  src="/img/logos/stanford-logo.png"
+                  className="col-span-5"
+                  alt="Stanford"
+                />
+                <img
+                  src="/img/logos/stanford-medicine-logo.png"
+                  className="col-span-5"
+                  alt="Stanford Medicine"
+                />
+              </div>
             </div>
           </div>
         </div>
