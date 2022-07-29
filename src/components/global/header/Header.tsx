@@ -25,7 +25,7 @@ export default function Header() {
                 src="/img/logos/noora-logo-full.png"
                 alt="Noora logo"
               />
-              <span className="font-bold tracking-wide text-xl text-noora-primary-main">
+              <span className="font-bold tracking-wide text-xl text-noora-primary">
                 NOORA
               </span>
             </a>
@@ -52,7 +52,7 @@ export default function Header() {
                   <Link href="/modules">
                     <a
                       type="button"
-                      className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-noora-primary-main shadow-sm hover:bg-noora-primary-dark"
+                      className="trans-300 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-noora-primary shadow-sm hover:bg-noora-primary-dark"
                     >
                       <FontAwesomeIcon
                         icon={faComment}
@@ -95,7 +95,7 @@ export default function Header() {
                           ))}
                           {/* <div className="flex items-center mx-4 py-1">
                             <Link href="/modules">
-                              <a className="justify-center w-full inline-flex items-center px-4 py-2 border border-transparent text-md font-medium rounded-full text-white bg-noora-primary-main shadow-sm hover:bg-noora-primary-dark">
+                              <a className="justify-center w-full inline-flex items-center px-4 py-2 border border-transparent text-md font-medium rounded-full text-white bg-noora-primary shadow-sm hover:bg-noora-primary-dark">
                                 <FontAwesomeIcon
                                   icon={faComment}
                                   className="-ml-1 mr-2 h-3 w-3"

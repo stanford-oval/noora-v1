@@ -58,7 +58,7 @@ export default function MessageBox({ history, convoState }: any) {
           {convoState.value.turn.includes("microphone") ? (
             <FontAwesomeIcon
               icon={faMicrophone}
-              className="w-4 h-4 text-noora-primary-main"
+              className="w-4 h-4 text-noora-primary"
             />
           ) : (
             <FontAwesomeIcon icon={faPen} className="w-4 h-4 text-slate-400" />
@@ -89,13 +89,13 @@ export default function MessageBox({ history, convoState }: any) {
           className={clsx(
             "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800 disabled:bg-gray-100",
             convoState.value.turn.includes("microphone")
-              ? "border-noora-primary-main"
+              ? "border-noora-primary"
               : "border-gray-400"
           )}
         />
         <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10">
           <Microphone
-            className="bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+            className="bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
             turn={convoState.value.turn}
             setTurn={(str: string) =>
               convoState.setValue((cs: any) => ({
@@ -119,7 +119,7 @@ export default function MessageBox({ history, convoState }: any) {
             convoState.value.draft.length == 0 ||
             convoState.value.turn.includes("microphone")
           }
-          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary-main hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Send
         </button>

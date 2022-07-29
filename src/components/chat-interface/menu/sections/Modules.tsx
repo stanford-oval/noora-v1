@@ -68,7 +68,7 @@ function Sentiments({ convoState }: any) {
           return (
             <div key={sentiment.title} className="form-check">
               <input
-                className="form-check-input h-4 w-4 border border-gray-400 rounded-sm bg-white checked:bg-noora-primary-main checked:hover:bg-noora-primary-main checked:focus:bg-noora-primary-main outline-none ring-0 focus:ring-0 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-1 cursor-pointer"
+                className="form-check-input h-4 w-4 border border-gray-400 rounded-sm bg-white checked:bg-noora-primary checked:hover:bg-noora-primary checked:focus:bg-noora-primary outline-none ring-0 focus:ring-0 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-1 cursor-pointer"
                 type="checkbox"
                 checked={sentiment.active}
                 onChange={() => {

@@ -20,7 +20,7 @@ export default function Hero() {
             </p>
             <div className="mt-6 mb-2 flex gap-x-3 gap-y-2 flex-wrap justify-center md:justify-start">
               <Link href="/noora?module=general">
-                <button className="button flex text-lg text-white bg-noora-primary-main hover:bg-noora-primary-dark font-medium">
+                <button className="button flex text-lg text-white bg-noora-primary hover:bg-noora-primary-dark font-medium">
                   Get started{" "}
                   <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-0.5" />
                 </button>

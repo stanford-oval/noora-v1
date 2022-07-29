@@ -95,7 +95,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       badProb = probs[topTokens.indexOf(" Bad")];
     goodReplyConfidence = goodProb / (goodProb + badProb);
 
-    if (goodReplyConfidence > 1 - convoState.value.model.leniency) {
+    if (goodReplyConfidence > convoState.value.model.goodReplyThreshold) {
       classification = "Good reply.";
       goodAnswer = true;
     } else {
@@ -104,6 +104,8 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     }
 
     console.log("Classification: " + classification);
+
+    console.log(prompt + " " + classification);
 
     output = await Completion({
       model: convoState.value.model.name,
@@ -145,7 +147,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
         replyCategory: null,
         goodAnswer: goodAnswer,
         goodReplyConfidence: goodReplyConfidence,
-        leniency: convoState.value.model.leniency,
+        goodReplyThreshold: convoState.value.model.goodReplyThreshold,
       },
     ],
   }));

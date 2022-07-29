@@ -24,7 +24,7 @@ export default function Progress({ convoState }: any) {
             },
           ].map((x) => (
             <div className="px-3" key={x.units}>
-              <span className="font-bold text-3xl text-noora-primary-main">
+              <span className="font-bold text-3xl text-noora-primary">
                 {x.num}
               </span>
               <span className="font-normal text-sm text-gray-400">

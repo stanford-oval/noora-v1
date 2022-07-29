@@ -20,7 +20,7 @@ export default function Footer({ convoState, history, draft }: any) {
             progress: [],
           }));
         }}
-        className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-full text-white bg-noora-secondary-light hover:bg-noora-secondary-main"
+        className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-full text-white bg-noora-secondary-light hover:bg-noora-secondary"
       >
         Try Again
         <FontAwesomeIcon icon={faRepeat} className="ml-2 h-4 w-4" />

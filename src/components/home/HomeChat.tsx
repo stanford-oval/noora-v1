@@ -12,12 +12,17 @@ export default function HomeChat() {
       { title: "general", active: true },
       { title: "work", active: true },
     ],
+    sentiments: [
+      { title: "positive", active: true },
+      { title: "neutral", active: false },
+      { title: "negative", active: true },
+    ],
     model: {
       name: "text-davinci-002", //"curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49",
       temperature: 0.9,
       frequencyPenalty: 0.6,
       presencePenalty: 0.5,
-      leniency: 0.5, 
+      goodReplyThreshold: 0.5,
     },
     progress: [],
     numProblems: 5,

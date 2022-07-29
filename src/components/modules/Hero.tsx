@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="pt-16">
       <div className="container pt-6 md:pt-8">
-        <p className="inline font-bold text-noora-secondary-main font-display text-4xl tracking-tight text-transparent">
+        <p className="inline font-bold text-noora-secondary font-display text-4xl tracking-tight text-transparent">
           Practice your{" "}
           <span className="special-underline">social skills</span>.
         </p>

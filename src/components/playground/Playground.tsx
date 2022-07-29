@@ -52,7 +52,7 @@ export default function Playground() {
       temperature: 0.9,
       frequencyPenalty: 0.6,
       presencePenalty: 0.5,
-      leniency: 0.5,
+      goodReplyThreshold: 0.5,
     },
     showTechnical: true,
     progress: [],

@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         noora: {
           primary: {
-            main: "#6940b6",
+            DEFAULT: "#6940b6",
             light: "#7447c9",
             dark: "#5b379e",
             dark1: "#3f2278",
@@ -22,7 +22,7 @@ module.exports = {
           secondary: {
             bright: "#283975",
             light: "#1f306b",
-            main: "#192245",
+            DEFAULT: "#192245",
             dark: "#0d142b",
           },
         },

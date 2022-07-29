@@ -28,7 +28,7 @@ export default function AskNoora() {
       >
         <div className="pt-12 pb-32">
           <div className="container text-center justify-center">
-            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary-main bg-clip-text font-bold text-5xl tracking-tight text-transparent">
+            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary bg-clip-text font-bold text-5xl tracking-tight text-transparent">
               Ask Noora
             </p>
             <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">

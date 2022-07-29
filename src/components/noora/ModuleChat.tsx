@@ -22,7 +22,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       temperature: 0.9,
       frequencyPenalty: 0.6,
       presencePenalty: 0.5,
-      leniency: 0.5,
+      goodReplyThreshold: 0.5,
     },
     progress: [],
     numProblems: 10,

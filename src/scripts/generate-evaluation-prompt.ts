@@ -14,7 +14,6 @@ export default function formPrompt(
   // console.log(fewShotExamples);
 
   const prompt = formEvalPrompt(statement, reply, fewShotExamples);
-  console.log(prompt);
 
   return prompt;
 }

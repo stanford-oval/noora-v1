@@ -52,7 +52,7 @@ export default function Messages({ history, convoState }: any) {
                   "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
                   message.fromNoora
                     ? "bg-gray-200 mr-auto"
-                    : "bg-noora-primary-main text-white ml-auto"
+                    : "bg-noora-primary text-white ml-auto"
                 )}
               >
                 {message.statement ? (

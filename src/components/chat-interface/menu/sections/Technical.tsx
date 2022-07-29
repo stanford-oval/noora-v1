@@ -14,11 +14,11 @@ export default function Technical({ convoState }: any) {
 
       <Slider
         parameter={{
-          name: "Leniency",
-          description: "1 = most lenient",
+          name: "“Good Reply” Threshold",
+          description: "confidence > threshold → “good reply” rating",
           min: 0,
           max: 1,
-          propertyName: "leniency",
+          propertyName: "goodReplyThreshold",
         }}
         convoState={convoState}
       />
@@ -62,14 +62,17 @@ function NoorasMessageDetails({ convoState }: any) {
     <div>
       <div>
         <b>Problem {convoState.value.progress.length}: </b>
-        {(lastProblem.goodReplyConfidence.toFixed(5) * 100).toFixed(2)}% (
-        {lastProblem.goodReplyConfidence > lastProblem.leniency ? (
+        <span className="font-bold text-noora-primary">
+          {(lastProblem.goodReplyConfidence.toFixed(5) * 100).toFixed(2)}%
+        </span>{" "}
+        (
+        {lastProblem.goodReplyConfidence > lastProblem.goodReplyThreshold ? (
           <span className="font-bold text-green-600">
-            &#62; {lastProblem.leniency}
+            &#62; {lastProblem.goodReplyThreshold}
           </span>
         ) : (
           <span className="font-bold text-red-600">
-            &#60; {lastProblem.leniency}
+            &#60; {lastProblem.goodReplyThreshold}
           </span>
         )}
         ) confident that the reply was a good one.

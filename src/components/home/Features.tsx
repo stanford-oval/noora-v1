@@ -79,7 +79,7 @@ export default function Features() {
         <div className="relative md:grid md:grid-cols-2 md:gap-16 md:items-center">
           <div className="relative">
             <h3 className="font-bold text-gray-900 tracking-tight text-3xl md:4xl">
-              About <span className="text-noora-primary-main">Noora</span>
+              About <span className="text-noora-primary">Noora</span>
             </h3>
             <p className="mt-3 text-lg text-gray-500">
               Noora is a conversational AI designed to help improve the social
@@ -109,7 +109,7 @@ export default function Features() {
               {nooraFeatures.map((item) => (
                 <div key={item.id} className="relative">
                   <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-noora-primary-main text-white">
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-noora-primary text-white">
                       <item.icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
@@ -216,7 +216,7 @@ export default function Features() {
                 {communicationFeatures.map((item) => (
                   <div key={item.id} className="relative">
                     <dt>
-                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-noora-primary-main text-white">
+                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-noora-primary text-white">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
