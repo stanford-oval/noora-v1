@@ -15,8 +15,7 @@ export default function Hero() {
               Improve your social skills using AI.
             </p>
             <p className="mt-3 text-xl xl:text-2xl tracking-tight text-gray-600">
-              Developed by Stanford&apos;s Open Virtual Assistant Lab, Noora is
-              a chatbot who guides you through a diverse set of social
+              Noora is a chatbot who guides you through a diverse set of social
               scenarios.
             </p>
             <div className="mt-6 mb-2 flex gap-x-3 gap-y-2 flex-wrap justify-center md:justify-start">
@@ -26,31 +25,26 @@ export default function Hero() {
                   <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-0.5" />
                 </button>
               </Link>
-              <a
-                href="https://oval.cs.stanford.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="button flex text-lg text-gray-600 bg-gray-300 hover:bg-[#C9CDD4] font-light">
-                  Stanford OVAL{" "}
-                  <ExternalLinkIcon className="h-4 w-4 mt-1.5 ml-1 stroke-1" />
-                </button>
-              </a>
             </div>
             <div className="mt-6 w-full col-span-12">
-              <h2 className="uppercase text-gray-500">
-                Designed By
+              <h2 className="text-gray-500 text-lg">
+                Developed by <a
+                href="https://oval.cs.stanford.edu/"
+                className="font-medium text-gray-600 text-[#8C1515]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Stanford&apos;s Open Virtual Assistant Lab</a>
               </h2>
               <div className="mt-2 w-full flex gap-x-4 justify-center md:justify-start">
+                <img
+                  src="/img/logos/stanford-medicine-logo.png"
+                  className="col-span-5 h-11 w-auto"
+                  alt="Stanford Medicine"
+                />
                 <img
                   src="/img/logos/stanford-logo.png"
                   className="col-span-5 h-12 w-auto"
                   alt="Stanford"
-                />
-                <img
-                  src="/img/logos/stanford-medicine-logo.png"
-                  className="col-span-5  h-12 w-auto"
-                  alt="Stanford Medicine"
                 />
               </div>
             </div>

@@ -86,8 +86,15 @@
 
 @media only screen and (max-width: 768px) {
     #homeHero {
+    background-position: 95% 60%;
+    box-shadow: inset 0 0 0 2000px #ffffffc0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #homeHero {
     background-position: 75% 60%;
-    box-shadow: inset 0 0 0 2000px #ffffffcd;
+    box-shadow: inset 0 0 0 2000px #ffffffc0;
     }
 }
 
