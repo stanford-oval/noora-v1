@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="mt-6 mb-2 flex gap-x-3 gap-y-2 flex-wrap justify-center md:justify-start">
               <Link href="/noora?module=general">
                 <button className="button flex text-lg text-white bg-noora-primary-main hover:bg-noora-primary-dark font-medium">
-                  Meet Noora{" "}
+                  Get started{" "}
                   <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-0.5" />
                 </button>
               </Link>
@@ -30,7 +30,7 @@ export default function Hero() {
               <h2 className="text-gray-500 text-lg">
                 Developed by <a
                 href="https://oval.cs.stanford.edu/"
-                className="font-medium text-gray-600 text-[#8C1515]"
+                className="font-medium text-[#8C1515]"
                 target="_blank"
                 rel="noopener noreferrer"
               >Stanford&apos;s Open Virtual Assistant Lab</a>

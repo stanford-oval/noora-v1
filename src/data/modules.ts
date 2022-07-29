@@ -8,7 +8,7 @@ const modules = {
   general: {
     title: "General",
     module: "general",
-    desc: "Practice responding to positive, neutral, and negative statements in a general context. In this module, Noora is your friend and speaks on a variety of topics including family, weather, and school. ",
+    desc: "Practice responding to statements in a general context. In this module, Noora is your friend and speaks on a variety of topics including family, weather, and school. ",
     selectedDesc:
       "Noora is your friend and you will practice replying to statements of a variety of general topics.",
     example: {
@@ -23,7 +23,7 @@ const modules = {
   work: {
     title: "Work",
     module: "work",
-    desc: "Practice responding to positive, neutral, and negative statements in the workplace. In this module, Noora is your co-worker and speaks on a variety of work-related topics such as promotions and job updates.",
+    desc: "Practice responding to statements in the workplace. In this module, Noora is your co-worker and speaks on a variety of work-related topics such as promotions and job updates.",
     selectedDesc:
       "Noora is your co-worker and you will practice replying to statements you might hear in a workplace.",
     example: {

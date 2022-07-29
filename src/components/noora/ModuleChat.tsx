@@ -12,6 +12,11 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       { title: "general", active: true, fixed: true },
       { title: "work", active: true, fixed: true },
     ],
+    sentiments: [
+      { title: "positive", active: true },
+      { title: "neutral", active: false },
+      { title: "negative", active: true },
+    ],
     model: {
       name: "text-davinci-002", //"curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49",
       temperature: 0.9,
@@ -34,8 +39,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   };
 
   useEffect(() => {
-    if (modules)
-      setCs((cs: any) => ({ ...cs, modules: modules }));
+    if (modules) setCs((cs: any) => ({ ...cs, modules: modules }));
   }, [modules]);
 
   return (

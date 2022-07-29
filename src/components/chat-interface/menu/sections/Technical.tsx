@@ -61,8 +61,18 @@ function NoorasMessageDetails({ convoState }: any) {
   return (
     <div>
       <div>
-        <b>Statement {convoState.value.progress.length}: </b>
-        {lastProblem.statementCategory}
+        <b>Problem {convoState.value.progress.length}: </b>
+        {(lastProblem.goodReplyConfidence.toFixed(5) * 100).toFixed(2)}% (
+        {lastProblem.goodReplyConfidence > lastProblem.leniency ? (
+          <span className="font-bold text-green-600">
+            &#62; {lastProblem.leniency}
+          </span>
+        ) : (
+          <span className="font-bold text-red-600">
+            &#60; {lastProblem.leniency}
+          </span>
+        )}
+        ) confident that the reply was a good one.
       </div>
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>

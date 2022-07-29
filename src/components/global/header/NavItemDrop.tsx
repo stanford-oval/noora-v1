@@ -17,7 +17,7 @@ export default function NavItemDrop({
   currPath,
 }: NavItemDropProps) {
   return (
-    <Popover className="h-full">
+    <Popover className="h-full relative">
       <Popover.Button className={clsx(itemStyle, "h-full")}>
         {name}{" "}
         <FontAwesomeIcon
@@ -26,7 +26,7 @@ export default function NavItemDrop({
         />
       </Popover.Button>
 
-      <Popover.Panel className="-mt-1 absolute z-10 bg-white shadow">
+      <Popover.Panel className="-mt-1 right-0 w-52 absolute z-10 bg-white shadow">
         <div className="flex flex-col">
           {dropRoutes.map((r: any) => {
             return (
@@ -47,7 +47,7 @@ export default function NavItemDrop({
 function DropdownItem({ href, name, active }: any) {
   const activeStyles = "bg-gray-100 border-noora-primary-main text-gray-900";
   const defaultStyles =
-    "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 pr-10";
+    "border-transparent w-full text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 pr-10";
   const navItemStyle = `trans-300 block px-4 py-2 text-lg border-l-4 text-base font-medium ${
     active ? activeStyles : defaultStyles
   }`;

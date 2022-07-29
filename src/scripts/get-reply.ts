@@ -62,11 +62,11 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   const prompt = formPrompt(statementObj[1], statementObj[0], message);
   // let target = statementObj[2];
 
-  let output = "";
   let classification = "";
   let explanation = "";
   let goodAnswer = false;
   let answers = [];
+  let goodReplyConfidence = -1;
 
   try {
     // first get good/bad answer
@@ -83,21 +83,19 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       }),
     }).then((res) => res.json());
 
-    output = output["text"];
-
     let probsObj = output["logprobs"]["top_logprobs"][0];
+
     let probs = softmax(Object.values(probsObj));
-    let goodProb = 0.00001;
-    if (probsObj.indexOf(" Good") != -1)
-      goodProb = probs[probsObj.indexOf(" Good")];
-    let badProb = 0.00001;
-    if (probsObj.indexOf(" Bad") != -1)
-      badProb = probs[probsObj.indexOf(" Bad")];
-    let percentage = goodProb / (goodProb + badProb);
+    let topTokens = Object.keys(probsObj);
+    let goodProb = 0.000001;
+    if (topTokens.indexOf(" Good") != -1)
+      goodProb = probs[topTokens.indexOf(" Good")];
+    let badProb = 0.000001;
+    if (topTokens.indexOf(" Bad") != -1)
+      badProb = probs[topTokens.indexOf(" Bad")];
+    goodReplyConfidence = goodProb / (goodProb + badProb);
 
-    console.log(goodProb, badProb, percentage, convoState.value.model.leniency);
-
-    if (percentage > 1 - convoState.value.model.leniency) {
+    if (goodReplyConfidence > 1 - convoState.value.model.leniency) {
       classification = "Good reply.";
       goodAnswer = true;
     } else {
@@ -130,7 +128,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     }
   } catch (error) {
     console.error(error);
-    explanation = "Noora is not available right now.";
+    explanation = "Please enter a proper reply.";
     answers = [explanation];
   }
 
@@ -146,6 +144,8 @@ async function getRating(message: string, statementObj: any, convoState: any) {
         explanation: explanation,
         replyCategory: null,
         goodAnswer: goodAnswer,
+        goodReplyConfidence: goodReplyConfidence,
+        leniency: convoState.value.model.leniency,
       },
     ],
   }));
@@ -156,13 +156,13 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 export function getStatement(convoState: any) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
-  const module: string = getRandomItem(modules).title;
-  console.log("Selected module: " + module);
+  const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
+  const module = getRandomItem(modules).title as keyof typeof module_statements;
+  const sentiment = getRandomItem(sentiments)
+    .title as keyof typeof module_statements[typeof module];
 
   // choose statement
-  let statement = getRandomItem(
-    module_statements[module as keyof typeof module_statements]
-  );
+  let statement = getRandomItem(module_statements[module][sentiment]);
   convoState.setValue((cs: any) => ({
     ...cs,
     statement: statement,
