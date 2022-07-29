@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Page from "../../utility/Page";
+import Page from "../utility/Page";
 import { useRouter } from "next/router";
-import modules from "../../../data/modules";
+import modules from "../../data/modules";
 import Preamble from "./Preamble";
 import ModuleChat from "./ModuleChat";
 
@@ -9,7 +9,7 @@ export default function Noora() {
   const router = useRouter();
 
   const [selectedModule, setSelectedModule] = useState(
-    modules[router.query.module as keyof typeof modules]
+    modules["general"]
   );
 
   useEffect(() => {
@@ -18,9 +18,7 @@ export default function Noora() {
       router.asPath.match(new RegExp(`[&?]module=(.*)(&|$)`));
 
     if (!key) {
-      router.push("/modules/noora?module=all", undefined, {
-        shallow: true,
-      }); // default if no path
+      setSelectedModule(modules["general"]);
     } else {
       setSelectedModule(modules[key as keyof typeof modules]);
     }

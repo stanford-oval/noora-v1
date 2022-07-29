@@ -1,5 +1,5 @@
 import React from "react";
-import Noora from "../../components/modules/noora/Noora";
+import Noora from "../components/noora/Noora";
 
 export default function noora() {
   return (

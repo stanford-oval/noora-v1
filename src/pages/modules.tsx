@@ -1,7 +1,7 @@
 import React from "react";
-import CardsGrid from "../../components/modules/index/CardsGrid";
-import Hero from "../../components/modules/index/Hero";
-import Page from "../../components/utility/Page";
+import CardsGrid from "../components/modules/CardsGrid";
+import Hero from "../components/modules/Hero";
+import Page from "../components/utility/Page";
 
 export default function index() {
   return (

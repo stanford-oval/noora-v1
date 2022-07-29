@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import modules from "../../../data/modules";
+import modules from "../../data/modules";
 
 export default function CardsGrid() {
   return (
@@ -16,7 +16,7 @@ export default function CardsGrid() {
               </div>
               <div className="mt-4">
                 <h3 className="text-2xl font-bold">
-                  <Link href={"/modules/noora?module=" + module.module}>
+                  <Link href={"/noora?module=" + module.module}>
                     <a className="text-noora-secondary-light">
                       {/* Extend touch target to entire panel */}
                       <span className="absolute inset-0" aria-hidden="true" />

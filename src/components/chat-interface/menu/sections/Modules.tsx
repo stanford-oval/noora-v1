@@ -5,12 +5,11 @@ export default function Modules({ convoState }: any) {
   return (
     <div className="space-x-1 pt-3 pb-1 px-1">
       {convoState.value.modules
-        .sort((m1: any, m2: any) => (m2.active && !m1.active ? 1 : -1))
+        // .sort((m1: any, m2: any) => (m2.active && !m1.active ? 1 : -1))
         .map((module: any) => {
           return (
             <button
               disabled={
-                module.fixed ||
                 (convoState.value.modules.filter((m: any) => m.active).length ==
                   1 &&
                   module.active)
@@ -43,7 +42,7 @@ export default function Modules({ convoState }: any) {
                   xmlns="http://www.w3.org/2000/svg"
                   className={clsx(
                     "h-3 w-3 inline-block",
-                    module.fixed ? "hidden" : ""
+                    // module.fixed ? "hidden" : ""
                   )}
                   style={{ marginTop: "-0.2rem" }}
                   fill="none"

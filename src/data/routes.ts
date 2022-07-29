@@ -1,18 +1,12 @@
 const routes = [
   { href: "/", name: "Home" },
   {
+    name: "Noora",
+    href: "/noora",
+  },
+  {
     name: "Modules",
     href: "/modules",
-    dropRoutes: [
-      {
-        href: "/modules",
-        name: "Overview",
-      },
-      {
-        href: "/modules/noora?modules=all",
-        name: "Noora",
-      },
-    ],
   },
   {
     name: "Links",
@@ -28,7 +22,6 @@ const routes = [
       },
     ],
   },
-  { href: "/playground?page=practice", name: "Playground" },
 ];
 
 export default routes;

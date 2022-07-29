@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NooraChat from "../../chat-interface/chat/NooraChat";
-import Menu from "../../chat-interface/menu/Menu";
-import Summary from "../../chat-interface/summary/Summary";
+import NooraChat from "../chat-interface/chat/NooraChat";
+import Menu from "../chat-interface/menu/Menu";
+import Summary from "../chat-interface/summary/Summary";
 
 export default function ModuleChat({ modules }: ModuleChatProps) {
   const [h, setH] = useState([]);

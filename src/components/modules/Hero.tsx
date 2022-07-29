@@ -1,21 +1,19 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
-import DisclosureTransition from "../../global/utility/DisclosureTransition";
+import DisclosureTransition from "../global/utility/DisclosureTransition";
 
 export default function Hero() {
   return (
     <div className="pt-16">
       <div className="container pt-6 md:pt-8">
-        <p className="inline font-bold text-noora-primary-dark1 font-display text-4xl tracking-tight text-transparent">
-          Practice with our{" "}
-          <span className="special-underline">curated modules</span>.
+        <p className="inline font-bold text-noora-secondary-main font-display text-4xl tracking-tight text-transparent">
+          Practice your{" "}
+          <span className="special-underline">social skills</span>.
         </p>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-4">
           <p>
-            Thank you for choosing Noora to assist you with social conversation.
-            Noora is designed to provide practice in areas that can be
-            challenging during social conversation, such as{" "}
+            Noora helps you practice challenging aspects social conversation, such as{" "}
             <b>responding empathetically and positively to others</b>.
             {/* initiating and ending a
                   conversation, responding to bullying, and keeping a conversation
@@ -29,7 +27,7 @@ export default function Hero() {
             everyday situations.
           </p>
 
-          <Disclosure>
+          {/* <Disclosure>
             {({ open }) => (
               <div className="mx-auto w-full rounded-2xl bg-white py-1">
                 <DisclosureTransition>
@@ -43,8 +41,7 @@ export default function Hero() {
                       80% on three consecutive tries, but feel free to complete
                       as many as you&apos;d like until you feel comfortable and
                       confident with your responses.
-                      {/* The modules will help you with a different response if it feels that
-                      yours needs improvement. */}
+                      
                     </p>
                   </Disclosure.Panel>
                 </DisclosureTransition>{" "}
@@ -58,7 +55,7 @@ export default function Hero() {
                 </Disclosure.Button>
               </div>
             )}
-          </Disclosure>
+          </Disclosure> */}
         </div>
       </div>
     </div>
