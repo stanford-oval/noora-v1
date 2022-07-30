@@ -24,14 +24,10 @@ export default async function generateResult(statement: string, uuid: string) {
   console.log(prompt);
 
   // // 3. call GPT-3
-  // let reply = await Completion({
-  //   model: "text-davinci-002",
-  //   prompt: prompt,
-  //   temperature: temp,
-  //   max_tokens: 1000,
-  //   frequency_penalty: freqPenalty,
-  //   presence_penalty: presPenalty,
-  // });
+  const replies = await getReplies(prompt);
+
+  console.log(replies);
+
   // // 4. parse examples
   // let responses: any[] = [];
   // reply.split("\n").forEach((r: string) => {
@@ -60,6 +56,31 @@ export default async function generateResult(statement: string, uuid: string) {
     good_replies: good_replies,
     bad_replies: bad_replies,
   };
+}
+
+async function getReplies(prompt: string) {
+  let response = await Completion({
+    model: "text-davinci-002",
+    prompt: prompt,
+    temperature: temp,
+    max_tokens: 1000,
+    frequency_penalty: freqPenalty,
+    presence_penalty: presPenalty,
+  });
+
+  const raw_replies = response.trim().split("\n");
+  let replies: string[] = [];
+
+  raw_replies.forEach((r: any) => {
+    if (r.includes("you reply,")) {
+      replies.push(r.split("you reply,")[1].trim());
+    } else {
+      console.log("Generated reply thrown out because format is incorrect:");
+      console.log(r);
+    }
+  });
+
+  return replies;
 }
 
 function formGenerationPrompt(
@@ -100,7 +121,7 @@ async function getSentiment(statement: string) {
 
   console.log(prompt);
 
-  let reply = await Completion({
+  let response = await Completion({
     model: "text-davinci-002",
     prompt: prompt,
     temperature: 0,
@@ -109,7 +130,7 @@ async function getSentiment(statement: string) {
     presence_penalty: 0,
   });
 
-  let sentiment = reply.trim().split(" ")[0];
+  let sentiment = response.trim().split(" ")[0];
 
   if (["positive", "neutral", "negative"].indexOf(sentiment) == -1) {
     console.log("Could not identify sentiment. Assuming neutral.");

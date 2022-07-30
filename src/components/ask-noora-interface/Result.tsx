@@ -95,8 +95,7 @@ export default function Result({
         </div>
       ) : (
         <div className="text-center text-slate-500">
-          Generating responses takes around 25 seconds. Feel free to submit more
-          statements while you&apos;re waiting.
+          Give Noora a few seconds to think...
         </div>
       )}
     </div>
