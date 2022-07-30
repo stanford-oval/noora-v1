@@ -12,7 +12,7 @@ export default function AskNoora() {
           category: "curious",
           reasoning: "You want to know more about the good book I read.",
           reply:
-            "“What book did you read? What was your favorite part of the book?”",
+            "What book did you read? What was your favorite part of the book?",
           rating: "Good answer.",
           explanation:
             "You showed me you are interested in my experiences and you asked about my book.",
@@ -24,7 +24,7 @@ export default function AskNoora() {
           reasoning:
             "You feel the need to tell me the benefits of reading and why it's important.",
           reply:
-            "“Reading is good for your brain and helps you understand the world better. You should read more.”",
+            "Reading is good for your brain and helps you understand the world better. You should read more.",
           rating: "Bad answer.",
           explanation:
             "To be a good friend, you should not say that because you do not acknowledge my happiness and tell me what to do.",

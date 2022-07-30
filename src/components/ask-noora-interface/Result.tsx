@@ -60,8 +60,7 @@ export default function Result({
                 ))}{" "}
                 {good_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Noora didn&apos;t generate any good replies. Please
-                    try again.
+                    Noora didn&apos;t generate any good replies.
                   </div>
                 )}
               </ul>
@@ -85,8 +84,7 @@ export default function Result({
                 ))}
                 {bad_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Noora didn&apos;t generate any bad replies. Please try
-                    again.
+                    Noora didn&apos;t generate any bad replies.
                   </div>
                 )}
               </ul>
@@ -112,9 +110,9 @@ function Reply({ reply, explanation, category, good_reply }: ReplyProps) {
           : "border-red-700 bg-red-100"
       )}
     >
-      <p className="text-slate-800 text-lg">
-        {reply}
-        <span className="inline-block ml-2 border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-800 text-gray-800">
+      <p>
+        <span className="text-slate-800 text-lg mr-2">“{reply}”</span>
+        <span className="inline-block border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-800 text-gray-800">
           {category}
         </span>
       </p>

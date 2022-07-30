@@ -1,9 +1,6 @@
 import Completion from "./Completion";
 
-import categoryPrompts from "../data/prompts/category-specific";
-import generateDataPrompt from "../data/prompts/generate-data";
 import { getFewShotExamples, selectAttitudes } from "./v6_utils";
-import examples from "../data/few_shot_examples";
 
 const temp = 0.9;
 const freqPenalty = 0.6;
@@ -11,27 +8,30 @@ const presPenalty = 0.5;
 
 export default async function generateResult(statement: string, uuid: string) {
   const attitudes = selectAttitudes();
-
+  let generationAttitudes = attitudes.slice(10, 15);
+  generationAttitudes[0] = "appropriate"; // force
   const sentiment = await getSentiment(statement);
 
   const fewShotExamples = getFewShotExamples(sentiment, attitudes);
 
   const prompt = formGenerationPrompt(
     statement,
-    attitudes.slice(10, 15),
+    generationAttitudes,
     fewShotExamples
   );
 
-  console.log(prompt);
+  // console.log(prompt);
 
   // // 3. call GPT-3
   const replies = await getReplies(prompt);
 
+  console.log(replies);
+
   const evalPrompt = formInitialEvalPrompt(statement, fewShotExamples);
-  console.log(evalPrompt);
+  // console.log(evalPrompt);
 
   const evaluations = await evalGeneratedReplies(evalPrompt, replies);
-  console.log(evaluations);
+  // console.log(evaluations);
 
   // 5. return data
   let good_replies: any[] = [];
@@ -39,10 +39,10 @@ export default async function generateResult(statement: string, uuid: string) {
 
   evaluations.forEach((e: any, idx: number) => {
     const ex = {
-      reply: replies[idx],
+      reply: replies[idx].replace('"', ""),
       isGoodReply: e.isGoodReply,
       explanation: e.explanation,
-      category: "None",
+      category: generationAttitudes[idx],
     };
     if (ex.isGoodReply) good_replies.push(ex);
     else bad_replies.push(ex);
@@ -67,7 +67,7 @@ async function evalGeneratedReplies(prompt: string, replies: string[]) {
     let explanation = "";
     let isGoodReply = false;
     let numApiCalls = 0;
-    while (numApiCalls < 3) {
+    while (numApiCalls < 2) {
       let result = await Completion({
         model: "text-davinci-002",
         prompt: runningPrompt,
@@ -99,7 +99,10 @@ async function evalGeneratedReplies(prompt: string, replies: string[]) {
     if (explanation == "") {
       explanation = "Oops! Noora could not properly generate an explanation.";
     }
-    evaluations.push({ isGoodReply: isGoodReply, explanation: explanation });
+    evaluations.push({
+      isGoodReply: isGoodReply,
+      explanation: explanation.replace('"', ""),
+    });
   }
 
   return evaluations;
