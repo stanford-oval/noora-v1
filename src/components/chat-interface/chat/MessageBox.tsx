@@ -51,7 +51,9 @@ export default function MessageBox({ history, convoState }: any) {
   useEffect(() => {
     if (
       (convoState.value.turn.startsWith("user-answer") &&
-        history.value.length > 3) ||
+        history.value
+          .slice(0, Math.min(history.value.length, 5))
+          .filter((h: any) => !h.fromNoora).length > 0) ||
       convoState.value.turn == "user-answer-edit"
     ) {
       // don't autofocus on page load (especially for mobile)
