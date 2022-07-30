@@ -23,7 +23,7 @@ export default function MessageBox({ history, convoState }: any) {
     let m = message.trim().toLowerCase();
 
     if (convoState.value.turn == "user-answer-start") {
-      if (m.includes("no") || m.includes("don")) {
+      if (m.includes("no") || m.includes("don") || m.includes("na")) {
         history.setValue((h: any) => [
           ...h,
           { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },

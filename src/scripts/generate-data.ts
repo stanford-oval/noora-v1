@@ -2,22 +2,17 @@ import Completion from "./Completion";
 
 import categoryPrompts from "../data/prompts/category-specific";
 import generateDataPrompt from "../data/prompts/generate-data";
+import { getFewShotExamples, selectAttitudes } from './v6_utils';
 
 const temp = 0.9;
-const freqPenalty = 0.5;
-const presPenalty = 0.25;
+const freqPenalty = 0.6;
+const presPenalty = 0.5;
 
 export default async function generateResult(statement: string, uuid: string) {
-  // 1. generate intermediate examples
-  let intermediates = await generateIntermediateExamples(statement);
-  intermediates.forEach((intermediate, idx) => {
-    intermediates[idx] = `(${idx + 1}) ` + intermediate;
-  });
-  // 2. construct final prompt
-  let prompt = generateDataPrompt.replace(
-    "{intermediate_examples_formatted}",
-    intermediates.join("\r\n")
-  );
+  const attitudes = selectAttitudes();
+  
+  const prompt = ""
+
   // 3. call GPT-3
   let reply = await Completion({
     model: "text-davinci-002",
