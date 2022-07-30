@@ -24,7 +24,7 @@ export default function Menu({ convoState }: any) {
     >
       <div className="border-b-2 border-gray-400 py-4">
         <div className="text-2xl text-center font-bold text-noora-secondary">
-          Info
+          Menu
         </div>
       </div>
       <div className="px-2 py-1">

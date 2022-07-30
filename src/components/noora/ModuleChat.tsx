@@ -7,11 +7,8 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   const [h, setH] = useState([]);
   const [cs, setCs] = useState({
     draft: "",
-    turn: "user-answer",
-    modules: [
-      { title: "general", active: true, fixed: true },
-      { title: "work", active: true, fixed: true },
-    ],
+    turn: "user-answer-start",
+    modules: modules,
     sentiments: [
       { title: "positive", active: true },
       { title: "neutral", active: false },
@@ -39,7 +36,10 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   };
 
   useEffect(() => {
-    if (modules) setCs((cs: any) => ({ ...cs, modules: modules }));
+    if (modules)
+      setCs((c: any) => {
+        return { ...c, modules: modules };
+      });
   }, [modules]);
 
   return (

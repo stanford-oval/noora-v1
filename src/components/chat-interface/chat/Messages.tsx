@@ -7,11 +7,17 @@ export default function Messages({ history, convoState }: any) {
 
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
+    let activeModules = convoState.value.modules.filter((m: any) => m.active);
+
     history.setValue((h: any) => [
       ...h,
       ...[
         "Hi! I am Noora.",
-        "Imagine that I am your friend. Let's start chatting.",
+        `Imagine that I am your ${
+          activeModules.length == 1 && activeModules[0].title == "work"
+            ? "co-worker"
+            : "friend"
+        }. Let's start chatting.`,
         getStatement(convoState),
       ].map((m, i) => ({
         id: -1 - i,

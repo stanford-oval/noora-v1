@@ -8,9 +8,7 @@ import ModuleChat from "./ModuleChat";
 export default function Noora() {
   const router = useRouter();
 
-  const [selectedModule, setSelectedModule] = useState(
-    modules["general"]
-  );
+  const [selectedModule, setSelectedModule] = useState(modules["general"]);
 
   useEffect(() => {
     const key: any =
@@ -41,7 +39,6 @@ export default function Noora() {
             <ModuleChat
               modules={(selectedModule.module == "all"
                 ? Object.values(modules).map((m: any) => {
-                    console.log(m.module);
                     if (m.module == "all") return;
                     return { title: m.module, active: true, fixed: true };
                   })
@@ -56,7 +53,9 @@ export default function Noora() {
               ).filter((m: any) => m)}
             />
           </div>
-        ) : <div className="h-screen"></div>}
+        ) : (
+          <div className="h-screen"></div>
+        )}
       </Page>
     </div>
   );
