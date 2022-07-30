@@ -17,7 +17,6 @@ export default function formPrompt(
   return prompt;
 }
 
-
 function formEvalPrompt(
   statement: string,
   reply: string,
@@ -28,8 +27,8 @@ function formEvalPrompt(
   fewShotExamples.forEach((ex) => {
     console.log(ex);
     prompt += `You said, "${ex["statement"]}"\n`;
+    console.log("attitudes:", Object.keys(ex["replies"]));
     Object.values(ex["replies"]).forEach((reply: any, idx: number) => {
-      console.log(Object.keys(ex["replies"])[idx]);
       prompt += `(${idx + 1}) I replied, "${reply["reply"]}"\n`;
       prompt += `Feedback: ${capFirst(reply["rating"].trim())} reply. ${
         reply["explanation"]

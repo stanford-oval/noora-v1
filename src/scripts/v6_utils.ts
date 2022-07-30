@@ -19,21 +19,31 @@ export function selectAttitudes() {
   return attitudes;
 }
 
-
 export function getFewShotExamples(sentiment: string, attitudes: string[]) {
   // two objects in fewShotExamples: {statement: '', replies: [{attitude: '', reply: '', rating: '', explanation: ''}]}
   let fewShotExamples: any[] = [];
 
   let currExs = examples[sentiment as keyof typeof examples];
+  console.log(sentiment + ":", currExs);
 
   [currExs["general"], currExs["work"]].forEach((exs, i) => {
-    console.log(exs["statement"], i);
+    console.log(i, exs["statement"]);
     let selectedExs = Object.fromEntries(
       Object.entries(exs).filter(
         ([key]) => attitudes.slice(i * 5, 5 * (i + 1)).indexOf(key) != -1
       )
     );
-    fewShotExamples.push({ statement: exs["statement"], replies: selectedExs });
+
+    let replies = Object.keys(selectedExs).map((key) => ({
+      ...(selectedExs[key] as Object),
+      attitude: key,
+    }));
+
+    fewShotExamples.push({
+      statement: exs["statement"],
+      replies: replies,
+      attitudes: attitudes.slice(i * 5, 5 * (i + 1)),
+    });
   });
 
   return fewShotExamples;
