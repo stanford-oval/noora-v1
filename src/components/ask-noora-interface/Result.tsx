@@ -60,7 +60,7 @@ export default function Result({
                 ))}{" "}
                 {good_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Oops! Noora didn&apos;t generate any good replies. Please
+                    Noora didn&apos;t generate any good replies. Please
                     try again.
                   </div>
                 )}
@@ -85,7 +85,7 @@ export default function Result({
                 ))}
                 {bad_replies.length == 0 && (
                   <div className="text-center md:text-left text-slate-500">
-                    Oops! Noora didn&apos;t generate any bad replies. Please try
+                    Noora didn&apos;t generate any bad replies. Please try
                     again.
                   </div>
                 )}
@@ -95,7 +95,7 @@ export default function Result({
         </div>
       ) : (
         <div className="text-center text-slate-500">
-          Give Noora a few seconds to think...
+          Noora takes around 20 seconds...
         </div>
       )}
     </div>

@@ -3,6 +3,7 @@ import Completion from "./Completion";
 import categoryPrompts from "../data/prompts/category-specific";
 import generateDataPrompt from "../data/prompts/generate-data";
 import { getFewShotExamples, selectAttitudes } from "./v6_utils";
+import examples from "../data/few_shot_examples";
 
 const temp = 0.9;
 const freqPenalty = 0.6;
@@ -26,29 +27,26 @@ export default async function generateResult(statement: string, uuid: string) {
   // // 3. call GPT-3
   const replies = await getReplies(prompt);
 
-  console.log(replies);
+  const evalPrompt = formInitialEvalPrompt(statement, fewShotExamples);
+  console.log(evalPrompt);
 
-  // // 4. parse examples
-  // let responses: any[] = [];
-  // reply.split("\n").forEach((r: string) => {
-  //   let example = {};
-  //   try {
-  //     // example = parseExStr(r);
-  //     responses.push(example);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // });
+  const evaluations = await evalGeneratedReplies(evalPrompt, replies);
+  console.log(evaluations);
 
   // 5. return data
   let good_replies: any[] = [];
   let bad_replies: any[] = [];
 
-  // responses.forEach((r) => {
-  //   if (r.rating && r.reply && r.explanation)
-  //     if (r.rating == "Good answer.") good_replies.push(r);
-  //     else bad_replies.push(r);
-  // });
+  evaluations.forEach((e: any, idx: number) => {
+    const ex = {
+      reply: replies[idx],
+      isGoodReply: e.isGoodReply,
+      explanation: e.explanation,
+      category: "None",
+    };
+    if (ex.isGoodReply) good_replies.push(ex);
+    else bad_replies.push(ex);
+  });
 
   return {
     id: uuid,
@@ -56,6 +54,75 @@ export default async function generateResult(statement: string, uuid: string) {
     good_replies: good_replies,
     bad_replies: bad_replies,
   };
+}
+
+async function evalGeneratedReplies(prompt: string, replies: string[]) {
+  let runningPrompt = prompt;
+
+  let evaluations: any[] = [];
+
+  for (const [idx, reply] of replies.entries()) {
+    runningPrompt += `(${idx + 1}) I replied, "${reply}"\nFeedback:`;
+
+    let explanation = "";
+    let isGoodReply = false;
+    let numApiCalls = 0;
+    while (numApiCalls < 3) {
+      let result = await Completion({
+        model: "text-davinci-002",
+        prompt: runningPrompt,
+        temperature: temp,
+        max_tokens: 60,
+        frequency_penalty: freqPenalty,
+        presence_penalty: presPenalty,
+      });
+      numApiCalls++;
+
+      result = result.trim().split("\n")[0];
+
+      if (result.includes("Good reply.") || result.includes("Bad reply.")) {
+        explanation = result.split("reply.")[1].trim();
+        isGoodReply = result.includes("Good reply.");
+
+        console.log(isGoodReply, explanation);
+        break;
+      } else {
+        console.log(
+          "Regenerating evaluation because it does not contain rating:"
+        );
+        console.log(result);
+      }
+
+      runningPrompt += result + "\n";
+    }
+
+    if (explanation == "") {
+      explanation = "Oops! Noora could not properly generate an explanation.";
+    }
+    evaluations.push({ isGoodReply: isGoodReply, explanation: explanation });
+  }
+
+  return evaluations;
+}
+
+function formInitialEvalPrompt(statement: string, fewShotExamples: any[]) {
+  let prompt = "";
+
+  fewShotExamples.forEach((ex) => {
+    prompt += `You said, "${ex["statement"]}"\n`;
+
+    Object.values(ex["replies"]).forEach((reply: any, idx: number) => {
+      prompt += `(${idx + 1}) I replied, "${reply["reply"]}"\n`;
+      prompt += `Feedback: ${capFirst(reply["rating"].trim())} reply. ${
+        reply["explanation"]
+      }\n`;
+    });
+    prompt += "\n";
+  });
+
+  // unseen statement
+  prompt += `You said, "${statement}"\n`;
+  return prompt;
 }
 
 async function getReplies(prompt: string) {
@@ -73,7 +140,7 @@ async function getReplies(prompt: string) {
 
   raw_replies.forEach((r: any) => {
     if (r.includes("you reply,")) {
-      replies.push(r.split("you reply,")[1].trim());
+      replies.push(r.split("you reply,")[1].trim().replace('"', ""));
     } else {
       console.log("Generated reply thrown out because format is incorrect:");
       console.log(r);
