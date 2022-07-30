@@ -20,10 +20,22 @@ export default function MessageBox({ history, convoState }: any) {
     ]);
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
-    if (convoState.value.progress.length < convoState.value.numProblems) {
+    let m = message.trim().toLowerCase();
+
+    if (convoState.value.turn == "user-answer-start") {
+      if (m.includes("no") || m.includes("don")) {
+        history.setValue((h: any) => [
+          ...h,
+          { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },
+        ]);
+      } else {
+        await noorasTurn(message, convoState, history);
+      }
+    } else if (
+      convoState.value.progress.length < convoState.value.numProblems
+    ) {
       await noorasTurn(message, convoState, history);
     } else {
-      let m = message.trim().toLowerCase();
       if (m.includes("ye") || m.includes("i want to")) {
         convoState.setValue((cs: any) => ({
           ...cs,
@@ -149,7 +161,14 @@ async function noorasTurn(
     const replies = await getReply(message, convoState, "get-statement");
     history.setValue((h: any) => [
       ...h,
-      { fromNoora: true, text: "Let's try another one." },
+      {
+        fromNoora: true,
+        id: uuidv4(),
+        text:
+          convoState.value.turn == "user-answer-start"
+            ? "Let's get started."
+            : "Let's try another one.",
+      },
       ...replies,
     ]);
   } else {

@@ -17,15 +17,16 @@ export default function Messages({ history, convoState }: any) {
           activeModules.length == 1 && activeModules[0].title == "work"
             ? "co-worker"
             : "friend"
-        }. Let's start chatting.`,
-        getStatement(convoState),
+        }.`,
+        "You can view your progress and choose what topics you want to practice using the Menu.",
+        "Are you ready to begin?",
       ].map((m, i) => ({
         id: -1 - i,
         fromNoora: true,
         text: m,
-        statement: i == 2,
       })),
     ]);
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
   }, []);
 
   // scrolling
