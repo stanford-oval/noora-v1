@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useMemo,
 } from "react";
-import AskNoora from "./ask-noora/AskNoora";
+import AskNooraPlayground from "./ask-noora/AskNooraPlayground";
 import { Tab } from "@headlessui/react";
 import { clsx } from "clsx";
 import Practice from "./practice/Practice";
@@ -189,7 +189,7 @@ export default function Playground() {
               <Practice />
             </Tab.Panel>
             <Tab.Panel>
-              <AskNoora />
+              <AskNooraPlayground />
             </Tab.Panel>
           </Tab.Panels>
         )}

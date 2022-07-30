@@ -1,27 +1,24 @@
-import React, { useContext, useRef } from "react";
-import generateResult from "../../../scripts/generate-data";
+import React, { useRef } from "react";
+import generateResult from "../../scripts/generate-data";
 import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import { PlaygroundContext } from "../Playground";
 
-export default function InputForm() {
-  const { askNoora } = useContext(PlaygroundContext);
-  const { query, results, resultsQueue } = askNoora;
+export default function InputForm({ query, results, resultsQueue }: any) {
   const inputBox = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
     e.preventDefault();
     let statement = query.value.slice();
-    query.setValue("Noora is not available right now.");
-    return
-    // if (inputBox.current) inputBox.current.focus();
-    // let id = uuidv4();
-    // results.setValue((r:any) => ([...r, { id: id, statement: statement }]));
+    query.setValue("");
 
-    // console.log("Generating result for: " + statement);
-    // let result = await generateResult(statement, id);
-    // resultsQueue.setValue([result]);
+    if (inputBox.current) inputBox.current.focus();
+    let id = uuidv4();
+    results.setValue((r: any) => [...r, { id: id, statement: statement }]);
+
+    console.log("Generating result for: " + statement);
+    let result = await generateResult(statement, id);
+    resultsQueue.setValue([result]);
   };
 
   return (

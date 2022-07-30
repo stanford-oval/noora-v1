@@ -9,6 +9,10 @@ const routes = [
     href: "/modules",
   },
   {
+    name: "Ask Noora",
+    href: "/ask-noora",
+  },
+  {
     name: "Links",
     dropRoutes: [
       { href: "https://oval.cs.stanford.edu/", name: "Stanford OVAL" },

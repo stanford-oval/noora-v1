@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { clsx } from "clsx";
-import { PlaygroundContext } from "../Playground";
 
 export default function Result({
   statement,
   good_replies,
   bad_replies,
   id,
+  results,
 }: ResultProps) {
-  const { askNoora } = useContext(PlaygroundContext);
-  const { results } = askNoora;
-
   return (
     <div
       className={clsx(
@@ -137,6 +134,7 @@ type ResultProps = {
   good_replies: any[];
   bad_replies: any[];
   id: number;
+  results: any;
 };
 
 type ReplyProps = {

@@ -1,12 +1,12 @@
-import React, { useEffect, useContext } from "react";
-import { PlaygroundContext } from "../Playground";
+import React, { useEffect } from "react";
 import InputForm from "./InputForm";
 import Result from "./Result";
 
-export default function AskNoora() {
-  const { askNoora } = useContext(PlaygroundContext);
-  const { results, resultsQueue } = askNoora;
-
+export default function AskNooraComponent({
+  query,
+  results,
+  resultsQueue,
+}: any) {
   useEffect(() => {
     // on queue change, update the right element
     resultsQueue.value.forEach((result: any) => {
@@ -24,7 +24,7 @@ export default function AskNoora() {
     <div>
       <div
         className="pt-16 bg-cover bg-no-repeat bg-center overflow-hidden"
-        id="nooraRepliesHero"
+        id="askNooraHero"
       >
         <div className="pt-12 pb-32">
           <div className="container text-center justify-center">
@@ -32,10 +32,13 @@ export default function AskNoora() {
               Ask Noora
             </p>
             <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">
-              Tell Noora anything, and she will give you some good and bad
-              replies.
+              Don't know how to reply to something? Noora can help advise you.
             </h2>
-            <InputForm />
+            <InputForm
+              query={query}
+              results={results}
+              resultsQueue={resultsQueue}
+            />
           </div>
         </div>
       </div>
@@ -51,6 +54,7 @@ export default function AskNoora() {
                   statement={result.statement}
                   good_replies={result.good_replies}
                   bad_replies={result.bad_replies}
+                  results={results}
                 />
               </li>
             ))}
