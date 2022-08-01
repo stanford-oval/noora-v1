@@ -43,7 +43,7 @@ export default function Result({
       {reply ? (
         <div className="text-center mt-3 text-lg text-gray-600 max-w-4xl mx-auto">
           {explanation} <br />
-          For example: <span className="text-noora-primary font-bold">“{reply}”</span>
+          For example: <span className="text-noora-primary font-bold inline-block mt-1">“{reply}”</span>
         </div>
       ) : (
         <div className="text-center text-slate-500">
