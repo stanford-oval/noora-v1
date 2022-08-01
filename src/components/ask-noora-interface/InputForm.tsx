@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import generateResult from "../../scripts/generate-data";
+import generateResult from "../../scripts/generate-advice";
 import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
