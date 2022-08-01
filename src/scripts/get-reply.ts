@@ -60,7 +60,7 @@ export default async function getReply(
 
 async function getRating(message: string, statementObj: any, convoState: any) {
   const prompt = formPrompt(statementObj[1], statementObj[0], message);
-  // let target = statementObj[2];
+  let target = statementObj[2];
 
   let classification = "";
   let explanation = "";
@@ -126,7 +126,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     } else {
       answers.push("Not quite!");
       answers.push(explanation);
-      // answers.push("A better answer might've been: “" + target.trim() + "”");
+      answers.push("A better answer might've been: “" + target.trim() + "”");
     }
   } catch (error) {
     console.error(error);
