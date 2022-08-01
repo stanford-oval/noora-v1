@@ -1,6 +1,6 @@
 import examples, {
   attitudes as all_attitudes,
-} from "../data/few_shot_examples";
+} from "../data/few-shot-examples";
 
 export function selectAttitudes() {
   let all_attitudes_copy = all_attitudes.slice();

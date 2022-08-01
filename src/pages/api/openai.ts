@@ -14,7 +14,7 @@ export default async function handler(
   console.log("In api/openai handler...");
 
   try {
-    await limiter.check(res, 30, "CACHE_TOKEN"); // 30 requests per minute
+    await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });

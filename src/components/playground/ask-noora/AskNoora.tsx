@@ -1,12 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { PlaygroundContext } from "../Playground";
 import InputForm from "./InputForm";
 import Result from "./Result";
+import { useRouter } from "next/router";
 
-export default function AskNooraComponent({
-  query,
-  results,
-  resultsQueue,
-}: any) {
+export default function AskNoora() {
+  const router = useRouter();
+
+  React.useEffect(() => {
+    router.push("/playground", undefined, { shallow: true });
+  }, []);
+
+  const { askNoora } = useContext(PlaygroundContext);
+  const { results, resultsQueue } = askNoora;
+
   useEffect(() => {
     // on queue change, update the right element
     resultsQueue.value.forEach((result: any) => {
@@ -15,8 +22,9 @@ export default function AskNooraComponent({
         else return r;
       });
 
-      results.setValue(newResults);
-      resultsQueue.setValue([]); // empty queue
+      results.updateValue(newResults);
+
+      resultsQueue.updateValue([]); // empty queue
     });
   }, [resultsQueue.value]);
 
@@ -24,23 +32,18 @@ export default function AskNooraComponent({
     <div>
       <div
         className="pt-16 bg-cover bg-no-repeat bg-center overflow-hidden"
-        id="askNooraHero"
+        id="nooraRepliesHero"
       >
         <div className="pt-12 pb-32">
           <div className="container text-center justify-center">
-            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary bg-clip-text font-bold text-5xl tracking-tight text-transparent">
+            <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark1 via-noora-primary-dark2 to-noora-secondary-bright bg-clip-text font-bold text-5xl tracking-tight text-transparent">
               Ask Noora
             </p>
             <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">
-              Don&apos;t know how to reply to something?
-              <br />
-              Noora can help advise you.
+              Tell Noora anything, and she will give you some good and bad
+              replies.
             </h2>
-            <InputForm
-              query={query}
-              results={results}
-              resultsQueue={resultsQueue}
-            />
+            <InputForm />
           </div>
         </div>
       </div>
@@ -54,9 +57,8 @@ export default function AskNooraComponent({
                 <Result
                   id={result.id}
                   statement={result.statement}
-                  explanation={result.explanation}
-                  reply={result.reply}
-                  results={results}
+                  good_replies={result.good_replies}
+                  bad_replies={result.bad_replies}
                 />
               </li>
             ))}

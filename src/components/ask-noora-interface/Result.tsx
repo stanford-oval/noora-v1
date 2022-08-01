@@ -3,8 +3,8 @@ import { clsx } from "clsx";
 
 export default function Result({
   statement,
-  good_replies,
-  bad_replies,
+  explanation,
+  reply,
   id,
   results,
 }: ResultProps) {
@@ -40,103 +40,24 @@ export default function Result({
           </span>
         )}
       </div>
-      {good_replies || bad_replies ? (
-        <div className="grid md:grid-cols-2 gap-3 mt-3">
-          {good_replies && (
-            <div>
-              <h1 className="text-lg md:text-xl text-green-700 font-medium text-center md:text-left">
-                Good Replies
-              </h1>
-              <ul className="col-span-1 space-y-1 mt-1">
-                {good_replies.map((reply, idx) => (
-                  <li key={idx}>
-                    <Reply
-                      reply={reply.reply}
-                      explanation={reply.explanation}
-                      category={reply.category}
-                      good_reply={true}
-                    />
-                  </li>
-                ))}{" "}
-                {good_replies.length == 0 && (
-                  <div className="text-center md:text-left text-slate-500">
-                    Noora didn&apos;t generate any good replies.
-                  </div>
-                )}
-              </ul>
-            </div>
-          )}
-          {bad_replies && (
-            <div>
-              <h1 className="text-lg md:text-xl text-red-700 font-mediumm text-center md:text-left font-medium">
-                Bad Replies
-              </h1>
-              <ul className="col-span-1 space-y-1 mt-1">
-                {bad_replies.map((reply, idx) => (
-                  <li key={idx}>
-                    <Reply
-                      reply={reply.reply}
-                      explanation={reply.explanation}
-                      category={reply.category}
-                      good_reply={false}
-                    />
-                  </li>
-                ))}
-                {bad_replies.length == 0 && (
-                  <div className="text-center md:text-left text-slate-500">
-                    Noora didn&apos;t generate any bad replies.
-                  </div>
-                )}
-              </ul>
-            </div>
-          )}
+      {reply ? (
+        <div className="text-center mt-3 text-lg text-gray-600">
+          {explanation} <br />
+          For example: <span className="text-noora-primary font-bold">“{reply}”</span>
         </div>
       ) : (
         <div className="text-center text-slate-500">
-          Noora takes around 20 seconds...
+          Give Noora a few seconds to think...
         </div>
       )}
-    </div>
-  );
-}
-
-function Reply({ reply, explanation, category, good_reply }: ReplyProps) {
-  return (
-    <div
-      className={clsx(
-        "p-3 border-2 rounded-lg",
-        good_reply
-          ? "border-green-700 bg-green-100"
-          : "border-red-700 bg-red-100"
-      )}
-    >
-      <p>
-        <span className="text-slate-800 text-lg mr-2">“{reply}”</span>
-        <span className="inline-block border-1 items-center px-2 py-0.5 rounded-full text-xs font-normal -top-0.5 relative bg-gray-200 border-gray-800 text-gray-800">
-          {category}
-        </span>
-      </p>
-      <div className="text-slate-600 mt-2 font-light">
-        <p>If you replied with the above:</p>
-        <p>
-          <i>{explanation}</i>
-        </p>
-      </div>
     </div>
   );
 }
 
 type ResultProps = {
   statement: string;
-  good_replies: any[];
-  bad_replies: any[];
+  explanation: string;
+  reply: string;
   id: number;
   results: any;
-};
-
-type ReplyProps = {
-  reply: string;
-  category: string;
-  explanation: string;
-  good_reply: boolean;
 };
