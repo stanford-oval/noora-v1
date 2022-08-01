@@ -32,8 +32,9 @@ export default function AskNooraComponent({
               Ask Noora
             </p>
             <h2 className="mt-3 text-2xl max-w-lg tracking-tight text-slate-800 mx-auto">
-              Don&apos;t know how to reply to something? Noora can help advise
-              you.
+              Don&apos;t know how to reply to something?
+              <br />
+              Noora can help advise you.
             </h2>
             <InputForm
               query={query}

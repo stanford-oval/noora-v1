@@ -35,7 +35,7 @@ export default function InputForm({ query, results, resultsQueue }: any) {
             query.setValue(e.target.value);
           }}
           value={query.value}
-          placeholder="I finished great book today!"
+          placeholder="I finished a great book today!"
           className="block p-4 pl-12 w-full border-2 focus:outline-none border-gray-400 shadow-sm focus:ring-0 focus:border-noora-primary sm:text-sm rounded-full text-slate-800"
         />
         <button
