@@ -1,0 +1,49 @@
+{
+  "name": "react-anchor-link-smooth-scroll",
+  "version": "1.0.12",
+  "description": "React component for anchor links using the smoothscroll polyfill.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauricevancooten/react-anchor-link-smooth-scroll.git"
+  },
+  "keywords": [
+    "scroll",
+    "react",
+    "smooth",
+    "component",
+    "smooth-scroll",
+    "polyfill",
+    "javascript"
+  ],
+  "author": "Maurice van Cooten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mauricevancooten/react-anchor-link-smooth-scroll/issues"
+  },
+  "homepage": "https://github.com/mauricevancooten/react-anchor-link-smooth-scroll#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.2",
+    "smoothscroll-polyfill": "^0.4.3",
+    "webpack": "^3.12.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "main": "lib/anchor-link.js",
+  "scripts": {
+    "compile": "NODE_ENV='production' webpack",
+    "compile-watch": "NODE_ENV='development' webpack -w"
+  }
+}
