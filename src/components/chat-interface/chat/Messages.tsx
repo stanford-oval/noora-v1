@@ -106,7 +106,7 @@ function Message({ message }: any) {
     return (
       <div>
         <span>
-          A better reply might've been:{" "}
+          A better reply might&apos;ve been:{" "}
           <span className="font-bold text-noora-secondary-light">
             &ldquo;{message.text}&rdquo;
           </span>
