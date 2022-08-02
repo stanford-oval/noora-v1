@@ -8,10 +8,10 @@ const routes = [
     name: "Modules",
     href: "/modules",
   },
-  {
-    name: "Ask Noora",
-    href: "/ask-noora",
-  },
+  // {
+  //   name: "Ask Noora",
+  //   href: "/ask-noora",
+  // },
   {
     name: "Links",
     dropRoutes: [
