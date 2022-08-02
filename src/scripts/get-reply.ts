@@ -202,7 +202,8 @@ function getStatementIdx(
 ) {
   let seenIdxs = convoState.value.progress
     .map((p: any) => {
-      if (p.statementCategory == category) return p.idx;
+      if (p.statementCategory == category && p.goodAnswer)
+        return p.idx; // same category seen, but can repeat ones where user got it wrong
       else {
         return -1;
       }

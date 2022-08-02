@@ -19,6 +19,7 @@ export default function Footer({ convoState, history, draft }: any) {
             ...cs,
             draft: "",
             turn: "user-answer",
+            numProblems: 10,
             modules: [
               { title: "general", active: true },
               { title: "work", active: true },
