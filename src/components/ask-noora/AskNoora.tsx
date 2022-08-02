@@ -8,7 +8,7 @@ export default function AskNoora() {
       id: -1,
       statement: "I just finished a really good book!",
       explanation:
-        "You should show me that you are interested in my experiences by asking me about my book.",
+        "You should show them that you are interested in their experiences by asking them about their book.",
       reply: "That's great! What was your favorite part of the book?",
     },
   ]);
