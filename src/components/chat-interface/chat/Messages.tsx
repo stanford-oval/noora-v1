@@ -18,7 +18,6 @@ export default function Messages({ history, convoState }: any) {
             ? "co-worker"
             : "friend"
         }.`,
-        "You can view your progress and choose what topics you want to practice using the Menu.",
         "Are you ready to begin?",
       ].map((m, i) => ({
         id: -1 - i,
