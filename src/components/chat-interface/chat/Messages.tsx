@@ -62,16 +62,7 @@ export default function Messages({ history, convoState }: any) {
                     : "bg-noora-primary text-white ml-auto"
                 )}
               >
-                {message.statement ? (
-                  <span>
-                    <span className="font-bold text-noora-primary-dark">
-                      &ldquo;{message.text}&rdquo;
-                    </span>{" "}
-                    What would you say?
-                  </span>
-                ) : (
-                  message.text
-                )}
+                <Message message={message} />
               </div>
             )}
           </li>
@@ -97,4 +88,30 @@ export default function Messages({ history, convoState }: any) {
       </div>
     </div>
   );
+}
+
+function Message({ message }: any) {
+  if (message.statement)
+    return (
+      <div>
+        <span>
+          <span className="font-bold text-noora-primary-dark">
+            &ldquo;{message.text}&rdquo;
+          </span>{" "}
+          What would you say?
+        </span>
+      </div>
+    );
+  else if (message.suggestion)
+    return (
+      <div>
+        <span>
+          A better reply might've been:{" "}
+          <span className="font-bold text-noora-secondary-light">
+            &ldquo;{message.text}&rdquo;
+          </span>
+        </span>
+      </div>
+    );
+  return <div>{message.text}</div>;
 }

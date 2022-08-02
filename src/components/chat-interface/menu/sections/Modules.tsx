@@ -67,28 +67,30 @@ function Sentiments({ convoState }: any) {
         {convoState.value.sentiments.map((sentiment: any) => {
           return (
             <div key={sentiment.title} className="form-check">
-              <input
-                className="form-check-input h-4 w-4 border border-gray-400 rounded-sm bg-white checked:bg-noora-primary checked:hover:bg-noora-primary checked:focus:bg-noora-primary outline-none ring-0 focus:ring-0 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-1 cursor-pointer"
-                type="checkbox"
-                checked={sentiment.active}
-                onChange={() => {
-                  // toggle category active/inactive
-                  let newSentiments = convoState.value.sentiments.map(
-                    (s: any) => {
-                      if (s.title == sentiment.title)
-                        return { title: s.title, active: !s.active };
-                      else return s;
-                    }
-                  );
-                  convoState.setValue((cs: any) => ({
-                    ...cs,
-                    sentiments: newSentiments,
-                  }));
-                }}
-              />
-              <label className="form-check-label inline-block text-gray-800 mt-0.5">
-                {sentiment.title.charAt(0).toUpperCase() +
-                  sentiment.title.slice(1)}
+              <label className="form-check-label inline-block text-gray-800 cursor-pointer">
+                <input
+                  className="form-check-input h-4 w-4 border border-gray-400 rounded-sm bg-white checked:bg-noora-primary checked:hover:bg-noora-primary checked:focus:bg-noora-primary outline-none ring-0 focus:ring-0 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-1 cursor-pointer"
+                  type="checkbox"
+                  checked={sentiment.active}
+                  onChange={() => {
+                    // toggle category active/inactive
+                    let newSentiments = convoState.value.sentiments.map(
+                      (s: any) => {
+                        if (s.title == sentiment.title)
+                          return { title: s.title, active: !s.active };
+                        else return s;
+                      }
+                    );
+                    convoState.setValue((cs: any) => ({
+                      ...cs,
+                      sentiments: newSentiments,
+                    }));
+                  }}
+                />
+                <span className="inline-block mt-0.5">
+                  {sentiment.title.charAt(0).toUpperCase() +
+                    sentiment.title.slice(1)}
+                </span>
               </label>
             </div>
           );

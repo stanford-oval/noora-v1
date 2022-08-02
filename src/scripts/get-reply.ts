@@ -39,13 +39,15 @@ export default async function getReply(
     }));
     let answers = await getRating(
       message,
-      [...convoState.value.statement],
+      convoState.value.statement.statementIdx,
+      [...convoState.value.statement.statementObj],
       convoState
     );
 
     replies = answers.map((a: any) => ({
       fromNoora: true,
-      text: a,
+      text: a.text,
+      suggestion: a.suggestion,
       statement: false,
     }));
   }
@@ -58,7 +60,12 @@ export default async function getReply(
   return replies;
 }
 
-async function getRating(message: string, statementObj: any, convoState: any) {
+async function getRating(
+  message: string,
+  statementIdx: number,
+  statementObj: any,
+  convoState: any
+) {
   const prompt = formPrompt(statementObj[1], statementObj[0], message);
   let target = statementObj[2];
 
@@ -95,7 +102,12 @@ async function getRating(message: string, statementObj: any, convoState: any) {
       badProb = probs[topTokens.indexOf(" Bad")];
     goodReplyConfidence = goodProb / (goodProb + badProb);
 
-    if (goodReplyConfidence > convoState.value.model.goodReplyThreshold) {
+    let threshold =
+      message.length < 3 ? 0.9 : convoState.value.model.goodReplyThreshold; //  length filtering
+    console.log(
+      `"good" token probability: ${goodProb}. "bad token probability: ${badProb}. threshold: ${threshold}`
+    );
+    if (goodReplyConfidence > threshold) {
       classification = "Good reply.";
       goodAnswer = true;
     } else {
@@ -105,7 +117,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
 
     console.log("Classification: " + classification);
 
-    console.log(prompt + " " + classification);
+    // console.log(prompt + " " + classification);
 
     output = await Completion({
       model: convoState.value.model.name,
@@ -121,12 +133,12 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     console.log("Explanation: " + explanation);
 
     if (goodAnswer) {
-      answers.push("Good reply!");
-      answers.push(explanation);
+      answers.push({ text: "Good reply!" });
+      answers.push({ text: explanation });
     } else {
-      answers.push("Not quite!");
-      answers.push(explanation);
-      answers.push("A better answer might've been: “" + target.trim() + "”");
+      answers.push({ text: "Not quite!" });
+      answers.push({ text: explanation });
+      answers.push({ text: target.trim(), suggestion: true });
     }
   } catch (error) {
     console.error(error);
@@ -140,6 +152,7 @@ async function getRating(message: string, statementObj: any, convoState: any) {
     progress: [
       ...cs.progress,
       {
+        idx: statementIdx,
         statement: statementObj[1],
         statementCategory: statementObj[0],
         reply: message,
@@ -155,30 +168,72 @@ async function getRating(message: string, statementObj: any, convoState: any) {
   return answers;
 }
 
-export function getStatement(convoState: any) {
+export async function getStatement(convoState: any) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
   const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
-  const module = getRandomItem(modules).title as keyof typeof module_statements;
+  const category = getRandomItem(modules)
+    .title as keyof typeof module_statements;
   const sentiment = getRandomItem(sentiments)
-    .title as keyof typeof module_statements[typeof module];
+    .title as keyof typeof module_statements[typeof category];
 
+  await timeout(700);
   // choose statement
-  let statement = getRandomItem(module_statements[module][sentiment]);
+  const statementIdx = getStatementIdx(
+    category + "/" + sentiment,
+    module_statements[category][sentiment],
+    convoState
+  );
+  const statement = module_statements[category][sentiment][statementIdx];
   convoState.setValue((cs: any) => ({
     ...cs,
-    statement: statement,
+    statement: { statementIdx: statementIdx, statementObj: statement },
   }));
-  console.log("Selected statement: ");
-  console.log(statement);
+  // console.log("Selected statement: ");
+  // console.log(statement);
 
   return statement[1];
 }
 
-// function timeout(ms: number) {
-//   // for testing purposes
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
+function getStatementIdx(
+  category: string,
+  statementsList: any[],
+  convoState: any
+) {
+  let seenIdxs = convoState.value.progress
+    .map((p: any) => {
+      if (p.statementCategory == category) return p.idx;
+      else {
+        return -1;
+      }
+    })
+    .filter((i: number) => i >= 0);
+  if (convoState.value.statement)
+    seenIdxs.push(convoState.value.statement.statementIdx);
+  // console.log("Seen statement indexes:", seenIdxs);
+
+  if (seenIdxs.length >= statementsList.length) {
+    console.log("Exhausted all statements. Resetting.");
+    seenIdxs = seenIdxs.slice(
+      statementsList.length *
+        Math.floor(seenIdxs.length / statementsList.length),
+      seenIdxs.length
+    );
+  }
+
+  let newRandomIdx = 0;
+  while (true) {
+    newRandomIdx = Math.floor(Math.random() * statementsList.length);
+    if (seenIdxs.indexOf(newRandomIdx) == -1) break;
+  }
+
+  return newRandomIdx;
+}
+
+function timeout(ms: number) {
+  // for testing purposes
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 function getRandomItem(items: any) {
   return items[Math.floor(Math.random() * items.length)];
