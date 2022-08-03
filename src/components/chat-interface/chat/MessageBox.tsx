@@ -103,7 +103,7 @@ export default function MessageBox({ history, convoState }: any) {
           className={clsx(
             "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800",
             convoState.value.turn.includes("microphone")
-              ? "border-noora-primary disabled:bg-slate-200"
+              ? "border-noora-primary disabled:bg-slate-200 placeholder-slate-600 "
               : "border-gray-400  disabled:bg-gray-100"
           )}
         />
