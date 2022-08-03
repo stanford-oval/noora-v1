@@ -1,6 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { clsx } from "clsx";
-import { getStatement } from "../../../scripts/get-reply";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
+import { InformationCircleIcon } from "@heroicons/react/outline";
+
+import dynamic from "next/dynamic";
+import { ACTIONS, EVENTS, STATUS } from "react-joyride";
+const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
@@ -11,19 +17,30 @@ export default function Messages({ history, convoState }: any) {
 
     history.setValue((h: any) => [
       ...h,
-      ...[
-        "Hi! I am Noora.",
-        `Imagine that I am your ${
+      {
+        id: -1,
+        fromNoora: true,
+        text: "Hi! I am Noora.",
+      },
+      {
+        id: -2,
+        fromNoora: true,
+        text: `Imagine that I am your ${
           activeModules.length == 1 && activeModules[0].title == "work"
             ? "co-worker"
             : "friend"
         }.`,
-        "Are you ready to begin?",
-      ].map((m, i) => ({
-        id: -1 - i,
+      },
+      {
+        id: -3,
         fromNoora: true,
-        text: m,
-      })),
+        component: <MicrophoneInfoElement />,
+      },
+      {
+        id: -4,
+        fromNoora: true,
+        text: "Are you ready to begin?",
+      },
     ]);
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
   }, []);
@@ -34,7 +51,7 @@ export default function Messages({ history, convoState }: any) {
       if (messagesBottom.current)
         if (
           history.value
-            .slice(0, Math.min(history.value.length, 5))
+            .slice(0, Math.min(history.value.length, 6))
             .filter((h: any) => !h.fromNoora).length > 0
         )
           messagesBottom.current.scrollIntoView({
@@ -62,6 +79,18 @@ export default function Messages({ history, convoState }: any) {
                 )}
               >
                 <Message message={message} />
+              </div>
+            )}
+            {message && message.component && (
+              <div
+                className={clsx(
+                  "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
+                  message.fromNoora
+                    ? "bg-gray-200 mr-auto"
+                    : "bg-noora-primary text-white ml-auto"
+                )}
+              >
+                {message.component}
               </div>
             )}
           </li>
@@ -113,4 +142,81 @@ function Message({ message }: any) {
       </div>
     );
   return <div>{message.text}</div>;
+}
+
+function MicrophoneInfoElement() {
+  const [joyrideState, setJoyrideState] = useState({
+    run: false,
+    steps: [
+      {
+        target: ".joyride-step-1",
+        content:
+          "Tap on this button, then speak!\n Noora will turn your words into text.",
+        disableBeacon: true,
+      },
+    ],
+    stepIndex: 0,
+  });
+
+  const handleJoyrideCallback = (data: any) => {
+    const { action, index, status, type } = data;
+
+    if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+      // Update state to advance the tour
+      setJoyrideState((js: any) => ({
+        ...js,
+        stepIndex: index + (action === ACTIONS.PREV ? -1 : 1),
+      }));
+    } else if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+      // Need to set our running state to false, so we can restart if we click start again.
+      setJoyrideState((js: any) => ({ ...js, stepIndex: 0, run: false }));
+    }
+
+    console.groupCollapsed(type);
+    console.log(data); //eslint-disable-line no-console
+    console.groupEnd();
+  };
+
+  return (
+    <div>
+      <JoyRideNoSSR
+        steps={joyrideState.steps}
+        run={joyrideState.run}
+        callback={handleJoyrideCallback}
+        stepIndex={joyrideState.stepIndex}
+        floaterProps={{ placement: "top" }}
+        styles={{
+          options: {
+            // overlayColor: "rgba(79, 26, 0, 0.4)",
+            primaryColor: "#6940b6",
+            zIndex: 1000,
+          },
+        }}
+        locale={{
+          close: "Got it!",
+        }}
+      />
+      You can tap on the{" "}
+      <FontAwesomeIcon
+        icon={faMicrophone}
+        onClick={() => {
+          setJoyrideState((js: any) => ({ ...js, run: true }));
+        }}
+        className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5"
+      />{" "}
+      button next to the Send button to speak.{" "}
+      <div className="text-gray-500 inline-block">
+        (
+        <button
+          onClick={() => {
+            setJoyrideState((js: any) => ({ ...js, run: true }));
+          }}
+        >
+          <span className="text-noora-primary font-medium">show me</span>
+          <InformationCircleIcon className="w-5 h-5 inline-block ml-1 mb-0.5" />
+        </button>
+        )
+      </div>
+    </div>
+  );
 }

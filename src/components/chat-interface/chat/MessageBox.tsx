@@ -5,16 +5,8 @@ import getReply from "../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
 import Microphone from "../../global/utility/Microphone";
 import { clsx } from "clsx";
-import dynamic from "next/dynamic";
-const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function MessageBox({ history, convoState }: any) {
-  const [steps, setSteps] = useState([
-    {
-      target: ".joyride-step-1",
-      content: "You can tap on this button to speak!",
-    },
-  ]);
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
@@ -75,20 +67,6 @@ export default function MessageBox({ history, convoState }: any) {
       className="px-2 bg-white rounded-b-md py-2 border-gray-400 border-2"
       id="messageBox"
     >
-      {/* <JoyRideNoSSR
-        steps={steps}
-        floaterProps={{ placement: "left" }}
-        styles={{
-          options: {
-            // overlayColor: "rgba(79, 26, 0, 0.4)",
-            primaryColor: "#6940b6",
-            zIndex: 1000,
-          },
-        }}
-        locale={{
-          close: "Got it!",
-        }}
-      /> */}
       <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
           {convoState.value.turn.includes("microphone") ? (
