@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 
-export default function Footer({ convoState, history, draft }: any) {
+export default function Footer({ convoState, history }: any) {
   return (
     <div className="bg-gray-100 border-2 border-gray-400 rounded-b-lg py-4 text-center flex gap-2 justify-center">
       <Link href="/dashboard#modules">
