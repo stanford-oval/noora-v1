@@ -20,20 +20,23 @@ export default function Hero() {
             </p>
             <div className="mt-6 mb-2 flex gap-x-3 gap-y-2 flex-wrap justify-center md:justify-start">
               <Link href="/noora?module=general">
-                <button className="button flex text-lg text-white bg-noora-primary hover:bg-noora-primary-dark font-medium">
+                <button className="pulse-button uppercase rounded-full outline-none px-6 py-4 flex text-xl text-white bg-noora-primary hover:bg-noora-primary-dark font-medium">
                   Get started{" "}
-                  <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-0.5" />
+                  <ArrowSmRightIcon className="h-6 w-6 mt-0.5 ml-1" />
                 </button>
               </Link>
             </div>
             <div className="mt-6 w-full col-span-12">
               <h2 className="text-gray-500 text-lg">
-                Developed by <a
-                href="https://oval.cs.stanford.edu/"
-                className="font-medium text-[#8C1515]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Stanford&apos;s Open Virtual Assistant Lab</a>
+                Developed by{" "}
+                <a
+                  href="https://oval.cs.stanford.edu/"
+                  className="font-medium text-[#8C1515]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stanford&apos;s Open Virtual Assistant Lab
+                </a>
               </h2>
               <div className="mt-2 w-full flex gap-x-4 justify-center md:justify-start">
                 <img

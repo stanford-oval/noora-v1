@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+.pulse-button {
+	box-shadow: 0 0 0 0 #6940b663;
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #6940b645;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #6940b63e;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #6940b659;
+	}
+}
+
 /* PLAYGROUND */
 
 #chat-window {
