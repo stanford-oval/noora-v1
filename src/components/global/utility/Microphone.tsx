@@ -55,6 +55,7 @@ async function sttFromMic(
   } else setText("Speak into your microphone...");
 
   recognizer.recognizeOnceAsync((result: any) => {
+    if (setTurn) setTurn("user-answer-edit"); 
     let transcribed;
     if (result.reason === ResultReason.RecognizedSpeech) {
       transcribed = `${result.text}`;
@@ -65,6 +66,5 @@ async function sttFromMic(
         (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
         transcribed
     );
-    if (setTurn) setTurn("user-answer-edit"); // to edit microphone text
   });
 }
