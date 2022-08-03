@@ -4,7 +4,7 @@ import { ChevronUpIcon } from "@heroicons/react/solid";
 import Modules from "./sections/Modules";
 import Progress from "./sections/Progress";
 import Technical from "./sections/Technical";
-import DisclosureTransition from "../../global/utility/DisclosureTransition";
+import DisclosureTransition from "../../../global/utility/DisclosureTransition";
 
 export default function Menu({ convoState }: any) {
   const sections = [

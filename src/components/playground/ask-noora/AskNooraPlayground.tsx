@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { PlaygroundContext } from "../Playground";
-import AskNooraComponent from "../../ask-noora-interface/AskNooraComponent";
+import AskNooraComponent from "../../interfaces/ask-noora-interface/AskNooraComponent";
 
 export default function AskNooraPlayground() {
   const { askNoora } = useContext(PlaygroundContext);

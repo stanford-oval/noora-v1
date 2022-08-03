@@ -2,12 +2,24 @@ import React from "react";
 import Link from "next/link";
 import modules from "../../data/modules";
 
-export default function CardsGrid() {
+export default function ModulesInfo() {
   return (
-    <div className="container pt-2 pb-8 md:pb-10">
-      <div className="flex flex-row items-stretch justify-center flex-wrap w-full">
+    <div id="modules">
+      <div className="pb-4 text-slate-700 flex flex-col gap-y-2">
+        <h1 className="inline font-bold text-noora-secondary font-display text-3xl tracking-tight">
+          Choose from our{" "}
+          <span className="special-underline">modules</span>.
+        </h1>
+        <p>
+          The goal is that after successfully completing these modules, you
+          will <b>respond well during social conversation</b> and will{" "}
+          <b>feel more comfortable and confident</b> when they come up in
+          everyday situations.
+        </p>
+      </div>
+      <div className="flex flex-col md:flex-row items-stretch justify-center w-full gap-2">
         {Object.values(modules).map((module) => (
-          <div key={module.title} className="group relative md:w-1/2 p-1">
+          <div key={module.title} className="group relative">
             <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
               <div>
                 <span className="rounded-lg inline-flex bg-indigo-50 border-2 border-indigo-100 text-indigo-700 p-0.5">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AskNooraComponent from "../ask-noora-interface/AskNooraComponent";
+import AskNooraComponent from "../interfaces/ask-noora-interface/AskNooraComponent";
 
 export default function AskNoora() {
   const [q, setQ] = useState("");

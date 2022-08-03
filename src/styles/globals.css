@@ -26,6 +26,29 @@
 	}
 }
 
+.pulse-button-light {
+	box-shadow: 0 0 0 0 #a09ea263;
+	transform: scale(1);
+	animation: pulse-light 2s infinite;
+}
+
+@keyframes pulse-light {
+	0% {
+		transform: scale(0.96);
+		box-shadow: 0 0 0 0 #a09ea263;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 7px #a09ea263;
+	}
+
+	100% {
+		transform: scale(0.96);
+		box-shadow: 0 0 0 0 #a09ea263;
+	}
+}
+
 /* PLAYGROUND */
 
 #chat-window {

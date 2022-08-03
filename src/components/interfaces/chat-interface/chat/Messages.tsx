@@ -151,7 +151,7 @@ function MicrophoneInfoElement() {
       {
         target: ".joyride-step-1",
         content:
-          "Tap this button, then speak!\n Noora will turn your words into text.",
+          "Tap this button, then speak!\n Noora will turn what you say into text.",
         disableBeacon: true,
       },
     ],
