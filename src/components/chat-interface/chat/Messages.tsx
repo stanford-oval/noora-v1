@@ -204,19 +204,16 @@ function MicrophoneInfoElement() {
         }}
         className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5"
       />{" "}
-      button next to the Send button to speak.{" "}
-      <div className="text-gray-500 inline-block">
-        (
+      button to speak.{" "}
         <button
           onClick={() => {
             setJoyrideState((js: any) => ({ ...js, run: true }));
           }}
+           className="button text-xs bg-noora-secondary-bright hover:bg-noora-secondary-light text-white block mt-3"
         >
-          <span className="text-noora-primary font-medium">show me</span>
-          <InformationCircleIcon className="w-5 h-5 inline-block ml-1 mb-0.5" />
+          <span>Show me where</span>
+          <InformationCircleIcon className="w-4 h-4 inline-block ml-1 -mt-0.5" />
         </button>
-        )
-      </div>
     </div>
   );
 }
