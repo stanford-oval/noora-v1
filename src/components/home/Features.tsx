@@ -158,7 +158,7 @@ export default function Features() {
               />
             </svg>
             <img
-              className="relative mx-auto px-4 sm:px-0 rounded-lg"
+              className="relative mx-auto px-4 sm:px-0"
               width={490}
               src="img/demo.png"
               alt="noora in action"
