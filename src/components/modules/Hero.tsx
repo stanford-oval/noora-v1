@@ -13,7 +13,7 @@ export default function Hero() {
         </p>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-4">
           <p>
-            Noora helps you practice challenging aspects social conversation, such as{" "}
+            Noora helps you practice challenging aspects of social conversation, such as{" "}
             <b>responding empathetically and positively to others</b>.
             {/* initiating and ending a
                   conversation, responding to bullying, and keeping a conversation
