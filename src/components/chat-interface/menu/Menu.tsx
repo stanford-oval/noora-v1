@@ -8,8 +8,12 @@ import DisclosureTransition from "../../global/utility/DisclosureTransition";
 
 export default function Menu({ convoState }: any) {
   const sections = [
-    { title: "Modules", component: <Modules convoState={convoState} /> },
     { title: "Progress", component: <Progress convoState={convoState} /> },
+    {
+      title: "Modules",
+      component: <Modules convoState={convoState} />,
+      defaultHide: !convoState.value.showTechnical,
+    },
     {
       title: "Technical",
       component: <Technical convoState={convoState} />,

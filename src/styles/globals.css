@@ -6,7 +6,7 @@
 .pulse-button {
 	box-shadow: 0 0 0 0 #6940b663;
 	transform: scale(1);
-	animation: pulse 2s infinite;
+	animation: pulse 1.6s infinite;
 }
 
 @keyframes pulse {

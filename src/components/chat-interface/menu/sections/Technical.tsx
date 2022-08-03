@@ -7,6 +7,35 @@ export default function Technical({ convoState }: any) {
         <span className="font-bold">Current turn: </span>
         {convoState.value.turn}
       </div>
+      
+      <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
+
+      <div className="mt-1 text-gray-700 px-1">
+        <div>
+          <div className="flex items-stretch mt-1">
+            <label htmlFor={"numProblems"} className="font-bold">
+              &#35; Problems:
+            </label>
+            <div className="ml-auto">{convoState.value.numProblems}</div>
+          </div>
+          <input
+            id={"numProblems"}
+            type="range"
+            min={convoState.value.progress.length + 1}
+            max={Math.max(convoState.value.progress.length + 1, 20)}
+            defaultValue={convoState.value.numProblems}
+            disabled={!convoState.value.turn.startsWith("user-answer")}
+            onChange={(e: any) => {
+              convoState.setValue((cs: any) => ({
+                ...cs,
+                numProblems: Number(e.target.value),
+              }));
+            }}
+            step="1"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-300 gray-slider-thumb"
+          />
+        </div>
+      </div>
 
       <div className="border-gray-300 bg-gray-300 border-1 my-1.5"></div>
 

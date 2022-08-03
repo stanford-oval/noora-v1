@@ -37,7 +37,7 @@ export default function MessageBox({ history, convoState }: any) {
           { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },
         ]);
       } else {
-        await noorasTurn(message, convoState, history);
+        await noorasTurn(message, convoState, history, true);
       }
     } else if (
       convoState.value.progress.length < convoState.value.numProblems
