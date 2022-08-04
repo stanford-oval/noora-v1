@@ -6,6 +6,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import dynamic from "next/dynamic";
 import { ACTIONS, EVENTS, STATUS } from "react-joyride";
+import SpeechSynthesizer from "../../../global/utility/SpeechSynthesizer";
 const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function Messages({ history, convoState }: any) {
@@ -25,16 +26,16 @@ export default function Messages({ history, convoState }: any) {
       {
         id: -2,
         fromNoora: true,
-        text: `Imagine that I am your ${
-          activeModules.length == 1 && activeModules[0].title == "work"
-            ? "co-worker"
-            : "friend"
-        }.`,
+        text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
+          ? "co-worker"
+          : "friend"
+          }.`,
       },
       {
         id: -3,
         fromNoora: true,
         component: <MicrophoneInfoElement />,
+        read: "You can tap on the microphone button to speak."
       },
       {
         id: -4,
@@ -69,7 +70,7 @@ export default function Messages({ history, convoState }: any) {
       <ul>
         {history.value.map((message: any, i: number) => (
           <li key={i}>
-            {message && message.text && (
+            {message && (
               <div
                 className={clsx(
                   "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
@@ -78,19 +79,10 @@ export default function Messages({ history, convoState }: any) {
                     : "bg-noora-primary text-white ml-auto"
                 )}
               >
-                <Message message={message} />
-              </div>
-            )}
-            {message && message.component && (
-              <div
-                className={clsx(
-                  "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
-                  message.fromNoora
-                    ? "bg-gray-200 mr-auto"
-                    : "bg-noora-primary text-white ml-auto"
-                )}
-              >
-                {message.component}
+                <div className="flex flex-row items-center gap-x-2">
+                  {message.text ? <Message message={message} /> : message.component}
+                  {message.fromNoora && <SpeechSynthesizer text={message.component ? message.read : message.text} className="-mt-0.5 h-4 w-4 inline-block text-gray-500" />}
+                </div>
               </div>
             )}
           </li>
@@ -202,18 +194,18 @@ function MicrophoneInfoElement() {
         onClick={() => {
           setJoyrideState((js: any) => ({ ...js, run: true }));
         }}
-        className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5"
+        className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
       />{" "}
       button to speak.{" "}
-        <button
-          onClick={() => {
-            setJoyrideState((js: any) => ({ ...js, run: true }));
-          }}
-           className="button text-xs bg-noora-secondary-bright hover:bg-noora-secondary-light text-white block mt-3"
-        >
-          <span>Show me where</span>
-          <InformationCircleIcon className="w-4 h-4 inline-block ml-1 -mt-0.5" />
-        </button>
+      <button
+        onClick={() => {
+          setJoyrideState((js: any) => ({ ...js, run: true }));
+        }}
+        className="button text-xs bg-noora-secondary-bright hover:bg-noora-secondary-light text-white block mt-3"
+      >
+        <span>Show me where</span>
+        <InformationCircleIcon className="w-4 h-4 inline-block ml-1 -mt-0.5" />
+      </button>
     </div>
   );
 }
