@@ -48,9 +48,13 @@ export async function textToSpeech(currText: string, turn: any, setTurn: any) {
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
     if (turn.startsWith("user-answer")) setTurn("noora-reads")
 
+    const ssml = await fetch("/api/get-ssml").then((res) => res.json());
+
+    console.log(ssml)
+
     // Start the synthesizer and wait for a result.
-    await synthesizer.speakTextAsync(
-        currText,
+    await synthesizer.speakSsmlAsync(
+        ssml.text,
         (result: any) => {
             setTurn("user-answer")
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
