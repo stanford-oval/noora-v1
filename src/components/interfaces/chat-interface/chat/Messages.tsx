@@ -44,7 +44,7 @@ export default function Messages({ history, convoState }: any) {
         text: "Are you ready to begin?",
       },
     ]);
-    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-select" }));
   }, []);
 
   // scrolling
@@ -88,7 +88,7 @@ export default function Messages({ history, convoState }: any) {
             )}
           </li>
         ))}
-        {(!convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("read")) && (
+        {(!convoState.value.turn.startsWith("user-") && !convoState.value.turn.includes("read")) && (
           <div
             className={
               "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"

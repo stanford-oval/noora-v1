@@ -9,9 +9,9 @@ import { clsx } from "clsx";
 export default function MessageBox({ history, convoState }: any) {
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
-  let handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: any, message?: string) => {
     e.preventDefault();
-    const message = convoState.value.draft.slice();
+    message = message ? message : convoState.value.draft.slice();
     let userMsgId = uuidv4();
 
     history.setValue((h: any) => [
@@ -67,81 +67,99 @@ export default function MessageBox({ history, convoState }: any) {
       className="px-2 bg-white rounded-b-md py-2 border-gray-400 border-2"
       id="messageBox"
     >
-      <div className="relative">
-        <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
-          {convoState.value.turn.includes("microphone") ? (
-            <FontAwesomeIcon
-              icon={faMicrophone}
-              className="w-4 h-4 text-noora-primary"
-            />
-          ) : (
-            <FontAwesomeIcon icon={faPen} className="w-4 h-4 text-slate-400" />
-          )}
-        </div>
-
-        <input
-          ref={inputBoxRef}
-          type="text"
-          onChange={(e) => {
-            convoState.setValue((cs: any) => ({
-              ...cs,
-              draft: e.target.value,
-            }));
-          }}
-          value={convoState.value.draft}
-          placeholder={
-            convoState.value.turn.startsWith("user-answer")
-              ? convoState.value.turn.includes("microphone")
-                ? "Speak into your microphone..."
-                : "Send message..."
-              : "Please wait for Noora..."
-          }
-          disabled={
-            !convoState.value.turn.startsWith("user-answer") ||
-            convoState.value.turn.includes("microphone")
-          }
-          className={clsx(
-            "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800",
-            convoState.value.turn.includes("microphone")
-              ? "border-noora-primary disabled:bg-slate-200 placeholder-slate-600 "
-              : "border-gray-400  disabled:bg-gray-100"
-          )}
-        />
-        <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10 joyride-step-1">
-          <Microphone
-            className="bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
-            turn={convoState.value.turn}
-            setTurn={(str: string) =>
-              convoState.setValue((cs: any) => ({
-                ...cs,
-                turn: str,
-              }))
-            }
-            setText={(str: string) =>
-              convoState.setValue((cs: any) => ({
-                ...cs,
-                draft: str,
-              }))
-            }
-            currText={convoState.value.draft}
-          />
-        </div>
-        <button
-          type="submit"
-          onClick={(e) => handleSubmit(e)}
-          disabled={
-            convoState.value.draft.length == 0 ||
-            convoState.value.turn.includes("microphone")
-          }
-          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
-        >
-          Send
-        </button>
-      </div>
+      {convoState.value.turn.startsWith("user-select") ?
+        <SelectInputForm options={["Positive", "Neutral", "Negative"]} handleSubmit={handleSubmit} /> :
+        <MessageInputForm convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={handleSubmit} />}
     </form>
   );
 }
 
+function SelectInputForm({ options, handleSubmit }: any) {
+  return (<div className="flex sm:justify-between sm:px-16 md:px-8 lg:px-32 xl:px-48 justify-center flex-wrap md:flex-nowrap gap-2">
+    {options.map((o: string) => <button
+      key={o}
+      onClick={(e: any) => {
+        handleSubmit(e, o);
+      }}
+      className="block focus:ring-0 py-3 px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-gray-700 border-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-800"
+    >{o}
+    </button>)}
+  </div>)
+}
+
+function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
+  return <div className="relative">
+    <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none  z-10">
+      {convoState.value.turn.includes("microphone") ? (
+        <FontAwesomeIcon
+          icon={faMicrophone}
+          className="w-4 h-4 text-noora-primary"
+        />
+      ) : (
+        <FontAwesomeIcon icon={faPen} className="w-4 h-4 text-slate-400" />
+      )}
+    </div>
+
+    <input
+      ref={inputBoxRef}
+      type="text"
+      onChange={(e) => {
+        convoState.setValue((cs: any) => ({
+          ...cs,
+          draft: e.target.value,
+        }));
+      }}
+      value={convoState.value.draft}
+      placeholder={
+        convoState.value.turn.startsWith("user-answer")
+          ? convoState.value.turn.includes("microphone")
+            ? "Speak into your microphone..."
+            : "Send message..."
+          : "Please wait for Noora..."
+      }
+      disabled={
+        !convoState.value.turn.startsWith("user-answer") ||
+        convoState.value.turn.includes("microphone")
+      }
+      className={clsx(
+        "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800",
+        convoState.value.turn.includes("microphone")
+          ? "border-noora-primary disabled:bg-slate-200 placeholder-slate-600 "
+          : "border-gray-400  disabled:bg-gray-100"
+      )}
+    />
+    <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10 joyride-step-1">
+      <Microphone
+        className="bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+        turn={convoState.value.turn}
+        setTurn={(str: string) =>
+          convoState.setValue((cs: any) => ({
+            ...cs,
+            turn: str,
+          }))
+        }
+        setText={(str: string) =>
+          convoState.setValue((cs: any) => ({
+            ...cs,
+            draft: str,
+          }))
+        }
+        currText={convoState.value.draft}
+      />
+    </div>
+    <button
+      type="submit"
+      onClick={(e) => handleSubmit(e)}
+      disabled={
+        convoState.value.draft.length == 0 ||
+        convoState.value.turn.includes("microphone")
+      }
+      className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+    >
+      Send
+    </button>
+  </div>
+}
 async function noorasTurn(
   message: string,
   convoState: any,

@@ -15,7 +15,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       { title: "negative", active: true },
     ],
     model: {
-      name: "text-davinci-002", //"curie:ft-open-virtual-assistant-lab-stanford:dataset-v5-model-v4-2022-07-12-23-12-49",
+      name: "text-davinci-002",
       temperature: 0.9,
       frequencyPenalty: 0.6,
       presencePenalty: 0.5,
