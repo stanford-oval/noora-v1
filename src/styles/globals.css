@@ -4,49 +4,49 @@
 @tailwind utilities;
 
 .pulse-button {
-	box-shadow: 0 0 0 0 #6940b663;
-	transform: scale(1);
-	animation: pulse 1.6s infinite;
+    box-shadow: 0 0 0 0 #6940b663;
+    transform: scale(1);
+    animation: pulse 1.6s infinite;
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 #6940b645;
-	}
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #6940b645;
+    }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px #6940b63e;
-	}
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px #6940b63e;
+    }
 
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 #6940b659;
-	}
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #6940b659;
+    }
 }
 
 .pulse-button-light {
-	box-shadow: 0 0 0 0 #a09ea263;
-	transform: scale(1);
-	animation: pulse-light 2s infinite;
+    box-shadow: 0 0 0 0 #a09ea263;
+    transform: scale(1);
+    animation: pulse-light 2s infinite;
 }
 
 @keyframes pulse-light {
-	0% {
-		transform: scale(0.96);
-		box-shadow: 0 0 0 0 #a09ea263;
-	}
+    0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 0 #a09ea263;
+    }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 7px #a09ea263;
-	}
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 7px #a09ea263;
+    }
 
-	100% {
-		transform: scale(0.96);
-		box-shadow: 0 0 0 0 #a09ea263;
-	}
+    100% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 0 #a09ea263;
+    }
 }
 
 /* PLAYGROUND */
@@ -54,6 +54,7 @@
 #chat-window {
     height: 55vh;
     max-height: 55vh;
+    overflow: auto !important;
 }
 
 .gray-slider-thumb::-webkit-slider-thumb {
@@ -132,15 +133,15 @@
 
 @media only screen and (max-width: 768px) {
     #homeHero {
-    background-position: 95% 60%;
-    box-shadow: inset 0 0 0 2000px #ffffffc0;
+        background-position: 95% 60%;
+        box-shadow: inset 0 0 0 2000px #ffffffc0;
     }
 }
 
 @media only screen and (max-width: 600px) {
     #homeHero {
-    background-position: 75% 60%;
-    box-shadow: inset 0 0 0 2000px #ffffffc0;
+        background-position: 75% 60%;
+        box-shadow: inset 0 0 0 2000px #ffffffc0;
     }
 }
 
@@ -301,10 +302,8 @@ button.active.focus {
 }
 
 .special-underline {
-    @apply bg-gradient-to-r from-indigo-200 to-indigo-200
-      bg-no-repeat [background-position:0_88%]
-      [background-size:100%_0.2em]
-      /* motion-safe:transition-all motion-safe:duration-200
+    @apply bg-gradient-to-r from-indigo-200 to-indigo-200 bg-no-repeat [background-position:0_88%] [background-size:100%_0.2em]
+        /* motion-safe:transition-all motion-safe:duration-200
       hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]; */
 }
