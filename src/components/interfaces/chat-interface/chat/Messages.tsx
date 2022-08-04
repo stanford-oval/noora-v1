@@ -22,6 +22,7 @@ export default function Messages({ history, convoState }: any) {
         id: -1,
         fromNoora: true,
         text: "Hi! I am Noora.",
+        style: "cheerful"
       },
       {
         id: -2,
@@ -60,7 +61,7 @@ export default function Messages({ history, convoState }: any) {
             block: "nearest",
           });
     }, 5);
-  }, [history.value, convoState.value.turn]);
+  }, [history.value]);
 
   return (
     <div
@@ -207,9 +208,16 @@ function MicrophoneInfoElement() {
 }
 
 function SpeechButton({ convoState, message }: any) {
-  const preText = message.suggestion ? "A better answer might've been: " + message.text : ""
+  const preText = message.suggestion ? "A better answer might've been: " : ""
   const text = message.component ? message.read : message.text
   const postText = message.statement ? " What would you say?" : ""
+  let style = "neutral"
+  if (message.style)
+    style = message.style
+  else if (message.sentiment == "positive")
+    style = "cheerful"
+  else if (message.sentiment == "negative")
+    style = "sad"
 
   return (<SpeechSynthesizer
     turn={convoState.value.turn}
@@ -218,6 +226,6 @@ function SpeechButton({ convoState, message }: any) {
         ...cs,
         turn: str,
       }))
-    } text={message.component ? message.read : (message.statement ? message.text + " What would you say?" : (message.suggestion ? "A better answer might've been: " + message.text : message.text))} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />
+    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.5} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />
   )
 }

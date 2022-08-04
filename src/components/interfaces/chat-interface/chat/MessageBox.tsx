@@ -22,7 +22,7 @@ export default function MessageBox({ history, convoState }: any) {
 
     let m = message.trim().toLowerCase();
 
-    if (convoState.value.turn == "user-answer-start") {
+    if (convoState.value.turn.startsWith("user-answer-start")) {
       if (m.includes("no") || m.includes("don") || m.includes("na")) {
         history.setValue((h: any) => [
           ...h,
@@ -54,7 +54,7 @@ export default function MessageBox({ history, convoState }: any) {
         history.value
           .slice(0, Math.min(history.value.length, 5))
           .filter((h: any) => !h.fromNoora).length > 0) ||
-      convoState.value.turn == "user-answer-edit"
+      convoState.value.turn.endsWith("-edit")
     ) {
       // don't autofocus on page load (especially for mobile)
       // hence the history check, but we want to autofocus if microphone used
@@ -161,13 +161,14 @@ async function noorasTurn(
     noorasTurn
   ) {
     const replies = await getReply(message, convoState, "get-statement");
+
     history.setValue((h: any) => [
       ...h,
       {
         fromNoora: true,
         id: uuidv4(),
         text:
-          convoState.value.turn == "user-answer-start"
+          convoState.value.turn.startsWith("user-answer-start")
             ? "Let's get started."
             : "Let's try another one.",
       },

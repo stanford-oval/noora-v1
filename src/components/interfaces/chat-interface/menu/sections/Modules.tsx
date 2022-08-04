@@ -14,7 +14,7 @@ export default function Modules({ convoState }: any) {
 function Topics({ convoState }: any) {
   return (
     <div>
-      Sentiments:{" "}
+      Topics:{" "}
       <span className="space-x-1">
         {convoState.value.modules
           // .sort((m1: any, m2: any) => (m2.active && !m1.active ? 1 : -1))
@@ -62,7 +62,7 @@ function Topics({ convoState }: any) {
 function Sentiments({ convoState }: any) {
   return (
     <div>
-      Topics:{" "}
+      Sentiments:{" "}
       <span className="flex gap-x-3 gap-y-1">
         {convoState.value.sentiments.map((sentiment: any) => {
           return (

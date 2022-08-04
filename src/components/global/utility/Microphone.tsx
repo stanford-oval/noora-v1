@@ -54,7 +54,7 @@ async function sttFromMic(
   else return;
 
   recognizer.recognizeOnceAsync((result: any) => {
-    setTurn("user-answer-edit");
+    setTurn(turn + "-edit");
     let transcribed;
     if (result.reason === ResultReason.RecognizedSpeech) {
       transcribed = `${result.text}`;

@@ -20,15 +20,18 @@ export default async function getReply(
     {
       fromNoora: true,
       text: "Oops! Something went wrong.",
+      sentiment: "neutral",
       statement: false,
     },
   ];
 
   if (command == "get-statement") {
+    const statement = await getStatement(convoState)
     replies = [
       {
         fromNoora: true,
-        text: await getStatement(convoState),
+        text: statement.text,
+        sentiment: statement.sentiment,
         statement: true,
       },
     ];
@@ -48,6 +51,7 @@ export default async function getReply(
       fromNoora: true,
       text: a.text,
       suggestion: a.suggestion,
+      sentiment: a.text == "Good reply!" ? "positive" : "neutral",
       statement: false,
     }));
   }
@@ -192,7 +196,7 @@ export async function getStatement(convoState: any) {
   // console.log("Selected statement: ");
   // console.log(statement);
 
-  return statement[1];
+  return { sentiment: statement[0].split("/")[1], text: statement[1] };
 }
 
 function getStatementIdx(
@@ -217,7 +221,7 @@ function getStatementIdx(
     console.log("Exhausted all statements. Resetting.");
     seenIdxs = seenIdxs.slice(
       statementsList.length *
-        Math.floor(seenIdxs.length / statementsList.length),
+      Math.floor(seenIdxs.length / statementsList.length),
       seenIdxs.length
     );
   }
