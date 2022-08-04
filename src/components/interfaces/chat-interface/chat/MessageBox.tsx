@@ -12,6 +12,8 @@ export default function MessageBox({ history, convoState }: any) {
   const handleSubmit = async (e: any, message?: string) => {
     e.preventDefault();
     message = message ? message : convoState.value.draft.slice();
+    if (!message) message = ""
+
     let userMsgId = uuidv4();
 
     history.setValue((h: any) => [
@@ -36,7 +38,7 @@ export default function MessageBox({ history, convoState }: any) {
     ) {
       await noorasTurn(message, convoState, history);
     } else {
-      if (m.includes("ye") || m.includes("i want to") || m.includes("ok")) {
+      if (m == "Yes") {
         convoState.setValue((cs: any) => ({
           ...cs,
           numProblems: cs.numProblems + 3,
@@ -75,13 +77,13 @@ export default function MessageBox({ history, convoState }: any) {
 }
 
 function SelectInputForm({ options, handleSubmit }: any) {
-  return (<div className="flex sm:justify-between sm:px-16 md:px-8 lg:px-32 xl:px-48 justify-center flex-wrap md:flex-nowrap gap-2">
+  return (<div className="flex gap-x-2 md:gap-x-4 lg:gap-x-8 xl:gap-x-12 justify-center flex-wrap md:flex-nowrap gap-y-2">
     {options.map((o: string) => <button
       key={o}
       onClick={(e: any) => {
         handleSubmit(e, o);
       }}
-      className="block focus:ring-0 py-3 px-6 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-gray-700 border-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-800"
+      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-gray-700 border-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-800"
     >{o}
     </button>)}
   </div>)
@@ -160,6 +162,7 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
     </button>
   </div>
 }
+
 async function noorasTurn(
   message: string,
   convoState: any,
