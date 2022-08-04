@@ -23,7 +23,7 @@ export default function MessageBox({ history, convoState }: any) {
     let m = message.trim().toLowerCase();
 
     if (convoState.value.turn.startsWith("user-answer-start")) {
-      if ((!m.includes("ye"))) {
+      if (!(m.includes("ye") || m.includes("i want to") || m.includes("ok"))) {
         history.setValue((h: any) => [
           ...h,
           { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },
@@ -36,7 +36,7 @@ export default function MessageBox({ history, convoState }: any) {
     ) {
       await noorasTurn(message, convoState, history);
     } else {
-      if (m.includes("ye") || m.includes("i want to")) {
+      if (m.includes("ye") || m.includes("i want to") || m.includes("ok")) {
         convoState.setValue((cs: any) => ({
           ...cs,
           numProblems: cs.numProblems + 3,
