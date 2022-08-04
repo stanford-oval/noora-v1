@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { clsx } from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
+import { faMicrophone, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 import { InformationCircleIcon } from "@heroicons/react/outline";
 
 import dynamic from "next/dynamic";
@@ -147,6 +147,12 @@ function MicrophoneInfoElement() {
           "Tap this button, then speak!\n Noora will turn what you say into text.",
         disableBeacon: true,
       },
+      {
+        target: ".demo-audio",
+        content:
+          "Tap this button to hear Noora speak! Noora can speak in sad and happy tones.",
+        disableBeacon: true,
+      },
     ],
     stepIndex: 0,
   });
@@ -182,6 +188,7 @@ function MicrophoneInfoElement() {
           },
         }}
         locale={{
+          next: "Next",
           close: "Got it!",
         }}
       />
@@ -193,7 +200,13 @@ function MicrophoneInfoElement() {
         }}
         className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
       />{" "}
-      button to speak.{" "}
+      button to speak. Click the <FontAwesomeIcon
+        icon={faVolumeUp}
+        onClick={() => {
+          setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
+        }}
+        className="w-5 h-5 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
+      /> button to hear Noora reply.
       <button
         onClick={() => {
           setJoyrideState((js: any) => ({ ...js, run: true }));
@@ -226,6 +239,7 @@ function SpeechButton({ convoState, message }: any) {
         ...cs,
         turn: str,
       }))
-    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.5} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />
+    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.5}
+    className={clsx("-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400", message.id == -3 ? "demo-audio" : "")} />
   )
 }
