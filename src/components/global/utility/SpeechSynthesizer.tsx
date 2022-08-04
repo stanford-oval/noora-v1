@@ -1,6 +1,7 @@
 import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import getSpeechSSMLStr from "../../../data/speech-ssml";
 import { getTokenOrRefresh } from "../../../scripts/token_util";
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
@@ -33,7 +34,7 @@ export default function SpeechSynthesizer({
     );
 }
 
-export async function textToSpeech(currText: string, turn: any, setTurn: any) {
+export async function textToSpeech(text: string, turn: any, setTurn: any) {
     const tokenObj = await getTokenOrRefresh();
     const speechConfig = sdk.SpeechConfig.fromAuthorizationToken(
         tokenObj.authToken,
@@ -48,13 +49,13 @@ export async function textToSpeech(currText: string, turn: any, setTurn: any) {
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
     if (turn.startsWith("user-answer")) setTurn("noora-reads")
 
-    const ssml = await fetch("/api/get-ssml").then((res) => res.json());
+    const ssmlStr = getSpeechSSMLStr(text)
 
-    console.log(ssml)
+    console.log(ssmlStr)
 
     // Start the synthesizer and wait for a result.
     await synthesizer.speakSsmlAsync(
-        ssml.text,
+        ssmlStr, // ssml.text,
         (result: any) => {
             setTurn("user-answer")
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
