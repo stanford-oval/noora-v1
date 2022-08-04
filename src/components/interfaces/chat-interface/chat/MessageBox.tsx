@@ -25,7 +25,7 @@ export default function MessageBox({ history, convoState }: any) {
     let m = message.trim().toLowerCase();
 
     if (convoState.value.turn.startsWith("user-answer-start")) {
-      if (!(m.includes("ye") || m.includes("i want to") || m.includes("ok"))) {
+      if (m.includes("no") || m.includes("don")) {
         history.setValue((h: any) => [
           ...h,
           { id: uuidv4(), fromNoora: true, text: "Are you ready to begin?" },
@@ -38,7 +38,7 @@ export default function MessageBox({ history, convoState }: any) {
     ) {
       await noorasTurn(message, convoState, history);
     } else {
-      if (m == "Yes") {
+      if (m == "yes") {
         convoState.setValue((cs: any) => ({
           ...cs,
           numProblems: cs.numProblems + 3,
@@ -70,7 +70,7 @@ export default function MessageBox({ history, convoState }: any) {
       id="messageBox"
     >
       {convoState.value.turn.startsWith("user-select") ?
-        <SelectInputForm options={["Positive", "Neutral", "Negative"]} handleSubmit={handleSubmit} /> :
+        <SelectInputForm options={convoState.value.turn.includes("end") ? (["Yes", "No"]) : (["Positive", "Neutral", "Negative"])} handleSubmit={handleSubmit} /> :
         <MessageInputForm convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={handleSubmit} />}
     </form>
   );
@@ -83,7 +83,7 @@ function SelectInputForm({ options, handleSubmit }: any) {
       onClick={(e: any) => {
         handleSubmit(e, o);
       }}
-      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-gray-700 border-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-800"
+      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-noora-secondary-bright bg-noora-secondary-bright hover:bg-noora-secondary-light hover:border-noora-secondary-light"
     >{o}
     </button>)}
   </div>)
@@ -203,6 +203,6 @@ async function noorasTurn(
         text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Do you want to continue practicing?`,
       },
     ]);
-    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-end" }));
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-select-end" }));
   }
 }

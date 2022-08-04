@@ -44,7 +44,8 @@ export default function Messages({ history, convoState }: any) {
         text: "Are you ready to begin?",
       },
     ]);
-    convoState.setValue((cs: any) => ({ ...cs, turn: "user-select" }));
+    convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
+    // convoState.setValue((cs: any) => ({ ...cs, turn: "user-select" }));
   }, []);
 
   // scrolling
