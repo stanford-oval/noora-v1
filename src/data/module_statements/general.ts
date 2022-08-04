@@ -161,7 +161,7 @@ const general_statements = {
     ],
     [
       "general/negative",
-      "I could't figure out the new computer program.",
+      "I couldn't figure out the new computer program.",
       "What was the problem?",
     ],
     [

@@ -6,11 +6,13 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 export default function SpeechSynthesizer({
     className,
+    turn,
+    setTurn,
     text,
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech(text);
+        textToSpeech(text, turn, setTurn);
     };
 
     return (
@@ -21,6 +23,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className="inline-block"
+            disabled={!turn.startsWith("user-answer")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -30,7 +33,7 @@ export default function SpeechSynthesizer({
     );
 }
 
-export async function textToSpeech(currText: string) {
+export async function textToSpeech(currText: string, turn: any, setTurn: any) {
     const tokenObj = await getTokenOrRefresh();
     const speechConfig = sdk.SpeechConfig.fromAuthorizationToken(
         tokenObj.authToken,
@@ -43,11 +46,13 @@ export async function textToSpeech(currText: string) {
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
+    if (turn.startsWith("user-answer")) setTurn("noora-reads")
 
     // Start the synthesizer and wait for a result.
     await synthesizer.speakTextAsync(
         currText,
         (result: any) => {
+            setTurn("user-answer")
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
                 console.log("Synthesis finished.");
             } else {

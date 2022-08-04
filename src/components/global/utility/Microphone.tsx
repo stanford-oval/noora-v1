@@ -50,12 +50,11 @@ async function sttFromMic(
   const audioConfig = speechsdk.AudioConfig.fromDefaultMicrophoneInput();
   const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
 
-  if (setTurn) {
-    if (turn.startsWith("user-answer")) setTurn("user-answer-microphone");
-  } else setText("Speak into your microphone...");
+  if (turn.startsWith("user-answer")) setTurn("user-answer-microphone")
+  else return;
 
   recognizer.recognizeOnceAsync((result: any) => {
-    if (setTurn) setTurn("user-answer-edit"); 
+    setTurn("user-answer-edit");
     let transcribed;
     if (result.reason === ResultReason.RecognizedSpeech) {
       transcribed = `${result.text}`;
@@ -63,8 +62,8 @@ async function sttFromMic(
 
     setText(
       currText +
-        (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
-        transcribed
+      (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
+      transcribed
     );
   });
 }

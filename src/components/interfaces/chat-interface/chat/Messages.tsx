@@ -81,13 +81,20 @@ export default function Messages({ history, convoState }: any) {
               >
                 <div className="flex flex-row items-center gap-x-2">
                   {message.text ? <Message message={message} /> : message.component}
-                  {message.fromNoora && <SpeechSynthesizer text={message.component ? message.read : message.text} className="-mt-0.5 h-4 w-4 inline-block text-gray-500" />}
+                  {message.fromNoora && <SpeechSynthesizer
+                    turn={convoState.value.turn}
+                    setTurn={(str: string) =>
+                      convoState.setValue((cs: any) => ({
+                        ...cs,
+                        turn: str,
+                      }))
+                    } text={message.component ? message.read : (message.statement ? message.text + " What would you say?" : (message.suggestion ? "A better answer might've been: " + message.text : message.text))} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />}
                 </div>
               </div>
             )}
           </li>
         ))}
-        {!convoState.value.turn.startsWith("user-answer") && (
+        {(!convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("read")) && (
           <div
             className={
               "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
@@ -163,10 +170,6 @@ function MicrophoneInfoElement() {
       // Need to set our running state to false, so we can restart if we click start again.
       setJoyrideState((js: any) => ({ ...js, stepIndex: 0, run: false }));
     }
-
-    console.groupCollapsed(type);
-    console.log(data); //eslint-disable-line no-console
-    console.groupEnd();
   };
 
   return (
