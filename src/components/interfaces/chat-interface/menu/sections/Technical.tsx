@@ -24,7 +24,7 @@ export default function Technical({ convoState }: any) {
             min={convoState.value.progress.length + 1}
             max={Math.max(convoState.value.progress.length + 1, 20)}
             defaultValue={convoState.value.numProblems}
-            disabled={!convoState.value.turn.startsWith("user-answer")}
+            disabled={!convoState.value.turn.startsWith("user")}
             onChange={(e: any) => {
               convoState.setValue((cs: any) => ({
                 ...cs,
@@ -129,7 +129,7 @@ function Slider({ parameter, convoState }: any) {
       <input
         id={parameter.propertyName}
         type="range"
-        disabled={!convoState.value.turn.startsWith("user-answer")}
+        disabled={!convoState.value.turn.startsWith("user")}
         min={parameter.min}
         max={parameter.max}
         defaultValue={convoState.value.model[parameter.propertyName]}

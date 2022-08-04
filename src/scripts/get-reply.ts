@@ -51,14 +51,14 @@ export default async function getReply(
       fromNoora: true,
       text: a.text,
       suggestion: a.suggestion,
-      sentiment: a.text == "Good reply!" ? "positive" : "neutral",
+      sentiment: a.sentiment ? a.sentiment : "neutral",
       statement: false,
     }));
   }
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: "user-answer",
+    turn: command == "get-statement" ? "user-select" : "user-answer",
   }));
 
   return replies;
@@ -137,8 +137,8 @@ async function getRating(
     console.log("Explanation: " + explanation);
 
     if (goodAnswer) {
-      answers.push({ text: "Good reply!" });
-      answers.push({ text: explanation });
+      answers.push({ text: "Good reply!", sentiment: "positive" });
+      answers.push({ text: explanation, sentiment: "positive" });
     } else {
       answers.push({ text: "Not quite!" });
       answers.push({ text: explanation });

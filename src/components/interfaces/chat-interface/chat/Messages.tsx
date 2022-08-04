@@ -45,7 +45,7 @@ export default function Messages({ history, convoState }: any) {
       },
     ]);
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
-    // convoState.setValue((cs: any) => ({ ...cs, turn: "user-select" }));
+    // convoState.setValue((cs: any) => ({ ...cs, turn: "user-select-start" }));
   }, []);
 
   // scrolling
@@ -89,7 +89,7 @@ export default function Messages({ history, convoState }: any) {
             )}
           </li>
         ))}
-        {(!convoState.value.turn.startsWith("user-") && !convoState.value.turn.includes("read")) && (
+        {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           <div
             className={
               "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs break-words bg-gray-200 mr-auto"
@@ -120,7 +120,7 @@ function Message({ message }: any) {
           <span className="font-bold text-noora-primary-dark">
             &ldquo;{message.text}&rdquo;
           </span>{" "}
-          What would you say?
+          Is this a positive, neutral, or negative statement?
         </span>
       </div>
     );
@@ -224,7 +224,7 @@ function MicrophoneInfoElement() {
 function SpeechButton({ convoState, message }: any) {
   const preText = message.suggestion ? "A better answer might've been: " : ""
   const text = message.component ? message.read : message.text
-  const postText = message.statement ? " What would you say?" : ""
+  const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
   let style = "neutral"
   if (message.style)
     style = message.style

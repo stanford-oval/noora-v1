@@ -50,7 +50,7 @@ async function sttFromMic(
   const audioConfig = speechsdk.AudioConfig.fromDefaultMicrophoneInput();
   const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
 
-  if (turn.startsWith("user-answer")) setTurn("user-answer-microphone")
+  if (turn.startsWith("user")) setTurn("user-answer-microphone")
   else return;
 
   recognizer.recognizeOnceAsync((result: any) => {

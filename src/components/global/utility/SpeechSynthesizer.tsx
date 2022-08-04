@@ -28,7 +28,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className="inline-block"
-            disabled={!turn.startsWith("user-answer")}
+            disabled={!turn.startsWith("user")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -57,7 +57,8 @@ export async function textToSpeech(text: string,
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-    if (turn.startsWith("user-answer")) setTurn("noora-reads")
+    let originalTurn = turn.slice()
+    if (turn.startsWith("user")) setTurn(turn + "-noora-reads")
 
     const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
 
@@ -67,7 +68,7 @@ export async function textToSpeech(text: string,
     await synthesizer.speakSsmlAsync(
         ssmlStr, // ssml.text,
         (result: any) => {
-            setTurn("user-answer")
+            setTurn(originalTurn)
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
                 console.log("Synthesis finished.");
             } else {

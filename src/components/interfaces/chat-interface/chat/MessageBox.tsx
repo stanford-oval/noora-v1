@@ -24,7 +24,7 @@ export default function MessageBox({ history, convoState }: any) {
 
     let m = message.trim().toLowerCase();
 
-    if (convoState.value.turn.startsWith("user-answer-start")) {
+    if (convoState.value.turn.includes("start")) {
       if (m.includes("no") || m.includes("don")) {
         history.setValue((h: any) => [
           ...h,
@@ -170,9 +170,36 @@ async function noorasTurn(
   noorasTurn = false
 ) {
   if (convoState.value.statement) {
-    // rate reply if statement was given
-    const replies = await getReply(message, convoState, "rate-reply");
-    history.setValue((h: any) => [...h, ...replies]);
+    if (convoState.value.turn.includes("select")) {
+      // handle sentiment classification
+      const targetSentiment = convoState.value.statement.statementObj[0].split("/")[1]
+      const correct = message.trim().toLowerCase() == targetSentiment.trim().toLowerCase()
+
+
+      history.setValue((h: any) => [...h, {
+        id: uuidv4(),
+        fromNoora: true,
+        text: correct ? "That's right!" : `Actually, this statement is a ${targetSentiment} one.`,
+      },
+      {
+        id: uuidv4(),
+        fromNoora: true,
+        text: "How would you reply to it?",
+      }]
+      );
+
+      convoState.setValue((cs: any) => ({
+        ...cs,
+        turn: "user-answer",
+      }));
+
+      return
+    }
+    else {
+      // rate reply if statement was given
+      const replies = await getReply(message, convoState, "rate-reply");
+      history.setValue((h: any) => [...h, ...replies]);
+    }
   }
 
   // get statement if still need to practice
@@ -189,7 +216,7 @@ async function noorasTurn(
         fromNoora: true,
         id: uuidv4(),
         text:
-          convoState.value.turn.startsWith("user-answer-start")
+          convoState.value.turn.includes("start")
             ? "Let's get started."
             : "Let's try another one.",
       },
