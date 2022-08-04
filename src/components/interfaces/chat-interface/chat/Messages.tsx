@@ -135,6 +135,17 @@ function Message({ message }: any) {
         </span>
       </div>
     );
+  else if (message.correction)
+    return (
+      <div>
+        <span>
+          Actually, this is a{" "}
+          <span className="font-bold text-noora-secondary-light">
+            {message.text}
+          </span> statement.
+        </span>
+      </div>
+    );
   return <div>{message.text}</div>;
 }
 
@@ -223,7 +234,7 @@ function MicrophoneInfoElement() {
 
 function SpeechButton({ convoState, message }: any) {
   const preText = message.suggestion ? "A better answer might've been: " : ""
-  const text = message.component ? message.read : message.text
+  const text = message.read ? message.read : message.text
   const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
   let style = "neutral"
   if (message.style)
@@ -240,7 +251,7 @@ function SpeechButton({ convoState, message }: any) {
         ...cs,
         turn: str,
       }))
-    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.5}
+    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
     className={clsx("-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400", message.id == -3 ? "demo-audio" : "")} />
   )
 }
