@@ -9,11 +9,15 @@ export default function SpeechSynthesizer({
     className,
     turn,
     setTurn,
+    preText,
     text,
+    postText,
+    style,
+    styleDegree
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech(text, turn, setTurn);
+        textToSpeech(text, preText, postText, style, styleDegree, turn, setTurn);
     };
 
     return (
@@ -34,7 +38,13 @@ export default function SpeechSynthesizer({
     );
 }
 
-export async function textToSpeech(text: string, turn: any, setTurn: any) {
+export async function textToSpeech(text: string,
+    preText: any,
+    postText: any,
+    style: any,
+    styleDegree: any,
+    turn: any,
+    setTurn: any) {
     const tokenObj = await getTokenOrRefresh();
     const speechConfig = sdk.SpeechConfig.fromAuthorizationToken(
         tokenObj.authToken,
@@ -49,7 +59,7 @@ export async function textToSpeech(text: string, turn: any, setTurn: any) {
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
     if (turn.startsWith("user-answer")) setTurn("noora-reads")
 
-    const ssmlStr = getSpeechSSMLStr(text)
+    const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
 
     console.log(ssmlStr)
 

@@ -81,14 +81,7 @@ export default function Messages({ history, convoState }: any) {
               >
                 <div className="flex flex-row items-center gap-x-2">
                   {message.text ? <Message message={message} /> : message.component}
-                  {message.fromNoora && <SpeechSynthesizer
-                    turn={convoState.value.turn}
-                    setTurn={(str: string) =>
-                      convoState.setValue((cs: any) => ({
-                        ...cs,
-                        turn: str,
-                      }))
-                    } text={message.component ? message.read : (message.statement ? message.text + " What would you say?" : (message.suggestion ? "A better answer might've been: " + message.text : message.text))} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />}
+                  {message.fromNoora && <SpeechButton convoState={convoState} message={message} />}
                 </div>
               </div>
             )}
@@ -211,4 +204,20 @@ function MicrophoneInfoElement() {
       </button>
     </div>
   );
+}
+
+function SpeechButton({ convoState, message }: any) {
+  const preText = message.suggestion ? "A better answer might've been: " + message.text : ""
+  const text = message.component ? message.read : message.text
+  const postText = message.statement ? " What would you say?" : ""
+
+  return (<SpeechSynthesizer
+    turn={convoState.value.turn}
+    setTurn={(str: string) =>
+      convoState.setValue((cs: any) => ({
+        ...cs,
+        turn: str,
+      }))
+    } text={message.component ? message.read : (message.statement ? message.text + " What would you say?" : (message.suggestion ? "A better answer might've been: " + message.text : message.text))} className="-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400" />
+  )
 }

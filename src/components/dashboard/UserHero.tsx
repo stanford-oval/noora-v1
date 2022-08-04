@@ -8,7 +8,7 @@ export default function UserHero() {
           <img
             src="/img/default_pfp.png"
             alt="Default Picture"
-            className="h-28 w-28 rounded-full"
+            className="h-28 w-28 rounded-full bg-gray-400"
           />
           <div>
           <h1 className="font-bold text-noora-secondary text-3xl">Guest</h1>
