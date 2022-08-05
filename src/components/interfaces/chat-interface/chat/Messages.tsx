@@ -7,6 +7,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 import dynamic from "next/dynamic";
 import { ACTIONS, EVENTS, STATUS } from "react-joyride";
 import SpeechSynthesizer from "../../../global/utility/SpeechSynthesizer";
+import { messageToSpeechParams } from "../../../../scripts/util";
 const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function Messages({ history, convoState }: any) {
@@ -253,21 +254,6 @@ function SpeechButton({ convoState, message, currentAudioRef }: any) {
   const props = messageToSpeechParams(convoState, message, currentAudioRef)
 
   return (<SpeechSynthesizer {...props}
-    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} id={message.id} />
+    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")}/>
   )
-}
-
-function messageToSpeechParams(convoState: any, message: any, currentAudioRef: any) {
-  const preText = message.suggestion ? "A better reply might've been: " : ""
-  const text = message.read ? message.read : message.text
-  const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
-  let style = "neutral"
-  if (message.style)
-    style = message.style
-  else if (message.sentiment == "positive")
-    style = "cheerful"
-  else if (message.sentiment == "negative")
-    style = "sad"
-
-  return { preText: preText, text: text, postText: postText, style: style, convoState: convoState, currentAudioRef: currentAudioRef, styleDegree: 1.3 }
 }

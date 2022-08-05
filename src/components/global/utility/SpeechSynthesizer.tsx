@@ -50,7 +50,8 @@ export default function SpeechSynthesizer({
     );
 }
 
-export async function textToSpeech(text: string,
+export async function textToSpeech(
+    text: string,
     preText: string,
     postText: string,
     style: string,
