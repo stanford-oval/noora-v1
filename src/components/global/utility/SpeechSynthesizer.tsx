@@ -25,7 +25,7 @@ export default function SpeechSynthesizer({
     let buttonColor = "text-gray-500"
     if (convoState.value.currentAudio.player) {
         // audio is playing
-        // buttonColor = "text-gray-400"
+        buttonColor = "text-gray-400"
         if (convoState.value.currentAudio.messagesIds.includes(id)) {
             // THIS message's audio is playing
             buttonColor = "text-noora-primary"
@@ -40,7 +40,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-        // disabled={convoState.value.turn.includes("noora-reads")}
+            disabled={convoState.value.turn.includes("noora-reads")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -95,29 +95,18 @@ export async function textToSpeech(text: string,
     await synthesizer.speakSsmlAsync(
         ssmlStr, // ssml.text
         (result: any) => {
-            const wordCount = (text + preText + postText).split(" ").length
             convoState.setValue((cs: any) => ({
                 ...cs, currentAudio: { player: player, messagesIds: [id] }
             }))
 
-            let timeoutDuration = 0.38 * wordCount
-
-            setTimeout(() => {
-
-                if (player.privmediaSource)
-                    timeoutDuration = player.privMediaSource.duration
+            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+                console.log("Synthesis finished.");
+                console.log(result.privAudioDuration)
 
                 setTimeout(() => {
-                    // player.close()
+                    player.close()
 
                     currPlayer = currentAudioRef.current.player
-                    if (!currPlayer) {
-                        console.error("No current player found.", player)
-                        return
-                    }
-
-                    // alert(JSON.stringify(Object.keys(currPlayer)))
-
                     if (currPlayer.privId == player.privId) {
                         // this is the current audio
                         setTurn(originalTurn)
@@ -125,12 +114,7 @@ export async function textToSpeech(text: string,
                             ...cs, currentAudio: { player: null, messagesIds: [] }
                         }))
                     }
-                }, timeoutDuration * 1000 - 1500)
-            }
-                , 1000)
-
-            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-                console.log("Synthesis finished.");
+                }, result.privAudioDuration / 10000)
             } else {
                 console.error(
                     "Speech synthesis canceled, " +

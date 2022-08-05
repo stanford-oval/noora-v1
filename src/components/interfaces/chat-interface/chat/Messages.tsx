@@ -27,6 +27,7 @@ export default function Messages({ history, convoState }: any) {
         id: -1,
         fromNoora: true,
         text: "Hi! I am Noora.",
+        read: "Hi. I am Nora.",
         style: "cheerful"
       },
       {
