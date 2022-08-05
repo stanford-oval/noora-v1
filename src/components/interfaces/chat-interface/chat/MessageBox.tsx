@@ -142,6 +142,7 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
       <Microphone
         className="bg-noora-primary hover:bg-noora-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
         turn={convoState.value.turn}
+        convoState={convoState}
         setTurn={(str: string) =>
           convoState.setValue((cs: any) => ({
             ...cs,

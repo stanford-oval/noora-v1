@@ -17,7 +17,6 @@ export default function Messages({ history, convoState }: any) {
 
   currentAudioRef.current = convoState.value.currentAudio
 
-
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
     let activeModules = convoState.value.modules.filter((m: any) => m.active);
@@ -56,7 +55,6 @@ export default function Messages({ history, convoState }: any) {
       },
     ]);
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
-    // convoState.setValue((cs: any) => ({ ...cs, turn: "user-select-start" }));
   }, []);
 
   // scrolling

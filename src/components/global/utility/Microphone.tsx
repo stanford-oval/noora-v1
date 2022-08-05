@@ -13,6 +13,7 @@ export default function Microphone({
   setTurn,
   setText,
   currText,
+  convoState
 }: any) {
   const microphoneHandler = () => {
     console.log("In Microphone handler");
@@ -24,6 +25,13 @@ export default function Microphone({
       type="button"
       onClick={(e: any) => {
         e.preventDefault();
+
+        // stop audio
+        if (convoState.value.currentAudio.player) {
+          convoState.value.currentAudio.player.pause()
+          convoState.value.currentAudio.player.close()
+        }
+
         microphoneHandler();
       }}
       disabled={turn.includes("read") || turn.includes("rate-reply")}

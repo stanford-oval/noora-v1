@@ -93,7 +93,7 @@ export async function textToSpeech(
         currPlayer.pause()
         currPlayer.close()
         convoState.setValue((cs: any) => ({
-            ...cs, currentAudio: { player: null, messagess: [], duration:  null }
+            ...cs, currentAudio: { messagesIds: [], duration:  null }
         }))
     }
 
