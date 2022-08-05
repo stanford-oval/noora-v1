@@ -133,7 +133,7 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
     />
     <div className="flex absolute right-20 bottom-3 md:bottom-2.5 z-10 joyride-step-1">
       <Microphone
-        className="bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
+        className="bg-noora-primary hover:bg-noora-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-2.5 py-2.5"
         turn={convoState.value.turn}
         setTurn={(str: string) =>
           convoState.setValue((cs: any) => ({
@@ -157,7 +157,7 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
         convoState.value.draft.length == 0 ||
         convoState.value.turn.includes("microphone")
       }
-      className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+      className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"
     >
       Send
     </button>
