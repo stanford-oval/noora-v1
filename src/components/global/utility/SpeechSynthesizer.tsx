@@ -7,8 +7,7 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 export default function SpeechSynthesizer({
     className,
-    turn,
-    setTurn,
+    convoState,
     preText,
     text,
     postText,
@@ -17,7 +16,7 @@ export default function SpeechSynthesizer({
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech(text, preText, postText, style, styleDegree, turn, setTurn);
+        textToSpeech(text, preText, postText, style, styleDegree, convoState);
     };
 
     return (
@@ -27,8 +26,8 @@ export default function SpeechSynthesizer({
                 e.preventDefault();
                 handler();
             }}
-            className="inline-block"
-            disabled={!turn.startsWith("user")}
+            className="inline-block text-gray-500 disabled:text-gray-400"
+            disabled={convoState.value.turn.includes("noora-reads")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -43,8 +42,15 @@ export async function textToSpeech(text: string,
     postText: any,
     style: any,
     styleDegree: any,
-    turn: any,
-    setTurn: any) {
+    convoState: any) {
+
+    const setTurn = (str: string) => {
+        convoState.setValue((cs: any) => ({
+            ...cs,
+            turn: str,
+        }))
+    }
+
     const tokenObj = await getTokenOrRefresh();
     const speechConfig = sdk.SpeechConfig.fromAuthorizationToken(
         tokenObj.authToken,
@@ -58,8 +64,8 @@ export async function textToSpeech(text: string,
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-    let originalTurn = turn.slice()
-    if (turn.startsWith("user")) setTurn(turn + "-noora-reads")
+    let originalTurn = convoState.value.turn.slice()
+    if (originalTurn.startsWith("user")) setTurn(originalTurn + "-noora-reads")
 
     const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
 
@@ -70,12 +76,10 @@ export async function textToSpeech(text: string,
         ssmlStr, // ssml.text
         (result: any) => {
             const wordCount = (text + preText + postText).split(" ").length
+            setTurn(originalTurn)
             setTimeout(() => {
-                setTurn(originalTurn)
-                // if (player) {
-                //     player.pause()
-                //     player.close()
-                // }
+                // if (player)
+                //     setTurn(originalTurn)
             }, 0.38 * wordCount * 1000)
 
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {

@@ -245,13 +245,7 @@ function SpeechButton({ convoState, message }: any) {
     style = "sad"
 
   return (<SpeechSynthesizer
-    turn={convoState.value.turn}
-    setTurn={(str: string) =>
-      convoState.setValue((cs: any) => ({
-        ...cs,
-        turn: str,
-      }))
-    } preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
-    className={clsx("-mt-0.5 h-4 w-4 inline-block text-gray-500 disabled:text-gray-400", message.id == -3 ? "demo-audio" : "")} />
+    convoState={convoState} preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
+    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} />
   )
 }

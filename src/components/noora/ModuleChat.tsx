@@ -22,6 +22,10 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       goodReplyThreshold: 0.5,
     },
     progress: [],
+    currentAudio: {
+      player: null,
+      messagesId: []
+    },
     numProblems: 10,
   });
 
