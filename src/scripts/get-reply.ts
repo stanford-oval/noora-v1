@@ -185,7 +185,7 @@ export async function getStatement(convoState: any) {
   const sentiment = getRandomItem(sentiments)
     .title as keyof typeof module_statements[typeof category];
 
-  await timeout(700);
+  // await timeout(700);
   // choose statement
   const statementIdx = getStatementIdx(
     category + "/" + sentiment,
@@ -237,11 +237,6 @@ function getStatementIdx(
   }
 
   return newRandomIdx;
-}
-
-function timeout(ms: number) {
-  // for testing purposes
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function getRandomItem(items: any) {

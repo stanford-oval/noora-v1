@@ -18,7 +18,7 @@ export default function MessageBox({ history, convoState }: any) {
 
     history.setValue((h: any) => [
       ...h,
-      { id: userMsgId, fromNoora: false, text: message },
+      { id: userMsgId, fromNoora: false, text: message, show: true },
     ]);
     convoState.setValue((cs: any) => ({ ...cs, draft: "" }));
 
@@ -84,7 +84,7 @@ function SelectInputForm({ convoState, options, handleSubmit }: any) {
         handleSubmit(e, o);
       }}
       disabled={convoState.value.turn.includes("noora-reads")}
-      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-noora-secondary-bright bg-noora-secondary-bright hover:bg-noora-secondary-light disabled:bg-noora-secondary-light disabled:border-noora-secondary-light disabled:text-slate-300 hover:border-noora-secondary-light"
+      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-noora-secondary-bright bg-noora-secondary-bright hover:bg-noora-secondary-light disabled:bg-slate-400 disabled:border-slate-400 hover:border-noora-secondary-light"
     >{o}
     </button>)}
   </div>)
