@@ -85,10 +85,7 @@ export async function textToSpeech(text: string,
 
     // console.log(ssmlStr)
 
-    console.log(currentAudioRef.current)
-
     let currPlayer = currentAudioRef.current.player
-    console.log(currPlayer)
     if (currPlayer) {
         currPlayer.pause()
         currPlayer.close()
@@ -104,18 +101,23 @@ export async function textToSpeech(text: string,
             }))
 
             setTimeout(() => {
-                player.close()
+                setTimeout(() => {
+                    // player.close()
 
-                const currPlayer = currentAudioRef.current.player
+                    currPlayer = currentAudioRef.current.player
 
-                if (currPlayer.privId == player.privId) {
-                    // this is the current audio
-                    setTurn(originalTurn)
-                    // convoState.setValue((cs: any) => ({
-                    //     ...cs, currentAudio: { player: null, messagesIds: [] }
-                    // }))
-                }
-            }, 0.1 * 0.38 * wordCount * 1000)
+                    console.log("current", currPlayer)
+
+                    if (currPlayer.privId == player.privId) {
+                        // this is the current audio
+                        setTurn(originalTurn)
+                        convoState.setValue((cs: any) => ({
+                            ...cs, currentAudio: { player: null, messagesIds: [] }
+                        }))
+                    }
+                }, player.privMediaSource.duration * 1000 - 500)
+            }
+                , 500)
 
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
                 console.log("Synthesis finished.");
