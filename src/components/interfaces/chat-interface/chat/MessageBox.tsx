@@ -11,6 +11,13 @@ export default function MessageBox({ history, convoState }: any) {
 
   const handleSubmit = async (e: any, message?: string) => {
     e.preventDefault();
+
+    // stop audio
+    if (convoState.value.currentAudio.player) {
+      convoState.value.currentAudio.player.pause()
+      convoState.value.currentAudio.player.close()
+    }
+
     message = message ? message : convoState.value.draft.slice();
     if (!message) message = ""
 
@@ -155,7 +162,7 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
       onClick={(e) => handleSubmit(e)}
       disabled={
         convoState.value.draft.length == 0 ||
-        convoState.value.turn.includes("microphone")
+        convoState.value.turn.includes("microphone") || convoState.value.turn.includes("read")
       }
       className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"
     >

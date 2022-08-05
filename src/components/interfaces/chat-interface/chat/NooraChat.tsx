@@ -14,11 +14,10 @@ export default function NooraChat({
   currentAudioRef.current = convoState.value.currentAudio
 
   useEffect(() => {
-    const idxHidden = history.value.findIndex((m: any) => {
-      return !m.show;
-    });
+    let idxHidden = history.value.findIndex((m: any) => !m.show);
 
     if (idxHidden == -1) {
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0] }))
       return;
     }
 
@@ -29,7 +28,7 @@ export default function NooraChat({
     console.log(history.value[idxHidden - 1], prevFromUser)
 
     const showItem = (id: string) => {
-      const props = messageToSpeechParams(convoState, item, currentAudioRef)
+      const props = messageToSpeechParams(convoState, item, currentAudioRef, true)
       console.log(JSON.parse(JSON.stringify(props)))
       textToSpeech(props)
 
@@ -49,7 +48,9 @@ export default function NooraChat({
       // otherwise show it AFTER waiting for speaking to finish
       setTimeout(() => {
         const duration = currentAudioRef.current ? (currentAudioRef.current as any).duration / 10000 : 5000
-        setTimeout(() => { showItem(item.id) }, duration - 500)
+        setTimeout(() => {
+          showItem(item.id)
+        }, duration - 500)
       }, 1000)
     }
   }, [history.value])

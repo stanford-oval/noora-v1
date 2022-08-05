@@ -58,7 +58,8 @@ export async function textToSpeech(
         id,
         styleDegree,
         convoState,
-        currentAudioRef }: any) {
+        currentAudioRef,
+        fromAuto }: any) {
 
     const setTurn = (str: string) => {
         convoState.setValue((cs: any) => ({
@@ -91,6 +92,9 @@ export async function textToSpeech(
     if (currPlayer) {
         currPlayer.pause()
         currPlayer.close()
+        convoState.setValue((cs: any) => ({
+            ...cs, currentAudio: { player: null, messagess: [], duration:  null }
+        }))
     }
 
     // Start the synthesizer and wait for a result.
@@ -109,13 +113,15 @@ export async function textToSpeech(
 
                     currPlayer = currentAudioRef.current.player
                     // console.log(currPlayer.privId, player.privId)
-                    if (currPlayer.privId == player.privId) {
-                        // this is the current audio
-                        setTurn(originalTurn)
-                        convoState.setValue((cs: any) => ({
-                            ...cs, currentAudio: { player: null, messagesIds: [], duration: 0 }
-                        }))
-                    }
+                    if (currPlayer)
+                        if (currPlayer.privId == player.privId) {
+                            // this is the current audio
+                            if (!fromAuto)
+                                setTurn(originalTurn)
+                            convoState.setValue((cs: any) => ({
+                                ...cs, currentAudio: { messagesIds: [], duration: null }
+                            }))
+                        }
                 }, result.privAudioDuration / 10000)
             } else {
                 console.error(

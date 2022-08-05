@@ -251,7 +251,7 @@ function MicrophoneInfoElement() {
 }
 
 function SpeechButton({ convoState, message, currentAudioRef }: any) {
-  const props = messageToSpeechParams(convoState, message, currentAudioRef)
+  const props = messageToSpeechParams(convoState, message, currentAudioRef, false)
 
   return (<SpeechSynthesizer {...props}
     className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")}/>

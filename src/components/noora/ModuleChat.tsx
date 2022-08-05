@@ -25,7 +25,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     currentAudio: {
       player: null,
       messagesIds: [],
-      duration: 0,
+      duration: null,
     },
     numProblems: 10,
   });
