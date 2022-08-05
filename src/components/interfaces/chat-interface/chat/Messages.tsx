@@ -76,24 +76,8 @@ export default function Messages({ history, convoState }: any) {
       id="chat-window"
     >
       <ul>
-        {history.value.map((message: any, i: number) => (
-          <li key={i}>
-            {message && (
-              <div
-                className={clsx(
-                  "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
-                  message.fromNoora
-                    ? "bg-gray-200 mr-auto"
-                    : "bg-noora-primary text-white ml-auto"
-                )}
-              >
-                <div className="flex flex-row items-center gap-x-2">
-                  {message.text ? <Message message={message} /> : message.component}
-                  {message.fromNoora && <SpeechButton currentAudioRef={currentAudioRef} convoState={convoState} message={message} />}
-                </div>
-              </div>
-            )}
-          </li>
+        {history.value.map((message: any) => (
+          <MessageWrapper message={message} currentAudioRef={currentAudioRef} convoState={convoState} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           <div
@@ -116,6 +100,26 @@ export default function Messages({ history, convoState }: any) {
       </div>
     </div>
   );
+}
+
+function MessageWrapper({ message, currentAudioRef, convoState }: any) {
+  return <li>
+    {message && (
+      <div
+        className={clsx(
+          "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
+          message.fromNoora
+            ? "bg-gray-200 mr-auto"
+            : "bg-noora-primary text-white ml-auto"
+        )}
+      >
+        <div className="flex flex-row items-center gap-x-2">
+          {message.text ? <Message message={message} /> : message.component}
+          {message.fromNoora && <SpeechButton currentAudioRef={currentAudioRef} convoState={convoState} message={message} />}
+        </div>
+      </div>
+    )}
+  </li>
 }
 
 function Message({ message }: any) {
