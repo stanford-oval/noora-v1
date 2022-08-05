@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MessageBox from "./MessageBox";
 import Header from "./Header";
 import Messages from "./Messages";
@@ -14,6 +14,9 @@ export default function NooraChat({
   currentAudioRef.current = convoState.value.currentAudio
 
   useEffect(() => {
+    if (convoState.value.autoPlaying)
+      return;
+
     let idxHidden = history.value.findIndex((m: any) => !m.show);
 
     if (idxHidden == -1) {
@@ -23,36 +26,24 @@ export default function NooraChat({
 
     let item = history.value[idxHidden]
 
-    // show this if the previous message was from user
     const prevFromUser = !history.value[idxHidden - 1].fromNoora
-    console.log(history.value[idxHidden - 1], prevFromUser)
 
-    const showItem = (id: string) => {
-      const props = messageToSpeechParams(convoState, item, currentAudioRef, true)
-      console.log(JSON.parse(JSON.stringify(props)))
+    if (prevFromUser) {
+      let hidden = history.value.filter((m: any) => !m.show);
+      const props = messageToSpeechParams(convoState, item, currentAudioRef, history, hidden)
       textToSpeech(props)
 
       history.setValue((h: any) => {
         return h.map((m: any) => {
-          if (m.id == id)
+          if (m.id == item.id)
             return { ...item, show: true }
           else
             return m
         })
       })
+      convoState.setValue((cs: any) => ({ ...cs, autoPlaying: true }))
     }
 
-    if (prevFromUser) {
-      showItem(item.id)
-    } else {
-      // otherwise show it AFTER waiting for speaking to finish
-      setTimeout(() => {
-        const duration = currentAudioRef.current ? (currentAudioRef.current as any).duration / 10000 : 5000
-        setTimeout(() => {
-          showItem(item.id)
-        }, duration - 500)
-      }, 1000)
-    }
   }, [history.value])
 
   return (

@@ -4,6 +4,7 @@ import clsx from "clsx";
 import React from "react";
 import getSpeechSSMLStr from "../../../data/speech-ssml";
 import { getTokenOrRefresh } from "../../../scripts/token_util";
+import { messageToSpeechParams } from "../../../scripts/util";
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 export default function SpeechSynthesizer({
@@ -40,7 +41,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-            disabled={convoState.value.turn.includes("noora-reads")}
+        disabled={convoState.value.turn.includes("noora-reads")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -57,9 +58,10 @@ export async function textToSpeech(
         style,
         id,
         styleDegree,
+        history,
         convoState,
         currentAudioRef,
-        fromAuto }: any) {
+        hidden }: any) {
 
     const setTurn = (str: string) => {
         convoState.setValue((cs: any) => ({
@@ -88,41 +90,78 @@ export async function textToSpeech(
 
     // console.log(ssmlStr)
 
-    let currPlayer = currentAudioRef.current.player
-    if (currPlayer) {
-        currPlayer.pause()
-        currPlayer.close()
+    player.onAudioStart = () => {
         convoState.setValue((cs: any) => ({
-            ...cs, currentAudio: { messagesIds: [], duration: null }
+            ...cs, currentAudio: { player: player, messagesIds: [id] }
         }))
+
+        let currPlayer = currentAudioRef.current.player
+        if (currPlayer) {
+            currPlayer.pause()
+            currPlayer.close()
+            convoState.setValue((cs: any) => ({
+                ...cs, currentAudio: { messagesIds: [] }
+            }))
+        }
     }
 
-    player.onAudioEnd = () => {
-        console.log("Audio end.")
-        player.close()
+    if (hidden)
+        player.onAudioEnd = () => {
+            console.log("Audio end.")
+            player.close()
 
-        currPlayer = currentAudioRef.current.player
-        // console.log(currPlayer.privId, player.privId)
-        if (currPlayer)
-            if (currPlayer.privId == player.privId) {
-                // this is the current audio
-                if (!fromAuto)
-                    setTurn(originalTurn)
-                convoState.setValue((cs: any) => ({
-                    ...cs, currentAudio: { messagesIds: [], duration: null }
-                }))
+            let currPlayer = currentAudioRef.current.player
+            // console.log(currPlayer.privId, player.privId)
+            if (currPlayer)
+                if (currPlayer.privId == player.privId) {
+                    convoState.setValue((cs: any) => ({
+                        ...cs, currentAudio: { messagesIds: [] }
+                    }))
+                }
+
+
+            hidden = hidden.slice(1)
+            // show the next one and play its audio
+            if (hidden.length == 0) {
+                convoState.setValue((cs: any) => ({ ...cs, autoPlaying: false, turn: convoState.value.turn.split("-noora-reads")[0] }))
+                return;
             }
-    }
+            let item = hidden[0]
+
+            history.setValue((h: any) => {
+                return h.map((m: any) => {
+                    if (m.id == item.id)
+                        return { ...m, show: true }
+                    else
+                        return m
+                })
+            })
+
+            const props = messageToSpeechParams(convoState, item, currentAudioRef, history, hidden)
+            textToSpeech(props)
+        }
+    else
+        player.onAudioEnd = () => {
+            console.log("Audio end.")
+            player.close()
+
+            let currPlayer = currentAudioRef.current.player
+            // console.log(currPlayer.privId, player.privId)
+            if (currPlayer)
+                if (currPlayer.privId == player.privId) {
+                    // this is the current audio
+                    setTurn(originalTurn)
+                    convoState.setValue((cs: any) => ({
+                        ...cs, currentAudio: { messagesIds: [] }
+                    }))
+                }
+        }
 
     // Start the synthesizer and wait for a result.
     await synthesizer.speakSsmlAsync(
         ssmlStr, // ssml.text
         (result: any) => {
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-                convoState.setValue((cs: any) => ({
-                    ...cs, currentAudio: { player: player, messagesIds: [id], duration: result.privAudioDuration }
-                }))
-
                 console.log("Synthesis finished.");
             } else {
                 console.error(
