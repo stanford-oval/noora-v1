@@ -25,6 +25,7 @@ export default function Messages({ history, convoState }: any) {
       ...h,
       {
         id: -1,
+        show: true,
         fromNoora: true,
         text: "Hi! I am Noora.",
         read: "Hi. I am Nora.",
@@ -32,6 +33,7 @@ export default function Messages({ history, convoState }: any) {
       },
       {
         id: -2,
+        show: true,
         fromNoora: true,
         text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
           ? "co-worker"
@@ -41,12 +43,14 @@ export default function Messages({ history, convoState }: any) {
       {
         id: -3,
         fromNoora: true,
+        show: true,
         component: <MicrophoneInfoElement />,
         read: "You can tap on the microphone button to speak. Click on the audio button to hear Noora's replies"
       },
       {
         id: -4,
         fromNoora: true,
+        show: true,
         text: "Are you ready to begin?",
       },
     ]);
@@ -103,6 +107,9 @@ export default function Messages({ history, convoState }: any) {
 }
 
 function MessageWrapper({ message, currentAudioRef, convoState }: any) {
+  if (!message.show)
+    return <></>
+
   return <li>
     {message && (
       <div
