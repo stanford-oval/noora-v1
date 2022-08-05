@@ -101,7 +101,7 @@ export async function textToSpeech(text: string,
 
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
                 console.log("Synthesis finished.");
-                console.log(result.privAudioDuration)
+                // console.log(result.privAudioDuration)
 
                 setTimeout(() => {
                     player.close()

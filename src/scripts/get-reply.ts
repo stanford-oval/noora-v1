@@ -2,6 +2,7 @@ import general_statements from "../data/module_statements/general";
 import work_statements from "../data/module_statements/work";
 import Completion from "./Completion";
 import formPrompt from "./generate-evaluation-prompt";
+import { v4 as uuidv4 } from "uuid";
 
 const module_statements = {
   general: general_statements,
@@ -18,6 +19,7 @@ export default async function getReply(
 
   let replies = [
     {
+      id: uuidv4(),
       fromNoora: true,
       text: "Oops! Something went wrong.",
       sentiment: "neutral",
@@ -29,6 +31,7 @@ export default async function getReply(
     const statement = await getStatement(convoState)
     replies = [
       {
+        id: uuidv4(),
         fromNoora: true,
         text: statement.text,
         sentiment: statement.sentiment,
@@ -48,6 +51,7 @@ export default async function getReply(
     );
 
     replies = answers.map((a: any) => ({
+      id: uuidv4(),
       fromNoora: true,
       text: a.text,
       suggestion: a.suggestion,

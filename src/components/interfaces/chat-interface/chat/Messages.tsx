@@ -239,7 +239,7 @@ function MicrophoneInfoElement() {
 }
 
 function SpeechButton({ convoState, message, currentAudioRef }: any) {
-  const preText = message.suggestion ? "A better answer might've been: " : ""
+  const preText = message.suggestion ? "A better reply might've been: " : ""
   const text = message.read ? message.read : message.text
   const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
   let style = "neutral"

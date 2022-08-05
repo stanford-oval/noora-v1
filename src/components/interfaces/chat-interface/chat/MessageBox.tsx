@@ -230,6 +230,7 @@ async function noorasTurn(
     history.setValue((h: any) => [
       ...h,
       {
+        id: uuidv4(),
         fromNoora: true,
         text: `Good job! You practiced ${convoState.value.numProblems} scenarios. Do you want to continue practicing?`,
       },
