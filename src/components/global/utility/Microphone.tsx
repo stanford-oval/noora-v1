@@ -26,7 +26,7 @@ export default function Microphone({
         e.preventDefault();
         microphoneHandler();
       }}
-      disabled={turn.includes("reads")}
+      disabled={turn.includes("read")}
       className={className}
     >
       <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />

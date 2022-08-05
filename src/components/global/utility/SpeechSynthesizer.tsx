@@ -80,7 +80,7 @@ export async function textToSpeech(
 
     // Create the speech synthesizer.
     let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
-    let originalTurn = convoState.value.turn.slice()
+    let originalTurn = convoState.value.turn.split("-noora-reads")[0]
     if (originalTurn.startsWith("user")) setTurn(originalTurn + "-noora-reads")
 
     const ssmlStr = getSpeechSSMLStr(text, preText, postText, style, styleDegree)
@@ -108,11 +108,12 @@ export async function textToSpeech(
                     player.close()
 
                     currPlayer = currentAudioRef.current.player
+                    // console.log(currPlayer.privId, player.privId)
                     if (currPlayer.privId == player.privId) {
                         // this is the current audio
                         setTurn(originalTurn)
                         convoState.setValue((cs: any) => ({
-                            ...cs, currentAudio: { player: null, messagesIds: [] }
+                            ...cs, currentAudio: { player: null, messagesIds: [], duration: 0 }
                         }))
                     }
                 }, result.privAudioDuration / 10000)

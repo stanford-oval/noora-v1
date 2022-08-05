@@ -18,7 +18,10 @@ export default function NooraChat({
       return !m.show;
     });
 
-    if (idxHidden == -1) return;
+    if (idxHidden == -1) {
+      return;
+    }
+
     let item = history.value[idxHidden]
 
     // show this if the previous message was from user
@@ -26,6 +29,10 @@ export default function NooraChat({
     console.log(history.value[idxHidden - 1], prevFromUser)
 
     const showItem = (id: string) => {
+      const props = messageToSpeechParams(convoState, item, currentAudioRef)
+      console.log(JSON.parse(JSON.stringify(props)))
+      textToSpeech(props)
+
       history.setValue((h: any) => {
         return h.map((m: any) => {
           if (m.id == id)
@@ -37,13 +44,13 @@ export default function NooraChat({
     }
 
     if (prevFromUser) {
-      const props = messageToSpeechParams(convoState, item, currentAudioRef)
-      console.log(JSON.parse(JSON.stringify(props)))
-      // textToSpeech(props)
       showItem(item.id)
     } else {
       // otherwise show it AFTER waiting for speaking to finish
-      setTimeout(() => { showItem(item.id) }, 2000)
+      setTimeout(() => {
+        const duration = currentAudioRef.current ? (currentAudioRef.current as any).duration / 10000 : 5000
+        setTimeout(() => { showItem(item.id) }, duration - 500)
+      }, 1000)
     }
   }, [history.value])
 
