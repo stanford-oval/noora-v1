@@ -8,7 +8,7 @@ import {
   SpeechConfig,
   AudioConfig,
 } from "microsoft-cognitiveservices-speech-sdk";
-const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
+const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 import { getTokenOrRefresh } from "../../../scripts/token_util";
 
@@ -23,17 +23,21 @@ export default function Microphone({
 
   // initialize recognizer
   useEffect(() => {
-    if (recog) return;
-    const init = async () => {
-      setRecog(await initRecognizer());
-    };
-    init();
+    try {
+      if (recog) return;
+      const init = async () => {
+        setRecog(await initRecognizer());
+      };
+      init();
+    } catch (error) {}
   }, []);
 
   const microphoneHandler = async (recognizer: any, mode: boolean) => {
-    console.log("In Microphone handler");
-    if (mode) await sttFromMic(turn, setTurn, setText, currText, recognizer);
-    else stopSttFromMic(turn, setTurn, recog);
+    try {
+      console.log("In Microphone handler");
+      if (mode) await sttFromMic(turn, setTurn, setText, currText, recognizer);
+      else stopSttFromMic(turn, setTurn, currText, setText, recognizer)
+    } catch (error) {}
   };
 
   return (
@@ -66,12 +70,10 @@ async function initRecognizer() {
   speechConfig.speechRecognitionLanguage = "en-US";
 
   const audioConfig = AudioConfig.fromDefaultMicrophoneInput();
-  const recognizer: SpeechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
-
-  recognizer.recognizing = function (s, e) {
-    var str = "(recognizing) Reason: " + ResultReason[e.result.reason] + " Text: " + e.result.text;
-    console.log(str);
-  };
+  const recognizer: SpeechRecognizer = new SpeechRecognizer(
+    speechConfig,
+    audioConfig
+  );
 
   return recognizer;
 }
@@ -87,6 +89,29 @@ async function sttFromMic(
   else return;
 
   recognizer.startContinuousRecognitionAsync();
+  let recogText = "";
+
+  recognizer.recognized = function (s, e) {
+    if (e.result.reason === sdk.ResultReason.NoMatch) {
+      // let noMatchDetail = sdk.NoMatchDetails.fromResult(e.result);
+      // console.log(
+      //   "\r\n(recognized)  Reason: " +
+      //     sdk.ResultReason[e.result.reason] +
+      //     " NoMatchReason: " +
+      //     sdk.NoMatchReason[noMatchDetail.reason]
+      // );
+    } else {
+      recogText += e.result.text == "" ? "" : e.result.text + " ";
+      console.log(
+        "\r\n(recognized)  Reason: " +
+          sdk.ResultReason[e.result.reason] +
+          " Text: " +
+          e.result.text
+      );
+    }
+
+    setText(currText + (currText == "" ? "" : " ") + recogText);
+  };
 
   // (result: any) => {
   //   let transcribed;
@@ -116,7 +141,8 @@ async function sttFromMic(
   // });
 }
 
-async function stopSttFromMic(turn: any, setTurn: any, recognizer: any) {
-  setTurn(turn + "-edit");
+async function stopSttFromMic(turn: any, setTurn: any, currText: string, setText: any, recognizer: any) {
+  setTurn("user-answer-edit");
   recognizer.stopContinuousRecognitionAsync();
+  setText(currText.trim());
 }
