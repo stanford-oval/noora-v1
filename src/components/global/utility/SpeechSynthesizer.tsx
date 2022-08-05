@@ -56,7 +56,8 @@ export async function textToSpeech(text: string,
     style: string,
     id: string,
     styleDegree: any,
-    convoState: any, currentAudioRef: any) {
+    convoState: any, 
+    currentAudioRef: any) {
 
     const setTurn = (str: string) => {
         convoState.setValue((cs: any) => ({
@@ -95,13 +96,12 @@ export async function textToSpeech(text: string,
     await synthesizer.speakSsmlAsync(
         ssmlStr, // ssml.text
         (result: any) => {
-            convoState.setValue((cs: any) => ({
-                ...cs, currentAudio: { player: player, messagesIds: [id] }
-            }))
-
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+                convoState.setValue((cs: any) => ({
+                    ...cs, currentAudio: { player: player, messagesIds: [id], duration: result.privAudioDuration }
+                }))
+
                 console.log("Synthesis finished.");
-                console.log(result.privAudioDuration)
 
                 setTimeout(() => {
                     player.close()

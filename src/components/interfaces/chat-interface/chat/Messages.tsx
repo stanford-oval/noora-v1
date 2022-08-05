@@ -45,7 +45,7 @@ export default function Messages({ history, convoState }: any) {
         fromNoora: true,
         show: true,
         component: <MicrophoneInfoElement />,
-        read: "You can tap on the microphone button to speak. Click on the audio button to hear Noora's replies"
+        read: "You can tap on the microphone button to speak. Click the audio button to hear Noora's replies"
       },
       {
         id: -4,
@@ -250,6 +250,14 @@ function MicrophoneInfoElement() {
 }
 
 function SpeechButton({ convoState, message, currentAudioRef }: any) {
+  const props = messageToSpeechParams(convoState, message, currentAudioRef)
+
+  return (<SpeechSynthesizer {...props}
+    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} id={message.id} />
+  )
+}
+
+function messageToSpeechParams(convoState: any, message: any, currentAudioRef: any) {
   const preText = message.suggestion ? "A better reply might've been: " : ""
   const text = message.read ? message.read : message.text
   const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
@@ -261,8 +269,5 @@ function SpeechButton({ convoState, message, currentAudioRef }: any) {
   else if (message.sentiment == "negative")
     style = "sad"
 
-  return (<SpeechSynthesizer
-    convoState={convoState} currentAudioRef={currentAudioRef} preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
-    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} id={message.id} />
-  )
+  return { preText: preText, text: text, postText: postText, style: style, convoState: convoState, currentAudioRef: currentAudioRef, styleDegree: 1.3 }
 }
