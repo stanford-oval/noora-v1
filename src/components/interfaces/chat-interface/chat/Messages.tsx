@@ -223,7 +223,7 @@ function MicrophoneInfoElement() {
           setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
         }}
         className="w-5 h-5 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
-      /> button to hear Noora's replies.
+      /> button to hear Noora&lsquo;s replies.
       <button
         onClick={() => {
           setJoyrideState((js: any) => ({ ...js, run: true }));
