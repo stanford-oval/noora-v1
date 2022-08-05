@@ -70,20 +70,21 @@ export default function MessageBox({ history, convoState }: any) {
       id="messageBox"
     >
       {convoState.value.turn.startsWith("user-select") ?
-        <SelectInputForm options={convoState.value.turn.includes("end") ? (["Yes", "No"]) : (["Positive", "Neutral", "Negative"])} handleSubmit={handleSubmit} /> :
+        <SelectInputForm convoState={convoState} options={convoState.value.turn.includes("end") ? (["Yes", "No"]) : (["Positive", "Neutral", "Negative"])} handleSubmit={handleSubmit} /> :
         <MessageInputForm convoState={convoState} inputBoxRef={inputBoxRef} handleSubmit={handleSubmit} />}
     </form>
   );
 }
 
-function SelectInputForm({ options, handleSubmit }: any) {
+function SelectInputForm({ convoState, options, handleSubmit }: any) {
   return (<div className="flex gap-x-2 md:gap-x-4 lg:gap-x-8 xl:gap-x-12 justify-center flex-wrap md:flex-nowrap gap-y-2">
     {options.map((o: string) => <button
       key={o}
       onClick={(e: any) => {
         handleSubmit(e, o);
       }}
-      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-noora-secondary-bright bg-noora-secondary-bright hover:bg-noora-secondary-light hover:border-noora-secondary-light"
+      disabled={convoState.value.turn.includes("noora-reads")}
+      className="block focus:ring-0 py-3 px-4 sm:px-6 md:px-8 border-2 focus:outline-none shadow-sm sm:text-base rounded-full text-white border-noora-secondary-bright bg-noora-secondary-bright hover:bg-noora-secondary-light disabled:bg-noora-secondary-light disabled:border-noora-secondary-light disabled:text-slate-300 hover:border-noora-secondary-light"
     >{o}
     </button>)}
   </div>)
@@ -113,15 +114,15 @@ function MessageInputForm({ convoState, inputBoxRef, handleSubmit }: any) {
       }}
       value={convoState.value.draft}
       placeholder={
-        convoState.value.turn.startsWith("user-answer")
-          ? convoState.value.turn.includes("microphone")
+        (convoState.value.turn.startsWith("user-answer") && !convoState.value.turn.includes("noora-reads"))
+          ? (convoState.value.turn.includes("microphone")
             ? "Speak into your microphone..."
-            : "Send message..."
+            : "Send message...")
           : "Please wait for Noora..."
       }
       disabled={
         !convoState.value.turn.startsWith("user-answer") ||
-        convoState.value.turn.includes("microphone")
+        convoState.value.turn.includes("microphone") || convoState.value.turn.includes("noora-reads")
       }
       className={clsx(
         "block focus:border-gray-400 focus:ring-0 p-4 pl-12 pr-32 w-full border-2 focus:outline-none shadow-sm sm:text-sm rounded-full text-slate-800",

@@ -50,7 +50,8 @@ export async function textToSpeech(text: string,
         tokenObj.authToken,
         tokenObj.region
     );
-    const audioConfig = sdk.AudioConfig.fromDefaultSpeakerOutput();
+    var player = new sdk.SpeakerAudioDestination();
+    const audioConfig = sdk.AudioConfig.fromSpeakerOutput(player);
 
     // The language of the voice that speaks.
     speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural";
@@ -66,9 +67,17 @@ export async function textToSpeech(text: string,
 
     // Start the synthesizer and wait for a result.
     await synthesizer.speakSsmlAsync(
-        ssmlStr, // ssml.text,
+        ssmlStr, // ssml.text
         (result: any) => {
-            setTurn(originalTurn)
+            const wordCount = (text + preText + postText).split(" ").length
+            setTimeout(() => {
+                setTurn(originalTurn)
+                // if (player) {
+                //     player.pause()
+                //     player.close()
+                // }
+            }, 0.38 * wordCount * 1000)
+
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
                 console.log("Synthesis finished.");
             } else {

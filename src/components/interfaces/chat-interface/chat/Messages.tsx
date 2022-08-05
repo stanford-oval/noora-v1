@@ -36,7 +36,7 @@ export default function Messages({ history, convoState }: any) {
         id: -3,
         fromNoora: true,
         component: <MicrophoneInfoElement />,
-        read: "You can tap on the microphone button to speak."
+        read: "You can tap on the microphone button to speak. Click on the audio button to hear Noora's replies"
       },
       {
         id: -4,
@@ -218,7 +218,7 @@ function MicrophoneInfoElement() {
           setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
         }}
         className="w-5 h-5 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
-      /> button to hear Noora reply.
+      /> button to hear Noora's replies.
       <button
         onClick={() => {
           setJoyrideState((js: any) => ({ ...js, run: true }));
