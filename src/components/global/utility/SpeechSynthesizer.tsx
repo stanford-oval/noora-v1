@@ -19,7 +19,7 @@ export default function SpeechSynthesizer({
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech(text, preText, postText, style, id, styleDegree, convoState, currentAudioRef);
+        textToSpeech({ text: text, preText: preText, postText: postText, style: style, id: id, styleDegree: styleDegree, convoState: convoState, currentAudioRef: currentAudioRef });
     };
 
     let buttonColor = "text-gray-500"
@@ -51,14 +51,14 @@ export default function SpeechSynthesizer({
 }
 
 export async function textToSpeech(
-    text: string,
-    preText: string,
-    postText: string,
-    style: string,
-    id: string,
-    styleDegree: any,
-    convoState: any, 
-    currentAudioRef: any) {
+    { text,
+        preText,
+        postText,
+        style,
+        id,
+        styleDegree,
+        convoState,
+        currentAudioRef }: any) {
 
     const setTurn = (str: string) => {
         convoState.setValue((cs: any) => ({
