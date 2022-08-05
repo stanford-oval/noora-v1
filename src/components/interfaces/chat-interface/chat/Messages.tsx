@@ -12,6 +12,11 @@ const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
 
+  let currentAudioRef = useRef()
+
+  currentAudioRef.current = convoState.value.currentAudio
+
+
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
     let activeModules = convoState.value.modules.filter((m: any) => m.active);
@@ -83,7 +88,7 @@ export default function Messages({ history, convoState }: any) {
               >
                 <div className="flex flex-row items-center gap-x-2">
                   {message.text ? <Message message={message} /> : message.component}
-                  {message.fromNoora && <SpeechButton convoState={convoState} message={message} />}
+                  {message.fromNoora && <SpeechButton currentAudioRef={currentAudioRef} convoState={convoState} message={message} />}
                 </div>
               </div>
             )}
@@ -232,7 +237,7 @@ function MicrophoneInfoElement() {
   );
 }
 
-function SpeechButton({ convoState, message }: any) {
+function SpeechButton({ convoState, message, currentAudioRef }: any) {
   const preText = message.suggestion ? "A better answer might've been: " : ""
   const text = message.read ? message.read : message.text
   const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
@@ -245,7 +250,7 @@ function SpeechButton({ convoState, message }: any) {
     style = "sad"
 
   return (<SpeechSynthesizer
-    convoState={convoState} preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
-    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} />
+    convoState={convoState} currentAudioRef={currentAudioRef} preText={preText} text={text} postText={postText} style={style} styleDegree={1.3}
+    className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} id={message.id} />
   )
 }
