@@ -180,7 +180,8 @@ async function noorasTurn(
       history.setValue((h: any) => [...h, {
         id: uuidv4(),
         fromNoora: true,
-        read: `Actually, this is a ${targetSentiment} statement.`,
+        read: correct ? null : `Actually, this is a ${targetSentiment} statement.`,
+        sentiment: correct ? "positive" : "neutral",
         text: correct ? "That's right!" : targetSentiment,
         correction: !correct,
       },
