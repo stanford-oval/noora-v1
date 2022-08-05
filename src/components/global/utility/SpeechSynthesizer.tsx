@@ -93,8 +93,25 @@ export async function textToSpeech(
         currPlayer.pause()
         currPlayer.close()
         convoState.setValue((cs: any) => ({
-            ...cs, currentAudio: { messagesIds: [], duration:  null }
+            ...cs, currentAudio: { messagesIds: [], duration: null }
         }))
+    }
+
+    player.onAudioEnd = () => {
+        console.log("Audio end.")
+        player.close()
+
+        currPlayer = currentAudioRef.current.player
+        // console.log(currPlayer.privId, player.privId)
+        if (currPlayer)
+            if (currPlayer.privId == player.privId) {
+                // this is the current audio
+                if (!fromAuto)
+                    setTurn(originalTurn)
+                convoState.setValue((cs: any) => ({
+                    ...cs, currentAudio: { messagesIds: [], duration: null }
+                }))
+            }
     }
 
     // Start the synthesizer and wait for a result.
@@ -107,22 +124,6 @@ export async function textToSpeech(
                 }))
 
                 console.log("Synthesis finished.");
-
-                setTimeout(() => {
-                    player.close()
-
-                    currPlayer = currentAudioRef.current.player
-                    // console.log(currPlayer.privId, player.privId)
-                    if (currPlayer)
-                        if (currPlayer.privId == player.privId) {
-                            // this is the current audio
-                            if (!fromAuto)
-                                setTurn(originalTurn)
-                            convoState.setValue((cs: any) => ({
-                                ...cs, currentAudio: { messagesIds: [], duration: null }
-                            }))
-                        }
-                }, result.privAudioDuration / 10000)
             } else {
                 console.error(
                     "Speech synthesis canceled, " +

@@ -1,7 +1,3 @@
-export function timeout(ms: number) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export function messageToSpeechParams(convoState: any, message: any, currentAudioRef: any, fromAuto: any) {
     const preText = message.suggestion ? "A better reply might've been: " : ""
     const text = message.read ? message.read : message.text
@@ -25,4 +21,8 @@ export function messageToSpeechParams(convoState: any, message: any, currentAudi
         currentAudioRef: currentAudioRef,
         fromAuto: fromAuto,
     }
+}
+
+export function timeout(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
