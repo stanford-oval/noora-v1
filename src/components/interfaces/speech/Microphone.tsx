@@ -37,7 +37,7 @@ export default function Microphone({
     try {
       console.log("In Microphone handler");
       if (mode) await sttFromMic(turn, setTurn, setText, currText, recognizer);
-      else stopSttFromMic(turn, setTurn, currText, setText, recognizer)
+      else stopSttFromMic(turn, setTurn, currText, setText, recognizer);
     } catch (error) {}
   };
 
@@ -94,6 +94,7 @@ async function sttFromMic(
   currText: string,
   recognizer: SpeechRecognizer
 ) {
+  console.log("recognizing...");
   if (turn.startsWith("user")) setTurn("user-answer-microphone");
   else return;
 
@@ -110,7 +111,16 @@ async function sttFromMic(
       //     sdk.NoMatchReason[noMatchDetail.reason]
       // );
     } else {
-      recogText += e.result.text == "" ? "" : e.result.text + " ";
+      let text = e.result.text;
+      if (recogText == "") {
+        recogText = text;
+      } else {
+        if (text != "") {
+          recogText += " " + text;
+        } else {
+          recogText = text;
+        }
+      }
       console.log(
         "\r\n(recognized)  Reason: " +
           sdk.ResultReason[e.result.reason] +
@@ -150,8 +160,15 @@ async function sttFromMic(
   // });
 }
 
-async function stopSttFromMic(turn: any, setTurn: any, currText: string, setText: any, recognizer: any) {
+async function stopSttFromMic(
+  turn: any,
+  setTurn: any,
+  currText: string,
+  setText: any,
+  recognizer: any
+) {
+  console.log(`stop: ${currText.trim()}`);
   setTurn("user-answer-edit");
   recognizer.stopContinuousRecognitionAsync();
-  setText(currText.trim());
+  // setText(currText.trim());
 }
