@@ -102,7 +102,7 @@ export default function Features() {
               >
                 Dr. Lynn Koegel
               </a>{" "}
-              in Stanford&apos;s Dept. of Psychiatry and Behavioral Sciences.
+              from Stanford&apos;s Dept. of Psychiatry and Behavioral Sciences.
             </p>
 
             <dl className="mt-10 space-y-10">

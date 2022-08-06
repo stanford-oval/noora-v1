@@ -5,10 +5,6 @@
     A platform utilizing conversational AI to improve the social skills of individuals with Autism Spectrum Disorder (ASD).
     </p>
     <p align="center" style="align: center;">
-        <a href="https://med.stanford.edu/" target="_blank">
-            <img src="./public/img/logos/stanford/medicine.png" width="140px" alt="Stanford Medicine" style="margin-bottom:5px" />
-        </a>
-        <span>&nbsp&nbsp</span>
         <a href="https://stanford.edu" target="_blank">
             <img src="./public/img/logos/stanford/university.png" width="140px" alt="Stanford University" />
         </a>
@@ -24,9 +20,9 @@
 
 ## Overview
 
-Noora is is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the social skills of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> in Stanford's Dept. of Psychiatry and Behavioral Sciences.
+Noora is is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the social skills of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> from Stanford's Dept. of Psychiatry and Behavioral Sciences.
 
-Dr. Koegel's intervention method, pivotal response training, has been shown to help individuals make friends, have romantic relationships, collaborate in the workplace, and engage in leisure activities. Because pivotal response training's applicability is restricted by the lack of trained professionals, Noora's goal is to automate the intervention, the success of which can have a great impact on society, as 1 in 54 children is currently diagnosed with ASD. 
+<!-- Dr. Koegel's intervention method, pivotal response training, has been shown to help individuals make friends, have romantic relationships, collaborate in the workplace, and engage in leisure activities. Because pivotal response training's applicability is restricted by the lack of trained professionals, Noora's goal is to automate the intervention, the success of which can have a great impact on society, as 1 in 54 children is currently diagnosed with ASD.  -->
 
 This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azure.
 
