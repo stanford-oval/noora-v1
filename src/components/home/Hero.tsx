@@ -53,7 +53,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="px-4 col-span-12 sm:px-0 sm:col-span-8 sm:col-start-3 md:col-span-6 md:pt-8 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
-            <img src="/img/demo.png" className="rounded-md" alt="Noora demo" />
+            <Link href="/noora"><img src="/img/demo.png" className="rounded-md cursor-pointer" alt="Noora demo" /></Link>
           </div>
         </div>
       </div>

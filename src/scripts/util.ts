@@ -16,7 +16,7 @@ export function messageToSpeechParams(convoState: any, message: any, currentAudi
         postText: postText,
         style: style,
         id: message.id,
-        styleDegree: 1.3,
+        styleDegree: style == "cheerful" ? 1.1 : 1.3,
         convoState: convoState,
         history: history,
         currentAudioRef: currentAudioRef,
