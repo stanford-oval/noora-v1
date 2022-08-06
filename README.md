@@ -47,3 +47,15 @@ OPENAI_API_KEY=[your API key]
 SPEECH_KEY=[your API key]
 SPEECH_REGION=[your API key]
 ```
+
+## Repo Structure
+
+**`pages`**: all of the Next.js app's paths (e.g., `noora.tsx`, `_404.tsx`). These files simply return components, typically wrapped by the `<Page>` component.
+
+**`components`**: the bulk of the website code. Folders under this directory reference the pages of the website, with the exception of `components/global` and `components/utility`.
+
+**`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`. 
+- `api/openai` calls OpenAI's Completion endpoint and returns the resulting `text` and `logprobs`. 
+- `api/get-speech-token.ts` retrieves an ephemeral authentication token for Microsoft Azure's speech service.
+
+**`public`**: the public assets including images and static files.

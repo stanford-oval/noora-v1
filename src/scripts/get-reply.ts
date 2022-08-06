@@ -1,5 +1,5 @@
-import general_statements from "../data/module_statements/general";
-import work_statements from "../data/module_statements/work";
+import general_statements from "../data/statement_bank/general";
+import work_statements from "../data/statement_bank/work";
 import Completion from "./Completion";
 import formPrompt from "./generate-evaluation-prompt";
 import { v4 as uuidv4 } from "uuid";
