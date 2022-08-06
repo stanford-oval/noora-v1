@@ -52,7 +52,7 @@ SPEECH_REGION=[your API key]
 
 **`pages`**: all of the Next.js app's paths (e.g., `noora.tsx`, `_404.tsx`). These files simply return components, typically wrapped by the `<Page>` component.
 
-**`components`**: the bulk of the website code. Folders under this directory reference the pages of the website, with the exception of `components/global` and `components/utility`.
+**`components`**: the bulk of the website code. Folders under this directory reference the pages of the website, with the exception of `components/global`.
 
 **`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`. 
 - `api/openai` calls OpenAI's Completion endpoint and returns the resulting `text` and `logprobs`. 

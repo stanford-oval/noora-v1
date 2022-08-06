@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Page from "../utility/Page";
+import Page from "../global/utility/Page";
 import { useRouter } from "next/router";
 import modules from "../../data/modules";
 import Preamble from "./Preamble";

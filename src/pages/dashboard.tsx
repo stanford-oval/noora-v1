@@ -1,7 +1,7 @@
 import React from "react";
 import UserHero from "../components/dashboard/UserHero";
 import ProgressSummary from "../components/dashboard/ProgressSummary";
-import Page from "../components/utility/Page";
+import Page from "../components/global/utility/Page";
 import ModulesInfo from "../components/dashboard/ModulesInfo";
 
 export default function dashboard() {

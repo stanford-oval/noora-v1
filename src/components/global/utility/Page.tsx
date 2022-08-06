@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../global/header/Header";
-import Footer from "../global/footer/Footer";
+import Header from "../../global/header/Header";
+import Footer from "../../global/footer/Footer";
 import Head from "next/head";
 
 export default function Page({ fullTitle, title, desc, children }: PageProps) {

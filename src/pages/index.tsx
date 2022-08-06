@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "../components/utility/Page";
+import Page from "../components/global/utility/Page";
 import Hero from "../components/home/Hero";
 
 export default function index() {

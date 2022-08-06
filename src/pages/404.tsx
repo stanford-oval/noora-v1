@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Page from "../components/utility/Page";
+import Page from "../components/global/utility/Page";
 
 export default function Custom404() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import AskNoora from "../components/ask-noora/AskNoora";
-import Page from "../components/utility/Page";
+import Page from "../components/global/utility/Page";
 
 export default function asknoora() {
   return (
