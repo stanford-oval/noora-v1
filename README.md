@@ -1,7 +1,5 @@
 <p align="center">
-    <br/>
-    <a href="https://noora.stanford.edu" target="_blank"><img width="100px" style="margin-bottom:-20px; margin-left:20px" src="./public/img/logos/noora/lamp.png" /></a>
-    <h2 align="center"><b>Noora</b></h2>
+    <h1 align="center"><b>Noora</b></h1>
     <p align="center">Use AI to improve your social skills.</p>
     <p align="center">
     A platform utilizing conversational AI to improve the social skills of individuals with Autism Spectrum Disorder (ASD).
@@ -10,7 +8,7 @@
         <a href="https://med.stanford.edu/" target="_blank">
             <img src="./public/img/logos/stanford/medicine.png" width="140px" alt="Stanford Medicine" style="margin-bottom:5px" />
         </a>
-        <span style="visibility: hidden">x</span>
+        <span>&nbsp&nbsp</span>
         <a href="https://stanford.edu" target="_blank">
             <img src="./public/img/logos/stanford/university.png" width="140px" alt="Stanford University" />
         </a>
