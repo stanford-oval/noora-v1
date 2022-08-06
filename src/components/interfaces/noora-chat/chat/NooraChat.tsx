@@ -24,6 +24,8 @@ export default function NooraChat({
       return;
     }
 
+    convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0] + "-noora-reads" }))
+
     let item = history.value[idxHidden]
 
     const prevFromUser = !history.value[idxHidden - 1].fromNoora
