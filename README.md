@@ -32,6 +32,8 @@ Dr. Koegel's intervention method, pivotal response training, has been shown to h
 
 This project built with Next.js, Tailwind CSS, OpenAI's GPT-3, and Microsoft Azure.
 
+<a href="http://noora.stanford.edu" target="_blank"><img src="./public/img/other/preview.png" /></a>
+
 
 ## Developer Setup
 
