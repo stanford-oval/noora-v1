@@ -3,7 +3,7 @@ import MessageBox from "./MessageBox";
 import Header from "./Header";
 import Messages from "./Messages";
 import { messageToSpeechParams } from "../../../../scripts/util";
-import { textToSpeech } from "../../../global/utility/SpeechSynthesizer";
+import { textToSpeech } from "../../speech/SpeechSynthesizer";
 
 export default function NooraChat({
   convoState,

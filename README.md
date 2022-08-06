@@ -52,7 +52,13 @@ SPEECH_REGION=[your API key]
 
 **`pages`**: all of the Next.js app's paths (e.g., `noora.tsx`, `_404.tsx`). These files simply return components, typically wrapped by the `<Page>` component.
 
-**`components`**: the bulk of the website code. Folders under this directory reference the pages of the website, with the exception of `components/global`.
+**`components`**: the bulk of the website code. Folders under this directory reference the pages of the website, with the exception of `components/global` and `components/interfaces`.
+- `components/interfaces` contains the code behind the Noora Chat feature and the Ask Noora feature.
+
+**`data`**: all static or pre-written data, such as GPT-3 prompts, statement banks, routes.
+
+**`scripts`**: code that is called by components.
+- `get-reply.ts` contains the logic and flow for Noora's replies, and is used in `MessageBox.tsx` (where users submit their message in the Noora Chat). 
 
 **`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`. 
 - `api/openai` calls OpenAI's Completion endpoint and returns the resulting `text` and `logprobs`. 

@@ -1,5 +1,5 @@
 import React from "react";
-import UserHero from "../components/dashboard/UserHero";
+import UserHero from "../components/dashboard/UserInfo";
 import ProgressSummary from "../components/dashboard/ProgressSummary";
 import Page from "../components/global/utility/Page";
 import ModulesInfo from "../components/dashboard/ModulesInfo";

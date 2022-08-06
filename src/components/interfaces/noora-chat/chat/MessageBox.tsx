@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import getReply from "../../../../scripts/get-reply";
 import { v4 as uuidv4 } from "uuid";
-import Microphone from "../../../global/utility/Microphone";
+import Microphone from "../../speech/Microphone";
 import { clsx } from "clsx";
 
 export default function MessageBox({ history, convoState }: any) {
@@ -182,7 +182,8 @@ async function noorasTurn(
     if (convoState.value.turn.includes("select")) {
       // handle sentiment classification
       const targetSentiment = convoState.value.statement.statementObj[0].split("/")[1]
-      const correct = message.trim().toLowerCase() == targetSentiment.trim().toLowerCase()
+      const m = message.trim().toLowerCase()
+      const correct = m  == targetSentiment.trim().toLowerCase()
 
 
       history.setValue((h: any) => [...h, {
