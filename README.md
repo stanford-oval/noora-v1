@@ -60,7 +60,7 @@ SPEECH_REGION=[your API key]
 **`scripts`**: code that is called by components.
 - `get-reply.ts` contains the logic and flow for Noora's replies, and is used in `MessageBox.tsx` (where users submit their message in the Noora Chat). 
 
-**`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`. 
+**`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`). 
 - `api/openai` calls OpenAI's Completion endpoint and returns the resulting `text` and `logprobs`. 
 - `api/get-speech-token.ts` retrieves an ephemeral authentication token for Microsoft Azure's speech service.
 
