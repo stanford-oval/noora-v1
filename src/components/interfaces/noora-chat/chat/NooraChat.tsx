@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import MessageBox from "./MessageBox";
+import MessageBox from "./message-box/MessageBox";
 import Header from "./Header";
 import Messages from "./Messages";
 import { messageToSpeechParams } from "../../../../scripts/util";
