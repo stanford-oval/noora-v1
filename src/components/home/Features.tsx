@@ -160,7 +160,7 @@ export default function Features() {
             <img
               className="relative mx-auto px-4 sm:px-0"
               width={490}
-              src="img/demo.png"
+              src="img/home/demo.png"
               alt="noora in action"
             />
           </div>

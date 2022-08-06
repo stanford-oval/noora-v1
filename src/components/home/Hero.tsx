@@ -40,12 +40,12 @@ export default function Hero() {
               </h2>
               <div className="mt-2 w-full flex gap-x-4 justify-center md:justify-start">
                 <img
-                  src="/img/logos/stanford-medicine-logo.png"
+                  src="/img/logos/stanford/medicine.png"
                   className="col-span-5 h-11 w-auto"
                   alt="Stanford Medicine"
                 />
                 <img
-                  src="/img/logos/stanford-logo.png"
+                  src="/img/logos/stanford/medicine.png"
                   className="col-span-5 h-12 w-auto"
                   alt="Stanford"
                 />
@@ -53,7 +53,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="px-4 col-span-12 sm:px-0 sm:col-span-8 sm:col-start-3 md:col-span-6 md:pt-8 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
-            <Link href="/noora"><img src="/img/demo.png" className="rounded-md cursor-pointer" alt="Noora demo" /></Link>
+            <Link href="/noora"><img src="/img/home/demo.png" className="rounded-md cursor-pointer" alt="Noora demo" /></Link>
           </div>
         </div>
       </div>

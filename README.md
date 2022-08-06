@@ -1,7 +1,7 @@
 # noora-website
 
 <a href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss">
-<img src="./public/powered-by-vercel.svg" alt="Powered by Vercel" />
+<img src="./public/img/vercel/powered-by.svg" alt="Powered by Vercel" />
 </img>
 </a>
 

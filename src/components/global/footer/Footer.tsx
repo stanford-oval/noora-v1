@@ -55,7 +55,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="/powered-by-vercel.svg" height="38" width="200" />
+            <Image src="/img/logos/vercel/powered-by.svg" height="38" width="200" />
           </a>
         </div>
       </div>
