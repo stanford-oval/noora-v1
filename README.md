@@ -11,7 +11,7 @@
     </p>
     <p align="center" style="align: center;">
         <a href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss" target="_blank">
-            <img src="./public/img/logos/vercel/powered-by.svg" width="120px" alt="Powered by Vercel" />
+            <img src="./public/img/logos/vercel/powered-by.svg" width="150px" alt="Powered by Vercel" />
         </a>
     </p>
 </p>
@@ -58,7 +58,7 @@ SPEECH_REGION=[your API key]
 **`data`**: all static or pre-written data, such as GPT-3 prompts, statement banks, routes.
 
 **`scripts`**: code that is called by components.
-- `get-reply.ts` contains the logic and flow for Noora's replies, and is used in `MessageBox.tsx` (where users submit their message in the Noora Chat). 
+- `/scripts/noora-chat` (and, more specifically, `get-reply.ts`) contains the logic and flow for Noora's replies, and is used in `MessageBox.tsx` (where users submit their message in the Noora Chat). 
 
 **`pages/api`**: the REST API endpoints. Rate limiting is in place for endpoints (implementation found in `scripts/rate-limit.ts`). 
 - `api/openai` calls OpenAI's Completion endpoint and returns the resulting `text` and `logprobs`. 
