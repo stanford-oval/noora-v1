@@ -27,11 +27,13 @@ export default function SpeechSynthesizer({
     if (convoState.value.audio.player) {
         // audio is playing
         buttonColor = "text-gray-400"
-        if (convoState.value.audio.messagesIds.includes(id)) {
+        if (convoState.value.audio.messageId == id) {
             // THIS message's audio is playing
             buttonColor = "text-noora-primary"
         }
     }
+    if (convoState.value.turn.includes("microphone"))
+        buttonColor = "text-gray-400"
 
     return (
         <button
@@ -41,7 +43,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-            disabled={convoState.value.turn.includes("noora-reads")}
+            disabled={convoState.value.turn.includes("noora-reads") || convoState.value.turn.includes("microphone")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -91,18 +93,19 @@ export async function textToSpeech(
     // console.log(ssmlStr)
 
     player.onAudioStart = () => {
-        convoState.setValue((cs: any) => ({
-            ...cs, audio: { ...cs.audio, player: player, messagesIds: [id] }
-        }))
-
         let currPlayer = audioRef.current.player
         if (currPlayer) {
             currPlayer.pause()
             currPlayer.close()
             convoState.setValue((cs: any) => ({
-                ...cs, audio: { ...cs.audio, messagesIds: [] }
+                ...cs, audio: { ...cs.audio, messageId: null }
             }))
         }
+
+
+        convoState.setValue((cs: any) => ({
+            ...cs, audio: { ...cs.audio, player: player, messageId: id }
+        }))
     }
 
     if (hidden)
@@ -115,7 +118,7 @@ export async function textToSpeech(
             if (currPlayer)
                 if (currPlayer.privId == player.privId) {
                     convoState.setValue((cs: any) => ({
-                        ...cs, audio: { ...cs.audio, messagesIds: [] }
+                        ...cs, audio: { ...cs.audio, player: null, messageId: null }
                     }))
                 }
 
@@ -156,7 +159,7 @@ export async function textToSpeech(
                     // this is the current audio
                     setTurn(originalTurn)
                     convoState.setValue((cs: any) => ({
-                        ...cs, audio: { ...cs.audio, messagesIds: [] }
+                        ...cs, audio: { ...cs.audio, player: null, messageId: null }
                     }))
                 }
         }

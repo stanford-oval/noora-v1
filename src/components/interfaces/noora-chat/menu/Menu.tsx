@@ -38,8 +38,16 @@ export default function Menu({ convoState }: any) {
           <span><MenuAlt2Icon className="h-4 w-4 -mt-0.5 inline-block" /> text-only</span>
           <Switch
             checked={convoState.value.audio.shouldAutoPlay}
-            onChange={(e: any) => {
-              convoState.setValue((cs: any) => ({ ...cs, audio: { ...cs.audio, shouldAutoPlay: !cs.audio.shouldAutoPlay } }));
+            onChange={() => {
+              if (convoState.value.audio.autoPlaying) {
+                if (convoState.value.audio.player) {
+                  convoState.value.audio.player.pause()
+                  convoState.value.audio.player.close()
+                }
+                convoState.setValue((cs: any) => ({ ...cs, audio: { ...cs.audio, player: null, messageId: null, shouldAutoPlay: !cs.audio.shouldAutoPlay, autoPlaying: false } }));
+              } else {
+                convoState.setValue((cs: any) => ({ ...cs, audio: { ...cs.audio, shouldAutoPlay: !cs.audio.shouldAutoPlay, autoPlaying: false } }));
+              }
             }}
             className={clsx(
               convoState.value.audio.shouldAutoPlay ? 'bg-noora-primary' : 'bg-gray-200',

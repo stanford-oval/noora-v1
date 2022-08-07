@@ -17,7 +17,7 @@ export default function NooraChat({
     if (!convoState.value.audio.shouldAutoPlay) {
       convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
-      if (convoState.value.audio.player) {
+      if (convoState.value.audio.player && convoState.autoPlaying) {
         convoState.value.audio.player.pause()
         convoState.value.audio.player.close()
       }
