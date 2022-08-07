@@ -1,4 +1,4 @@
-export function messageToSpeechParams(convoState: any, message: any, currentAudioRef: any, history: any, hidden: any) {
+export function messageToSpeechParams(convoState: any, message: any, audioRef: any, history: any, hidden: any) {
     const preText = message.suggestion ? "A better reply might've been: " : ""
     const text = message.read ? message.read : message.text
     const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
@@ -19,7 +19,7 @@ export function messageToSpeechParams(convoState: any, message: any, currentAudi
         styleDegree: style == "cheerful" ? 1.1 : 1.3,
         convoState: convoState,
         history: history,
-        currentAudioRef: currentAudioRef,
+        audioRef: audioRef,
         hidden: hidden,
     }
 }

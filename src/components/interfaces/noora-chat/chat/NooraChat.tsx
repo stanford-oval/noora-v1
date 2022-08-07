@@ -9,12 +9,38 @@ export default function NooraChat({
   convoState,
   history,
 }: any) {
-  let currentAudioRef = useRef()
+  let audioRef = useRef()
 
-  currentAudioRef.current = convoState.value.currentAudio
+  audioRef.current = convoState.value.audio
 
   useEffect(() => {
-    if (convoState.value.autoPlaying)
+    if (!convoState.value.audio.shouldAutoPlay) {
+      convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+      // stop audio
+      if (convoState.value.audio.player) {
+        convoState.value.audio.player.pause()
+        convoState.value.audio.player.close()
+      }
+      let idxHidden = history.value.findIndex((m: any) => !m.show);
+
+      if (idxHidden == -1)
+        return;
+
+      let item = history.value[idxHidden]
+
+      history.setValue((h: any) => {
+        return h.map((m: any) => {
+          if (m.id == item.id)
+            return { ...item, show: true }
+          else
+            return m
+        })
+      })
+
+      return;
+    }
+
+    if (convoState.value.audio.autoPlaying)
       return;
 
     let idxHidden = history.value.findIndex((m: any) => !m.show);
@@ -32,7 +58,7 @@ export default function NooraChat({
 
     if (prevFromUser) {
       let hidden = history.value.filter((m: any) => !m.show);
-      const props = messageToSpeechParams(convoState, item, currentAudioRef, history, hidden)
+      const props = messageToSpeechParams(convoState, item, audioRef, history, hidden)
       textToSpeech(props)
 
       history.setValue((h: any) => {
@@ -43,10 +69,10 @@ export default function NooraChat({
             return m
         })
       })
-      convoState.setValue((cs: any) => ({ ...cs, autoPlaying: true }))
+      convoState.setValue((cs: any) => ({ ...cs, audio: { ...cs.audio, autoPlaying: true } }))
     }
 
-  }, [history.value])
+  }, [history.value, convoState.value.audio.shouldAutoPlay])
 
   return (
     <div>

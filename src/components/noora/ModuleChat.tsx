@@ -22,12 +22,13 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       goodReplyThreshold: 0.5,
     },
     progress: [],
-    currentAudio: {
+    audio: {
       player: null,
       messagesIds: [],
+      autoPlaying: false,
+      shouldAutoPlay: false,
     },
     numProblems: 10,
-    autoPlaying: false
   });
 
   const history = {

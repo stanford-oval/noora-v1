@@ -10,7 +10,7 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 export default function SpeechSynthesizer({
     className,
     convoState,
-    currentAudioRef,
+    audioRef,
     preText,
     text,
     postText,
@@ -20,14 +20,14 @@ export default function SpeechSynthesizer({
 }: any) {
     const handler = () => {
         console.log("In speech handler");
-        textToSpeech({ text: text, preText: preText, postText: postText, style: style, id: id, styleDegree: styleDegree, convoState: convoState, currentAudioRef: currentAudioRef });
+        textToSpeech({ text: text, preText: preText, postText: postText, style: style, id: id, styleDegree: styleDegree, convoState: convoState, audioRef: audioRef });
     };
 
     let buttonColor = "text-gray-500"
-    if (convoState.value.currentAudio.player) {
+    if (convoState.value.audio.player) {
         // audio is playing
         buttonColor = "text-gray-400"
-        if (convoState.value.currentAudio.messagesIds.includes(id)) {
+        if (convoState.value.audio.messagesIds.includes(id)) {
             // THIS message's audio is playing
             buttonColor = "text-noora-primary"
         }
@@ -41,7 +41,7 @@ export default function SpeechSynthesizer({
                 handler();
             }}
             className={clsx("inline-block", buttonColor)}
-        disabled={convoState.value.turn.includes("noora-reads")}
+            disabled={convoState.value.turn.includes("noora-reads")}
         >
             <FontAwesomeIcon
                 icon={faVolumeUp}
@@ -60,7 +60,7 @@ export async function textToSpeech(
         styleDegree,
         history,
         convoState,
-        currentAudioRef,
+        audioRef,
         hidden }: any) {
 
     const setTurn = (str: string) => {
@@ -92,15 +92,15 @@ export async function textToSpeech(
 
     player.onAudioStart = () => {
         convoState.setValue((cs: any) => ({
-            ...cs, currentAudio: { player: player, messagesIds: [id] }
+            ...cs, audio: { ...cs.audio, player: player, messagesIds: [id] }
         }))
 
-        let currPlayer = currentAudioRef.current.player
+        let currPlayer = audioRef.current.player
         if (currPlayer) {
             currPlayer.pause()
             currPlayer.close()
             convoState.setValue((cs: any) => ({
-                ...cs, currentAudio: { messagesIds: [] }
+                ...cs, audio: { ...cs.audio, messagesIds: [] }
             }))
         }
     }
@@ -110,20 +110,24 @@ export async function textToSpeech(
             console.log("Audio end.")
             player.close()
 
-            let currPlayer = currentAudioRef.current.player
+            let currPlayer = audioRef.current.player
             // console.log(currPlayer.privId, player.privId)
             if (currPlayer)
                 if (currPlayer.privId == player.privId) {
                     convoState.setValue((cs: any) => ({
-                        ...cs, currentAudio: { messagesIds: [] }
+                        ...cs, audio: { ...cs.audio, messagesIds: [] }
                     }))
                 }
 
 
+            if (!audioRef.current.shouldAutoPlay) {
+                return;
+            }
+
             hidden = hidden.slice(1)
             // show the next one and play its audio
             if (hidden.length == 0) {
-                convoState.setValue((cs: any) => ({ ...cs, autoPlaying: false, turn: convoState.value.turn.split("-noora-reads")[0] }))
+                convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
                 return;
             }
             let item = hidden[0]
@@ -137,7 +141,7 @@ export async function textToSpeech(
                 })
             })
 
-            const props = messageToSpeechParams(convoState, item, currentAudioRef, history, hidden)
+            const props = messageToSpeechParams(convoState, item, audioRef, history, hidden)
             textToSpeech(props)
         }
     else
@@ -145,14 +149,14 @@ export async function textToSpeech(
             console.log("Audio end.")
             player.close()
 
-            let currPlayer = currentAudioRef.current.player
+            let currPlayer = audioRef.current.player
             // console.log(currPlayer.privId, player.privId)
             if (currPlayer)
                 if (currPlayer.privId == player.privId) {
                     // this is the current audio
                     setTurn(originalTurn)
                     convoState.setValue((cs: any) => ({
-                        ...cs, currentAudio: { messagesIds: [] }
+                        ...cs, audio: { ...cs.audio, messagesIds: [] }
                     }))
                 }
         }

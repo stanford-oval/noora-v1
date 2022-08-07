@@ -5,9 +5,9 @@ export default async function handleSubmit(e: any, convoState: any, history: any
     e.preventDefault();
 
     // stop audio
-    if (convoState.value.currentAudio.player) {
-        convoState.value.currentAudio.player.pause()
-        convoState.value.currentAudio.player.close()
+    if (convoState.value.audio.player) {
+        convoState.value.audio.player.pause()
+        convoState.value.audio.player.close()
     }
 
     message = message ? message : convoState.value.draft.slice();

@@ -13,9 +13,9 @@ const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
 
-  let currentAudioRef = useRef()
+  let audioRef = useRef()
 
-  currentAudioRef.current = convoState.value.currentAudio
+  audioRef.current = convoState.value.audio
 
   useEffect(() => {
     if (history.value.length > 0) return; // only run this on first render
@@ -80,7 +80,7 @@ export default function Messages({ history, convoState }: any) {
     >
       <ul>
         {history.value.map((message: any) => (
-          <MessageWrapper message={message} currentAudioRef={currentAudioRef} convoState={convoState} key={message.id} />
+          <MessageWrapper message={message} audioRef={audioRef} convoState={convoState} key={message.id} />
         ))}
         {(!convoState.value.turn.startsWith("user") && !convoState.value.turn.includes("read")) && (
           <div
@@ -105,7 +105,7 @@ export default function Messages({ history, convoState }: any) {
   );
 }
 
-function MessageWrapper({ message, currentAudioRef, convoState }: any) {
+function MessageWrapper({ message, audioRef, convoState }: any) {
   if (!message.show)
     return <></>
 
@@ -121,7 +121,7 @@ function MessageWrapper({ message, currentAudioRef, convoState }: any) {
       >
         <div className="flex flex-row items-center gap-x-2">
           {message.text ? <Message message={message} /> : message.component}
-          {message.fromNoora && <SpeechButton currentAudioRef={currentAudioRef} convoState={convoState} message={message} />}
+          {message.fromNoora && <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />}
         </div>
       </div>
     )}
@@ -248,8 +248,8 @@ function MicrophoneInfoElement() {
   );
 }
 
-function SpeechButton({ convoState, message, currentAudioRef }: any) {
-  const props = messageToSpeechParams(convoState, message, currentAudioRef, null, null)
+function SpeechButton({ convoState, message, audioRef }: any) {
+  const props = messageToSpeechParams(convoState, message, audioRef, null, null)
 
   return (<SpeechSynthesizer {...props}
     className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} />

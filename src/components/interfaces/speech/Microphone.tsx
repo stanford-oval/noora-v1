@@ -27,9 +27,9 @@ export default function Microphone({
         e.preventDefault();
 
         // stop audio
-        if (convoState.value.currentAudio.player) {
-          convoState.value.currentAudio.player.pause()
-          convoState.value.currentAudio.player.close()
+        if (convoState.value.audio.player) {
+          convoState.value.audio.player.pause()
+          convoState.value.audio.player.close()
         }
 
         microphoneHandler();
