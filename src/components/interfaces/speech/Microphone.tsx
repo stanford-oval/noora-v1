@@ -147,20 +147,19 @@ async function sttFromMic(
   else return;
 
   recognizer.startContinuousRecognitionAsync();
-  let recogText = "";
-
+  
   // text logic
+  let recogText = "";
   recognizer.recognized = function (s, e) {
     if (e.result.reason == sdk.ResultReason.NoMatch) {
     } else {
-      let text = e.result.text;
+      let text = e.result.text.trim();
+      console.log(`new text: ${text}`)
       if (recogText == "") {
         recogText = text;
       } else {
         if (text != "") {
           recogText += " " + text;
-        } else {
-          recogText = text;
         }
       }
       console.log(
@@ -170,8 +169,8 @@ async function sttFromMic(
           e.result.text
       );
     }
-
-    setText(currText + (currText == "" ? "" : " ") + recogText);
+    console.log(recogText);
+    setText((currText.trim() + (currText == "" ? "" : " ") + recogText).trim());
   };
 }
 
