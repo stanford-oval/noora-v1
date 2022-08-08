@@ -1,7 +1,7 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, VolumeUpIcon } from "@heroicons/react/solid";
-import Modules from "./sections/Modules";
+import Modules from "./sections/modules/Modules";
 import Progress from "./sections/Progress";
 import Technical from "./sections/Technical";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
