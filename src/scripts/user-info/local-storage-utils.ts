@@ -1,5 +1,5 @@
 export function writeResultToLocal(result: any) {
-    let results = JSON.parse(getFromLocal("progress") as string)
+    let results = getFromLocal("progress")
 
     if (!Array.isArray(results))
         results = []
@@ -21,5 +21,5 @@ export function writeToLocal(key: string, value: any) {
 
 export function getFromLocal(key: string) {
     if (typeof window !== "undefined")
-        return localStorage.getItem(key)
+        return JSON.parse(localStorage.getItem(key) as string)
 }
