@@ -8,7 +8,7 @@ export default function Sentiments({ convoState }: any) {
                 {convoState.value.sentiments.map((sentiment: any) => {
                     return (
                         <div key={sentiment.title} className="form-check">
-                            <label className="form-check-label inline-block text-gray-800 cursor-pointer">
+                            <label className="form-check-label inline-block text-gray-800">
                                 <input
                                     disabled={convoState.value.sentiments.filter((s: any) => s.active).length == 1 && sentiment.active}
                                     className="form-check-input h-4 w-4 border border-gray-400 rounded-sm disabled:cursor-default bg-white checked:bg-noora-primary checked:hover:bg-noora-primary checked:focus:bg-noora-primary disabled:checked:bg-slate-400 disabled:checked:hover:bg-slate-400 disabled:checked:focus:bg-slate-400 outline-none ring-0 focus:ring-0 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-1 cursor-pointer"

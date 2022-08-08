@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import React from "react";
 import getSpeechSSMLStr from "../../../data/azure-speech/speech-ssml";
-import { getTokenOrRefresh } from "../../../scripts/token_util";
-import { messageToSpeechParams } from "../../../scripts/util";
+import { getTokenOrRefresh } from "../../../scripts/utils/token_util";
+import { messageToSpeechParams } from "../../../scripts/utils/util";
+
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
+
 
 export default function SpeechSynthesizer({
     className,

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import getReply from "../get-reply";
+import getReply from "./get-reply";
 
 export default async function noorasTurn(
     message: string,

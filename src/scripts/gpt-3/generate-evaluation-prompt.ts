@@ -1,4 +1,4 @@
-import evalPrompts from "../data/prompts/noora-eval";
+import evalPrompts from "../../data/prompts/noora-eval";
 
 export default function formPrompt(
   statement: string,

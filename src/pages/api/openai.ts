@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
-import rateLimit from "../../scripts/rate-limit";
+import rateLimit from "../../scripts/utils/rate-limit";
 
 const limiter = rateLimit({
   interval: 60 * 1000, // 60 seconds

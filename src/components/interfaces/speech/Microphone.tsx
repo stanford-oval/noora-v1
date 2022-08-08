@@ -3,9 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
 
 import { ResultReason } from "microsoft-cognitiveservices-speech-sdk";
+import { getTokenOrRefresh } from "../../../scripts/utils/token_util";
 const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
-
-import { getTokenOrRefresh } from "../../../scripts/token_util";
 
 export default function Microphone({
   className,

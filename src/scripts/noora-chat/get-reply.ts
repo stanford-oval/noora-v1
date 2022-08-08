@@ -1,8 +1,8 @@
-import general_statements from "../data/statement_bank/general";
-import work_statements from "../data/statement_bank/work";
-import Completion from "./Completion";
-import formPrompt from "./generate-evaluation-prompt";
+import general_statements from "../../data/statement_bank/general";
+import work_statements from "../../data/statement_bank/work";
+import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
+import formPrompt from "../gpt-3/generate-evaluation-prompt";
 
 const module_statements = {
   general: general_statements,

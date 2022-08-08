@@ -26,9 +26,8 @@ export default function Noora() {
       <Page
         title={
           selectedModule
-            ? `${selectedModule.title} ${
-                selectedModule.title == "All" ? "Modules" : "Module"
-              }`
+            ? `${selectedModule.title} ${selectedModule.title == "All" ? "Modules" : "Module"
+            }`
             : "Noora"
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social skills of individuals with ASD."
@@ -39,17 +38,17 @@ export default function Noora() {
             <ModuleChat
               modules={(selectedModule.module == "all"
                 ? Object.values(modules).map((m: any) => {
-                    if (m.module == "all") return;
-                    return { title: m.module, active: true, fixed: true };
-                  })
+                  if (m.module == "all") return;
+                  return { title: m.module, active: true, fixed: true };
+                })
                 : Object.values(modules).map((m: any) => {
-                    if (m.module == "all") return;
-                    return {
-                      title: m.module,
-                      active: selectedModule.module == m.module,
-                      fixed: true,
-                    };
-                  })
+                  if (m.module == "all") return;
+                  return {
+                    title: m.module,
+                    active: selectedModule.module == m.module,
+                    fixed: true,
+                  };
+                })
               ).filter((m: any) => m)}
             />
           </div>
