@@ -26,9 +26,9 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       player: null,
       messageId: null,
       autoPlaying: false,
-      shouldAutoPlay: false // true,
+      shouldAutoPlay: true,
     },
-    numProblems: 1//0,
+    numProblems: 10,
   });
 
   const history = {
