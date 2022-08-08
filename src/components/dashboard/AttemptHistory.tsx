@@ -30,7 +30,7 @@ export default function AttemptHistory() {
                             {Object.keys(attempt.scores).map((k: any) => {
                                 k = k as keyof typeof attempt.scores
                                 if (k == "total" || attempt.scores[k][1] == 0) return <></>
-                                return <ProgressCircle num={attempt.scores[k][0]} denom={attempt.scores[k][1]} title={k} />
+                                return <ProgressCircle key={k} num={attempt.scores[k][0]} denom={attempt.scores[k][1]} title={k} />
                             })}
                         </div>
                     </div>)
