@@ -1,7 +1,7 @@
 export function messageToSpeechParams(convoState: any, message: any, audioRef: any, history: any, hidden: any) {
     const preText = message.suggestion ? "A better reply might've been: " : ""
     const text = message.read ? message.read : message.text
-    const postText = message.statement ? " Is this a positive, neutral, or negative statement?" : ""
+    const postText = message.statement ? " When I say this, do I sound positive, neutral, or negative?" : ""
     let style = "neutral"
     if (message.style)
         style = message.style
