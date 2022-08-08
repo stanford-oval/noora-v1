@@ -71,38 +71,6 @@ export default function Microphone({
     >
       <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
     </button>
-    // <>
-    //   <button
-    //     type="button"
-    //     onMouseDown={(e: any) => {
-    //       if (recog) {
-    //         try {
-    //           recog.stopContinuousRecognitionAsync();
-    //         } catch (error) {
-              
-    //         }
-    //       }
-    //       const initStart = async () => {
-    //         let recog = await initRecognizer();
-    //         sttFromMic(turn, setTurn, setText, currText, recog);
-    //         await setRecog(recog);
-    //       };
-    //       initStart();
-    //     }}
-    //     className={className}
-    //   >
-    //     <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
-    //   </button>
-    //   <button
-    //     type="button"
-    //     onMouseDown={(e: any) => {
-    //       stopSttFromMic(turn, setTurn, currText, setText, recog as SpeechRecognizer);
-    //     }}
-    //     className={className}
-    //   >
-    //     Stop
-    //   </button>
-    // </>
   );
 }
 
@@ -116,14 +84,10 @@ async function initRecognizer() {
   speechConfig.speechRecognitionLanguage = "en-US";
 
   const audioConfig = AudioConfig.fromDefaultMicrophoneInput();
-  // const audioConfig = AudioConfig.fromMicrophoneInput();
   const recognizer: SpeechRecognizer = new SpeechRecognizer(
     speechConfig,
     audioConfig
   );
-
-  console.log(`Init`);
-  console.log(recognizer);
   return recognizer;
 }
 
@@ -134,8 +98,6 @@ async function sttFromMic(
   currText: string,
   recognizer: SpeechRecognizer
 ) {
-  console.log(`STT`);
-  console.log(recognizer);
   if (turn.startsWith("user")) setTurn("user-answer-microphone");
   else return;
 
@@ -147,7 +109,6 @@ async function sttFromMic(
     if (e.result.reason == sdk.ResultReason.NoMatch) {
     } else {
       let text = e.result.text.trim();
-      console.log(`new text: ${text}`)
       if (recogText == "") {
         recogText = text;
       } else {
@@ -155,14 +116,7 @@ async function sttFromMic(
           recogText += " " + text;
         }
       }
-      console.log(
-        "\r\n(recognized)  Reason: " +
-          sdk.ResultReason[e.result.reason] +
-          " Text: " +
-          e.result.text
-      );
     }
-    console.log(recogText);
     setText((currText.trim() + (currText == "" ? "" : " ") + recogText).trim());
   };
 }
@@ -175,8 +129,6 @@ async function stopSttFromMic(
   recognizer: SpeechRecognizer
 ) {
   await setTimeout(() => {
-    console.log("Stopping");
-    console.log(recognizer);
     setTurn("user-answer-edit");
     recognizer.stopContinuousRecognitionAsync();
   }, 500);
