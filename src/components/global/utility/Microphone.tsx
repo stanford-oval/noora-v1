@@ -11,6 +11,7 @@ import {
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 import { getTokenOrRefresh } from "../../../scripts/token_util";
+import ErrorBoundary from "./ErrorBoundary";
 
 export default function Microphone({
   className,
@@ -41,22 +42,24 @@ export default function Microphone({
   };
 
   return (
-    <button
-      type="button"
-      onMouseDown={(e: any) => {
-        e.preventDefault();
-        microphoneHandler(recog, true);
-      }}
-      onMouseUp={(e: any) => {
-        console.log("released");
-        e.preventDefault();
-        microphoneHandler(recog, false);
-      }}
-      disabled={turn.includes("read") || turn.includes("rate-reply")}
-      className={className}
-    >
-      <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
-    </button>
+    <ErrorBoundary>
+      <button
+        type="button"
+        onMouseDown={(e: any) => {
+          e.preventDefault();
+          microphoneHandler(recog, true);
+        }}
+        onMouseUp={(e: any) => {
+          console.log("released");
+          e.preventDefault();
+          microphoneHandler(recog, false);
+        }}
+        disabled={turn.includes("read") || turn.includes("rate-reply")}
+        className={className}
+      >
+        <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
+      </button>
+    </ErrorBoundary>
   );
 }
 
