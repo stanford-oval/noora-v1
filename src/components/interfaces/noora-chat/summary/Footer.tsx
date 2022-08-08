@@ -18,12 +18,8 @@ export default function Footer({ convoState, history }: any) {
           convoState.setValue((cs: any) => ({
             ...cs,
             draft: "",
-            turn: "user-answer",
+            turn: "user-answer-start",
             numProblems: 10,
-            modules: [
-              { title: "general", active: true },
-              { title: "work", active: true },
-            ],
             progress: [],
           }));
         }}

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { saveSessionResult } from "../user-info/session-results";
 import noorasTurn from "./nooras-turn";
 
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
@@ -44,7 +45,15 @@ export default async function handleSubmit(e: any, convoState: any, history: any
             }));
             await noorasTurn(message, convoState, history, true);
         } else {
-            convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
+            handleSessionEnd(convoState)
         }
     }
 };
+
+
+function handleSessionEnd(convoState: any) {
+    saveSessionResult(convoState.value.progress)
+    
+    // show summary
+    convoState.setValue((cs: any) => ({ ...cs, turn: "summary" }));
+}
