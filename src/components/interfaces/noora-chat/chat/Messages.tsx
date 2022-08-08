@@ -7,7 +7,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 import dynamic from "next/dynamic";
 import { ACTIONS, EVENTS, STATUS } from "react-joyride";
 import SpeechSynthesizer from "../../speech/SpeechSynthesizer";
-import { messageToSpeechParams } from "../../../../scripts/utils/util";
+import { messageToSpeechParams } from "../../../../scripts/noora-chat/audio_utils";
 const JoyRideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 
 export default function Messages({ history, convoState }: any) {

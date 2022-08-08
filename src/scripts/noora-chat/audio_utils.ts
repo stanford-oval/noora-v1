@@ -1,11 +1,3 @@
-export function writeToLocal(key: string, value: any) {
-    if (typeof window !== "undefined") {
-        console.log("Writing to local storage for key: " + key)
-        localStorage.setItem(key, value)
-    }
-    console.log("Could not write to local storage for key: " + key)
-}
-
 export function messageToSpeechParams(convoState: any, message: any, audioRef: any, history: any, hidden: any) {
     const preText = message.suggestion ? "A better reply might've been: " : ""
     const text = message.read ? message.read : message.text
