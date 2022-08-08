@@ -136,7 +136,7 @@ function Message({ message }: any) {
           <span className="font-bold text-noora-primary-dark">
             &ldquo;{message.text}&rdquo;
           </span>{" "}
-          Is this a positive, neutral, or negative statement?
+          When I say this, do I sound positive, neutral, or negative?
         </span>
       </div>
     );
