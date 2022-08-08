@@ -26,7 +26,7 @@ export default async function noorasTurn(
             {
                 id: uuidv4(),
                 fromNoora: true,
-                text: "How would you reply to it?",
+                text: "How would you reply to me?",
             }]
             );
 
