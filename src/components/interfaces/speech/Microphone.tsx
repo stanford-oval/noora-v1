@@ -12,27 +12,31 @@ export default function Microphone({
   setTurn,
   setText,
   currText,
-  convoState
+  convoState,
 }: any) {
   const [recog, setRecog] = useState<SpeechRecognizer>();
+  const [tempDisable, setTempDisable] = useState(false);
+
+  useEffect(() => {
+    if (tempDisable) {
+      setTimeout(() => {
+        setTempDisable(false);
+      }, 1000);
+    }
+  }, [tempDisable]);
 
   // initialize recognizer
-  useEffect(() => {
-    try {
-      if (recog) return;
-      const init = async () => {
-        setRecog(await initRecognizer());
-      };
-      init();
-    } catch (error) {}
-  }, []);
+  // useEffect(() => {
+  //   if (recog) return;
+  //   const init = async () => {
+  //     setRecog(await initRecognizer());
+  //   };
+  //   init();
+  // }, []);
 
-  const microphoneHandler = async (recognizer: any, mode: boolean) => {
-    try {
-      console.log("In Microphone handler");
-      if (mode) await sttFromMic(turn, setTurn, setText, currText, recognizer);
-      else stopSttFromMic(turn, setTurn, currText, setText, recognizer);
-    } catch (error) {}
+  const microphoneHandler = async (recog: any, mode: boolean) => {
+    if (mode) await sttFromMic(turn, setTurn, setText, currText, recog);
+    else stopSttFromMic(turn, setTurn, currText, setText, recog);
   };
 
   return (
@@ -40,26 +44,65 @@ export default function Microphone({
       type="button"
       onMouseDown={(e: any) => {
         e.preventDefault();
-
         // stop audio
-        // if (convoState.value.audio.player) {
-        //   convoState.value.audio.player.pause()
-        //   convoState.value.audio.player.close()
-        // }
-
-        // microphoneHandler();
-        microphoneHandler(recog, true);
+        if (convoState.value.audio.player) {
+          convoState.value.audio.player.pause();
+          convoState.value.audio.player.close();
+        }
+        const initStart = async () => {
+          if (recog) {
+            recog.stopContinuousRecognitionAsync();
+          }
+          let newRecog = await initRecognizer();
+          sttFromMic(turn, setTurn, setText, currText, newRecog);
+          await setRecog(newRecog);
+        };
+        initStart();
       }}
       onMouseUp={(e: any) => {
-        console.log("released");
         e.preventDefault();
         microphoneHandler(recog, false);
+        setTempDisable(true);
       }}
-      disabled={turn.includes("read") || turn.includes("rate-reply")}
+      disabled={
+        turn.includes("read") || turn.includes("rate-reply") || tempDisable
+      }
       className={className}
     >
       <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
     </button>
+    // <>
+    //   <button
+    //     type="button"
+    //     onMouseDown={(e: any) => {
+    //       if (recog) {
+    //         try {
+    //           recog.stopContinuousRecognitionAsync();
+    //         } catch (error) {
+              
+    //         }
+    //       }
+    //       const initStart = async () => {
+    //         let recog = await initRecognizer();
+    //         sttFromMic(turn, setTurn, setText, currText, recog);
+    //         await setRecog(recog);
+    //       };
+    //       initStart();
+    //     }}
+    //     className={className}
+    //   >
+    //     <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
+    //   </button>
+    //   <button
+    //     type="button"
+    //     onMouseDown={(e: any) => {
+    //       stopSttFromMic(turn, setTurn, currText, setText, recog as SpeechRecognizer);
+    //     }}
+    //     className={className}
+    //   >
+    //     Stop
+    //   </button>
+    // </>
   );
 }
 
@@ -73,11 +116,14 @@ async function initRecognizer() {
   speechConfig.speechRecognitionLanguage = "en-US";
 
   const audioConfig = AudioConfig.fromDefaultMicrophoneInput();
+  // const audioConfig = AudioConfig.fromMicrophoneInput();
   const recognizer: SpeechRecognizer = new SpeechRecognizer(
     speechConfig,
     audioConfig
   );
 
+  console.log(`Init`);
+  console.log(recognizer);
   return recognizer;
 }
 
@@ -88,22 +134,17 @@ async function sttFromMic(
   currText: string,
   recognizer: SpeechRecognizer
 ) {
-  console.log("recognizing...");
+  console.log(`STT`);
+  console.log(recognizer);
   if (turn.startsWith("user")) setTurn("user-answer-microphone");
   else return;
 
   recognizer.startContinuousRecognitionAsync();
   let recogText = "";
 
+  // text logic
   recognizer.recognized = function (s, e) {
-    if (e.result.reason === sdk.ResultReason.NoMatch) {
-      // let noMatchDetail = sdk.NoMatchDetails.fromResult(e.result);
-      // console.log(
-      //   "\r\n(recognized)  Reason: " +
-      //     sdk.ResultReason[e.result.reason] +
-      //     " NoMatchReason: " +
-      //     sdk.NoMatchReason[noMatchDetail.reason]
-      // );
+    if (e.result.reason == sdk.ResultReason.NoMatch) {
     } else {
       let text = e.result.text;
       if (recogText == "") {
@@ -125,33 +166,6 @@ async function sttFromMic(
 
     setText(currText + (currText == "" ? "" : " ") + recogText);
   };
-
-  // (result: any) => {
-  //   let transcribed;
-  //   if (result.reason === ResultReason.RecognizedSpeech) {
-  //     transcribed = `${result.text}`;
-  //   } else return;
-
-  //   setText(
-  //     currText +
-  //       (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
-  //       transcribed
-  //   );
-  // }
-
-  // recognizer.recognizeOnceAsync((result: any) => {
-  //   setTurn(turn + "-edit");
-  //   let transcribed;
-  //   if (result.reason === ResultReason.RecognizedSpeech) {
-  //     transcribed = `${result.text}`;
-  //   } else return;
-
-  //   setText(
-  //     currText +
-  //       (currText.length > 0 && !currText.endsWith(" ") ? " " : "") +
-  //       transcribed
-  //   );
-  // });
 }
 
 async function stopSttFromMic(
@@ -159,10 +173,12 @@ async function stopSttFromMic(
   setTurn: any,
   currText: string,
   setText: any,
-  recognizer: any
+  recognizer: SpeechRecognizer
 ) {
-  console.log(`stop: ${currText.trim()}`);
-  setTurn("user-answer-edit");
-  recognizer.stopContinuousRecognitionAsync();
-  // setText(currText.trim());
+  await setTimeout(() => {
+    console.log("Stopping");
+    console.log(recognizer);
+    setTurn("user-answer-edit");
+    recognizer.stopContinuousRecognitionAsync();
+  }, 500);
 }
