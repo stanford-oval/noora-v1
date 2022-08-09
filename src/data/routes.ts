@@ -11,10 +11,10 @@ const routes = [
     name: "Dashboard",
     href: "/dashboard",
   },
-  // {
-  //   name: "Ask Noora",
-  //   href: "/ask-noora",
-  // },
+  {
+    name: "Ask Noora",
+    href: "/ask-noora",
+  },
 ];
 
 export default routes;
