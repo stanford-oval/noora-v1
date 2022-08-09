@@ -1,14 +1,12 @@
 export function writeResultToLocal(result: any) {
     let results = getFromLocal("progress")
 
-    if (!Array.isArray(results))
-        results = []
-
     console.log("Current results:", results)
-    results.push(result)
+    result = [result]
+    if (results)
+        result.push(...results) // reverse order
 
-    console.log()
-    writeToLocal("progress", JSON.stringify(results))
+    writeToLocal("progress", JSON.stringify(result))
 }
 
 export function writeToLocal(key: string, value: any) {

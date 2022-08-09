@@ -14,10 +14,11 @@ export default function AttemptHistory() {
 
     return (
         <div className="grid grid-cols-12 pt-3 gap-y-3">
-            {data && data.reverse().map((attempt: any, idx: number) => {
+            {data && data.map((attempt: any, idx: number) => {
+                console.log(idx, attempt)
                 let dateStr = dateFormat(new Date(attempt.timeCompleted), "mmmm dS, h:MM TT");
                 return (
-                    <div key={data.length - idx} className="col-span-12 flex gap-y-4 flex-col md:flex-row rounded-lg justify-between items-center text-noora-secondary  px-5 py-6 bg-gray-100 border-2 border-gray-200">
+                    <div key={idx} className="col-span-12 flex gap-y-4 flex-col md:flex-row rounded-lg justify-between items-center text-noora-secondary  px-5 py-6 bg-gray-100 border-2 border-gray-200">
                         <div className="text-center sm:text-left">
                             <p className="text-sm text-slate-500">
                                 {dateStr}
@@ -29,7 +30,7 @@ export default function AttemptHistory() {
                             <div className="border-gray-300 bg-gray-300 border-1 hidden sm:block"></div>
                             {Object.keys(attempt.scores).map((k: any) => {
                                 k = k as keyof typeof attempt.scores
-                                if (k == "total" || attempt.scores[k][1] == 0) return <></>
+                                if (k == "total" || attempt.scores[k][1] == 0) return <div key={k}></div>
                                 return <ProgressCircle key={k} num={attempt.scores[k][0]} denom={attempt.scores[k][1]} title={k} />
                             })}
                         </div>

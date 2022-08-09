@@ -16,7 +16,7 @@ export default function ProgressSummary() {
           <b>responding empathetically and positively to others</b>.
         </p>
       </div>
-      <div className="grid grid-cols-12">
+      <div id="progress" className="grid grid-cols-12">
         <div className="col-span-12 flex flex-col sm:flex-row gap-y-4 text-center sm:text-left justify-between items-center text-white  px-5 py-6 bg-noora-primary rounded-lg bg-gradient-to-br from-noora-primary-light via-noora-primary to-noora-secondary-bright">
           <div>
             <h1 className="text-2xl font-bold">Up Next</h1>
