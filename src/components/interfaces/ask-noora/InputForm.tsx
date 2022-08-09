@@ -42,7 +42,7 @@ export default function InputForm({ query, results, resultsQueue }: any) {
           type="submit"
           onClick={(e) => handleSubmit(e)}
           disabled={query.value.length == 0}
-          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark disabled:bg-noora-primary-dark focus:outline-none font-medium rounded-full text-sm px-4 py-2"
+          className="text-white absolute right-2.5 bottom-3 md:bottom-2.5 bg-noora-primary hover:bg-noora-primary-dark disabled:bg-slate-400 focus:outline-none font-medium rounded-full text-sm px-4 py-2"
         >
           Go
         </button>
