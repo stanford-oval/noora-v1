@@ -110,61 +110,48 @@ export async function textToSpeech(
         }))
     }
 
-    if (hidden)
-        player.onAudioEnd = () => {
-            console.log("Audio end.")
-            player.close()
+    player.onAudioEnd = () => {
+        console.log("Audio end.")
+        player.close()
 
-            let currPlayer = audioRef.current.player
-            // console.log(currPlayer.privId, player.privId)
-            if (currPlayer)
-                if (currPlayer.privId == player.privId) {
-                    convoState.setValue((cs: any) => ({
-                        ...cs, audio: { ...cs.audio, player: null, messageId: null }
-                    }))
-                }
-
-
-            if (!audioRef.current.shouldAutoPlay) {
-                return;
+        let currPlayer = audioRef.current.player
+        // console.log(currPlayer.privId, player.privId)
+        if (currPlayer)
+            if (currPlayer.privId == player.privId) {
+                convoState.setValue((cs: any) => ({
+                    ...cs, audio: { ...cs.audio, player: null, messageId: null }
+                }))
             }
 
-            hidden = hidden.slice(1)
-            // show the next one and play its audio
-            if (hidden.length == 0) {
-                convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
-                return;
-            }
-            let item = hidden[0]
+        if (!hidden) {
+            setTurn(originalTurn)
+            return;
+        }
 
-            history.setValue((h: any) => {
-                return h.map((m: any) => {
-                    if (m.id == item.id)
-                        return { ...m, show: true }
-                    else
-                        return m
-                })
+        if (!audioRef.current.shouldAutoPlay) {
+            return;
+        }
+
+        hidden = hidden.slice(1)
+        // show the next one and play its audio
+        if (hidden.length == 0) {
+            convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
+            return;
+        }
+        let item = hidden[0]
+
+        history.setValue((h: any) => {
+            return h.map((m: any) => {
+                if (m.id == item.id)
+                    return { ...m, show: true }
+                else
+                    return m
             })
+        })
 
-            const props = messageToSpeechParams(convoState, item, audioRef, history, hidden)
-            textToSpeech(props)
-        }
-    else
-        player.onAudioEnd = () => {
-            console.log("Audio end.")
-            player.close()
-
-            let currPlayer = audioRef.current.player
-            // console.log(currPlayer.privId, player.privId)
-            if (currPlayer)
-                if (currPlayer.privId == player.privId) {
-                    // this is the current audio
-                    setTurn(originalTurn)
-                    convoState.setValue((cs: any) => ({
-                        ...cs, audio: { ...cs.audio, player: null, messageId: null }
-                    }))
-                }
-        }
+        const props = messageToSpeechParams(convoState, item, audioRef, history, hidden)
+        textToSpeech(props)
+    }
 
     // Start the synthesizer and wait for a result.
     await synthesizer.speakSsmlAsync(
