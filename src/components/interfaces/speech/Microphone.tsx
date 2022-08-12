@@ -14,7 +14,6 @@ export default function Microphone({
   currText,
   convoState,
 }: any) {
-  // const [recog, setRecog] = useState<SpeechRecognizer>();
   const recog = useRef<SpeechRecognizer | null>(null); // doesn't wait for rerender to change
   const [tempDisable, setTempDisable] = useState(false); // waits for rerender, better for button disable change
 
@@ -94,21 +93,14 @@ async function sttFromMic(
 
   recognizer.startContinuousRecognitionAsync();
 
-  // text logic
+  // function keeps running when text is recognized, keeping recogText out to keep updating
   let recogText = "";
-  recognizer.recognized = function (s, e) {
-    if (e.result.reason == sdk.ResultReason.NoMatch) {
-    } else {
-      let text = e.result.text.trim();
-      if (recogText == "") {
-        recogText = text;
-      } else {
-        if (text != "") {
-          recogText += " " + text;
-        }
-      }
+  recognizer.recognized = function (_, e) {
+    if (e.result.reason != sdk.ResultReason.NoMatch) {
+      console.log("recognizing");
+      recogText = formatText(e.result.text, recogText);
+      setText(recogText);
     }
-    setText((currText.trim() + (currText == "" ? "" : " ") + recogText).trim());
   };
 }
 
@@ -123,4 +115,14 @@ async function stopSttFromMic(
     setTurn("user-answer-edit");
     recognizer.stopContinuousRecognitionAsync();
   }, 500);
+}
+
+function formatText(text: string, curr: string): string {
+  curr = curr.trim();
+  text = text.trim();
+
+  if (text != "") {
+    if (curr != "") text = " " + text;
+  }
+  return (curr + text).trim();
 }
