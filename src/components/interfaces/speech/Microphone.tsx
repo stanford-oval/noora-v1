@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,6 +8,7 @@ import {
   SpeechConfig,
   AudioConfig,
   Recognizer,
+  AutoDetectSourceLanguageConfig,
 } from "microsoft-cognitiveservices-speech-sdk";
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
@@ -21,8 +22,9 @@ export default function Microphone({
   currText,
   convoState,
 }: any) {
-  const [recog, setRecog] = useState<SpeechRecognizer>();
-  const [tempDisable, setTempDisable] = useState(false);
+  // const [recog, setRecog] = useState<SpeechRecognizer>();
+  const recog = useRef<SpeechRecognizer | null>(null); // doesn't wait for rerender to change
+  const [tempDisable, setTempDisable] = useState(false); // waits for rerender, better for button disable change
 
   useEffect(() => {
     if (tempDisable) {
@@ -41,7 +43,7 @@ export default function Microphone({
   //   init();
   // }, []);
 
-  const microphoneHandler = async (recog: any, mode: boolean) => {
+  const microphoneHandler = async (recog: SpeechRecognizer, mode: boolean) => {
     if (mode) await sttFromMic(turn, setTurn, setText, currText, recog);
     else stopSttFromMic(turn, setTurn, currText, setText, recog);
   };
@@ -57,22 +59,21 @@ export default function Microphone({
           convoState.value.audio.player.close();
         }
         const initStart = async () => {
-          if (recog) {
-            recog.stopContinuousRecognitionAsync();
+          if (recog.current) {
+            recog.current.stopContinuousRecognitionAsync();
           }
-          let newRecog = await initRecognizer();
-          sttFromMic(turn, setTurn, setText, currText, newRecog);
-          await setRecog(newRecog);
+          recog.current = await initRecognizer();
+          sttFromMic(turn, setTurn, setText, currText, recog.current);
         };
         initStart();
       }}
       onMouseUp={(e: any) => {
         e.preventDefault();
-        microphoneHandler(recog, false);
+        microphoneHandler(recog.current!, false);
         setTempDisable(true);
       }}
       disabled={
-        turn.includes("read") || turn.includes("rate-reply") || tempDisable
+        turn.includes("read") || turn.includes("rate-reply") //|| tempDisable
       }
       className={className}
     >
@@ -81,7 +82,7 @@ export default function Microphone({
   );
 }
 
-async function initRecognizer() {
+async function initRecognizer(): Promise<SpeechRecognizer> {
   const tokenObj = await getTokenOrRefresh();
 
   const speechConfig = SpeechConfig.fromAuthorizationToken(
@@ -109,7 +110,7 @@ async function sttFromMic(
   else return;
 
   recognizer.startContinuousRecognitionAsync();
-  
+
   // text logic
   let recogText = "";
   recognizer.recognized = function (s, e) {
