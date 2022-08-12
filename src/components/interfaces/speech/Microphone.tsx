@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
+import { faMicrophone, faSquare } from "@fortawesome/free-solid-svg-icons";
 
 
 import {
@@ -71,7 +71,7 @@ export default function Microphone({
       }
       className={className}
     >
-      <FontAwesomeIcon icon={faMicrophone} className="w-4 h-4 text-white" />
+      <FontAwesomeIcon icon={!pressed ? faMicrophone : faSquare} className="w-4 h-4 text-white" />
     </button>
   );
 }
