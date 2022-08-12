@@ -65,7 +65,7 @@ export default function Microphone({
         setTempDisable(true);
       }}
       disabled={
-        turn.includes("read") || turn.includes("rate-reply") //|| tempDisable
+        turn.includes("read") || turn.includes("rate-reply") || tempDisable
       }
       className={className}
     >
