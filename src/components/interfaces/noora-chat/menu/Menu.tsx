@@ -8,6 +8,7 @@ import DisclosureTransition from "../../../global/utility/DisclosureTransition";
 import { Switch } from '@headlessui/react'
 import clsx from "clsx";
 import { MenuAlt2Icon } from "@heroicons/react/outline";
+import { isIOS } from 'react-device-detect';
 
 export default function Menu({ convoState }: any) {
   const sections = [
@@ -34,7 +35,7 @@ export default function Menu({ convoState }: any) {
           Menu
         </div>
 
-        <div className="text-gray-600 text-center mx-auto mt-1 text-sm">
+        {!isIOS && <div className="text-gray-600 text-center mx-auto mt-1 text-sm">
           <span><MenuAlt2Icon className="h-4 w-4 -mt-0.5 inline-block" /> text-only</span>
           <Switch
             checked={convoState.value.audio.shouldAutoPlay}
@@ -63,7 +64,7 @@ export default function Menu({ convoState }: any) {
             />
           </Switch>
           <span>autoplay <VolumeUpIcon className="h-4 w-4 -mt-0.5 inline-block" /></span>
-        </div>
+        </div>}
 
       </div>
       <div className="px-2 py-1">

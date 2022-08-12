@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NooraChat from "../interfaces/noora-chat/chat/NooraChat";
 import Menu from "../interfaces/noora-chat/menu/Menu";
 import Summary from "../interfaces/noora-chat/summary/Summary";
+import { isIOS } from 'react-device-detect';
 
 export default function ModuleChat({ modules }: ModuleChatProps) {
   const [h, setH] = useState([]);
@@ -26,7 +27,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       player: null,
       messageId: null,
       autoPlaying: false,
-      shouldAutoPlay: true,
+      shouldAutoPlay: isIOS ? false : true,
     },
     numProblems: 10,
   });
