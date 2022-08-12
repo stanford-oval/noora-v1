@@ -2,9 +2,16 @@ import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
 
-import { ResultReason } from "microsoft-cognitiveservices-speech-sdk";
+
+import {
+  AudioConfig,
+  ResultReason,
+  SpeechConfig,
+  SpeechRecognizer,
+} from "microsoft-cognitiveservices-speech-sdk";
 import { getTokenOrRefresh } from "../../../scripts/utils/token_util";
-const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
+const sdk = require("microsoft-cognitiveservices-speech-sdk");
+const stopDelay = 250;
 
 export default function Microphone({
   className,
@@ -15,44 +22,49 @@ export default function Microphone({
   convoState,
 }: any) {
   const recog = useRef<SpeechRecognizer | null>(null); // doesn't wait for rerender to change
-  const [tempDisable, setTempDisable] = useState(false); // waits for rerender, better for button disable change
+  const [tempDisable, setTempDisable] = useState(false);
+  const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
     if (tempDisable) {
       setTimeout(() => {
         setTempDisable(false);
-      }, 500); // timing to sync disabled with send button
+      }, stopDelay); // timing to sync disabled with send button
     }
   }, [tempDisable]);
 
-  const microphoneHandler = async (recog: SpeechRecognizer, mode: boolean) => {
-    if (mode) await sttFromMic(turn, setTurn, setText, currText, recog);
-    else stopSttFromMic(turn, setTurn, currText, setText, recog);
-  };
+  // const microphoneHandler = async (recog: SpeechRecognizer, mode: boolean) => {
+  //   if (mode) await sttFromMic(turn, setTurn, setText, currText, recog);
+  //   else stopSttFromMic(turn, setTurn, currText, setText, recog);
+  // };
 
   return (
     <button
       type="button"
-      onMouseDown={(e: any) => {
+      onClick={(e: any) => {
         e.preventDefault();
-        // stop audio
-        if (convoState.value.audio.player) {
-          convoState.value.audio.player.pause();
-          convoState.value.audio.player.close();
-        }
-        const initStart = async () => {
-          if (recog.current) {
-            recog.current.stopContinuousRecognitionAsync();
+        if (!pressed) {
+          // stop audio
+          if (convoState.value.audio.player) {
+            convoState.value.audio.player.pause();
+            convoState.value.audio.player.close();
           }
-          recog.current = await initRecognizer();
-          sttFromMic(turn, setTurn, setText, currText, recog.current);
-        };
-        initStart();
-      }}
-      onMouseUp={(e: any) => {
-        e.preventDefault();
-        microphoneHandler(recog.current!, false);
-        setTempDisable(true);
+          const initStart = async () => {
+            if (recog.current) {
+              recog.current.stopContinuousRecognitionAsync();
+            }
+            recog.current = await initRecognizer();
+            await sttFromMic(turn, setTurn, setText, currText, recog.current!);
+          };
+          initStart();
+
+          setPressed(true);
+        } else {
+          stopSttFromMic(turn, setTurn, currText, setText, recog.current!);
+          setTempDisable(true);
+
+          setPressed(false);
+        }
       }}
       disabled={
         turn.includes("read") || turn.includes("rate-reply") || tempDisable
@@ -114,7 +126,7 @@ async function stopSttFromMic(
   await setTimeout(() => {
     setTurn("user-answer-edit");
     recognizer.stopContinuousRecognitionAsync();
-  }, 500);
+  }, stopDelay);
 }
 
 function formatText(text: string, curr: string): string {
