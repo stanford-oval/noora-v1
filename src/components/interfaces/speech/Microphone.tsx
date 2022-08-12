@@ -22,18 +22,9 @@ export default function Microphone({
     if (tempDisable) {
       setTimeout(() => {
         setTempDisable(false);
-      }, 1000);
+      }, 500); // timing to sync disabled with send button
     }
   }, [tempDisable]);
-
-  // initialize recognizer
-  // useEffect(() => {
-  //   if (recog) return;
-  //   const init = async () => {
-  //     setRecog(await initRecognizer());
-  //   };
-  //   init();
-  // }, []);
 
   const microphoneHandler = async (recog: SpeechRecognizer, mode: boolean) => {
     if (mode) await sttFromMic(turn, setTurn, setText, currText, recog);
