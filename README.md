@@ -1,8 +1,8 @@
 <p align="center">
     <h1 align="center"><b>Noora</b></h1>
-    <p align="center">Use AI to improve your conversation skills.</p>
+    <p align="center">Use AI to improve your social conversations.</p>
     <p align="center">
-    A platform utilizing conversational AI to improve the conversation skills of individuals with Autism Spectrum Disorder (ASD).
+    A platform utilizing conversational AI to improve the social conversations of individuals with Autism Spectrum Disorder (ASD).
     </p>
     <p align="center" style="align: center;">
         <a href="https://stanford.edu" target="_blank">
@@ -20,7 +20,7 @@
 
 ## Overview
 
-Noora is is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the conversation skills of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> from Stanford's Dept. of Psychiatry and Behavioral Sciences.
+Noora is is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the social conversations of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> from Stanford's Dept. of Psychiatry and Behavioral Sciences.
 
 <!-- Dr. Koegel's intervention method, pivotal response training, has been shown to help individuals make friends, have romantic relationships, collaborate in the workplace, and engage in leisure activities. Because pivotal response training's applicability is restricted by the lack of trained professionals, Noora's goal is to automate the intervention, the success of which can have a great impact on society, as 1 in 54 children is currently diagnosed with ASD.  -->
 

@@ -6,7 +6,7 @@ export default function index() {
   return (
     <Page
       fullTitle="Noora"
-      desc="A platform utilizing conversational AI to improve the conversation skills of individuals with ASD."
+      desc="A platform utilizing conversational AI to improve the social conversations of individuals with ASD."
     >
       <Hero />
     </Page>

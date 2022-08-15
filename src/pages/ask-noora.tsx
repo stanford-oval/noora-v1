@@ -6,7 +6,7 @@ export default function asknoora() {
     return (
         <Page
             title="Ask Noora"
-            desc="How would Noora reply? Noora is a conversational AI to improve the conversation skills of individuals with ASD."
+            desc="How would Noora reply? Noora is a conversational AI to improve the social conversations of individuals with ASD."
         >
             <AskNoora />
         </Page>

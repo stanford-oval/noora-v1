@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="grid grid-cols-12 items-center justify-between text-center md:text-left gap-y-8 sm:gap-y-6 sm:gap-x-12 lg:gap-x-0">
           <div className="px-4 sm:px-0 col-span-12 sm:col-start-2 sm:col-span-10 md:col-span-6 md:col-start-0 xl:col-span-6">
             <p className="inline leading-tight bg-gradient-to-r from-noora-primary-dark via-noora-secondary-light to-noora-primary-dark1 bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight text-transparent">
-              Improve your conversation skills <br className="hidden xl:block" />using AI.
+              Improve your social conversations using AI.
             </p>
             <p className="mt-3 text-xl xl:text-2xl tracking-tight text-gray-600">
               Noora is a chatbot who guides you through a diverse set of social
