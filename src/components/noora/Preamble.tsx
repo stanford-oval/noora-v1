@@ -25,7 +25,7 @@ export default function Preamble({ module }: any) {
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-2">
           <p>{module.selectedDesc}</p>
 
-          <p>
+          {/* <p>
             For example, if Noora says “
             <b className="text-noora-primary special-underline">
               {module.example.noora}
@@ -46,7 +46,7 @@ export default function Preamble({ module }: any) {
               {module.example.badUser}
             </b>
             ,” Noora would give you feedback for improving your reply.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
