@@ -42,7 +42,8 @@ export default function Messages({ history, convoState }: any) {
       {
         id: -5,
         show: true,
-        exampleTurns: true
+        exampleTurns: true,
+        module: activeModules[0].title
       },
       {
         id: -6,
@@ -60,8 +61,8 @@ export default function Messages({ history, convoState }: any) {
       if (messagesBottom.current)
         if (
           history.value
-            .slice(0, Math.min(history.value.length, 6))
-            .filter((h: any) => !h.fromNoora).length > 0
+            .slice(0, Math.min(history.value.length, 10))
+            .filter((h: any) => !h.fromNoora).length > 2
         )
           messagesBottom.current.scrollIntoView({
             behavior: "smooth",

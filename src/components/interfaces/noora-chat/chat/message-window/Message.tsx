@@ -7,7 +7,7 @@ export default function Message({ message, audioRef, convoState }: any) {
         return <></>
 
     if (message.exampleTurns)
-        return <ExampleTurns />
+        return <ExampleTurns module={message.module} convoState={convoState} audioRef={audioRef} />
 
     return <li>
         {message && (
