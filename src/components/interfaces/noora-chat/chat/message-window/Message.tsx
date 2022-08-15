@@ -1,8 +1,4 @@
 import React from "react";
-import { clsx } from "clsx";
-
-import SpeechSynthesizer from "../../../speech/SpeechSynthesizer";
-import { messageToSpeechParams } from "../../../../../scripts/noora-chat/audio_utils";
 import ExampleTurns from "./ExampleTurns";
 import MessageStyleWrapper from "./MessageStyleWrapper";
 
@@ -15,11 +11,8 @@ export function MessageWrapper({ message, audioRef, convoState }: any) {
 
     return <li>
         {message && (
-            <MessageStyleWrapper fromNoora={message.fromNoora}>
-                <div className="flex flex-row items-center gap-x-2">
-                    {message.text ? <Message message={message} /> : message.component}
-                    {message.fromNoora && <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />}
-                </div>
+            <MessageStyleWrapper message={message} convoState={convoState} audioRef={audioRef}>
+                {message.text ? <Message message={message} /> : message.component}
             </MessageStyleWrapper>
         )}
     </li>
@@ -60,12 +53,4 @@ function Message({ message }: any) {
             </div>
         );
     return <div>{message.text}</div>;
-}
-
-function SpeechButton({ convoState, message, audioRef }: any) {
-    const props = messageToSpeechParams(convoState, message, audioRef, null, null)
-
-    return (<SpeechSynthesizer {...props}
-        className={clsx("-mt-0.5 h-4 w-4 inline-block ", message.id == -3 ? "demo-audio" : "")} />
-    )
 }
