@@ -8,7 +8,7 @@ export default function dashboard() {
   return (
     <Page
       title="Dashboard"
-      desc="View your Noora account and progress. Noora is a platform utilizing conversational AI to improve the social skills of individuals with ASD."
+      desc="View your Noora account and progress. Noora is a platform utilizing conversational AI to improve the conversation skills of individuals with ASD."
     >
       <UserHero />
       <div className="container py-8 flex flex-col gap-8">

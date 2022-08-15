@@ -9,7 +9,7 @@ export default function ProgressSummary() {
       <div className="pb-4 text-slate-700 flex flex-col gap-y-2">
         <h1 className="inline font-bold text-noora-secondary font-display text-3xl tracking-tight">
           Practice your{" "}
-          <span className="special-underline">social skills</span>.
+          <span className="special-underline">conversation skills</span>.
         </h1>
         <p>
           Noora helps you practice challenging aspects of social conversation, such as{" "}

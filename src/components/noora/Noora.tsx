@@ -30,7 +30,7 @@ export default function Noora() {
             }`
             : "Noora"
         }
-        desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social skills of individuals with ASD."
+        desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the conversation skills of individuals with ASD."
       >
         {selectedModule ? (
           <div>
