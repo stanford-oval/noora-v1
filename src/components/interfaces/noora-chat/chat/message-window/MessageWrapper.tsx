@@ -5,7 +5,7 @@ import { clsx } from "clsx";
 import SpeechSynthesizer from "../../../speech/SpeechSynthesizer";
 import { messageToSpeechParams } from "../../../../../scripts/noora-chat/audio_utils";
 
-export default function MessageStyleWrapper({ message, audioRef, convoState, children }: any) {
+export default function MessageWrapper({ message, audioRef, convoState, children }: any) {
     return <div
         className={clsx(
             "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",

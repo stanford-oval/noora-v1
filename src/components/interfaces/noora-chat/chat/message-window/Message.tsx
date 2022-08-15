@@ -1,8 +1,8 @@
 import React from "react";
 import ExampleTurns from "./ExampleTurns";
-import MessageStyleWrapper from "./MessageStyleWrapper";
+import MessageWrapper from "./MessageWrapper";
 
-export function MessageWrapper({ message, audioRef, convoState }: any) {
+export default function Message({ message, audioRef, convoState }: any) {
     if (!message.show)
         return <></>
 
@@ -11,14 +11,14 @@ export function MessageWrapper({ message, audioRef, convoState }: any) {
 
     return <li>
         {message && (
-            <MessageStyleWrapper message={message} convoState={convoState} audioRef={audioRef}>
-                {message.text ? <Message message={message} /> : message.component}
-            </MessageStyleWrapper>
+            <MessageWrapper message={message} convoState={convoState} audioRef={audioRef}>
+                {message.text ? <MessageText message={message} /> : message.component}
+            </MessageWrapper>
         )}
     </li>
 }
 
-function Message({ message }: any) {
+function MessageText({ message }: any) {
     if (message.statement)
         return (
             <div>
