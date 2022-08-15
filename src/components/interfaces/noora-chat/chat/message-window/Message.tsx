@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import SpeechSynthesizer from "../../../speech/SpeechSynthesizer";
 import { messageToSpeechParams } from "../../../../../scripts/noora-chat/audio_utils";
 import ExampleTurns from "./ExampleTurns";
+import MessageStyleWrapper from "./MessageStyleWrapper";
 
 export function MessageWrapper({ message, audioRef, convoState }: any) {
     if (!message.show)
@@ -14,19 +15,12 @@ export function MessageWrapper({ message, audioRef, convoState }: any) {
 
     return <li>
         {message && (
-            <div
-                className={clsx(
-                    "rounded-xl w-fit px-4 py-3 mt-1.5 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl break-words",
-                    message.fromNoora
-                        ? "bg-gray-200 mr-auto"
-                        : "bg-noora-primary text-white ml-auto"
-                )}
-            >
+            <MessageStyleWrapper fromNoora={message.fromNoora}>
                 <div className="flex flex-row items-center gap-x-2">
                     {message.text ? <Message message={message} /> : message.component}
                     {message.fromNoora && <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />}
                 </div>
-            </div>
+            </MessageStyleWrapper>
         )}
     </li>
 }
