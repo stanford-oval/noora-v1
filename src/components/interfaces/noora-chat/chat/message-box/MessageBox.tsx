@@ -11,7 +11,7 @@ export default function MessageBox({ history, convoState }: any) {
       (convoState.value.turn.startsWith("user-answer") &&
         history.value
           .slice(0, Math.min(history.value.length, 10))
-          .filter((h: any) => !h.fromNoora).length > 2) ||
+          .filter((h: any) => !h.fromNoora).length > 0) ||
       convoState.value.turn.endsWith("-edit")
     ) {
       // don't autofocus on page load (especially for mobile)

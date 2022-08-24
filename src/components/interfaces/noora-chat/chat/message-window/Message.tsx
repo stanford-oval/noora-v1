@@ -1,13 +1,9 @@
 import React from "react";
-import ExampleTurns from "./ExampleTurns";
 import MessageWrapper from "./MessageWrapper";
 
 export default function Message({ message, audioRef, convoState }: any) {
     if (!message.show)
         return <></>
-
-    if (message.exampleTurns)
-        return <ExampleTurns module={message.module} convoState={convoState} audioRef={audioRef} />
 
     return <li>
         {message && (

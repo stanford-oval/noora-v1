@@ -39,12 +39,18 @@ export default function Messages({ history, convoState }: any) {
         component: <MicrophoneInfo />,
         read: "You can tap on the microphone button to speak. Click the audio button to hear my replies"
       },
-      {
-        id: -5,
-        show: true,
-        exampleTurns: true,
-        module: activeModules[0].title
-      },
+      // {
+      //   id: -4,
+      //   show: true,
+      //   fromNoora: true,
+      //   text: "When I say something"
+      // },
+      // {
+      //   id: -4,
+      //   show: true,
+      //   fromNoora: true,
+      //   text: ""
+      // },
       {
         id: -6,
         fromNoora: true,
@@ -62,7 +68,7 @@ export default function Messages({ history, convoState }: any) {
         if (
           history.value
             .slice(0, Math.min(history.value.length, 10))
-            .filter((h: any) => !h.fromNoora).length > 2
+            .filter((h: any) => !h.fromNoora).length > 0
         )
           messagesBottom.current.scrollIntoView({
             behavior: "smooth",
