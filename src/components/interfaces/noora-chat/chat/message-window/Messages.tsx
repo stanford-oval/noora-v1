@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
-import MicrophoneInfo from "./MicrophoneInfo";
+import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
+import Instructions from "./initial-messages/Instructions";
 
 export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
@@ -39,12 +40,13 @@ export default function Messages({ history, convoState }: any) {
         component: <MicrophoneInfo />,
         read: "You can tap on the microphone button to speak. Click the audio button to hear my replies"
       },
-      // {
-      //   id: -4,
-      //   show: true,
-      //   fromNoora: true,
-      //   text: "When I say something"
-      // },
+      {
+        id: -4,
+        show: true,
+        fromNoora: true,
+        component: <Instructions />,
+        read: "If I say, “I had a good weekend!”, you should tell me that this is a positive statement. Then, you can reply, “I'm happy to hear that!”"
+      },
       // {
       //   id: -4,
       //   show: true,
