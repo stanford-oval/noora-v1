@@ -15,7 +15,6 @@ export default function AttemptHistory() {
     return (
         <div className="grid grid-cols-12 pt-3 gap-y-3">
             {data && data.map((attempt: any, idx: number) => {
-                console.log(idx, attempt)
                 let dateStr = dateFormat(new Date(attempt.timeCompleted), "mmmm dS, h:MM TT");
                 return (
                     <div key={idx} className="col-span-12 flex gap-y-4 flex-col md:flex-row rounded-lg justify-between items-center text-noora-secondary  px-5 py-6 bg-gray-100 border-2 border-gray-200">
