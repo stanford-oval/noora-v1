@@ -70,7 +70,7 @@ export default function MicrophoneInfo() {
                 }}
                 className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
             />{" "}
-            button to start speaking. When you're done talking, click it again. Click the <FontAwesomeIcon
+            button to start speaking. When you&apos;re done talking, click it again. Click the <FontAwesomeIcon
                 icon={faVolumeUp}
                 onClick={() => {
                     setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
