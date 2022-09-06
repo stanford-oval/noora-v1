@@ -38,7 +38,7 @@ export default function Messages({ history, convoState }: any) {
         fromNoora: true,
         show: true,
         component: <MicrophoneInfo />,
-        read: "You can tap on the microphone button to speak. Click the audio button to hear my replies"
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
       },
       {
         id: -4,

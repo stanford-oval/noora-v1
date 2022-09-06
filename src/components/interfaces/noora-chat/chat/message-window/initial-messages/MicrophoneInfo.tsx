@@ -14,7 +14,7 @@ export default function MicrophoneInfo() {
             {
                 target: ".joyride-step-1",
                 content:
-                    "Tap this button, then speak!\n Noora will turn what you say into text.",
+                    "Tap this button, then start speaking!\n Noora will turn what you say into text. When you're done talking, click this button again.",
                 disableBeacon: true,
             },
             {
@@ -70,7 +70,7 @@ export default function MicrophoneInfo() {
                 }}
                 className="w-4 h-4 text-noora-primary inline-block mb-1 px-0.5 cursor-pointer"
             />{" "}
-            button to speak. Click the <FontAwesomeIcon
+            button to start speaking. When you're done talking, click it again. Click the <FontAwesomeIcon
                 icon={faVolumeUp}
                 onClick={() => {
                     setJoyrideState((js: any) => ({ ...js, run: true, stepIndex: 1 }));
