@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { MenuAlt2Icon } from "@heroicons/react/outline";
 import { isIOS } from 'react-device-detect';
 
-export default function Menu({ convoState }: any) {
+export default function DesktopMenu({ convoState }: any) {
   const sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
     {

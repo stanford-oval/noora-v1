@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NooraChat from "../interfaces/noora-chat/chat/NooraChat";
-import Menu from "../interfaces/noora-chat/menu/Menu";
+import DesktopMenu from "../interfaces/noora-chat/menu/DesktopMenu";
 import Summary from "../interfaces/noora-chat/summary/Summary";
 import { isIOS } from 'react-device-detect';
 
@@ -60,7 +60,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
           )}
         </div>
         <div className="basis-auto md:basis-5/12 lg:basis-1/4 w-full mx-auto md:min-h-full">
-          <Menu convoState={convoState} />
+          <DesktopMenu convoState={convoState} />
         </div>
       </div>
     </div>

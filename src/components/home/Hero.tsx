@@ -41,13 +41,13 @@ export default function Hero() {
               <div className="mt-2 w-full flex gap-x-4 justify-center md:justify-start">
                 <img
                   src="/img/logos/stanford/medicine.png"
-                  className="col-span-5 h-11 w-auto"
+                  className="h-9 lg:h-11 w-auto"
                   alt="Stanford Medicine"
                 />
                 <img
-                  src="/img/logos/stanford/medicine.png"
-                  className="col-span-5 h-12 w-auto"
-                  alt="Stanford"
+                  src="/img/logos/stanford/engineering.png"
+                  className="h-10 lg:h-12 mt-0.5 w-auto"
+                  alt="Stanford Engineering"
                 />
               </div>
             </div>
