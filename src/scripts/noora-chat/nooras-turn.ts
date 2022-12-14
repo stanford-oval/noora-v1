@@ -10,9 +10,9 @@ export default async function noorasTurn(
     if (convoState.value.statement) {
         if (convoState.value.turn.includes("select")) {
             // handle sentiment classification
-            const targetSentiment = convoState.value.statement.statementObj[0].split("/")[1]
-            const m = message.trim().toLowerCase()
-            const correct = m == targetSentiment.trim().toLowerCase()
+            const targetSentiment = convoState.value.statement.statementObj.val.sentiment;
+            const m = message.trim().toLowerCase();
+            const correct = m == targetSentiment.trim().toLowerCase();
 
 
             history.setValue((h: any) => [...h, {
@@ -34,7 +34,6 @@ export default async function noorasTurn(
                 ...cs,
                 turn: "user-answer",
             }));
-
             return
         }
         else {
@@ -51,7 +50,6 @@ export default async function noorasTurn(
         noorasTurn
     ) {
         const replies = await getReply(message, convoState, "get-statement");
-
         history.setValue((h: any) => [
             ...h,
             {
@@ -64,6 +62,7 @@ export default async function noorasTurn(
             },
             ...replies,
         ]);
+        // console.log(convoState);
     } else {
         history.setValue((h: any) => [
             ...h,
