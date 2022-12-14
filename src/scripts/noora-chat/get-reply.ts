@@ -1,8 +1,3 @@
-// import general_statements from "../../data/statement_bank/general";
-// import work_statements from "../../data/statement_bank/work";
-// import relevantQuestions from "../../data/statement_bank/relevantQuestions";
-// import leadingQuestions from "../../data/statement_bank/leadingQuestions";
-// import rightAmount from "../../data/statement_bank/rightAmount";
 import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
@@ -18,14 +13,6 @@ function makeIndex(problems: any[]) {
 }
 
 const pairedProblems = makeIndex(problems);
-
-// const module_statements = {
-//   general: general_statements,
-//   work: work_statements,
-//   relevantQuestions: relevantQuestions,
-//   leadingQuestions: leadingQuestions,
-//   rightAmount: rightAmount
-// };
 
 export default async function getReply(
   message: string,
