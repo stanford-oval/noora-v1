@@ -1,5 +1,6 @@
 import general_statements from "../../data/statement_bank/general";
 import work_statements from "../../data/statement_bank/work";
+import empathy_statements from "../../data/statement_bank/empathy"
 import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
@@ -7,6 +8,7 @@ import formPrompt from "../gpt-3/generate-evaluation-prompt";
 const module_statements = {
   general: general_statements,
   work: work_statements,
+  empathy: empathy_statements,
 };
 
 export default async function getReply(
