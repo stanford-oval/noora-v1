@@ -10,8 +10,6 @@ export default function Messages({ history, convoState, currModule}: any) {
 
   audioRef.current = convoState.value.audio;
 
-  console.log(history);
-
   if (currModule != 'general' && currModule != 'work') {
     history.value[1] = {
       id: -2,
@@ -89,8 +87,7 @@ export default function Messages({ history, convoState, currModule}: any) {
           });
     }, 5);
   }, [history.value]);
-  console.log("HISTORY");
-  console.log(history);
+
   return (
     <div
       className="bg-white border-x-2 border-gray-400 p-2 overflow-y-auto pretty-scroll"

@@ -62,7 +62,6 @@ export default async function noorasTurn(
             },
             ...replies,
         ]);
-        // console.log(convoState);
     } else {
         history.setValue((h: any) => [
             ...h,

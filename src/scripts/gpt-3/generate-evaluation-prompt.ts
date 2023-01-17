@@ -11,7 +11,6 @@ export default function formPrompt(
 
 
   prompt += `\n\nYou said, "${statement}"\n(1) ${reply}\nFeedback:`;
-  console.log(prompt);
 
   return prompt;
 }
