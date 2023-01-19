@@ -4,27 +4,17 @@ import DesktopMenu from "../interfaces/noora-chat/menu/DesktopMenu";
 import Summary from "../interfaces/noora-chat/summary/Summary";
 import { isIOS } from 'react-device-detect';
 
-const OLD = "old";
-const NEW = "new";
-
 export default function ModuleChat({ modules }: ModuleChatProps) {
-  const questionTypeMap = {
-    "general": OLD,
-    "work": OLD,
-    "relevantQuestions": NEW,
-    "leadingQuestions": NEW,
-    "rightAmount": NEW
-  };
   const [h, setH] = useState([]);
-  const active_modules = modules.filter((m: any) => m.active);
-  const questionType = questionTypeMap[active_modules[0].title];  
-
-
-
   const [cs, setCs] = useState({
     draft: "",
     turn: "user-answer-start",
     modules: modules,
+    sentiments: [
+      { title: "positive", active: true },
+      { title: "neutral", active: false },
+      { title: "negative", active: true },
+    ],
     model: {
       name: "text-davinci-002",
       temperature: 0.9,
@@ -42,16 +32,6 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     numProblems: 10,
   });
 
-  if (questionType == OLD) {
-    cs.sentiments = [
-      { title: "positive", active: true },
-      { title: "neutral", active: true },
-      { title: "negative", active: true },
-    ];
-  }
-
-  cs.questionType = questionType;
-
   const history = {
     value: h,
     setValue: setH,
@@ -68,9 +48,6 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
         return { ...c, modules: modules };
       });
   }, [modules]);
-
-  let new_active = modules.filter((m: any) => m.active);
-
 
   return (
     <div className="bg-gray-100 py-4" id="homeChat">

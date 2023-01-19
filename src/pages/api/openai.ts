@@ -17,7 +17,6 @@ export default async function handler(
     await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
-
     });
 
     const openai = new OpenAIApi(configuration);
@@ -26,7 +25,6 @@ export default async function handler(
 
     let text = "";
     let logprobs = {};
-
     if (response && response.data && response.data.choices) {
       if (response.data.choices[0].text) text = response.data.choices[0].text;
 

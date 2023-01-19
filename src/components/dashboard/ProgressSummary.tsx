@@ -21,7 +21,7 @@ export default function ProgressSummary() {
           <div>
             <h1 className="text-2xl font-bold">Up Next</h1>
             <p className="text-lg">
-              Practice responding to <b>Empathy</b> statements.
+              Practice responding to <b>General</b> statements.
             </p>
           </div>
           <div>
