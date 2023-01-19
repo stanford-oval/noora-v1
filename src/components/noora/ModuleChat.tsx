@@ -16,8 +16,10 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     "rightAmount": NEW
   };
   const [h, setH] = useState([]);
-  const active_modules = modules?.filter((m: any) => m.active);
-  const questionType = questionTypeMap[active_modules[0].title];
+  const active_modules = modules.filter((m: any) => m.active);
+  const questionType = questionTypeMap[active_modules[0].title];  
+
+
 
   const [cs, setCs] = useState({
     draft: "",

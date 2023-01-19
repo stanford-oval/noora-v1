@@ -25,8 +25,8 @@ export default function Messages({ history, convoState, currModule}: any) {
       id: -4,
       show: true,
       fromNoora: true,
-      component: Instructions(activeModules)?.text,
-      read: Instructions(activeModules)?.speech,
+      component: Instructions(activeModules).text,
+      read: Instructions(activeModules).speech,
     };
   }
 
@@ -60,8 +60,8 @@ export default function Messages({ history, convoState, currModule}: any) {
       id: -4,
       show: true,
       fromNoora: true,
-      component: Instructions(activeModules)?.text,
-      read: Instructions(activeModules)?.speech,
+      component: Instructions(activeModules).text,
+      read: Instructions(activeModules).speech,
     };
     history.value[4] = {
         id: -6,
