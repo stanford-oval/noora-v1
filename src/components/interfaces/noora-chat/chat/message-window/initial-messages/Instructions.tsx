@@ -1,8 +1,13 @@
 import React from "react";
 
 export default function Instructions(activeModules: any) {
-    console.log(activeModules[0].title);
-    if (activeModules[0].title == 'relevantQuestions') {
+    if (activeModules[0].title == 'general' || activeModules[0].title == 'work') {
+      return {
+        text: <div>If I say, <span className="font-bold text-noora-primary">“I had a good weekend,”</span> you should say that this is a <span className="font-bold text-noora-secondary-light">positive </span>statement. Then, you can reply, <span className="font-bold text-noora-secondary-light">“I&apos;m happy for you! What did you do?”</span></div>,
+        speech: "If I say, “I had a good weekend!”, you should tell me that this is a positive statement. Then, you can reply, “I'm happy to hear that!”",
+      };
+    }
+    else if (activeModules[0].title == 'relevantQuestions') {
       return {
         text: <div>If I say, <span className="font-bold text-noora-primary">“I had the best time with my friend yesterday, we watched movies and ordered pizza,”</span> you can reply, <span className="font-bold text-noora-secondary-light">“Wow, that sounds fun! What movies did you watch?”</span></div>,
         speech: "If I say, “I had the best time with my friend yesterday, we watched movies and ordered pizza!”, you can reply, “Wow, that sounds fun! What movies did you watch?”",
@@ -44,10 +49,4 @@ export default function Instructions(activeModules: any) {
         speech: "If I say, “I can’t wait for the weekend”, you can reply, “I can’t either! I’m looking forward to getting some great rest.”",
       };
     }
-    // DEFAULT: if (activeModules[0].title == 'general' || activeModules[0].title == 'work') {
-    return {
-      text: <div>If I say, <span className="font-bold text-noora-primary">“I had a good weekend,”</span> you should say that this is a <span className="font-bold text-noora-secondary-light">positive </span>statement. Then, you can reply, <span className="font-bold text-noora-secondary-light">“I&apos;m happy for you! What did you do?”</span></div>,
-      speech: "If I say, “I had a good weekend!”, you should tell me that this is a positive statement. Then, you can reply, “I'm happy to hear that!”",
-    };
-    // }
 }
