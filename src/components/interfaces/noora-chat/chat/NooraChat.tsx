@@ -85,12 +85,10 @@ export default function NooraChat({
 
   }, [history.value, convoState.value.audio.shouldAutoPlay])
 
-  let activeModules = convoState.value.modules.filter((m: any) => m.active);
-
   return (
     <div>
       <Header />
-      <Messages history={history} convoState={convoState} currModule={activeModules[0].title} />
+      <Messages history={history} convoState={convoState} />
       <MessageBox
         history={history}
         convoState={convoState}

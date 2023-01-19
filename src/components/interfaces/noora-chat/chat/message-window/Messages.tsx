@@ -3,72 +3,63 @@ import Message from "./Message";
 import MicrophoneInfo from "./initial-messages/MicrophoneInfo";
 import Instructions from "./initial-messages/Instructions";
 
-export default function Messages({ history, convoState, currModule}: any) {
+export default function Messages({ history, convoState }: any) {
   const messagesBottom = useRef<HTMLDivElement>(null);
-  let activeModules = convoState.value.modules.filter((m: any) => m.active);
-  let audioRef = useRef();
 
-  audioRef.current = convoState.value.audio;
+  let audioRef = useRef()
 
-  if (currModule != 'general' && currModule != 'work') {
-    history.value[1] = {
-      id: -2,
-      show: true,
-      fromNoora: true,
-      text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
-        ? "co-worker"
-        : "friend"
-        }.`,
-    };
-
-    history.value[3] = {
-      id: -4,
-      show: true,
-      fromNoora: true,
-      component: Instructions(activeModules).text,
-      read: Instructions(activeModules).speech,
-    };
-  }
+  audioRef.current = convoState.value.audio
 
   useEffect(() => {
-    // if (history.value.length > 0) return; // only run this on first render
-    history.value[0] = {
-      id: -1,
-      show: true,
-      fromNoora: true,
-      text: "Hi! I am Noora.",
-      read: "Hi. I am Nora.",
-      style: "cheerful"
-    };
-    history.value[1] = {
-      id: -2,
-      show: true,
-      fromNoora: true,
-      text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
-        ? "co-worker"
-        : "friend"
-        }.`,
-    };
-    history.value[2] = {
-      id: -3,
-      fromNoora: true,
-      show: true,
-      component: <MicrophoneInfo />,
-      read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
-    };
-    history.value[3] = {
-      id: -4,
-      show: true,
-      fromNoora: true,
-      component: Instructions(activeModules).text,
-      read: Instructions(activeModules).speech,
-    };
-    history.value[4] = {
+    if (history.value.length > 0) return; // only run this on first render
+    let activeModules = convoState.value.modules.filter((m: any) => m.active);
+
+    history.setValue((h: any) => [
+      ...h,
+      {
+        id: -1,
+        show: true,
+        fromNoora: true,
+        text: "Hi! I am Noora.",
+        read: "Hi. I am Nora.",
+        style: "cheerful"
+      },
+      {
+        id: -2,
+        show: true,
+        fromNoora: true,
+        text: `Imagine that I am your ${activeModules.length == 1 && activeModules[0].title == "work"
+          ? "co-worker"
+          : "friend"
+          }.`,
+      },
+      {
+        id: -3,
+        fromNoora: true,
+        show: true,
+        component: <MicrophoneInfo />,
+        read: "You can tap on the microphone button to start speaking. When you're done talking, click it again. Click the audio button to hear my replies"
+      },
+      {
+        id: -4,
+        show: true,
+        fromNoora: true,
+        component: <Instructions />,
+        read: "If I say, “I had a good weekend!”, you should tell me that this is a positive statement. Then, you can reply, “I'm happy to hear that!”"
+      },
+      // {
+      //   id: -4,
+      //   show: true,
+      //   fromNoora: true,
+      //   text: ""
+      // },
+      {
         id: -6,
         fromNoora: true,
         show: true,
         text: "Are you ready to begin?",
-    };
+      },
+    ]);
     convoState.setValue((cs: any) => ({ ...cs, turn: "user-answer-start" }));
   }, []);
 

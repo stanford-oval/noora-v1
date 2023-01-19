@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Sentiments({ convoState }: any) {
-
     return (
         <div>
             Sentiments:{" "}

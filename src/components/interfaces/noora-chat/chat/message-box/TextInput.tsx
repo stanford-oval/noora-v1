@@ -17,7 +17,6 @@ export default function TextInput({ convoState, inputBoxRef, handleSubmit }: any
             )}
         </div>
 
-
         <input
             ref={inputBoxRef}
             type="text"

@@ -8,13 +8,13 @@ export default function Message({ message, audioRef, convoState }: any) {
     return <li>
         {message && (
             <MessageWrapper message={message} convoState={convoState} audioRef={audioRef}>
-                {message.text ? <MessageText message={message} convoState={convoState} /> : message.component}
+                {message.text ? <MessageText message={message} /> : message.component}
             </MessageWrapper>
         )}
     </li>
 }
 
-function MessageText({ message, convoState }: any) {
+function MessageText({ message }: any) {
     if (message.statement)
         return (
             <div>
@@ -22,7 +22,7 @@ function MessageText({ message, convoState }: any) {
                     <span className="font-bold text-noora-primary-dark">
                         &ldquo;{message.text}&rdquo;
                     </span>{" "}
-                    {convoState.value.questionType == "old" ? "When I say this, do I sound positive, neutral, or negative?" : "How would you reply to me?"}
+                    When I say this, do I sound positive, neutral, or negative?
                 </span>
             </div>
         );
