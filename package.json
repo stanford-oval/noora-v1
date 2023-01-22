@@ -36,6 +36,7 @@
     "react-spinners": "^0.13.3",
     "reactjs-percentage-circle": "^1.0.0",
     "swr": "^1.3.0",
+    "type-check": "^0.4.0",
     "universal-cookie": "^4.0.4",
     "uuid": "^8.3.2"
   },

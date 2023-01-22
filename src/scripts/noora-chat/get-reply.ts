@@ -40,10 +40,11 @@ export default async function getReply(
         fromNoora: true,
         text: statement.text,
         // sentiment: statement.sentiment,
-        statement: true
+        statement: true,
       },
     ];
     if (convoState.value.questionType == "old") {
+      // @ts-ignore
       replies[0]["sentiment"] = statement.sentiment;
     }
 
