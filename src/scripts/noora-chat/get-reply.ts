@@ -1,13 +1,18 @@
-import general_statements from "../../data/statement_bank/general";
-import work_statements from "../../data/statement_bank/work";
 import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
+import data from "../../data/statement_bank/data.json";
 
-const module_statements = {
-  general: general_statements,
-  work: work_statements,
-};
+const problems = data.data;
+
+function makeIndex(problems: any[]) {
+  let counter = 0;
+  return (problems.map(p => {
+    return ({"idx": counter++, "val": p})
+  }));
+}
+
+const pairedProblems = makeIndex(problems);
 
 export default async function getReply(
   message: string,
@@ -22,7 +27,7 @@ export default async function getReply(
       id: uuidv4(),
       fromNoora: true,
       text: "Oops! Something went wrong.",
-      sentiment: "neutral",
+      // sentiment: "neutral",
       statement: false,
     },
   ];
@@ -34,10 +39,18 @@ export default async function getReply(
         id: uuidv4(),
         fromNoora: true,
         text: statement.text,
-        sentiment: statement.sentiment,
+        // sentiment: statement.sentiment,
         statement: true,
       },
     ];
+    if (convoState.value.questionType == "old") {
+      // @ts-ignore
+      replies[0]["sentiment"] = statement.sentiment;
+    }
+
+
+
+
   } else if (command == "rate-reply") {
     convoState.setValue((cs: any) => ({
       ...cs,
@@ -46,7 +59,8 @@ export default async function getReply(
     let answers = await getRating(
       message,
       convoState.value.statement.statementIdx,
-      [...convoState.value.statement.statementObj],
+      convoState.value.statement.statementObj,
+      // [...convoState.value.statement.statementObj],
       convoState
     );
 
@@ -62,7 +76,7 @@ export default async function getReply(
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: command == "get-statement" ? "user-select" : "user-answer",
+    turn: command == (convoState.value.questionType == "old" && "get-statement") ? "user-select" : "user-answer",
   }));
 
   return replies;
@@ -74,8 +88,8 @@ async function getRating(
   statementObj: any,
   convoState: any
 ) {
-  const prompt = formPrompt(statementObj[1], statementObj[0], message);
-  let target = statementObj[2];
+  const prompt = formPrompt(statementObj, message);
+  let target = statementObj.val.response;
 
   let classification = "";
   let explanation = "";
@@ -102,6 +116,7 @@ async function getRating(
 
     let probs = softmax(Object.values(probsObj));
     let topTokens = Object.keys(probsObj);
+
     let goodProb = 0.000001;
     if (topTokens.indexOf(" Good") != -1)
       goodProb = probs[topTokens.indexOf(" Good")];
@@ -113,7 +128,7 @@ async function getRating(
     let threshold =
       message.length < 3 ? 0.9 : convoState.value.model.goodReplyThreshold; //  length filtering
     console.log(
-      `"good" token probability: ${goodProb}. "bad token probability: ${badProb}. threshold: ${threshold}`
+      `"good" token probability: ${goodProb}. "bad token" probability: ${badProb}. threshold: ${threshold}`
     );
     if (goodReplyConfidence > threshold) {
       classification = "Good reply.";
@@ -179,29 +194,34 @@ async function getRating(
 export async function getStatement(convoState: any) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
-  const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
-  const category = getRandomItem(modules)
-    .title as keyof typeof module_statements;
-  const sentiment = getRandomItem(sentiments)
-    .title as keyof typeof module_statements[typeof category];
-
+  const category = getRandomItem(modules).title;
+  let filtered_problems = pairedProblems.filter((c: any) => c.val.task_name == category);
+  if (convoState.value.questionType == "old") {
+    const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
+    const sentiment = getRandomItem(sentiments).title;
+    filtered_problems = filtered_problems.filter((c: any) => c.val.sentiment == sentiment);
+  }
   // await timeout(700);
   // choose statement
   const statementIdx = getStatementIdx(
-    category + "/" + sentiment,
-    module_statements[category][sentiment],
+    category,
+    filtered_problems,
     convoState
   );
-  const statement = module_statements[category][sentiment][statementIdx];
+
+  const statement = pairedProblems[statementIdx];
   convoState.setValue((cs: any) => ({
     ...cs,
     statement: { statementIdx: statementIdx, statementObj: statement },
   }));
-  // console.log("Selected statement: ");
-  // console.log(statement);
 
-  return { sentiment: statement[0].split("/")[1], text: statement[1] };
+  if (convoState.value.questionType == "old") {
+    return { sentiment: statement.val.sentiment, text: statement.val.text };
+  }
+  return { text: statement.val.text };
 }
+
+
 
 function getStatementIdx(
   category: string,
@@ -232,7 +252,9 @@ function getStatementIdx(
 
   let newRandomIdx = 0;
   while (true) {
-    newRandomIdx = Math.floor(Math.random() * statementsList.length);
+    let possibleIdxs = statementsList.map(c=>c.idx);
+    const randomElement = statementsList[Math.floor(Math.random() * possibleIdxs.length)];
+    newRandomIdx = randomElement.idx;
     if (seenIdxs.indexOf(newRandomIdx) == -1) break;
   }
 

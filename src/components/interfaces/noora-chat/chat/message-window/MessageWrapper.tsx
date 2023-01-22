@@ -18,7 +18,7 @@ export default function MessageWrapper({ message, audioRef, convoState, children
             {children}
             {message.fromNoora && <SpeechButton audioRef={audioRef} convoState={convoState} message={message} />}
         </div>
-       
+
     </div>
 }
 

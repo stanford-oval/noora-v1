@@ -4,17 +4,21 @@ import DesktopMenu from "../interfaces/noora-chat/menu/DesktopMenu";
 import Summary from "../interfaces/noora-chat/summary/Summary";
 import { isIOS } from 'react-device-detect';
 
+const OLD = "old";
+const NEW = "new";
+
 export default function ModuleChat({ modules }: ModuleChatProps) {
   const [h, setH] = useState([]);
+  const active_modules = modules?.filter((m: any) => m.active);
+  let questionType = NEW;
+  if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
+    questionType = OLD;
+  }
+
   const [cs, setCs] = useState({
     draft: "",
     turn: "user-answer-start",
     modules: modules,
-    sentiments: [
-      { title: "positive", active: true },
-      { title: "neutral", active: false },
-      { title: "negative", active: true },
-    ],
     model: {
       name: "text-davinci-002",
       temperature: 0.9,
@@ -30,8 +34,15 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       shouldAutoPlay: isIOS ? false : true,
     },
     numProblems: 10,
+    questionType: questionType,
+    sentiments: [
+      { title: "positive", active: true },
+      { title: "neutral", active: true },
+      { title: "negative", active: true },
+    ]
   });
 
+  cs.questionType = questionType;
   const history = {
     value: h,
     setValue: setH,
@@ -48,6 +59,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
         return { ...c, modules: modules };
       });
   }, [modules]);
+
 
   return (
     <div className="bg-gray-100 py-4" id="homeChat">

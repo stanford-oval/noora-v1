@@ -1,11 +1,14 @@
 import evalPrompts from "../../data/prompts/noora-eval";
 
 export default function formPrompt(
-  statement: string,
-  category: string,
+  statementObj: any,
   reply: string
 ) {
-  let prompt = evalPrompts[category.split("/")[1] as keyof typeof evalPrompts];
+  const statement = statementObj.val.text;
+  let prompt = "";
+
+  prompt = (statementObj.val.task_type === "old") ? evalPrompts["old"][statementObj.val.sentiment as keyof typeof evalPrompts["old"]] : evalPrompts["new"][statementObj.val.task_name as keyof typeof evalPrompts["new"]];
+
 
   prompt += `\n\nYou said, "${statement}"\n(1) ${reply}\nFeedback:`;
 

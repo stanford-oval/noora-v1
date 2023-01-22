@@ -20,7 +20,7 @@
 
 ## Overview
 
-Noora is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the social conversation of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> from Stanford's Dept. of Psychiatry and Behavioral Sciences.
+Noora is is a research project led by Prof. Monica Lam, from Stanford University, with the goal of improving the social conversation of people with Autism Spectrum Disorder (ASD). The project is a collaboration between <a href="https://oval.cs.stanford.edu" target="_blank">Stanford's Open Virtual Assistant Lab</a> and <a href="https://profiles.stanford.edu/lynn-koegel" target="_blank">Dr. Lynn Koegel</a> from Stanford's Dept. of Psychiatry and Behavioral Sciences.
 
 <!-- Dr. Koegel's intervention method, pivotal response training, has been shown to help individuals make friends, have romantic relationships, collaborate in the workplace, and engage in leisure activities. Because pivotal response training's applicability is restricted by the lack of trained professionals, Noora's goal is to automate the intervention, the success of which can have a great impact on society, as 1 in 54 children is currently diagnosed with ASD.  -->
 
