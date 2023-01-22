@@ -8,18 +8,12 @@ const OLD = "old";
 const NEW = "new";
 
 export default function ModuleChat({ modules }: ModuleChatProps) {
-  const questionTypeMap = {
-    "general": OLD,
-    "work": OLD,
-    "relevantQuestions": NEW,
-    "leadingQuestions": NEW,
-    "rightAmount": NEW
-  };
   const [h, setH] = useState([]);
-  const active_modules = modules.filter((m: any) => m.active);
-  const questionType = questionTypeMap[active_modules[0].title];  
-
-
+  const active_modules = modules?.filter((m: any) => m.active);
+  let questionType = NEW;
+  if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
+    questionType = OLD;
+  }
 
   const [cs, setCs] = useState({
     draft: "",
@@ -40,18 +34,15 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       shouldAutoPlay: isIOS ? false : true,
     },
     numProblems: 10,
-  });
-
-  if (questionType == OLD) {
-    cs.sentiments = [
+    questionType: questionType,
+    sentiments: [
       { title: "positive", active: true },
       { title: "neutral", active: true },
       { title: "negative", active: true },
-    ];
-  }
+    ]
+  });
 
   cs.questionType = questionType;
-
   const history = {
     value: h,
     setValue: setH,
