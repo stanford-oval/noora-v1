@@ -60,8 +60,6 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       });
   }, [modules]);
 
-  let new_active = modules.filter((m: any) => m.active);
-
 
   return (
     <div className="bg-gray-100 py-4" id="homeChat">
