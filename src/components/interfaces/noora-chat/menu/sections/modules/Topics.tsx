@@ -5,11 +5,11 @@ import { PlusIcon } from "@heroicons/react/solid";
 export default
     function Topics({ convoState }: any) {
         let modulesToUse = convoState.value.modules;
-        if (["general", "work"].includes(convoState.value.modules.filter((m: any) => m.active)[0].title)) {
-            modulesToUse = modulesToUse.filter((m: any) => (m.title == "general" || m.title == "work"));
+        if (["Empathy: General", "Empathy: Work Setting"].includes(convoState.value.modules.filter((m: any) => m.active)[0].title)) {
+            modulesToUse = modulesToUse.filter((m: any) => (m.title == "Empathy: General" || m.title == "Empathy: Work Setting"));
         }
         else {
-            modulesToUse = modulesToUse.filter((m: any) => (m.title != "general" && m.title != "work"));
+            modulesToUse = modulesToUse.filter((m: any) => (m.title != "Empathy: General" && m.title != "Empathy: Work Setting"));
         }
     return (
         <div>

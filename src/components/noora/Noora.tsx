@@ -39,12 +39,12 @@ export default function Noora() {
               modules={(selectedModule.module == "all"
                 ? Object.values(modules).map((m: any) => {
                   if (m.module == "all") return;
-                  return { title: m.module, active: true, fixed: true };
+                  return { title: m.title, active: true, fixed: true };
                 })
                 : Object.values(modules).map((m: any) => {
                   if (m.module == "all") return;
                   return {
-                    title: m.module,
+                    title: m.title,
                     active: selectedModule.module == m.module,
                     fixed: true,
                   };
