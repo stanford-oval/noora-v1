@@ -5,11 +5,11 @@ import { PlusIcon } from "@heroicons/react/solid";
 export default
     function Topics({ convoState }: any) {
         let modulesToUse = convoState.value.modules;
-        if (["general", "work"].includes(convoState.value.modules.filter((m: any) => m.active)[0].title)) {
-            modulesToUse = modulesToUse.filter((m: any) => (m.title == "general" || m.title == "work"));
+        if (["Empathy: General", "Empathy: Work Setting"].includes(convoState.value.modules.filter((m: any) => m.active)[0].displayName)) {
+            modulesToUse = modulesToUse.filter((m: any) => (m.displayName == "Empathy: General" || m.displayName == "Empathy: Work Setting"));
         }
         else {
-            modulesToUse = modulesToUse.filter((m: any) => (m.title != "general" && m.title != "work"));
+            modulesToUse = modulesToUse.filter((m: any) => (m.displayName != "Empathy: General" && m.displayName != "Empathy: Work Setting"));
         }
     return (
         <div>
@@ -28,7 +28,7 @@ export default
                                     // toggle category active/inactive
                                     let newModules = convoState.value.modules.map((m: any) => {
                                         if (m.title == module.title)
-                                            return { title: m.title, active: !m.active };
+                                            return { title: m.title, displayName: m.displayName, active: !m.active };
                                         else return m;
                                     });
                                     convoState.setValue((cs: any) => ({
@@ -44,7 +44,7 @@ export default
                                         : "bg-gray-200 border-gray-500 text-gray-600"
                                 )}
                             >
-                                {module.title}{" "}
+                                {module.displayName}{" "}
                                 {module.active ? (
                                     <span className="group-disabled:hidden">&#x2715;</span>
                                 ) : (
