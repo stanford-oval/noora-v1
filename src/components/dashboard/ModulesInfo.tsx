@@ -18,7 +18,7 @@ export default function ModulesInfo() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 flex flex-col md:flex-row items-stretch justify-center w-full gap-2">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 flex-col md:flex-row items-stretch justify-center w-full gap-2">
         {Object.values(modules).map((module) => (
           <div key={module.title} className="group relative">
             <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
