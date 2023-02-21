@@ -14,7 +14,7 @@ export default
     return (
         <div>
             Topics:{" "}
-            <span className="space-x-1">
+            <span className="space-x-1 space-y-1">
                 {modulesToUse
                     // .sort((m1: any, m2: any) => (m2.active && !m1.active ? 1 : -1))
                     .map((module: any) => {
