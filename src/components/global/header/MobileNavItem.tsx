@@ -62,7 +62,7 @@ export default function MobileNavItem({
 
   return (
     <Link href={href}>
-      <a className={navItemStyle}>{name}</a>
+      <a className={navItemStyle} onClick={() => { if (active) window.location.reload() }}>{name}</a>
     </Link>
   );
 }
