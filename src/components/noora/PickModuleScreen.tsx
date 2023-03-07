@@ -45,8 +45,8 @@ export default function PickModuleScreen({ open, setOpen }: any) {
 function PopupContents(setOpen: any) {
     return (
         <div>
-            <div className="pb-4 text-slate-700 flex flex-col gap-y-2 text-center">
-                <h1 className="inline font-bold text-noora-secondary font-display text-3xl tracking-tight">
+            <div className="pb-4 text-slate-700 flex flex-col gap-y-1 md:gap-y-2 text-center">
+                <h1 className="inline font-bold text-noora-secondary font-display text-2xl md:text-3xl tracking-tight">
                     What do you want to{" "}
                     <span className="text-noora-primary">practice</span>?
                 </h1>

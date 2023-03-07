@@ -20,6 +20,7 @@ export default function Noora() {
     if (!key) {
       setShowPickModuleScreen(true);
     } else {
+      setShowPickModuleScreen(false);
       setSelectedModule(modules[key as keyof typeof modules]);
     }
   }, [router.query, showPickModuleScreen]);
