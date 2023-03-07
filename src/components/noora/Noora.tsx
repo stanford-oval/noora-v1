@@ -4,11 +4,13 @@ import { useRouter } from "next/router";
 import modules from "../../data/modules";
 import Preamble from "./Preamble";
 import ModuleChat from "./ModuleChat";
+import PickModuleScreen from "./PickModuleScreen";
 
 export default function Noora() {
   const router = useRouter();
 
   const [selectedModule, setSelectedModule] = useState(modules["general"]);
+  const [showPickModuleScreen, setShowPickModuleScreen] = useState(false);
 
   useEffect(() => {
     const key: any =
@@ -17,6 +19,7 @@ export default function Noora() {
 
     if (!key) {
       setSelectedModule(modules["general"]);
+      setShowPickModuleScreen(true);
     } else {
       setSelectedModule(modules[key as keyof typeof modules]);
     }
@@ -26,12 +29,12 @@ export default function Noora() {
       <Page
         title={
           selectedModule
-            ? `${selectedModule.title} ${selectedModule.title == "All" ? "Modules" : "Module"
-            }`
+            ? `${selectedModule.title} Module`
             : "Noora"
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social conversation of individuals with ASD."
       >
+        {showPickModuleScreen && <PickModuleScreen />}
         {selectedModule ? (
           <div>
             <Preamble module={selectedModule} />
