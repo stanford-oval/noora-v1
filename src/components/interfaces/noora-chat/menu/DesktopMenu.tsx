@@ -9,10 +9,12 @@ import { Switch } from '@headlessui/react'
 import clsx from "clsx";
 import { MenuAlt2Icon } from "@heroicons/react/outline";
 import { isIOS } from 'react-device-detect';
+import Clock from "./sections/timer/Clock";
 
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
+    { title: "Time Taken", component: <Clock convoState={convoState} /> },
     {
       title: "Modules",
       component: <Modules convoState={convoState} />,

@@ -8,7 +8,7 @@ const useTimer = (initialState = 0) => {
 
     const handleStart = () => {
         setIsActive(true)
-        setIsPaused(true)
+        setIsPaused(false)
         countRef.current = setInterval(() => {
             setTimer((timer) => timer + 1)
         }, 1000)
@@ -16,11 +16,11 @@ const useTimer = (initialState = 0) => {
 
     const handlePause = () => {
         clearInterval(countRef.current)
-        setIsPaused(false)
+        setIsPaused(true)
     }
 
     const handleResume = () => {
-        setIsPaused(true)
+        setIsPaused(false)
         countRef.current = setInterval(() => {
             setTimer((timer) => timer + 1)
         }, 1000)
@@ -29,7 +29,7 @@ const useTimer = (initialState = 0) => {
     const handleReset = () => {
         clearInterval(countRef.current)
         setIsActive(false)
-        setIsPaused(false)
+        setIsPaused(true)
         setTimer(0)
     }
 

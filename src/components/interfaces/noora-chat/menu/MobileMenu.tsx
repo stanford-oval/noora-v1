@@ -9,7 +9,7 @@ export default function MobileMenu() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
 
     return (
-        <div>
+        <div className="hidden">
             <Transition.Root show={sidebarOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
                     <Transition.Child
