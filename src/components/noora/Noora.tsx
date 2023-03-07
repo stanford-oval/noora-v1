@@ -18,12 +18,11 @@ export default function Noora() {
       router.asPath.match(new RegExp(`[&?]module=(.*)(&|$)`));
 
     if (!key) {
-      setSelectedModule(modules["general"]);
       setShowPickModuleScreen(true);
     } else {
       setSelectedModule(modules[key as keyof typeof modules]);
     }
-  }, [router.query]);
+  }, [router.query, showPickModuleScreen]);
   return (
     <div>
       <Page

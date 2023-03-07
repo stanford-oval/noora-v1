@@ -1,14 +1,15 @@
-import { Fragment, useRef, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+
+import Link from "next/link";
+import modules from "../../data/modules";
 
 export default function PickModuleScreen() {
     const [open, setOpen] = useState(true)
 
-    const cancelButtonRef = useRef(null)
-
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+            <Dialog as="div" className="relative z-10" onClose={setOpen}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -32,45 +33,44 @@ export default function PickModuleScreen() {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                <div>
-                                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                                        Icon
-                                    </div>
-                                    <div className="mt-3 text-center sm:mt-5">
-                                        <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                                            Payment successful
-                                        </Dialog.Title>
-                                        <div className="mt-2">
-                                            <p className="text-sm text-gray-500">
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius aliquam laudantium explicabo
-                                                pariatur iste dolorem animi vitae error totam. At sapiente aliquam accusamus facere veritatis.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
-                                    <button
-                                        type="button"
-                                        className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        Deactivate
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
-                                        onClick={() => setOpen(false)}
-                                        ref={cancelButtonRef}
-                                    >
-                                        Cancel
-                                    </button>
-                                </div>
+                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:m-4 sm:max-w-4xl sm:p-6">
+                                <PopupContents />
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
                 </div>
             </Dialog>
         </Transition.Root>
+    )
+}
+
+function PopupContents() {
+    return (
+        <div>
+            <div className="grid md:grid-cols-3 sm:grid-cols-2 flex-col md:flex-row items-stretch justify-center w-full gap-2">
+                {Object.values(modules).map((module) => (
+                    <div key={module.title} className="group relative">
+                        <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
+                            <div>
+                                <span className="rounded-lg inline-flex bg-indigo-50 border-2 border-indigo-100 text-indigo-700 p-0.5">
+                                    <module.icon className="h-6 w-6" />
+                                </span>
+                            </div>
+                            <div className="mt-4">
+                                <h3 className="text-xl font-bold">
+                                    <Link href={"/noora?module=" + module.module}>
+                                        <a className="text-noora-secondary-light">
+                                            {/* Extend touch target to entire panel */}
+                                            <span className="absolute inset-0" aria-hidden="true" />
+                                            {module.title}
+                                        </a>
+                                    </Link>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
     )
 }

@@ -24,29 +24,6 @@ export default function Preamble({ module }: any) {
         </h1>
         <div className="mt-3 text-lg font-base tracking-tight text-gray-700 flex flex-col gap-y-2">
           <p>{module.selectedDesc}</p>
-
-          {/* <p>
-            For example, if Noora says “
-            <b className="text-noora-primary special-underline">
-              {module.example.noora}
-            </b>
-            ,” a good response might be “
-            <b className="text-noora-secondary-light special-underline">
-              {module.example.goodUser}
-            </b>
-            ” <br />
-            <span className="text-gray-500">
-              {module.example.goodExplanation}
-            </span>
-          </p>
-
-          <p>
-            If you replied with “
-            <b className="text-noora-secondary-light special-underline">
-              {module.example.badUser}
-            </b>
-            ,” Noora would give you feedback for improving your reply.
-          </p> */}
         </div>
       </div>
     </div>
