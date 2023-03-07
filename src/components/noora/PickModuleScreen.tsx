@@ -1,6 +1,7 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-
+import { faShuffle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import modules from "../../data/modules";
 
@@ -79,6 +80,14 @@ function PopupContents(setOpen: any) {
                     </div>
                 ))}
             </div>
-        </div>
+
+            <div className="w-full">
+                <Link href={"/noora?module=" + (modules[Object.keys(modules)[Object.keys(modules).length * Math.random() << 0] as keyof typeof modules]).module}>
+                    <button className="rounded-lg py-2 outline-none bg-noora-primary hover:bg-noora-primary-dark text-white mx-auto mt-4 w-full text-lg font-medium flex justify-center">
+                        <FontAwesomeIcon icon={faShuffle} className="w-5 h-5 mt-1 mr-2" /> Choose for me
+                    </button>
+                </Link>
+            </div>
+        </div >
     )
 }
