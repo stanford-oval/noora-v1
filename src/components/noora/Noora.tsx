@@ -33,7 +33,7 @@ export default function Noora() {
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social conversation of individuals with ASD."
       >
-        {showPickModuleScreen && <PickModuleScreen />}
+        {showPickModuleScreen && <PickModuleScreen open={showPickModuleScreen} setOpen={setShowPickModuleScreen} />}
         {selectedModule ? (
           <div>
             <Preamble module={selectedModule} />
