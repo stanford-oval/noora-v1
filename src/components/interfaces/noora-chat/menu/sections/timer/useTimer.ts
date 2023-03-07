@@ -1,7 +1,17 @@
 import { useState, useRef } from 'react';
 
-const useTimer = (initialState = 0) => {
-    const [timer, setTimer] = useState(initialState)
+const useTimer = (convoState: any) => {
+    const timer = convoState.value.clock.currentTimeSpent
+    const incrementTimer = () => {
+        convoState.setValue((cs: any) => {
+            return {
+                ...cs, clock: {
+                    currentTimeSpent: cs.clock.currentTimeSpent + 1,
+                }
+            }
+        })
+    }
+
     const [isActive, setIsActive] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
     const countRef: any = useRef(null)
@@ -10,7 +20,7 @@ const useTimer = (initialState = 0) => {
         setIsActive(true)
         setIsPaused(false)
         countRef.current = setInterval(() => {
-            setTimer((timer) => timer + 1)
+            incrementTimer()
         }, 1000)
     }
 
@@ -19,21 +29,20 @@ const useTimer = (initialState = 0) => {
         setIsPaused(true)
     }
 
-    const handleResume = () => {
-        setIsPaused(false)
-        countRef.current = setInterval(() => {
-            setTimer((timer) => timer + 1)
-        }, 1000)
-    }
-
     const handleReset = () => {
         clearInterval(countRef.current)
         setIsActive(false)
         setIsPaused(true)
-        setTimer(0)
+        convoState.setValue((cs: any) => {
+            return {
+                ...cs, clock: {
+                    currentTimeSpent: 0,
+                }
+            }
+        })
     }
 
-    return { timer, isActive, isPaused, handleStart, handlePause, handleResume, handleReset }
+    return { timer, isActive, isPaused, handleStart, handlePause, handleReset }
 }
 
 export default useTimer

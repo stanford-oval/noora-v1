@@ -35,6 +35,10 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
     },
     numProblems: 10,
     questionType: questionType,
+    clock: {
+      currentTimeSpent: 0,
+      prevTimeSpent: 0,
+    },
     sentiments: [
       { title: "positive", active: true },
       { title: "neutral", active: true },

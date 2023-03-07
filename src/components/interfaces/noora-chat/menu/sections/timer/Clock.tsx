@@ -1,12 +1,12 @@
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import useTimer from './useTimer';
 import { faRepeat } from '@fortawesome/free-solid-svg-icons';
 
 export default function Clock({ convoState }: any) {
 
-    const { timer, isActive, isPaused, handleStart, handlePause, handleResume, handleReset } = useTimer(0)
+    const { timer, isActive, isPaused, handleStart, handlePause, handleReset } = useTimer(convoState)
 
     useEffect(() => {
         handleStart()
@@ -32,7 +32,7 @@ export default function Clock({ convoState }: any) {
                     <p className="text-xs text-gray-400 -mt-1">total time spent</p>
                 </div>
                 <div className='space-x-3 flex flex-row justify-center pt-2'>
-                    <button onClick={() => { if (isPaused) handleResume(); else handlePause(); }}>
+                    <button onClick={() => { if (isPaused) handleStart(); else handlePause(); }}>
                         <FontAwesomeIcon icon={
                             isPaused ? faPlay :
                                 faPause
