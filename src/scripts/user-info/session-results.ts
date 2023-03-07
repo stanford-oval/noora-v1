@@ -10,6 +10,8 @@ export function saveSessionResult(progressObj: any) {
         }
     }
 
+    console.log(progressObj)
+
     progressObj.forEach((problem: any) => {
         let sentiment = problem.statementCategory.split("/")[1]
         let sentimentKey = sentiment as keyof typeof result.scores

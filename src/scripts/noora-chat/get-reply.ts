@@ -169,6 +169,8 @@ async function getRating(
     answers = [explanation];
   }
 
+  console.log(statementObj)
+
   // SET PROGRESS
   convoState.setValue((cs: any) => ({
     ...cs,
@@ -176,27 +178,16 @@ async function getRating(
       ...cs.progress,
       {
         idx: statementIdx,
-        statement: statementObj[1],
-        statementCategory: statementObj[0],
+        statement: statementObj.val.text,
+        statementCategory: statementObj.val.task_name,
         reply: message,
         explanation: explanation,
         replyCategory: null,
-        timeTaken: cs.clock.currentTimeSpent,
         goodAnswer: goodAnswer,
         goodReplyConfidence: goodReplyConfidence,
         goodReplyThreshold: convoState.value.model.goodReplyThreshold,
       },
     ],
-  }));
-
-  // RESET CLOCK
-  convoState.setValue((cs: any) => ({
-    ...cs,
-    clock: {
-      ...cs.clock,
-      currentTimeSpent: 0,
-      prevTimeSpent: cs.prevTimeSpent + cs.clock.currentTimeSpent,
-    },
   }));
 
   return answers;
