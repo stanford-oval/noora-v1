@@ -8,7 +8,7 @@ const problems = data.data;
 function makeIndex(problems: any[]) {
   let counter = 0;
   return (problems.map(p => {
-    return ({"idx": counter++, "val": p})
+    return ({ "idx": counter++, "val": p })
   }));
 }
 
@@ -181,11 +181,22 @@ async function getRating(
         reply: message,
         explanation: explanation,
         replyCategory: null,
+        timeTaken: cs.clock.currentTimeSpent,
         goodAnswer: goodAnswer,
         goodReplyConfidence: goodReplyConfidence,
         goodReplyThreshold: convoState.value.model.goodReplyThreshold,
       },
     ],
+  }));
+
+  // RESET CLOCK
+  convoState.setValue((cs: any) => ({
+    ...cs,
+    clock: {
+      ...cs.clock,
+      currentTimeSpent: 0,
+      prevTimeSpent: cs.prevTimeSpent + cs.clock.currentTimeSpent,
+    },
   }));
 
   return answers;
@@ -252,7 +263,7 @@ function getStatementIdx(
 
   let newRandomIdx = 0;
   while (true) {
-    let possibleIdxs = statementsList.map(c=>c.idx);
+    let possibleIdxs = statementsList.map(c => c.idx);
     const randomElement = statementsList[Math.floor(Math.random() * possibleIdxs.length)];
     newRandomIdx = randomElement.idx;
     if (seenIdxs.indexOf(newRandomIdx) == -1) break;

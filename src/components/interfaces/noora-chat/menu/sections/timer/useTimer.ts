@@ -17,6 +17,8 @@ const useTimer = (convoState: any) => {
     const countRef: any = useRef(null)
 
     const handleStart = () => {
+        if (isActive)
+            return
         setIsActive(true)
         setIsPaused(false)
         countRef.current = setInterval(() => {

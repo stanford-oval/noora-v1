@@ -14,7 +14,7 @@ import Clock from "./sections/timer/Clock";
 export default function DesktopMenu({ convoState }: any) {
   const sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
-    { title: "Time Taken", component: <Clock convoState={convoState} /> },
+    // { title: "Time Taken", component: <Clock convoState={convoState} /> }, // (TODO)
     {
       title: "Modules",
       component: <Modules convoState={convoState} />,
