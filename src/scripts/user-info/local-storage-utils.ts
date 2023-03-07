@@ -9,6 +9,10 @@ export function writeResultToLocal(result: any) {
     writeToLocal("progress", JSON.stringify(result))
 }
 
+export function clearProgress() {
+    writeToLocal("progress", JSON.stringify([]))
+}
+
 export function writeToLocal(key: string, value: any) {
     if (typeof window !== "undefined") {
         localStorage.setItem(key, value)

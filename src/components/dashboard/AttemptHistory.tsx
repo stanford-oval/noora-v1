@@ -4,7 +4,6 @@ import dateFormat from "dateformat";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import clsx from "clsx";
-import Progress from "../interfaces/noora-chat/menu/sections/Progress";
 
 export default function AttemptHistory() {
     const { data } = useSWR("progress", key => {

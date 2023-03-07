@@ -1,4 +1,5 @@
 import React from "react";
+import { clearProgress } from "../../scripts/user-info/local-storage-utils";
 
 export default function UserHero() {
   return (
@@ -13,6 +14,7 @@ export default function UserHero() {
           <div>
             <h1 className="font-bold text-noora-secondary text-3xl">Guest</h1>
             <p className="text-slate-700">No login required! Just get started practicing.</p>
+            <button className="py-2 px-4 mt-2 rounded-full text-xs bg-noora-secondary-light text-white hover:bg-noora-secondary" onClick={() => {clearProgress(); window.location.replace(location.pathname);}}>Reset progress</button>
           </div>
         </div>
       </div>
