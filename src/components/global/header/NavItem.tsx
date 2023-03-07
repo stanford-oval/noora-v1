@@ -37,7 +37,7 @@ export default function NavItem({
 
   return (
     <Link href={href}>
-      <a className={navItemStyle} onClick={() => { if (active) window.location.reload() }}>{name}</a>
+      <a className={navItemStyle} onClick={() => { if (active) { window.location.replace(location.pathname); } }}>{name}</a>
     </Link>
   );
 }

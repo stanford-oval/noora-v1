@@ -21,11 +21,10 @@ export default function MobileNavItem({
   const activeStyles = "bg-indigo-50 border-noora-primary text-gray-900";
   const defaultStyles =
     "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700";
-  const navItemStyle = `trans-150 flex justify-items-stretch items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6 ${
-    (dropRoutes && active && !expanded) || (!dropRoutes && active)
+  const navItemStyle = `trans-150 flex justify-items-stretch items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6 ${(dropRoutes && active && !expanded) || (!dropRoutes && active)
       ? activeStyles
       : defaultStyles
-  }`;
+    }`;
 
   if (dropRoutes) {
     return (
@@ -62,7 +61,7 @@ export default function MobileNavItem({
 
   return (
     <Link href={href}>
-      <a className={navItemStyle} onClick={() => { if (active) window.location.reload() }}>{name}</a>
+      <a className={navItemStyle} onClick={() => { if (active) window.location.replace(location.pathname); }}>{name}</a>
     </Link>
   );
 }
@@ -71,9 +70,8 @@ function NestedItem({ href, name, active }: NestedItemProps) {
   const activeStyles = "bg-indigo-50 border-noora-primary text-green-900";
   const defaultStyles =
     "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700";
-  const navItemStyle = `trans-300 block pl-8 pr-4 py-2 border-l-4 text-base font-medium sm:pr-6 ${
-    active ? activeStyles : defaultStyles
-  }`;
+  const navItemStyle = `trans-300 block pl-8 pr-4 py-2 border-l-4 text-base font-medium sm:pr-6 ${active ? activeStyles : defaultStyles
+    }`;
 
   if (href.includes("http"))
     return (
