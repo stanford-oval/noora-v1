@@ -17,24 +17,24 @@ export default async function handler(
     await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
-
     });
 
     const openai = new OpenAIApi(configuration);
 
-    const response = await openai.createCompletion(req.body);
+    const response = await openai.createChatCompletion(req.body);
 
     let text = "";
-    let logprobs = {};
+    // let logprobs = {};
 
     if (response && response.data && response.data.choices) {
-      if (response.data.choices[0].text) text = response.data.choices[0].text;
+      if (response.data.choices[0].message && response.data.choices[0].message.content)
+        text = response.data.choices[0].message.content;
 
-      if (response.data.choices[0].logprobs)
-        logprobs = response.data.choices[0].logprobs;
+      // if (response.data.choices[0].logprobs)
+      //   logprobs = response.data.choices[0].logprobs;
     }
 
-    res.status(200).json({ text: text, logprobs: logprobs });
+    res.status(200).json({ text: text }); //, logprobs: logprobs });
   } catch {
     res.status(429).json({ error: "Rate limit exceeded" });
   }
