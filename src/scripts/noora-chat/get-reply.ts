@@ -48,9 +48,6 @@ export default async function getReply(
       replies[0]["sentiment"] = statement.sentiment;
     }
 
-
-
-
   } else if (command == "rate-reply") {
     convoState.setValue((cs: any) => ({
       ...cs,
@@ -95,42 +92,22 @@ async function getRating(
   let explanation = "";
   let goodAnswer = false;
   let answers = [];
-  let goodReplyConfidence = -1;
 
   try {
     // first get good/bad answer
-    let output = await fetch("/api/openai", {
-      method: "POST",
-      body: JSON.stringify({
-        model: convoState.value.model.name,
-        prompt: prompt,
-        temperature: 0,
-        max_tokens: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-        logprobs: 5,
-      }),
-    }).then((res) => res.json());
+    let output = await Completion({
+      model: convoState.value.model.name,
+      prompt: prompt,
+      temperature: 0,
+      max_tokens: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
+    });
 
-    let probsObj = output["logprobs"]["top_logprobs"][0];
+    let firstResponse = output.trim();
+    console.log("First response: " + firstResponse);
 
-    let probs = softmax(Object.values(probsObj));
-    let topTokens = Object.keys(probsObj);
-
-    let goodProb = 0.000001;
-    if (topTokens.indexOf(" Good") != -1)
-      goodProb = probs[topTokens.indexOf(" Good")];
-    let badProb = 0.000001;
-    if (topTokens.indexOf(" Bad") != -1)
-      badProb = probs[topTokens.indexOf(" Bad")];
-    goodReplyConfidence = goodProb / (goodProb + badProb);
-
-    let threshold =
-      message.length < 3 ? 0.9 : convoState.value.model.goodReplyThreshold; //  length filtering
-    console.log(
-      `"good" token probability: ${goodProb}. "bad token" probability: ${badProb}. threshold: ${threshold}`
-    );
-    if (goodReplyConfidence > threshold) {
+    if (firstResponse === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
     } else {
@@ -139,8 +116,6 @@ async function getRating(
     }
 
     console.log("Classification: " + classification);
-
-    // console.log(prompt + " " + classification);
 
     output = await Completion({
       model: convoState.value.model.name,
@@ -184,8 +159,6 @@ async function getRating(
         explanation: explanation,
         replyCategory: null,
         goodAnswer: goodAnswer,
-        goodReplyConfidence: goodReplyConfidence,
-        goodReplyThreshold: convoState.value.model.goodReplyThreshold,
       },
     ],
   }));
