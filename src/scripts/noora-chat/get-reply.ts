@@ -121,7 +121,7 @@ async function getRating(
       model: convoState.value.model.name,
       prompt: prompt + " " + classification,
       temperature: convoState.value.model.temperature,
-      max_tokens: 40,
+      max_tokens: 256,
       frequency_penalty: convoState.value.frequencyPenalty,
       presence_penalty: convoState.value.model.presencePenalty,
       stop: "\n",
