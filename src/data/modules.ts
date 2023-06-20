@@ -8,6 +8,7 @@ import {
   EyeIcon,
   HeartIcon,
   FlagIcon,
+  FireIcon,
 } from "@heroicons/react/outline";
 
 const modules = {
@@ -82,6 +83,14 @@ const modules = {
     selectedDesc:
       "Try not to bring up topics that aren’t relevant, no matter how interesting you think they are.",
     icon: FlagIcon,
+  },
+  sarcasm: {
+    title: "Sarcasm",
+    module: "sarcasm",
+    desc: "In this module, you will learn how to respond appropriately to sarcasm.",
+    selectedDesc:
+      "Identifying sarcastic statements can be hard! If you think someone is being sarcastic to you, try either acknowledging the sarcasm and being humorous back or just responding empathetically.",
+    icon: FireIcon,
   },
 };
 

@@ -2,8 +2,10 @@ import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
 import data from "../../data/statement_bank/data.json";
+import JSConfetti from 'js-confetti';
 
 const problems = data.data;
+const wrongReplies = ['Close!', 'Almost!', 'Almost there.', 'Warm, but not quite there.']
 
 function makeIndex(problems: any[]) {
   let counter = 0;
@@ -110,6 +112,7 @@ async function getRating(
     if (firstResponse === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
+
     } else {
       classification = "Bad reply.";
       goodAnswer = false;
@@ -121,7 +124,7 @@ async function getRating(
       model: convoState.value.model.name,
       prompt: prompt + " " + classification,
       temperature: convoState.value.model.temperature,
-      max_tokens: 256,
+      max_tokens: 128,
       frequency_penalty: convoState.value.frequencyPenalty,
       presence_penalty: convoState.value.model.presencePenalty,
       stop: "\n",
@@ -132,9 +135,17 @@ async function getRating(
 
     if (goodAnswer) {
       answers.push({ text: "Good reply!", sentiment: "positive" });
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti({
+        confettiColors: [
+          '#652876', '#8828A3', '#AD73BE', '#836794', '#7116A8', '#4F2689',
+        ],
+        emojiSize: 200,
+        confettiNumber: 30,
+      });
       answers.push({ text: explanation, sentiment: "positive" });
     } else {
-      answers.push({ text: "Not quite!" });
+      answers.push({ text: wrongReplies[Math.floor(Math.random()*wrongReplies.length)] });
       answers.push({ text: explanation });
       answers.push({ text: target.trim(), suggestion: true });
     }
@@ -174,7 +185,7 @@ export async function getStatement(convoState: any) {
   if (convoState.value.questionType == "old") {
     const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
     const sentiment = getRandomItem(sentiments).title;
-    filtered_problems = filtered_problems.filter((c: any) => c.val.sentiment == sentiment);
+    filtered_problems = filtered_problems.filter((c: any) => c.val.sentiment.includes(sentiment));
   }
   // await timeout(700);
   // choose statement
@@ -228,6 +239,7 @@ function getStatementIdx(
   let newRandomIdx = 0;
   while (true) {
     let possibleIdxs = statementsList.map(c => c.idx);
+    console.log(possibleIdxs)
     const randomElement = statementsList[Math.floor(Math.random() * possibleIdxs.length)];
     newRandomIdx = randomElement.idx;
     if (seenIdxs.indexOf(newRandomIdx) == -1) break;

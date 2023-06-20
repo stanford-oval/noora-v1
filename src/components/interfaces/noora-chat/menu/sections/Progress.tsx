@@ -46,7 +46,7 @@ function CheckMarks({ convoState }: any) {
       {[...Array(convoState.value.numProblems).keys()].map((i: number) => {
         const baseStyles =
           "h-10 w-10 rounded-full flex items-center justify-center border-2";
-        const wrongStyles = "bg-red-400 text-white border-red-600";
+        const wrongStyles = "bg-blue-400 text-white border-blue-600";
         const correctStyles = "bg-green-400 text-white border-green-600";
         const notDoneStyles =
           "bg-white border-dashed border-gray-400 text-gray-400";

@@ -43,6 +43,12 @@ export default function Instructions(activeModules: any) {
         speech: "If I say, “I can’t wait for the weekend”, you can reply, “I can’t either! I’m looking forward to getting some great rest.”",
       };
     }
+    else if (activeModules[0].title == 'sarcasm') {
+      return {
+        text: <div>If I say, <span className="font-bold text-noora-primary">“Eating vegetables and exercising regularly is just sooo boring and overrated. Who needs good health and a longer life anyway?”</span> you can reply with a tongue-in-cheek but empathetic statement like<span className="font-bold text-noora-secondary-light"> “Who would want to eat those nasty greens? Just kidding, I totally see what you mean — everyone should eat vegetables!”</span></div>,
+        speech: "If I say, 'Eating vegetables and exercising regularly is just sooo boring and overrated. Who needs good health and a longer life anyway?' you can reply with a tongue-in-cheek but empathetic statement like 'Who would want to eat those nasty greens? Just kidding, I totally see what you mean — everyone should eat vegetables!'",
+      };
+    }
     // BASE CASE if (activeModules[0].title == 'general' || activeModules[0].title == 'work') {
     return {
       text: <div>If I say, <span className="font-bold text-noora-primary">“I had a good weekend,”</span> you should say that this is a <span className="font-bold text-noora-secondary-light">positive </span>statement. Then, you can reply, <span className="font-bold text-noora-secondary-light">“I&apos;m happy for you! What did you do?”</span></div>,

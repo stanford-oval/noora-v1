@@ -6,10 +6,13 @@ export function messageToSpeechParams(convoState: any, message: any, audioRef: a
     let style = "neutral"
     if (message.style)
         style = message.style
-    else if (message.sentiment == "positive")
+    else if (message.sentiment && message.sentiment.includes("positive")) {
+        console.log("positive")
         style = "cheerful"
-    else if (message.sentiment == "negative")
+    } else if (message.sentiment && message.sentiment.includes("negative")) {
+        console.log("negative")
         style = "sad"
+    }
 
     return {
         text: text,

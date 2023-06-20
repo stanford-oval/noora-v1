@@ -5,504 +5,504 @@
       "response": "Hiking is a great way to get some exercise.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "We went to the beach last weekend.",
       "response": "That sounds like a lot of fun. I'm glad you had a good time.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "I sold a bunch of stuff at my garage sale last weekend.",
       "response": "That's great! I'm so happy for you!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "It's beautiful weather today.",
       "response": "Yes, it's lovely weather.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "I just started a workout routine.",
       "response": "Good for you! How is it going?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "It's really fun going to the dog park.",
       "response": "We should go together some time!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "My friend is helping me learn Spanish.",
       "response": "That's really cool! How are you finding it?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "I got a really cheap airplane ticket for my vacation.",
       "response": "That's great! I'm sure you'll have a wonderful time.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "The weather was great last weekend.",
       "response": "Yes, it was! What did you do last weekend?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "My daughter loves to take walks.",
       "response": "That's wonderful! It's great that she enjoys getting some exercise.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "I just joined a volunteer group.",
       "response": "Why did you join a volunteer group?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "I love working in my garden.",
       "response": "Gardening is a great hobby!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "positive"
+      "sentiment": ["positive", "neutral"]
     },
     {
       "text": "Tomorrow is supposed to be warm.",
       "response": "What's the temperature supposed to be?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I take a run every morning.",
       "response": "Good for you! Where do you run?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "There are still a lot of businesses that mail paper catalogs.",
       "response": "Yes, there are. Many people enjoy receiving catalogs in the mail.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "It's a good idea to study every night instead of waiting until the test.",
       "response": "I think that's a great idea!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "We went to the beach over the weekend.",
       "response": "That sounds like a lot of fun! I'm glad you had a good time.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I usually go out on Friday nights, but this week I'm staying home.",
       "response": "That's sounds like a good plan.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I've been listening to books on tape.",
       "response": "What books have you been listening to?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "There are some new shows on tv.",
       "response": "That's great! I'd love to watch some with you.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I talked with my professor about the class.",
       "response": "Good for you! I hope it went well.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I'm looking for a job.",
       "response": "What kind of job are you looking for?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I applied for a few jobs.",
       "response": "That's great, I hope you get one of them!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "My brother and I got in an argument last night.",
       "response": "I'm sorry to hear that, what happened?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I had an upset stomach last night.",
       "response": "I'm sorry to hear that. I hope you're feeling better now.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I was so sick over the weekend.",
       "response": "That sounds terrible. I hope you're feeling better now.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My boyfriend lost his job.",
       "response": "I'm sorry to hear that. I hope he's doing okay.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My cat ate something and was so sick last night.",
       "response": "Oh no, what did your cat eat?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I had to take my daughter to the emergency room last week.",
       "response": "I'm so sorry to hear that. Is she doing better?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I had the flu that lasted a week.",
       "response": "I'm sorry to hear that, I hope you're feeling better now.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My aunt wants to visit but my house is too small.",
       "response": "That sounds really tough. I know how you feel.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I couldn't figure out the new computer program.",
       "response": "What was the problem?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My friend's mother died over the weekend.",
       "response": "I'm so sorry for her loss. If there's anything I can do to help, please let me know.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My best friend just found out she has cancer.",
       "response": "I'm so sorry to hear that. How are you holding up?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I have to move out of my apartment.",
       "response": "I hope everything works out for you. Let me know if I can help in any way.",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My landlord sold the house so I have to move out.",
       "response": "Why did he sell the house?",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "It's really nice to work for such a great place.",
       "response": "I'm glad you enjoy working here.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "My boss always gets everyone's input.",
       "response": "It's good that he values everyone's opinion.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "It's super fun working at my job.",
       "response": "I'm glad to hear that you're enjoying your work.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "I always feel supported by my boss.",
       "response": "I'm glad to hear that you feel supported by your boss.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "My coworkers are always there when I need support.",
       "response": "That's great! I'm glad you have supportive coworkers.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "We had so much fun at our last work party.",
       "response": "I'm glad you had a good time! I love work parties!",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "Work had been going well.",
       "response": "I'm glad to hear that. I hope it continues to go well for you.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "I like having lunch with my coworkers.",
       "response": "It's always nice to have a chance to catch up with friends during lunchtime.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "I really have learned a lot at this job.",
       "response": "That's great! Learning is an important part of any job.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "I like having a job with low stress. I feel more productive.",
       "response": "I know how you feel, I've been in a low-stress job before and it's great.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "My job is so close to my house.",
       "response": "That's great! It's so convenient to have a job that's close to home.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "positive"
+      "sentiment": ["positive"]
     },
     {
       "text": "The office is typically very quiet.",
       "response": "That's good to know. Do you like that it's quiet?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "We had a plumber come in today.",
       "response": "Why did you need a plumber to come in?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "We had pest control come into the office today.",
       "response": "I hope that wasn't very disruptive for you.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "There may some changes around the office in the coming weeks.",
       "response": "I'm looking forward to hearing more about the changes.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "Some days at the office feel short and other days can feel very long.",
       "response": "I know what you mean. I sometimes feel that way too.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I'm going to call in a few more people since we're so busy.",
       "response": "I'm glad you have help for your work. Let me know if there's anything I can do.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "We need more hours for this week.",
       "response": "I completely understand. You should definitely talk to your boss about it.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "No one should work in a place where they don't feel happy.",
       "response": "Why do you feel that way?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "There is parking in front of the offices.",
       "response": "That sounds convenient. Do you park your car there?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "I'm taking a mental health day from work next week.",
       "response": "That's great! You deserve a break.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "Communication is very important.",
       "response": "It really is. couldn't agree more.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "There's a lot of collaboration that goes on.",
       "response": "That sounds great! Do you enjoy the collaboration?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "neutral"
+      "sentiment": ["neutral"]
     },
     {
       "text": "No one cleans out the refrigerator at work.",
       "response": "That's so strange, why do you think that is?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "The microwave at work is really filthy.",
       "response": "That's unfortunate. I hope it gets cleaned soon.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "The internet is always crashing at work.",
       "response": "I know how frustrating that can be.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My boss cut back my hours.",
       "response": "I'm so sorry to hear that. I hope you're doing okay.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I had to fire someone today.",
       "response": "That sounds difficult. Why did you have to fire them?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "Some of my coworkers always leave work early.",
       "response": "I hope they're not skipping out on work.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My project manager is so lazy.",
       "response": "That's the worst. How have you been dealing with that?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I did most of the work on our group project and didn't get credit.",
       "response": "That sounds really frustrating. I'm sorry to hear that.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My coworker always takes credit for my work.",
       "response": "I'm sorry to hear that. Have you talked to your coworker about it?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "My office mate talks so much and it's distracting.",
       "response": "I'm sorry to hear that, is there anything I can do to help you?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I'm so tired of my job.",
       "response": "I know exactly how you feel.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "Work is so boring.",
       "response": "I know how you feel. That sounds really tough.",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "There's nothing to do at work but my boss won't let me check my personal emails.",
       "response": "I'm sorry to hear that. Have you talked with your boss about it?",
       "task_type": "old",
       "task_name": "work",
-      "sentiment": "negative"
+      "sentiment": ["negative"]
     },
     {
       "text": "I’m really full from lunch.",
@@ -1463,6 +1463,114 @@
       "response": "I love the diversity of the people and cultures. It's amazing to be able to experience so many different perspectives in one place.",
       "task_type": "new",
       "task_name": "stayOnTrack"
+    },
+    {
+      "text": "Oh, look, another meeting! Because there's nothing I enjoy more than endless discussions that go absolutely nowhere and waste everyone's time.",
+      "response": "Haha ... I can completely understand what you mean: too many meetings is never fun.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Wow, the weather today is just perfect for ruining all my plans.",
+      "response": "Absolutely! The universe seems to have a special talent for aligning weather conditions with our plans, doesn't it?",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, great, another email to read and reply to. My favorite pastime!",
+      "response": "I'm sorry you have to play the eternal game of email catch-up. It can be a lot!",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "The food tastes delicious and so flavorful: it's almost like it didn't expire three months ago.",
+      "response": "Wow, that sounds disastrous. I hope you don't get sick!",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Fantastic! I get to spend my weekend doing household chores. It's the pinnacle of excitement.",
+      "response": "The wonders of dusting, scrubbing, and vacuuming. What a thrill! More seriously though, I'm sorry you have to do this and I hope it's not too painful.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, joy! Another traffic jam to test my patience and appreciation for the scenic view of car bumpers.",
+      "response": "Ah, the symphony of car horns. It's truly a journey to cherish. More seriously though, I hope you get out of that mess soon.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Wonderful, another deadline looming over me like a dark cloud. I thrive under pressure, after all.",
+      "response": "Deadlines are scary! They're like a rollercoaster ride of adrenaline and panic. I hope your deadline goes well!",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "How delightful! Waking up to discover my phone battery died overnight. It's the ultimate thrill of uncertainty.",
+      "response": "Ah, I'm sorry to hear that. Waking up with a dead smartphone is always a surprise.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, just what I needed! More paperwork to drown in. Who doesn't love administrative tasks?",
+      "response": "Paperwork is the worst. I hope it's not too painful.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "What a treat! My favorite TV show is on, and my internet decides to take a vacation.",
+      "response": "Oh no, that sucks! I hope it comes back on soon.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Well, this is just fantastic! I love it when my alarm clock decides to take a break and let me oversleep.",
+      "response": "Oh, I can imagine that must have been quite an unexpected start to your day. Oversleeping can throw off our routines. I'm sorry to hear that!",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, great, another Monday! Just what I needed to make my week absolutely thrilling.",
+      "response": "Mondays can feel a bit overwhelming, but they also present an opportunity to kick-start the week and set the tone for accomplishing great things. It's the beginning of a new chapter filled with possibilities.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Fantastic! My favorite part of grocery shopping is getting stuck behind the slowest person in the store.",
+      "response": "Hey, waiting in line is never fun. I hope the line isn't too long!.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, wow, a traffic jam! Just what I needed to make my commute an absolute delight.",
+      "response": "Traffic jams can be frustrating for sure! But hey, try listening to your favorite podcast or song to pass the time!",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Isn't it amazing? Another sleepless night! I love staring at the ceiling.",
+      "response": "Ah, sleepless nights, the perfect opportunity for introspection, creative thoughts, and enjoying the quiet beauty of the night sky.",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, joy! The joy of searching for misplaced keys in the morning. It's like a daily treasure hunt!",
+      "response": "Hey, I'm sorry to hear that. Did you end up finding your keys?",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Amazing! Another rainy day to indulge in my passion for indoor activities and forgetting what the sun looks like.",
+      "response": "Dang, that sucks. Is it raining tomorrow too?",
+      "task_type": "new",
+      "task_name": "sarcasm"
+    },
+    {
+      "text": "Oh, joy! Another group project at work. Collaborating with colleagues is just the epitome of fun.",
+      "response": "I'm sorry to hear that! I hope it's not too bad.",
+      "task_type": "new",
+      "task_name": "sarcasm"
     }
   ]
 }

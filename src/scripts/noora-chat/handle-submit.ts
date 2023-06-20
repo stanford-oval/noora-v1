@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { saveSessionResult } from "../user-info/session-results";
 import noorasTurn from "./nooras-turn";
 
+
 export default async function handleSubmit(e: any, convoState: any, history: any, message?: string) {
     e.preventDefault();
 
@@ -10,6 +11,8 @@ export default async function handleSubmit(e: any, convoState: any, history: any
         convoState.value.audio.player.pause()
         convoState.value.audio.player.close()
     }
+
+
 
     message = message ? message : convoState.value.draft.slice();
     if (!message) message = ""

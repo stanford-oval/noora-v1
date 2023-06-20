@@ -12,13 +12,13 @@ export default async function noorasTurn(
             // handle sentiment classification
             const targetSentiment = convoState.value.statement.statementObj.val.sentiment;
             const m = message.trim().toLowerCase();
-            const correct = m == targetSentiment.trim().toLowerCase();
+            const correct = targetSentiment.includes(m);
 
 
             history.setValue((h: any) => [...h, {
                 id: uuidv4(),
                 fromNoora: true,
-                read: correct ? null : `Actually, this is a ${targetSentiment} statement.`,
+                read: correct ? null : `Actually, this is a ${targetSentiment.join(' or ')} statement.`,
                 sentiment: correct ? "positive" : "neutral",
                 text: correct ? "That's right!" : targetSentiment,
                 correction: !correct,
