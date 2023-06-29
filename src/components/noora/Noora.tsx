@@ -24,6 +24,10 @@ export default function Noora() {
       setSelectedModule(modules[key as keyof typeof modules]);
     }
   }, [router.query, showPickModuleScreen]);
+
+  let focus = false;
+  console.log("Selected Module")
+  console.log(selectedModule)
   return (
     <div>
       <Page
@@ -37,9 +41,10 @@ export default function Noora() {
         {showPickModuleScreen && <PickModuleScreen open={showPickModuleScreen} setOpen={setShowPickModuleScreen} />}
         {selectedModule ? (
           <div>
-            <Preamble module={selectedModule} />
+            <Preamble module={selectedModule} focusedMode = {focus} />
             <ModuleChat
-              modules={(selectedModule.module == "all"
+              focusedMode = {focus}
+              modules={selectedModule.module == "all"
                 ? Object.values(modules).map((m: any) => {
                   if (m.module == "all") return;
                   return { title: m.module, displayName: m.title, active: true, fixed: true };
@@ -53,7 +58,7 @@ export default function Noora() {
                     fixed: true,
                   };
                 })
-              ).filter((m: any) => m)}
+              }
             />
           </div>
         ) : (
