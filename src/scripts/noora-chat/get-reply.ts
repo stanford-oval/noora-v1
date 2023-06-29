@@ -138,7 +138,7 @@ async function getRating(
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti({
         confettiColors: [
-          '#652876', '#8828A3', '#AD73BE', '#836794', '#7116A8', '#4F2689',
+          '#EE3E19', '#EE9F19', '#EEC819', '#83CC19', '#19CC9B', '#19A6CC', '#1945CC', '#5919CC', '#B519CC', '#CC1968'
         ],
         emojiSize: 200,
         confettiNumber: 30,
