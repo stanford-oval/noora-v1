@@ -7,9 +7,20 @@ import { isIOS } from 'react-device-detect';
 const OLD = "old";
 const NEW = "new";
 
-export default function ModuleChat({ modules }: ModuleChatProps) {
+// interface ModuleChatProps {
+//   modules: any[]; // You can replace 'any' with a specific type that represents the 'modules' property
+// }
+
+
+type ModuleChatProps = {
+  focusedMode: boolean;
+  modules: any[];
+};
+
+export default function ModuleChat(input_modules: ModuleChatProps) {
+  let focusedMode = input_modules.focusedMode;
   const [h, setH] = useState([]);
-  const active_modules = modules?.filter((m: any) => m.active);
+  const active_modules = input_modules.modules.filter((m: any) => m.active);
   let questionType = NEW;
   if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
     questionType = OLD;
@@ -18,7 +29,7 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   const [cs, setCs] = useState({
     draft: "",
     turn: "user-answer-start",
-    modules: modules,
+    modules: input_modules.modules,
     model: {
       name: "text-davinci-002",
       temperature: 0.9,
@@ -39,6 +50,9 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
       currentTimeSpent: 0,
       prevTimeSpent: 0,
     },
+    researchMode: {
+      focused: focusedMode,
+    },
     sentiments: [
       { title: "positive", active: true },
       { title: "neutral", active: true },
@@ -58,11 +72,11 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   };
 
   useEffect(() => {
-    if (modules)
+    if (input_modules.modules)
       setCs((c: any) => {
-        return { ...c, modules: modules };
+        return { ...c, modules: input_modules.modules };
       });
-  }, [modules]);
+  }, [input_modules.modules]);
 
 
   return (
@@ -83,6 +97,3 @@ export default function ModuleChat({ modules }: ModuleChatProps) {
   );
 }
 
-type ModuleChatProps = {
-  modules?: any[];
-};

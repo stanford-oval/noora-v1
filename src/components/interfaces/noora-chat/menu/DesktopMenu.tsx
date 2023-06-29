@@ -7,12 +7,14 @@ import Technical from "./sections/Technical";
 import DisclosureTransition from "../../../global/utility/DisclosureTransition";
 import { Switch } from '@headlessui/react'
 import clsx from "clsx";
-import { MenuAlt2Icon } from "@heroicons/react/outline";
+import { MenuAlt2Icon, LockOpenIcon, LockClosedIcon } from "@heroicons/react/outline";
 import { isIOS } from 'react-device-detect';
 import Clock from "./sections/timer/Clock";
+import Preamble from "../../../noora/Preamble";
+
 
 export default function DesktopMenu({ convoState }: any) {
-  const sections = [
+  let sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
     // { title: "Time Taken", component: <Clock convoState={convoState} /> }, // (TODO)
     {
@@ -27,6 +29,11 @@ export default function DesktopMenu({ convoState }: any) {
     },
   ];
 
+  if (convoState.value.researchMode.focused) {
+    sections = [sections[0]];
+  }
+
+  console.log(convoState)
   return (
     <div
       id="chat-window"
@@ -37,7 +44,8 @@ export default function DesktopMenu({ convoState }: any) {
           Menu
         </div>
 
-        {!isIOS && <div className="text-gray-600 text-center mx-auto mt-1 text-sm">
+        {/* Text-only toggle */}
+        {!isIOS && <div className="text-gray-600 text-center m-auto mt-1 mb-1 text-sm">
           <span><MenuAlt2Icon className="h-4 w-4 -mt-0.5 inline-block" /> text-only</span>
           <Switch
             checked={convoState.value.audio.shouldAutoPlay}
@@ -68,7 +76,33 @@ export default function DesktopMenu({ convoState }: any) {
           <span>autoplay <VolumeUpIcon className="h-4 w-4 -mt-0.5 inline-block" /></span>
         </div>}
 
+        {/* Focus toggle */}
+        {!isIOS && <div className="text-gray-600 text-center m-auto mt-1 text-sm">
+          <span><LockOpenIcon className="h-4 w-4 -mt-0.5 inline-block" /> practice </span>
+          <Switch
+            checked={convoState.value.researchMode.focused}
+            onChange={() => {
+              convoState.setValue((cs: any) => ({ ...cs, researchMode: { focused: !cs.researchMode.focused } }));
+            }}
+            className={clsx(
+              convoState.value.researchMode.focused ? 'bg-noora-primary' : 'bg-gray-200',
+              'relative inline-flex flex-shrink-0 h-5 w-9 border-2 border-transparent mx-1.5 -bottom-0.5  rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
+            )}
+          >
+            <span
+              aria-hidden="true"
+              className={clsx(
+                convoState.value.researchMode.focused ? 'translate-x-4' : 'translate-x-0',
+                'pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+              )}
+            />
+          </Switch>
+          <span>targeted <LockClosedIcon className="h-4 w-4 -mt-0.5 inline-block" /></span>
+        </div>}
+
+
       </div>
+
       <div className="px-2 py-1">
         {sections.map((section) => (
           <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
