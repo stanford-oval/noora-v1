@@ -26,8 +26,6 @@ export default function Noora() {
   }, [router.query, showPickModuleScreen]);
 
   let focus = false;
-  console.log("Selected Module")
-  console.log(selectedModule)
   return (
     <div>
       <Page
