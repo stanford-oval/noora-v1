@@ -16,7 +16,7 @@ import Preamble from "../../../noora/Preamble";
 export default function DesktopMenu({ convoState }: any) {
   let sections = [
     { title: "Progress", component: <Progress convoState={convoState} /> },
-    // { title: "Time Taken", component: <Clock convoState={convoState} /> }, // (TODO)
+    { title: "Time Taken", component: <Clock convoState={convoState} /> }, // (TODO)
     {
       title: "Modules",
       component: <Modules convoState={convoState} />,
@@ -30,10 +30,9 @@ export default function DesktopMenu({ convoState }: any) {
   ];
 
   if (convoState.value.researchMode.focused) {
-    sections = [sections[0]];
+    sections = sections.slice(0, 2);
   }
 
-  console.log(convoState)
   return (
     <div
       id="chat-window"
@@ -43,6 +42,8 @@ export default function DesktopMenu({ convoState }: any) {
         <div className="text-2xl text-center font-bold text-noora-secondary">
           Menu
         </div>
+
+        {/* <Clock/> */}
 
         {/* Text-only toggle */}
         {!isIOS && <div className="text-gray-600 text-center m-auto mt-1 mb-1 text-sm">
