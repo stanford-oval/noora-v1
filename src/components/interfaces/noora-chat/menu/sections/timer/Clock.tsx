@@ -21,25 +21,25 @@ export default function Clock({ convoState }: any) {
                 handlePause();
                 handleReset();
                 convoState.value.times.push(formatTime(timer));
-                console.log(`Current state of convoState times: ${convoState.value.times}`)
+                // console.log(`Current state of convoState times: ${convoState.value.times}`)
             } 
-            console.log(`isActive: ${isActive}`);
-            console.log(`isPaused: ${isPaused}`);
+            // console.log(`isActive: ${isActive}`);
+            // console.log(`isPaused: ${isPaused}`);
             handleStart();
         }
             
             if (previousLenRef.current == convoState.value.progress.length - 1) {
 
-            console.log(`Previous_len = ${previousLenRef.current}. Updating previous_len...`)
+            // console.log(`Previous_len = ${previousLenRef.current}. Updating previous_len...`)
             previousLenRef.current += 1;
-            console.log(`Previous_len = ${previousLenRef.current}`)
+            // console.log(`Previous_len = ${previousLenRef.current}`)
             handlePause();
         }
 
 
         setTurn(convoState.value.turn)
-        console.log("ConvoState")
-        console.log(convoState)
+        // console.log("ConvoState")
+        // console.log(convoState)
     }, [convoState.value.turn])
 
     const formatTime = (timer: any) => {
