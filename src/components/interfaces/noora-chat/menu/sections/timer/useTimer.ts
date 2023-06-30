@@ -13,17 +13,18 @@ const useTimer = (convoState: any) => {
     }
 
     const [isActive, setIsActive] = useState(false)
-    const [isPaused, setIsPaused] = useState(false)
+    const [isPaused, setIsPaused] = useState(true)
     const countRef: any = useRef(null)
 
     const handleStart = () => {
-        if (isActive)
-            return
-        setIsActive(true)
-        setIsPaused(false)
-        countRef.current = setInterval(() => {
-            incrementTimer()
-        }, 1000)
+        if (!isActive || isPaused) {
+            console.log("Starting");
+            setIsActive(true)
+            setIsPaused(false)
+            countRef.current = setInterval(() => {
+                incrementTimer()
+            }, 1000)
+        }
     }
 
     const handlePause = () => {

@@ -50,6 +50,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       currentTimeSpent: 0,
       prevTimeSpent: 0,
     },
+    times: [],
     researchMode: {
       focused: focusedMode,
     },
