@@ -13,30 +13,22 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  console.log(req);
   console.log("In api/openai handler...");
 
-  // try {
+  try {
     await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
-    // const configuration = new Configuration({
-    //   apiKey: process.env.OPENAI_API_KEY,
-    // });
-
 
     const client = new OpenAIClient(
       process.env.AZURE_ENDPOINT, 
       new AzureKeyCredential(process.env.AZURE_OPENAI_API_KEY)
     );
     
+    const messages = JSON.parse(req.body);
+    
 
-    const { id, created, choices, usage } = await client.getChatCompletions("gpt4-8k-playground", req.body);
-
-    // const openai = new OpenAIApi(configuration);
-
-    // const response = await openai.createChatCompletion(req.body);
+    const { id, created, choices, usage } = await client.getChatCompletions("gpt4-8k-playground", messages);
 
     let text = "";
-    // let logprobs = {};
 
     console.log(`OPENAI: ${choices}`)
 
@@ -45,10 +37,10 @@ export default async function handler(
     }
 
     res.status(200).json({ text: text }); //, logprobs: logprobs });
-  // } 
+  } 
   
-  // catch {
-  //   res.status(429).json({ error: "Rate limit exceeded" });
-  // }
+  catch {
+    res.status(429).json({ error: "Rate limit exceeded" });
+  }
 }
 
