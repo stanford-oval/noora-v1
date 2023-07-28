@@ -1,3 +1,4 @@
+import { ConsoleLoggingListener } from "microsoft-cognitiveservices-speech-sdk/distrib/lib/src/common.browser/ConsoleLoggingListener";
 import type { NextApiRequest, NextApiResponse } from "next";
 // import { Configuration, OpenAIApi } from "openai";
 import rateLimit from "../../scripts/utils/rate-limit";
@@ -15,7 +16,7 @@ export default async function handler(
 ) {
   console.log("In api/openai handler...");
 
-  try {
+  // try {
     await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
 
     const client = new OpenAIClient(
@@ -37,10 +38,10 @@ export default async function handler(
     }
 
     res.status(200).json({ text: text }); //, logprobs: logprobs });
-  } 
+  // } 
   
-  catch {
-    res.status(429).json({ error: "Rate limit exceeded" });
-  }
+  // catch {
+  //   res.status(429).json({ error: "Rate limit exceeded" });
+  // }
 }
 
