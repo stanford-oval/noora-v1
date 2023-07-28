@@ -109,7 +109,7 @@ async function getRating(
     let firstResponse = output.trim();
     console.log("First response: " + firstResponse);
 
-    if (firstResponse === "Good") {
+    if (firstResponse.split(" ")[0] === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
 
