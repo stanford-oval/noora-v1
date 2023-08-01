@@ -2,7 +2,7 @@ export default async function Completion(parameters: CompletionParameters) {
   const requestBody = convertPromptToChat(parameters);
   let reply = await fetch("/api/openai", {
     method: "POST",
-    body: JSON.stringify(requestBody.messages),
+    body: JSON.stringify(requestBody),
   }).then((res) => res.json());
 
   if (reply) reply = reply.text;
