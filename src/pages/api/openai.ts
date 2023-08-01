@@ -24,10 +24,10 @@ export default async function handler(
       new AzureKeyCredential(process.env.AZURE_OPENAI_API_KEY)
     );
     
-    const messages = JSON.parse(req.body);
+    const body = JSON.parse(req.body);
     
 
-    const { id, created, choices, usage } = await client.getChatCompletions("gpt4-8k-playground", messages);
+    const { id, created, choices, usage } = await client.getChatCompletions("gpt4-8k-playground", body.messages, {temperature: body.temperature, maxTokens : body.max_tokens, frequencyPenalty : body.frequency_penalty, presencePenalty : body.presence_penalty, stop : body.stop});
 
     let text = "";
 
