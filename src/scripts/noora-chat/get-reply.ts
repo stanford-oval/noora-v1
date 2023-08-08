@@ -106,10 +106,7 @@ async function getRating(
       presence_penalty: 0,
     });
 
-    let firstResponse = output.trim();
-    console.log("First response: " + firstResponse);
-
-    if (firstResponse.split(" ")[0] === "Good") {
+    if (output.split(" ")[0] === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
 
@@ -131,7 +128,6 @@ async function getRating(
     });
 
     explanation = output.trim();
-    console.log("Explanation: " + explanation);
 
     if (goodAnswer) {
       answers.push({ text: "Good reply!", sentiment: "positive" });

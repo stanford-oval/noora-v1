@@ -20,7 +20,7 @@ export default async function noorasTurn(
                 fromNoora: true,
                 read: correct ? null : `Actually, this is a ${targetSentiment.join(' or ')} statement.`,
                 sentiment: correct ? "positive" : "neutral",
-                text: correct ? "That's right!" : targetSentiment,
+                text: correct ? "That's right!" : targetSentiment.join(' or '),
                 correction: !correct,
             },
             {
