@@ -1571,6 +1571,2776 @@
       "response": "I'm sorry to hear that! I hope it's not too bad.",
       "task_type": "new",
       "task_name": "sarcasm"
+    },
+    {
+      "text": "My parents are coming to visit this weekend.",
+      "response": "That's great! Are you excited to spend time with them?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My sister just got married and I was the maid of honor.",
+      "response": "That's wonderful! How was the wedding?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My brother and I used to fight a lot when we were younger.",
+      "response": "Siblings often have their disagreements. Have you two become closer now?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I have a big family gathering next month for my grandmother's birthday.",
+      "response": "That sounds like it will be a fun celebration! How old will your grandmother be?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My parents are divorced and it's sometimes hard to juggle between their houses.",
+      "response": "I can imagine that can be challenging. How do you manage your time between them?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I have a younger brother who always copies everything I do.",
+      "response": "Younger siblings tend to look up to their older siblings. How do you feel about it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "My family and I love going on vacations together.",
+      "response": "That's wonderful! Where is your favorite vacation spot?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My parents always support me in everything I do.",
+      "response": "That's fantastic! Having supportive parents is really important. What are you currently working on?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I have an older sister who is my best friend.",
+      "response": "That's great to have such a close bond with your sister. What do you enjoy doing together?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My family has a tradition of having a game night every Friday.",
+      "response": "That sounds like a lot of fun! What games do you usually play?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just started learning how to play the guitar.",
+      "response": "That's awesome! Learning to play an instrument can be a lot of fun. I hope you enjoy it!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I love going hiking in the mountains.",
+      "response": "Hiking in the mountains is such a great way to connect with nature. I'm glad you enjoy it!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I enjoy reading mystery novels in my spare time.",
+      "response": "That's fantastic! Mystery novels can be so captivating. Do you have any favorite authors?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm really into photography and love taking pictures of landscapes.",
+      "response": "That's so cool! Photography is a great way to capture beautiful moments and landscapes. Do you have a favorite location to shoot?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm learning how to cook different types of cuisines.",
+      "response": "That's awesome! Cooking is a wonderful skill to have, and trying out different cuisines can be so much fun. What's your favorite dish to cook so far?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I enjoy playing video games in my free time.",
+      "response": "That's great! Video games can be a fantastic way to unwind and have some fun. What's your favorite game at the moment?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I love going to art galleries and exploring different art styles.",
+      "response": "That's wonderful! Art galleries are a great way to appreciate different art styles and discover new artists. Do you have a favorite art movement?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm a huge fan of watching and analyzing movies.",
+      "response": "That's amazing! Movies can be so impactful and analyzing them can give you a deeper appreciation for the art of filmmaking. What's your favorite movie genre?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I enjoy gardening and growing my own vegetables.",
+      "response": "That's fantastic! Gardening is a wonderful hobby that allows you to connect with nature and enjoy the fruits of your labor. What vegetables do you grow?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm really passionate about fashion and love creating unique outfits.",
+      "response": "That's so cool! Fashion is a great form of self-expression, and creating unique outfits is a wonderful way to showcase your personal style. Do you follow any fashion influencers for inspiration?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just came back from a wonderful vacation in Hawaii.",
+      "response": "Oh, that sounds amazing! What was your favorite part of the trip?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm planning a road trip across Europe for next summer.",
+      "response": "Wow, that sounds like an incredible adventure! Do you have any specific countries or cities in mind that you want to visit?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love exploring new cultures and trying different cuisines while traveling.",
+      "response": "That's wonderful! Food is such an important part of experiencing different cultures. Do you have any favorite dishes that you've tried?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a terrible experience with lost luggage on my last trip.",
+      "response": "Oh no, that must have been so frustrating! Did you eventually get your luggage back or did you have to replace everything?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm thinking of going on a cruise for my next vacation.",
+      "response": "That sounds like a great idea! Have you been on a cruise before or will it be your first time?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I got upgraded to a first-class seat on my flight!",
+      "response": "Lucky you! How was the experience of flying first class? Did you enjoy the extra comfort and amenities?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I prefer staying in cozy bed and breakfasts rather than big hotels.",
+      "response": "That's a great preference! Bed and breakfasts often provide a more intimate and personalized experience. Have you had any memorable stays at bed and breakfasts?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm always nervous about getting motion sickness while traveling by boat or plane.",
+      "response": "I can understand why! Motion sickness can be quite uncomfortable. Have you found any remedies or strategies that help alleviate the symptoms?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love taking long walks and exploring the local neighborhoods when I travel.",
+      "response": "That's a fantastic way to immerse yourself in the local culture! Have you discovered any hidden gems or interesting spots during your walks?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had an unforgettable encounter with a wild dolphin while snorkeling in the Maldives.",
+      "response": "Wow, that sounds like an incredible experience! Interacting with wildlife in their natural habitat is truly special. Did you manage to capture any photos or videos of the encounter?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just watched an amazing movie last night.",
+      "response": "That's great! What movie did you watch?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I can't decide which TV show to watch next.",
+      "response": "I understand. There are so many options out there. What genre do you prefer?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "Do you have any recommendations for a good comedy movie?",
+      "response": "Sure! Have you seen 'The Hangover' or 'Bridesmaids'? They are both hilarious.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I binge-watched an entire TV series over the weekend.",
+      "response": "Wow, that's impressive! Which series did you watch?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm a big fan of superhero movies.",
+      "response": "That's awesome! Who is your favorite superhero?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "Have you seen the latest episode of 'Game of Thrones'?",
+      "response": "Yes, I have! It was intense. What did you think of it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm not a fan of horror movies. They scare me too much.",
+      "response": "I can understand that. Some horror movies can be really terrifying.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been meaning to watch a documentary about wildlife.",
+      "response": "That sounds interesting! Documentaries can be really informative and eye-opening.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I cried during the ending of the movie 'The Notebook'.",
+      "response": "Oh, I can relate. 'The Notebook' is such an emotional movie.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm excited for the release of the next Marvel movie.",
+      "response": "Me too! Marvel movies are always action-packed and full of surprises.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I tried a new recipe for lasagna and it turned out amazing!",
+      "response": "That's fantastic! Could you share the recipe with me?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I burnt the cookies I was baking for my family.",
+      "response": "Oh no! It happens to the best of us. Maybe try again, they'll turn out great next time!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I went to a fancy restaurant and tried escargot for the first time.",
+      "response": "Wow, good for you for trying something new! How did it taste?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I made a homemade pizza with fresh ingredients and it was delicious.",
+      "response": "That sounds amazing! Homemade pizzas are the best. What toppings did you use?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I accidentally added too much salt to the soup I was cooking.",
+      "response": "Oops! That's happened to me before. You can try adding a potato to absorb the excess salt.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I went to a food festival and tried many different types of cuisines.",
+      "response": "That sounds like a food lover's dream! Which cuisine was your favorite?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I made a vegan cake for my friend's birthday and they loved it.",
+      "response": "That's wonderful! It's great to see vegan options being enjoyed by everyone. Do you have the recipe?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I tried making sushi at home for the first time and it was a disaster.",
+      "response": "Oh no, sushi can be tricky to make! Don't worry, with practice, you'll get better at it.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I visited a famous bakery and tried their signature dessert.",
+      "response": "That's awesome! What was the signature dessert and did it live up to the hype?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I hosted a dinner party and cooked a three-course meal for my friends.",
+      "response": "Impressive! Your friends are lucky to have you. What dishes did you prepare?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just finished a marathon and I'm so proud of myself!",
+      "response": "Congratulations! That's a huge accomplishment. How do you feel?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I tried rock climbing for the first time yesterday and it was amazing!",
+      "response": "That's awesome! Rock climbing can be such a thrilling experience. Did you find it challenging?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "After playing basketball for hours, I sprained my ankle. It's so painful.",
+      "response": "I'm sorry to hear that. Sprained ankles can be really painful. Have you seen a doctor?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I joined a yoga class to improve my flexibility and reduce stress.",
+      "response": "That's a great decision! Yoga is known for its benefits in flexibility and stress reduction. How are you finding the class so far?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love watching soccer matches and cheering for my favorite team.",
+      "response": "That's great! Soccer matches can be so exciting. Who's your favorite team?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I injured my shoulder while weightlifting. Now I have to take a break from the gym.",
+      "response": "I'm sorry to hear about your injury. Taking a break and allowing your shoulder to heal is important. Have you consulted a doctor or a physiotherapist?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I started swimming last month and it has been a great way to stay fit.",
+      "response": "That's wonderful! Swimming is an excellent full-body workout. How often do you go swimming?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm training for a triathlon and it's challenging but rewarding.",
+      "response": "That's impressive! Training for a triathlon requires dedication and hard work. How do you balance your training with other commitments?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I play tennis every weekend with my friends. It's a fun way to stay active.",
+      "response": "That sounds like a lot of fun! Tennis is a great sport for staying active and socializing. Do you have any favorite tennis players?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I started doing CrossFit and it's been challenging but I'm loving it.",
+      "response": "That's great! CrossFit is known for its intensity and effectiveness. How has it been challenging for you?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I went to a concert last night and it was amazing!",
+      "response": "That's great! Who did you see and what was your favorite part?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I can't go to the music festival this weekend because I have to work.",
+      "response": "Oh, that's a bummer. Maybe you can catch the next one. What kind of music do you like?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My favorite band just released a new album and I can't stop listening to it.",
+      "response": "That's awesome! What do you like most about their new album?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm going to a piano recital tonight, but I'm nervous about performing in front of a big audience.",
+      "response": "I understand why you might feel nervous, but I'm sure you'll do great! Just remember to enjoy the experience.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I attended a jazz concert last weekend and it was so relaxing.",
+      "response": "That sounds wonderful! Did you have a favorite performance or musician?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm learning to play the guitar and it's been challenging but rewarding.",
+      "response": "That's great to hear! How long have you been playing and what motivated you to start?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I missed out on buying concert tickets because they sold out within minutes.",
+      "response": "Oh no, that's disappointing. Keep an eye out for future concerts, sometimes tickets become available again.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm going to a music workshop next week to learn more about songwriting.",
+      "response": "That's fantastic! Songwriting can be such a creative and fulfilling process. Are you excited about it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I sang in a choir performance last night and it was a lot of fun.",
+      "response": "That's wonderful! Singing in a choir can be such a joyful experience. Did you have a favorite song?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm attending a music conference next month to network with other musicians.",
+      "response": "That's a great opportunity to connect with like-minded individuals. What are you hoping to gain from the conference?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I started practicing yoga.",
+      "response": "That's great! Yoga can have many benefits for both the body and mind.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been feeling stressed lately.",
+      "response": "I understand, stress can be tough to deal with. Have you tried any relaxation techniques?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm trying to eat healthier.",
+      "response": "That's a great goal! What changes are you making to your diet?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I injured my knee while playing sports.",
+      "response": "Oh no, I'm sorry to hear that. Have you seen a doctor or physiotherapist for it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm thinking of joining a gym.",
+      "response": "That's a great idea! It can be a good way to stay active and meet new people.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm trying to get better sleep.",
+      "response": "Getting enough quality sleep is important for overall well-being. Have you tried any relaxation techniques or established a bedtime routine?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been feeling low on energy lately.",
+      "response": "I understand how that can be difficult. Have you considered getting a check-up to rule out any underlying health issues?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I've been meditating for a few minutes every day.",
+      "response": "That's fantastic! Meditation can have many positive effects on mental well-being. How has it been going for you?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been feeling a lot of tension in my neck and shoulders.",
+      "response": "That can be tough to deal with. Have you tried any stretching exercises or considered getting a massage?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm trying to incorporate more fruits and vegetables into my meals.",
+      "response": "That's a great initiative! Fruits and vegetables are packed with nutrients and can have many health benefits.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I went on a date last night and it was a disaster.",
+      "response": "Oh no, what happened? Did something go wrong?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My best friend and I had a big fight and now we're not talking.",
+      "response": "That's really tough. I hope you two can work things out soon.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I just got engaged and I'm so excited!",
+      "response": "Congratulations! That's such wonderful news. I'm really happy for you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a heart-to-heart conversation with my sibling and it brought us closer.",
+      "response": "That's great to hear. Open and honest communication is so important in relationships.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My partner surprised me with a romantic weekend getaway.",
+      "response": "Wow, that sounds amazing! What a thoughtful gesture from your partner.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a falling out with my best friend and now I feel so lonely.",
+      "response": "I'm really sorry to hear that. Losing a close friend can be really difficult.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I helped my sibling through a tough time and it made our bond stronger.",
+      "response": "That's wonderful. Helping each other during tough times can really strengthen relationships.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a misunderstanding with my partner and we had a long conversation to resolve it.",
+      "response": "Good for you for addressing the issue. Communication is key in resolving misunderstandings.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My friend betrayed my trust and it's been really hard to forgive them.",
+      "response": "Betrayal is never easy to deal with. It takes time to heal and rebuild trust.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I met someone new and we instantly clicked. It feels like we've known each other forever.",
+      "response": "That's amazing! It's rare to find that instant connection with someone. Enjoy getting to know each other.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I recently visited an art gallery and was mesmerized by the beautiful paintings.",
+      "response": "That sounds like a wonderful experience. Did you have a favorite painting?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I attended a live music concert and the atmosphere was electric.",
+      "response": "That must have been an incredible experience. Which artist performed at the concert?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm thinking of taking up photography as a hobby.",
+      "response": "That's a fantastic idea! Photography can be a great way to express your creativity. What type of subjects do you plan to capture?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently watched a documentary about famous painters and it was very inspiring.",
+      "response": "Documentaries can be a great source of inspiration. Which painter did the documentary focus on?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I attended a pottery workshop and had so much fun creating my own ceramic piece.",
+      "response": "That's amazing! Pottery can be a therapeutic and creative activity. What type of ceramic piece did you make?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I visited an art museum and was fascinated by the sculptures on display.",
+      "response": "Art museums can be a treasure trove of beautiful sculptures. Which sculpture caught your attention the most?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I participated in a street art workshop and learned some amazing graffiti techniques.",
+      "response": "That's so cool! Street art can be a unique and expressive form of art. What kind of graffiti techniques did you learn?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I went to a theater performance and was blown away by the incredible acting skills of the cast.",
+      "response": "That's fantastic! Live theater can be a captivating experience. Which play did you watch?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently started writing poetry and it has become a therapeutic outlet for me.",
+      "response": "That's wonderful! Poetry can be a beautiful way to express emotions. Do you have a favorite poem that you've written?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm planning to visit an art fair this weekend to see the works of different artists.",
+      "response": "That's exciting! Art fairs are a great way to discover new artists and their creations. Are there any particular artists you're looking forward to seeing?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I went hiking in the mountains last weekend and saw a beautiful waterfall.",
+      "response": "Wow, that sounds amazing! I love exploring nature and discovering hidden gems like waterfalls.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I planted a tree in my backyard and can't wait to see it grow.",
+      "response": "That's awesome! Planting trees is a great way to contribute to the environment and create a greener space around you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I visited a national park and witnessed a breathtaking sunset.",
+      "response": "Oh, I can only imagine how stunning that must have been! National parks offer some of the most picturesque views, especially during sunset.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I went camping near a lake and had the most peaceful experience.",
+      "response": "That sounds so serene! Camping near a lake is a great way to escape the hustle and bustle of daily life and connect with nature.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I saw a flock of birds migrating overhead and it was a mesmerizing sight.",
+      "response": "How incredible! Witnessing the beauty of bird migration is truly a remarkable experience. Nature never ceases to amaze me.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I visited a botanical garden and was surrounded by an array of colorful flowers.",
+      "response": "Oh, I love botanical gardens! Being surrounded by vibrant flowers can be so uplifting and refreshing. It must have been a delightful visit.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I went on a whale-watching tour and saw several majestic whales.",
+      "response": "That's incredible! Observing whales in their natural habitat is a once-in-a-lifetime experience. It must have been awe-inspiring.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I planted a vegetable garden and harvested my first batch of fresh produce.",
+      "response": "Congratulations on your green thumb! There's nothing quite like the satisfaction of growing your own food. Enjoy the delicious harvest!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I went snorkeling in a coral reef and saw an incredible variety of marine life.",
+      "response": "Oh, I'm so jealous! Exploring coral reefs and witnessing the underwater world is a dream come true. It must have been an unforgettable experience.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I volunteered for a beach cleanup and it felt great to contribute to the environment.",
+      "response": "That's wonderful! It's heartwarming to see people actively working to keep our beaches clean and protect marine life. Your efforts make a difference.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I've always wanted to learn how to play the piano.",
+      "response": "That's awesome! Playing the piano can be a great way to express yourself. Have you started taking lessons?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I dream of traveling the world and experiencing different cultures.",
+      "response": "That sounds amazing! There's so much to explore and learn from different cultures. Do you have any specific destinations in mind?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I want to start my own business and be my own boss one day.",
+      "response": "That's a great aspiration! Being an entrepreneur can be challenging but rewarding. Do you have any business ideas in mind?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been working on improving my cooking skills.",
+      "response": "That's fantastic! Cooking is a valuable skill to have. Have you tried any new recipes recently?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I aim to run a marathon by the end of this year.",
+      "response": "That's impressive! Running a marathon requires dedication and training. Have you been following a specific training plan?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've always wanted to write a book.",
+      "response": "That's wonderful! Writing a book can be a fulfilling creative endeavor. What genre or topic are you interested in writing about?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm determined to learn a new language this year.",
+      "response": "That's fantastic! Learning a new language opens up a whole new world of opportunities. Which language are you interested in learning?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been saving money to buy my own house.",
+      "response": "That's great! Buying a house is a big accomplishment. How close are you to reaching your savings goal?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I want to learn how to code and build my own website.",
+      "response": "That's awesome! Coding skills are in high demand and building your own website can be a great way to showcase your work. Have you started learning any programming languages?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm determined to live a healthier lifestyle and exercise regularly.",
+      "response": "That's fantastic! Taking care of your health is important. Have you started incorporating any specific exercises or activities into your routine?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "When I was a child, I used to get scared of thunderstorms.",
+      "response": "Oh, thunderstorms can be really scary, especially for kids. How did you cope with that fear?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "Every time I think about my childhood, I remember the fun adventures my friends and I used to have.",
+      "response": "Those adventures must have been so exciting! Can you share one of your favorite memories?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I used to get really anxious before going to school when I was young.",
+      "response": "Anxiety can be tough, especially for children. How did you manage to overcome that anxiety?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My favorite childhood memory is when my family went on a road trip across the country.",
+      "response": "Road trips are always so much fun! What was your favorite place that you visited during that trip?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I used to get really excited when my grandparents came to visit us during the holidays.",
+      "response": "It's always so special to spend time with grandparents. What was your favorite activity to do with them?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a big fight with my best friend when we were kids.",
+      "response": "Friendship fights can be tough. How did you eventually resolve the conflict?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "Every summer, my family used to go camping in the mountains.",
+      "response": "Camping trips are always so much fun! What was your favorite camping activity?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I used to feel lonely when my siblings would go out to play without me.",
+      "response": "Feeling left out can be tough. How did you find ways to keep yourself occupied during those times?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I have fond memories of baking cookies with my mom when I was a child.",
+      "response": "Baking cookies with loved ones is always special. What was your favorite type of cookie to bake?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I used to get really scared of the dark when I was a child.",
+      "response": "Fear of the dark is common for many kids. How did you overcome that fear?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+  
+    {
+      "text": "I finally graduated from college after years of hard work.",
+      "response": "Congratulations! What was your major?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I just completed my first marathon.",
+      "response": "That's amazing! How did you train for it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I won the first prize in a national photography competition.",
+      "response": "Wow! Your photography skills must be exceptional. Can I see your winning photo?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I published my first book and it's receiving great reviews.",
+      "response": "That's fantastic! What is your book about?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I just got promoted to a managerial position at work.",
+      "response": "Congratulations on your promotion! What are your new responsibilities?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I successfully completed a challenging hiking trail.",
+      "response": "That's impressive! Which trail did you conquer?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I reached my weight loss goal and lost 20 pounds.",
+      "response": "Well done! How did you achieve your weight loss goal?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I received a scholarship to study abroad for a semester.",
+      "response": "That's fantastic news! Which country are you planning to study in?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I successfully completed a coding bootcamp and landed a job as a software engineer.",
+      "response": "Congratulations on your achievement! Which programming languages did you learn during the bootcamp?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I ran my first half-marathon and finished in under two hours.",
+      "response": "That's impressive! How did you prepare for the race?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just received my paycheck.",
+      "response": "That's great! How much did you earn this time?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I need to pay my rent this month.",
+      "response": "Do you have enough money saved up for it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm thinking about investing in the stock market.",
+      "response": "That's a great idea! Have you done any research on potential investments?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I just received a tax refund.",
+      "response": "That's awesome! How are you planning to use the money?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm having trouble managing my credit card debt.",
+      "response": "I understand. Have you considered contacting a financial advisor for guidance?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm planning to buy a new car.",
+      "response": "That's exciting! Have you looked into different financing options?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I just received a bonus at work.",
+      "response": "Congratulations! How do you plan to celebrate or use the extra money?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm considering opening a savings account.",
+      "response": "That's a smart move! It can help you save for future goals. Have you looked into different banks' interest rates?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I just paid off my student loans.",
+      "response": "That's a huge accomplishment! How does it feel to be debt-free?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm thinking about starting a side business.",
+      "response": "That's exciting! What kind of business are you considering?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I can't wait to travel the world and see all the beautiful places.",
+      "response": "That sounds amazing! I hope you have many unforgettable experiences.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I dream of starting my own business one day.",
+      "response": "That's a great goal! I wish you all the success in making your dream come true.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've always wanted to learn how to play a musical instrument.",
+      "response": "That's wonderful! Music can bring so much joy and fulfillment to your life.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My ultimate dream is to write a bestselling novel.",
+      "response": "That's an incredible aspiration! I hope you find the inspiration to create a captivating story.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I've been saving up to buy my dream car.",
+      "response": "That's fantastic! I can only imagine the excitement of owning your dream car.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm planning to climb Mount Everest someday.",
+      "response": "Wow, that's quite an ambitious goal! I admire your determination. Just make sure to stay safe and prepared.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I've always dreamed of living in a beachfront house.",
+      "response": "That sounds like paradise! I hope your dream of living by the beach becomes a reality.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm planning to pursue a career in medicine and help people.",
+      "response": "That's a noble career choice! The world needs more compassionate and skilled healthcare professionals.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I dream of having a big family and creating beautiful memories together.",
+      "response": "That's a lovely dream! I hope you have a wonderful journey of building a loving and joyful family.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm planning to travel to all 7 continents in my lifetime.",
+      "response": "That's an incredible goal! I hope you get to experience the diverse cultures and landscapes of each continent.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I've been feeling really stressed out lately.",
+      "response": "It's important to take time for self-care and find healthy ways to manage stress. Have you tried deep breathing exercises or going for a walk?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I can't seem to concentrate on anything.",
+      "response": "Lack of concentration can be frustrating. Have you tried breaking your tasks into smaller, manageable chunks or practicing mindfulness?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I feel overwhelmed with all the responsibilities I have.",
+      "response": "Feeling overwhelmed is common, but remember to prioritize your tasks and ask for help if needed. It's important to take breaks and practice self-care.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm having trouble sleeping at night.",
+      "response": "Trouble sleeping can be tough. Have you tried establishing a bedtime routine, avoiding caffeine, or creating a calm sleep environment?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I feel really anxious before social events.",
+      "response": "Social anxiety can be challenging, but remember that many people feel the same way. Practice deep breathing and positive self-talk to manage your anxiety.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been feeling down and lacking motivation lately.",
+      "response": "Feeling down and lacking motivation can be tough. It's important to reach out to loved ones or a professional for support and find activities that bring you joy.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm finding it hard to manage my time effectively.",
+      "response": "Time management can be challenging, but try creating a schedule, setting goals, and breaking tasks into smaller steps. Don't forget to take breaks and practice self-care.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm feeling overwhelmed and burnt out at work.",
+      "response": "Feeling overwhelmed and burnt out is common in the workplace. It's important to communicate your needs, set boundaries, and prioritize self-care to prevent burnout.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm struggling with body image issues.",
+      "response": "Struggling with body image can be challenging. Remember that your worth is not determined by your appearance. Surround yourself with positive influences and practice self-love.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I feel like I'm constantly comparing myself to others.",
+      "response": "Comparing yourself to others can be harmful. Remember that everyone has their own journey and focus on your own progress and accomplishments. Practice self-compassion.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I've been doing yoga every morning to stay fit.",
+      "response": "That's great! Yoga is an excellent way to improve flexibility and reduce stress.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I signed up for a spin class at the gym.",
+      "response": "Spin classes are intense but really effective. You'll definitely feel the burn!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I can't seem to find the motivation to workout lately.",
+      "response": "It's normal to have ups and downs in motivation. Try finding a workout buddy or changing up your routine to get inspired again!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I injured my knee while jogging yesterday.",
+      "response": "I'm sorry to hear that. Make sure to rest and consult a doctor if the pain persists.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I want to start weightlifting but don't know where to begin.",
+      "response": "Weightlifting is a great way to build strength. You may want to consider hiring a personal trainer to guide you through proper form and technique.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I love going for long hikes on the weekends.",
+      "response": "Hiking is a fantastic way to enjoy nature and get some exercise. Keep exploring those trails!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I've been doing HIIT workouts to maximize calorie burn.",
+      "response": "High-Intensity Interval Training is an excellent way to burn calories and boost your metabolism. Keep up the good work!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I find it hard to stick to a consistent workout routine.",
+      "response": "Consistency is key when it comes to fitness. Try setting specific goals and creating a schedule to help you stay on track.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm thinking of trying out a Zumba class.",
+      "response": "Zumba is a fun and energetic way to get your heart rate up. Give it a go and enjoy the dance party!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I injured my shoulder while lifting weights.",
+      "response": "I'm sorry to hear that. Make sure to rest and focus on proper form when you recover. Consider consulting a physical therapist for guidance.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+  
+    {
+      "text": "I can't stop listening to my favorite song. It's so catchy!",
+      "response": "What's your favorite song? I'd love to give it a listen!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm tired of hearing the same songs on the radio.",
+      "response": "I feel the same way! Do you have any recommendations for new music?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I always create a playlist for road trips. It sets the mood perfectly!",
+      "response": "That sounds like a great idea! What kind of music do you usually include in your road trip playlist?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm in the mood for some relaxing music. Any suggestions?",
+      "response": "How about trying some classical or instrumental music? It can be really soothing.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love discovering new songs and artists.",
+      "response": "That's awesome! How do you usually discover new music? Any favorite platforms or methods?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I enjoy listening to music while I work. It helps me concentrate.",
+      "response": "I'm the same way! What genre or artist do you usually prefer when working?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "Sometimes I get emotional when listening to certain songs.",
+      "response": "Music has a powerful way of evoking emotions. Is there a specific song that always gets to you?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love attending live concerts. The energy is incredible!",
+      "response": "There's nothing quite like the atmosphere of a live concert. What was the best concert you've been to?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I enjoy creating themed playlists for different occasions.",
+      "response": "That sounds fun! What's an example of a themed playlist you've created?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I can't get enough of this new artist I discovered. Their music is amazing!",
+      "response": "That's great! What's the name of the artist? I'd love to check them out.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just booked a trip to Paris!",
+      "response": "That's amazing! Paris is such a beautiful city. Are you excited?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I lost my passport while traveling abroad.",
+      "response": "Oh no, that's really unfortunate. Have you contacted the embassy for assistance?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "Do you have any recommendations for places to visit in Japan?",
+      "response": "Absolutely! Japan has so much to offer. Are you interested in historical sites or natural attractions?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I love trying local cuisines when I travel.",
+      "response": "That's a great way to experience the culture of a place. What's your favorite dish so far?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm planning a road trip across the United States.",
+      "response": "How exciting! The US has so much to see and explore. Which states are you planning to visit?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a terrible experience with lost luggage on my last trip.",
+      "response": "Oh no, that must have been really frustrating. Did you manage to recover your belongings?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I prefer traveling alone rather than with a group.",
+      "response": "That's understandable. Solo travel can be a great way to have more freedom and flexibility. Have you done it before?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm thinking of going on a safari in Africa.",
+      "response": "That sounds like an incredible adventure! Which country or national park are you considering?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I always get travel insurance before going on a trip.",
+      "response": "That's a smart decision. Travel insurance can provide peace of mind and protect you from unexpected situations. Do you have any particular company you recommend?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I got upgraded to first class on my flight!",
+      "response": "Wow, that's fantastic! First class offers a luxurious and comfortable flying experience. How was it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "Yesterday, I went hiking with my friends in the mountains.",
+      "response": "That sounds like a great adventure! I hope you enjoyed the beautiful views and had a fantastic time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently adopted a rescue dog from the local shelter.",
+      "response": "That's wonderful! Rescue dogs can bring so much love and joy to our lives. I'm sure you and your new furry friend will have many great adventures together.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "This morning, I accidentally spilled coffee on my laptop.",
+      "response": "Oh no, that's unfortunate! Make sure to turn off your laptop and let it dry. You may need to clean it or have it checked by a professional if the liquid caused any damage.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "Last night, I attended a live concert by my favorite band.",
+      "response": "That's amazing! There's something special about experiencing live music. I'm sure the concert was unforgettable and filled with incredible energy.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently started learning how to play the piano.",
+      "response": "That's fantastic! Learning a musical instrument can be challenging but also incredibly rewarding. I hope you enjoy the process and become a skilled pianist.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "Yesterday, I cooked a delicious homemade meal for my family.",
+      "response": "That's wonderful! There's nothing quite like a home-cooked meal made with love. I'm sure your family appreciated your effort and enjoyed every bite.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently finished reading a captivating book that I couldn't put down.",
+      "response": "That's fantastic! It's always a joy to discover a book that captivates us from start to finish. I'm glad you found such an engrossing read.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "Last weekend, I took a road trip to visit my grandparents in another state.",
+      "response": "That sounds like a wonderful trip! Spending time with loved ones and exploring new places can create cherished memories. I hope you had a safe and enjoyable journey.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "Yesterday, I watched a heartwarming movie that brought tears to my eyes.",
+      "response": "I love movies that evoke strong emotions! It's beautiful how a well-told story can touch our hearts. I'm glad you had a moving experience.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently finished a challenging puzzle that I had been working on for weeks.",
+      "response": "Congratulations on completing the puzzle! It takes patience and focus to solve a challenging one. I'm sure it was satisfying to see all the pieces come together.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I recently started learning how to play the guitar.",
+      "response": "That's awesome! How's your progress so far?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I had the most amazing vacation in Bali.",
+      "response": "Wow, Bali must be a beautiful place! What were some highlights of your trip?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I adopted a rescue dog last month.",
+      "response": "That's wonderful! What's your new furry friend's name?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I recently got promoted at work.",
+      "response": "Congratulations on your promotion! What new responsibilities do you have now?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I baked my first cake from scratch yesterday.",
+      "response": "That's impressive! How did it turn out? Did you enjoy the process?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I went skydiving for the first time last week.",
+      "response": "Oh wow, that's quite an adrenaline rush! How did you feel during the freefall?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I recently started practicing yoga.",
+      "response": "That's great! How has yoga been benefiting your mind and body?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I finished reading a captivating mystery novel over the weekend.",
+      "response": "Oh, I love mystery novels! Which one did you read? Was the ending satisfying?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I visited my grandparents in the countryside last month.",
+      "response": "That must have been a peaceful and nostalgic visit. Did you enjoy spending time with them?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+    {
+      "text": "I recently started taking painting lessons.",
+      "response": "That's fantastic! What kind of paintings are you working on? Any favorite techniques?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive", "neutral"]
+    },
+  
+    {
+      "text": "I've been feeling really overwhelmed lately.",
+      "response": "Take some time for yourself and try to relax. It's important to prioritize self-care.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm struggling to meet deadlines at work.",
+      "response": "Maybe you can break down the tasks into smaller, manageable chunks. Don't hesitate to ask for help if you need it.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I feel like I'm not making any progress in my personal goals.",
+      "response": "Remember that progress takes time and small steps are still steps forward. Keep pushing yourself and believe in your abilities.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm finding it difficult to balance my work and personal life.",
+      "response": "Finding balance can be challenging, but it's important to set boundaries and prioritize what's truly important to you. Take small breaks throughout the day to recharge.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm feeling really anxious about an upcoming presentation.",
+      "response": "Feeling anxious before a presentation is normal. Practice your presentation multiple times and visualize success. Take deep breaths and remember that you've prepared well.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm struggling to maintain a healthy lifestyle.",
+      "response": "Start small by incorporating one healthy habit at a time. Make sure to prioritize sleep, exercise regularly, and eat nutritious meals. Remember that progress is a journey.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm feeling overwhelmed by financial responsibilities.",
+      "response": "Consider creating a budget and tracking your expenses. Look for ways to save money and explore resources for financial assistance if needed. Remember that seeking guidance from a financial advisor can also be helpful.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm having trouble staying motivated to exercise regularly.",
+      "response": "Try finding an exercise routine that you enjoy and make it a habit by scheduling it in your calendar. Find an exercise buddy or join a fitness community for added motivation and support.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm struggling with self-doubt and lack of confidence.",
+      "response": "Remember that everyone experiences self-doubt at times. Focus on your strengths and accomplishments. Surround yourself with positive and supportive people who believe in you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm finding it hard to stay focused and productive.",
+      "response": "Create a daily to-do list and prioritize tasks. Minimize distractions and set specific goals to stay focused. Take short breaks to refresh your mind and avoid burnout.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I just had a big argument with my best friend.",
+      "response": "I'm sorry to hear that. Friendships can be complicated sometimes. Do you want to talk about it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I finally finished reading that book you recommended.",
+      "response": "That's great! What did you think of it? I'm always looking for new books to read.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I just received a promotion at work!",
+      "response": "Congratulations! That's a huge accomplishment. You must be proud of yourself.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm feeling really stressed out with all these deadlines.",
+      "response": "I understand how overwhelming that can be. Take a deep breath and try to tackle one task at a time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I just adopted a new puppy!",
+      "response": "That's wonderful news! Puppies are so much fun and bring so much joy. What's the little one's name?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm going through a tough breakup.",
+      "response": "I'm really sorry to hear that. Breakups can be really difficult. Do you want to talk about it?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I just found out I won a scholarship!",
+      "response": "That's amazing! Congratulations on your achievement. This scholarship will open up so many opportunities for you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm feeling really tired lately.",
+      "response": "It sounds like you need some rest. Make sure to take some time for yourself and get enough sleep.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I just had a great workout at the gym.",
+      "response": "That's fantastic! Exercise is so important for our physical and mental well-being. Keep up the good work!",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm really excited about my upcoming vacation.",
+      "response": "That's wonderful! Vacations are a great opportunity to relax and recharge. Where are you planning to go?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I just finished knitting a cozy blanket for my living room.",
+      "response": "That's impressive! I bet it adds a touch of warmth to your space.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm thinking of starting a DIY project to make a wooden bookshelf.",
+      "response": "That sounds like a fun and practical project! Have you worked with wood before?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I recently learned how to crochet and made a cute hat for my niece.",
+      "response": "How thoughtful! I'm sure your niece will love the personalized hat.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm planning to repurpose old wine bottles into decorative vases.",
+      "response": "That's a great idea! It's always satisfying to give new life to old items.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm trying my hand at origami and made a paper crane yesterday.",
+      "response": "That's wonderful! Origami can be challenging but very rewarding. Do you have any specific designs in mind?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I've been practicing calligraphy and just finished writing a beautiful quote.",
+      "response": "That's impressive! Calligraphy is such a beautiful art form. What quote did you choose?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm in the process of making a homemade scented candle with lavender and vanilla.",
+      "response": "That sounds amazing! The aroma of lavender and vanilla must be delightful. How did you learn to make candles?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm starting a DIY project to create a mosaic tabletop for my patio.",
+      "response": "That's a fantastic idea! Mosaic art can add a unique touch to any space. What materials will you be using?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive",
+        "neutral"
+      ]
+    },
+    {
+      "text": "I enjoy making handmade greeting cards for special occasions.",
+      "response": "That's so thoughtful! Handmade cards are always cherished. What techniques do you use to make them?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I'm learning to sew and just finished making a cute stuffed animal for my child.",
+      "response": "That's adorable! Handmade stuffed animals are so special. What inspired you to start sewing?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I just bought a new car!",
+      "response": "Congratulations on your new purchase! What kind of car did you get?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a flat tire on my way to work this morning.",
+      "response": "That's unfortunate. Did you manage to change the tire or did you need assistance?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm planning a road trip across the country.",
+      "response": "That sounds like an amazing adventure! Have you planned your stops and destinations?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I got stuck in traffic for hours today.",
+      "response": "Oh no, traffic can be so frustrating. How did you pass the time while waiting?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm thinking about buying an electric car.",
+      "response": "That's a fantastic choice! Electric cars are not only environmentally friendly but also cost-effective in the long run.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I accidentally locked my keys in the car.",
+      "response": "Oh no, that's a common mistake. Did you manage to find a way to unlock the car?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I went on a test drive and fell in love with a sports car.",
+      "response": "That's exciting! Sports cars can be a lot of fun to drive. Did you get any information about pricing and financing options?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had to get my car serviced because it was making weird noises.",
+      "response": "It's always a good idea to get those noises checked out. Did the mechanic find the source of the problem?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I got rear-ended in a minor car accident.",
+      "response": "I'm sorry to hear that. Are you okay? Did you exchange insurance information with the other driver?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm considering buying a used car instead of a new one.",
+      "response": "That's a smart choice. Used cars can be a great option if you find one that's in good condition and has a reliable history.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I adopted a rescue dog from the shelter.",
+      "response": "That's wonderful! How is your new furry friend settling in?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My cat knocked over a vase and broke it.",
+      "response": "Oh no! I hope nothing got damaged. Cats can be quite mischievous sometimes.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I took my dog to the park and she made new friends.",
+      "response": "That sounds like a lot of fun! It's great that your dog gets along well with others.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "My pet lizard escaped from its terrarium.",
+      "response": "Oh wow! I hope you find it soon. Lizards can be quite good at hiding.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My hamster learned a new trick.",
+      "response": "That's amazing! What trick did your little furry friend learn?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I accidentally spilled fish food in the aquarium.",
+      "response": "Oops! I hope it didn't cause any harm to the fish. It happens to the best of us.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My pet bird can mimic my voice.",
+      "response": "That's incredible! It must be so entertaining to hear your bird mimic your voice.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I accidentally stepped on my dog's tail.",
+      "response": "Oh no! I hope your dog is okay. Accidents happen, and I'm sure your furry friend forgave you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "My pet rabbit loves to hop around in the yard.",
+      "response": "That sounds adorable! I bet your rabbit enjoys exploring the outdoors.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I found a lost dog and returned it to its owner.",
+      "response": "That's amazing! You did a great thing by helping the lost dog find its way back home.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+  
+    {
+      "text": "I can't believe how hot it is today!",
+      "response": "I know, right? It feels like we're in the middle of summer already.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["negative"]
+    },
+    {
+      "text": "The weather forecast says it's going to rain all day tomorrow.",
+      "response": "Oh no, that's a bummer. I had plans for an outdoor picnic.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["negative"]
+    },
+    {
+      "text": "I can't wait for the leaves to change colors in the fall.",
+      "response": "Me too! The autumn foliage is always so beautiful.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive"]
+    },
+    {
+      "text": "I love the smell of fresh flowers in the springtime.",
+      "response": "Same here! It's such a refreshing scent after a long winter.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive"]
+    },
+    {
+      "text": "It's so windy outside today!",
+      "response": "I know, right? I nearly got blown away when I went out earlier.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["neutral"]
+    },
+    {
+      "text": "I can't stand the humidity in the summer.",
+      "response": "Tell me about it! It's like walking through a sauna every time you step outside.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["negative"]
+    },
+    {
+      "text": "I wish it would snow more during the winter.",
+      "response": "I'm with you on that! Snow always makes everything look so magical.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive"]
+    },
+    {
+      "text": "I'm tired of the constant rain lately.",
+      "response": "I feel you. It's been raining non-stop for days now.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["negative"]
+    },
+    {
+      "text": "The weather is perfect for a beach day.",
+      "response": "Absolutely! I can't wait to soak up the sun and have a swim.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["positive"]
+    },
+    {
+      "text": "I can't believe how quickly the seasons are changing.",
+      "response": "Right? It feels like we just transitioned from one season to another in the blink of an eye.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": ["neutral"]
+    },
+  
+    {
+      "text": "I love finding great deals online.",
+      "response": "Me too! It's so satisfying to get a good bargain.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I always get overwhelmed by the endless options when shopping online.",
+      "response": "I totally understand. It can be hard to choose sometimes.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I had a terrible experience with an online order. The package never arrived.",
+      "response": "Oh no, that's disappointing. Did you reach out to the customer support?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I'm addicted to online shopping. It's become a problem.",
+      "response": "It's important to find a balance. Have you considered setting a budget or taking breaks from shopping?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I received a wrong item in my online order.",
+      "response": "That's frustrating. Contact the customer support and they should be able to help you with a replacement or refund.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I always check product reviews before making an online purchase.",
+      "response": "That's a smart move! It helps to make informed decisions and avoid potential issues.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I find it difficult to shop for clothes online because I can't try them on.",
+      "response": "I completely understand. It's always tricky without trying them on. Look for online stores with flexible return policies to ease the process.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I always get excited when my online order arrives.",
+      "response": "It's like receiving a present! Enjoy your new purchase.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I prefer shopping in physical stores because I like the in-person experience.",
+      "response": "That's valid. Sometimes it's nice to see and feel the products before buying.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I'm always worried about my credit card information being compromised while shopping online.",
+      "response": "It's understandable to have concerns. Make sure to shop from reputable websites and use secure payment methods to protect your information.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+  
+    {
+      "text": "I made a mistake at work and my boss got angry.",
+      "response": "It's normal to make mistakes sometimes. Learn from it and try to do better next time.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I failed my driving test for the third time.",
+      "response": "I'm sorry to hear that. Please don't be discouraged. Keep practicing and you'll pass eventually.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I started a new hobby and I'm really enjoying it.",
+      "response": "That's wonderful! Hobbies are a great way to relax and explore your interests.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I received constructive criticism on my project.",
+      "response": "Ah, getting feedback is pretty valuable for growth. Use it to improve your work.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I lost my job unexpectedly.",
+      "response": "I'm sorry to hear that. Take some time to reassess your goals and explore new opportunities.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "negative"
+      ]
+    },
+    {
+      "text": "I achieved a personal goal I set for myself.",
+      "response": "Congratulations! It's important to celebrate your accomplishments. What's the next goal you're working towards?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a disagreement with a close friend.",
+      "response": "Disagreements happen in relationships. Try to communicate openly and find a resolution.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "neutral"
+      ]
+    },
+    {
+      "text": "I learned a valuable lesson from a failed business venture.",
+      "response": "Failures can teach us important lessons. Take those lessons and apply them to your future endeavors.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I had a life-changing experience while traveling.",
+      "response": "Travel often brings new perspectives and experiences. Cherish those memories and let them shape you.",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
+    },
+    {
+      "text": "I overcame a fear that I had for years.",
+      "response": "That's amazing! Facing fears can be challenging but rewarding. What other fears do you want to conquer?",
+      "task_type": "old",
+      "task_name": "general",
+      "sentiment": [
+        "positive"
+      ]
     }
   ]
 }

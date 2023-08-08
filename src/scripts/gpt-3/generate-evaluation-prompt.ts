@@ -5,12 +5,15 @@ export default function formPrompt(
   reply: string
 ) {
   const statement = statementObj.val.text;
+  const sentiment = statementObj.val.sentiment[0]
   let prompt = "";
 
-  prompt = (statementObj.val.task_type === "old") ? evalPrompts["old"][statementObj.val.sentiment as keyof typeof evalPrompts["old"]] : evalPrompts["new"][statementObj.val.task_name as keyof typeof evalPrompts["new"]];
+  prompt = (statementObj.val.task_type === "old") ? evalPrompts["old"][sentiment as keyof typeof evalPrompts["old"]] : evalPrompts["new"][statementObj.val.task_name as keyof typeof evalPrompts["new"]];
+  console.log(`sentiment is ${sentiment}`)
+  console.log(evalPrompts["old"][sentiment as keyof typeof evalPrompts["old"]])
 
+  prompt += `\n\nYou said, "${statement}"\r\n(1) ${reply}\r\nFeedback:`;
 
-  prompt += `\n\nYou said, "${statement}"\n(1) ${reply}\nFeedback:`;
-
+  console.log(`PROMPT IS ${prompt}`);
   return prompt;
 }
