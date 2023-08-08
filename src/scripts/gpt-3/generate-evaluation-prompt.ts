@@ -5,7 +5,10 @@ export default function formPrompt(
   reply: string
 ) {
   const statement = statementObj.val.text;
-  const sentiment = statementObj.val.sentiment[0]
+  let sentiment = ""
+  if (statementObj.val.task_type === "old") {
+    sentiment = statementObj.val.sentiment[0]
+  }
   let prompt = "";
 
   prompt = (statementObj.val.task_type === "old") ? evalPrompts["old"][sentiment as keyof typeof evalPrompts["old"]] : evalPrompts["new"][statementObj.val.task_name as keyof typeof evalPrompts["new"]];
