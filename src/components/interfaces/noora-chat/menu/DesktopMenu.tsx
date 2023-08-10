@@ -22,11 +22,11 @@ export default function DesktopMenu({ convoState }: any) {
       component: <Modules convoState={convoState} />,
       defaultHide: !convoState.value.showTechnical,
     },
-    {
-      title: "Technical",
-      component: <Technical convoState={convoState} />,
-      defaultHide: !convoState.value.showTechnical,
-    },
+    // {
+    //   title: "Technical",
+    //   component: <Technical convoState={convoState} />,
+    //   defaultHide: !convoState.value.showTechnical,
+    // },
   ];
 
   if (convoState.value.researchMode.focused) {

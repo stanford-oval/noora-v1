@@ -122,10 +122,19 @@ async function getRating(
       prompt: prompt + " " + classification,
       temperature: convoState.value.model.temperature,
       max_tokens: 128,
-      frequency_penalty: convoState.value.frequencyPenalty,
+      frequency_penalty: convoState.value.model.frequencyPenalty,
       presence_penalty: convoState.value.model.presencePenalty,
       stop: "\n",
     });
+
+    console.log(`model: ${convoState.value.model.name}`);
+    console.log(`prompt: ${prompt} ${classification}`);
+    console.log(`temperature: ${convoState.value.model.temperature}`);
+    console.log(`max_tokens: 128`);
+    console.log(`frequency_penalty: ${convoState.value.model.frequencyPenalty}`);
+    console.log(`presence_penalty: ${convoState.value.model.presencePenalty}`);
+    console.log(`stop: "\\n"`);
+    
 
     explanation = output.trim();
 
