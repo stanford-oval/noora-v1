@@ -3,7 +3,6 @@ import Page from "../components/global/utility/Page";
 import Hero from "../components/home/Hero";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase';
-import Signup from '../CreateUser';
 import { LogInScreen, BufferScreen } from '../SignIn';
 import { useAuth } from '../Authenticate'; // Import the useAuth function
 
