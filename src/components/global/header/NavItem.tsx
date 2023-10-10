@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { clsx } from 'clsx';
 import NavItemDrop from './NavItemDrop';
+import {  signOut } from "firebase/auth";
+import { auth } from '../../../firebase';
+
+
 
 export default function NavItem({
   name,
@@ -15,6 +19,7 @@ export default function NavItem({
     "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700";
   const navItemStyle = clsx("trans-300 inline-flex items-center cursor-pointer px-1 pt-1 border-b-4 text-lg font-medium", active ? activeStyles : defaultStyles);
 
+  
   if (dropRoutes)
     return (
       <NavItemDrop
@@ -27,7 +32,7 @@ export default function NavItem({
     );
 
   if (href == null) return <div className={navItemStyle}>{name}</div>;
-
+  
   if (href.includes("http"))
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={navItemStyle}>
@@ -37,7 +42,18 @@ export default function NavItem({
 
   return (
     <Link href={href}>
-      <a className={navItemStyle} onClick={() => { if (active) { window.location.replace(location.pathname); } }}>{name}</a>
+            <a
+              className={navItemStyle}
+              onClick={() => {
+                if (name === 'Sign Out') {
+                  signOut(auth);
+                } else if (active) {
+                  window.location.replace(location.pathname);
+                }
+              }}
+            >
+              {name}
+            </a>
     </Link>
   );
 }

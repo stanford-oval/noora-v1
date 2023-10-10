@@ -13,7 +13,11 @@ export default function NooraChat({
 
   audioRef.current = convoState.value.audio
 
+  // console.log("I'm here rn.");
+
+
   useEffect(() => {
+    
     return () => {
       // on component unmount
       const player = (audioRef.current as any).player as any
@@ -28,7 +32,7 @@ export default function NooraChat({
     if (!convoState.value.audio.shouldAutoPlay) {
       convoState.setValue((cs: any) => ({ ...cs, turn: convoState.value.turn.split("-noora-reads")[0], audio: { ...cs.audio, autoPlaying: false } }))
       // stop audio
-      if (convoState.value.audio.player && convoState.autoPlaying) {
+      if (convoState.value.audio.player && convoState.value.audio.autoPlaying) {
         convoState.value.audio.player.pause()
         convoState.value.audio.player.close()
       }

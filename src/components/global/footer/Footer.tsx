@@ -3,6 +3,8 @@ import routes from "../../../data/routes";
 import socials from "../../../data/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import {  signOut } from "firebase/auth";
+import { auth } from '../../../firebase';
 
 export default function Footer() {
   return (
@@ -19,6 +21,11 @@ export default function Footer() {
                   <a
                     href={r.href}
                     className="text-base text-gray-300 hover:text-gray-200"
+                    onClick={() => {
+                      if (r.name === 'Sign Out') {
+                        signOut(auth);
+                      }
+                    }}
                   >
                     {r.name}
                   </a>
