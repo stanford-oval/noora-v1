@@ -6,7 +6,7 @@ import ModulesInfo from "../components/dashboard/ModulesInfo";
 import { LogInScreen, BufferScreen } from '../SignIn';
 import { useAuth } from '../Authenticate'; // Import the useAuth function
 
-export default function dashboard() {
+export default function DashboardScreen() {
   const [user, email] = useAuth(); // Call the useAuth function to get the user state
 
   // Display a loading indicator while checking the authentication status
