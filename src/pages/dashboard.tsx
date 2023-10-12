@@ -6,7 +6,7 @@ import ModulesInfo from "../components/dashboard/ModulesInfo";
 import { LogInScreen, BufferScreen } from '../SignIn';
 import { useAuth } from '../Authenticate'; // Import the useAuth function
 
-export default function DashboardScreen() {
+function DashboardScreen() {
   const [user, email] = useAuth(); // Call the useAuth function to get the user state
 
   // Display a loading indicator while checking the authentication status
@@ -21,13 +21,17 @@ export default function DashboardScreen() {
       title="Dashboard"
       desc="View your Noora account and progress. Noora is a platform utilizing conversational AI to improve the social conversation of individuals with ASD."
     >
-      { user ? (<div>
-        <UserHero />
-        <div className="container py-8 flex flex-col gap-8">
-          <ProgressSummary />
-          <ModulesInfo />
+      { user ? (
+        <div>
+          <UserHero />
+          <div className="container py-8 flex flex-col gap-8">
+            <ProgressSummary />
+            <ModulesInfo />
+          </div>
         </div>
-      </div>) : <LogInScreen/>}
+      ) : <LogInScreen/>}
     </Page>
   );
 }
+
+export default DashboardScreen;
