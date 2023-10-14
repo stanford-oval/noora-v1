@@ -65,6 +65,11 @@ export default function Microphone({
 
           setPressed(false);
         }
+        convoState.setValue((cs: any) => ({
+          ...cs,
+          stt: true,
+        }));
+        console.log("Just set the value of STT to true.");
       }}
       disabled={
         turn.includes("read") || turn.includes("rate-reply") || tempDisable

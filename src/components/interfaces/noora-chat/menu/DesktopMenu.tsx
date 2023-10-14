@@ -50,6 +50,7 @@ export default function DesktopMenu({ convoState }: any) {
           <span><MenuAlt2Icon className="h-4 w-4 -mt-0.5 inline-block" /> text-only</span>
           <Switch
             checked={convoState.value.audio.shouldAutoPlay}
+            disabled
             onChange={() => {
               if (convoState.value.audio.autoPlaying) {
                 if (convoState.value.audio.player) {

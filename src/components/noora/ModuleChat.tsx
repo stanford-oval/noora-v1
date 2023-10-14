@@ -51,6 +51,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       prevTimeSpent: 0,
     },
     times: [],
+    stt: false,
     researchMode: {
       focused: focusedMode,
     },
@@ -79,6 +80,11 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       });
   }, [input_modules.modules]);
 
+  // console.log("History")
+  // console.log(history);
+
+  // console.log("convoState");
+  // console.log(convoState.value.times);
 
   return (
     <div className="bg-gray-100 py-4" id="homeChat">

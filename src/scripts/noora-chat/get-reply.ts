@@ -134,7 +134,6 @@ async function getRating(
     console.log(`frequency_penalty: ${convoState.value.model.frequencyPenalty}`);
     console.log(`presence_penalty: ${convoState.value.model.presencePenalty}`);
     console.log(`stop: "\\n"`);
-    
 
     explanation = output.trim();
 

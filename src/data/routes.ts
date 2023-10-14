@@ -1,3 +1,7 @@
+import React, { useState, useEffect, useRef } from 'react';
+
+import { useAuth } from '../Authenticate'; // Import the useAuth function
+
 const routes = [
   {
     href: "/",
@@ -14,6 +18,10 @@ const routes = [
   {
     name: "Ask Noora",
     href: "/ask-noora",
+  },
+  {
+    href: "/#",
+    name: "Sign Out",
   },
 ];
 

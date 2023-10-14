@@ -5,6 +5,8 @@ import modules from "../../data/modules";
 import Preamble from "./Preamble";
 import ModuleChat from "./ModuleChat";
 import PickModuleScreen from "./PickModuleScreen";
+import { LogInScreen, BufferScreen } from '../../SignIn';
+import { useAuth } from '../../Authenticate'; // Import the useAuth function
 
 export default function Noora() {
   const router = useRouter();
@@ -26,6 +28,16 @@ export default function Noora() {
   }, [router.query, showPickModuleScreen]);
 
   let focus = false;
+
+  const [user, email] = useAuth(); // Call the useAuth function to get the user state
+
+  // Display a loading indicator while checking the authentication status
+  if (user === null) {
+    return (
+      <BufferScreen/>
+    );
+  }
+
   return (
     <div>
       <Page
@@ -35,33 +47,35 @@ export default function Noora() {
             : "Noora"
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social conversation of individuals with ASD."
-      >
-        {showPickModuleScreen && <PickModuleScreen open={showPickModuleScreen} setOpen={setShowPickModuleScreen} />}
-        {selectedModule ? (
-          <div>
-            <Preamble module={selectedModule} focusedMode = {focus} />
-            <ModuleChat
-              focusedMode = {focus}
-              modules={selectedModule.module == "all"
-                ? Object.values(modules).map((m: any) => {
-                  if (m.module == "all") return;
-                  return { title: m.module, displayName: m.title, active: true, fixed: true };
-                })
-                : Object.values(modules).map((m: any) => {
-                  if (m.module == "all") return;
-                  return {
-                    title: m.module,
-                    displayName: m.title,
-                    active: selectedModule.module == m.module,
-                    fixed: true,
-                  };
-                })
-              }
-            />
-          </div>
-        ) : (
-          <div className="h-screen"></div>
-        )}
+      > 
+        {user ? (<div> 
+          {showPickModuleScreen && <PickModuleScreen open={showPickModuleScreen} setOpen={setShowPickModuleScreen} />}
+          {selectedModule ? (
+            <div>
+              <Preamble module={selectedModule} focusedMode = {focus} />
+              <ModuleChat
+                focusedMode = {focus}
+                modules={selectedModule.module == "all"
+                  ? Object.values(modules).map((m: any) => {
+                    if (m.module == "all") return;
+                    return { title: m.module, displayName: m.title, active: true, fixed: true };
+                  })
+                  : Object.values(modules).map((m: any) => {
+                    if (m.module == "all") return;
+                    return {
+                      title: m.module,
+                      displayName: m.title,
+                      active: selectedModule.module == m.module,
+                      fixed: true,
+                    };
+                  })
+                }
+              />
+            </div>
+          ) : (
+            <div className="h-screen"></div>
+          )})
+        </div>) : <LogInScreen />}
       </Page>
     </div>
   );
