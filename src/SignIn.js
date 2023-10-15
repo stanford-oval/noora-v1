@@ -10,6 +10,9 @@ import { faShuffle } from "@fortawesome/free-solid-svg-icons";
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import Link from "next/link";
+import PropTypes from 'prop-types';
+import { ConsoleLoggingListener } from 'microsoft-cognitiveservices-speech-sdk/distrib/lib/src/common.browser/Exports';
+
 
 export function BufferScreen() {
     return (
@@ -20,19 +23,23 @@ export function BufferScreen() {
 
 export function LogInScreen() {
     return (
-        <Login/>
+        <Login logInInitialization={true}/>
     )
 }
 
-const Login = () => {
+export function UserCreationScreen() {
+    return (
+        <Login logInInitialization={false}/>
+    )
+}
+
+const Login = ({ logInInitialization }) => {
+    console.log(`Log In Initialization: ${logInInitialization}`)
     const router = useRouter()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [logInHook, setLogInHook] = useState(true);
+    const [logInHook, setLogInHook] = useState(logInInitialization);
     const [authCode, setAuthCode] = useState('');
-
-    console.log("Log IN HOOk")
-    console.log(logInHook);
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -82,14 +89,14 @@ const Login = () => {
                 <h1 className="inline bg-gradient-to-r from-noora-primary-dark via-noora-secondary-light to-noora-primary-dark1 bg-clip-text font-bold text-4xl xl:text-5xl tracking-tight">
                     {logInHook ? "Log in to" : "Sign up for" } <span className="text-noora-primary">Noora.</span>
                 </h1>
-                <p>
+                {/* <p>
                     {logInHook ? "Don't have an account? " : "Already have an account? "}
                     <a href={"/#"} onClick={() => { 
                         setLogInHook(!logInHook); 
                     }}>                            
                         <span className="text-noora-primary">{logInHook ? "Create one here." : "Sign in here."}</span>
                     </a>
-                </p>
+                </p> */}
                 </div>
                 <div className=" top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-200 p-6 rounded-md w-1/2">
                     <form className="mx-auto text-center">
@@ -210,3 +217,8 @@ const Login = () => {
 }
  
 
+
+
+Login.propTypes = {
+    logInInitialization: PropTypes.bool.isRequired, 
+};
