@@ -112,7 +112,7 @@ const Login = ({ logInInitialization }) => {
                                 name="email"
                                 type="email"
                                 required
-                                placeholder="HOT_POTATO"
+                                placeholder="NOORA_USER"
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
