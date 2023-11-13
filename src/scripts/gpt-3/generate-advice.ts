@@ -11,7 +11,7 @@ export default async function generateResult(statement: string, uuid: string) {
 
   let numApiCalls = 0;
   let explanation = "";
-  let reply = "Noora couldn't think of a reply. Please try again.";
+  let reply = "Noora couldn't think of a reply. Please try again later.";
   let success = false;
   while (numApiCalls < 3) {
     let result = await Completion({
