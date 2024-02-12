@@ -55,6 +55,7 @@ export default function AskNooraComponent({
                   id={result.id}
                   statement={result.statement}
                   explanation={result.explanation}
+                  success={result.success}
                   reply={result.reply}
                   results={results}
                 />

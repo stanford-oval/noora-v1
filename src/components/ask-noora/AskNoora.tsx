@@ -10,6 +10,7 @@ export default function AskNoora() {
       explanation:
         "You should show them that you are interested in their experiences by asking them about their book.",
       reply: "That's great! What was your favorite part of the book?",
+      success: true,
     },
   ]);
   const [rq, setRq] = useState<any[]>([]);

@@ -11,7 +11,8 @@ export default async function generateResult(statement: string, uuid: string) {
 
   let numApiCalls = 0;
   let explanation = "";
-  let reply = "Noora couldn't think of a reply.";
+  let reply = "Noora couldn't think of a reply. Please try again later.";
+  let success = false;
   while (numApiCalls < 3) {
     let result = await Completion({
       model: "text-davinci-002",
@@ -27,6 +28,7 @@ export default async function generateResult(statement: string, uuid: string) {
     if (tokens.length == 2) {
       explanation = tokens[0].trim();
       reply = tokens[1].trim().replace('"', "");
+      success = true;
       break;
     }
   }
@@ -35,6 +37,7 @@ export default async function generateResult(statement: string, uuid: string) {
     id: uuid,
     statement: statement,
     explanation: explanation,
+    success: success,
     reply: reply.replace('"', ""),
   };
 }
