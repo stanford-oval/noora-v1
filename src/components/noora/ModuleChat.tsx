@@ -44,7 +44,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       autoPlaying: false,
       shouldAutoPlay: isIOS ? false : true,
     },
-    numProblems: 2, // TEMPX
+    numProblems: 10,
     questionType: questionType,
     clock: {
       currentTimeSpent: 0,
