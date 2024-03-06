@@ -17,7 +17,7 @@ export default function NooraChat({
 
 
   useEffect(() => {
-    
+
     return () => {
       // on component unmount
       const player = (audioRef.current as any).player as any

@@ -2,16 +2,21 @@ import Completion from "../gpt-3/Completion";
 import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
 import data from "../../data/statement_bank/data.json";
-import JSConfetti from 'js-confetti';
+import JSConfetti from "js-confetti";
 
 const problems = data.data;
-const wrongReplies = ['Close!', 'Almost!', 'Almost there.', 'Warm, but not quite there.']
+const wrongReplies = [
+  "Close!",
+  "Almost!",
+  "Almost there.",
+  "Warm, but not quite there.",
+];
 
 function makeIndex(problems: any[]) {
   let counter = 0;
-  return (problems.map(p => {
-    return ({ "idx": counter++, "val": p })
-  }));
+  return problems.map((p) => {
+    return { idx: counter++, val: p };
+  });
 }
 
 const pairedProblems = makeIndex(problems);
@@ -35,13 +40,14 @@ export default async function getReply(
   ];
 
   if (command == "get-statement") {
-    const statement = await getStatement(convoState)
+    const statement = await getStatement(convoState);
     replies = [
       {
         id: uuidv4(),
         fromNoora: true,
         text: statement.text,
-        // sentiment: statement.sentiment,
+        // @ts-ignore
+        sentiment: statement.sentiment,
         statement: true,
       },
     ];
@@ -49,7 +55,6 @@ export default async function getReply(
       // @ts-ignore
       replies[0]["sentiment"] = statement.sentiment;
     }
-
   } else if (command == "rate-reply") {
     convoState.setValue((cs: any) => ({
       ...cs,
@@ -75,7 +80,10 @@ export default async function getReply(
 
   convoState.setValue((cs: any) => ({
     ...cs,
-    turn: command == (convoState.value.questionType == "old" && "get-statement") ? "user-select" : "user-answer",
+    turn:
+      command == (convoState.value.questionType == "old" && "get-statement")
+        ? "user-select"
+        : "user-answer",
   }));
 
   return replies;
@@ -109,7 +117,6 @@ async function getRating(
     if (output.split(" ")[0] === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
-
     } else {
       classification = "Bad reply.";
       goodAnswer = false;
@@ -131,7 +138,9 @@ async function getRating(
     console.log(`prompt: ${prompt} ${classification}`);
     console.log(`temperature: ${convoState.value.model.temperature}`);
     console.log(`max_tokens: 128`);
-    console.log(`frequency_penalty: ${convoState.value.model.frequencyPenalty}`);
+    console.log(
+      `frequency_penalty: ${convoState.value.model.frequencyPenalty}`
+    );
     console.log(`presence_penalty: ${convoState.value.model.presencePenalty}`);
     console.log(`stop: "\\n"`);
 
@@ -142,14 +151,25 @@ async function getRating(
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti({
         confettiColors: [
-          '#EE3E19', '#EE9F19', '#EEC819', '#83CC19', '#19CC9B', '#19A6CC', '#1945CC', '#5919CC', '#B519CC', '#CC1968'
+          "#EE3E19",
+          "#EE9F19",
+          "#EEC819",
+          "#83CC19",
+          "#19CC9B",
+          "#19A6CC",
+          "#1945CC",
+          "#5919CC",
+          "#B519CC",
+          "#CC1968",
         ],
         emojiSize: 200,
         confettiNumber: 30,
       });
       answers.push({ text: explanation, sentiment: "positive" });
     } else {
-      answers.push({ text: wrongReplies[Math.floor(Math.random()*wrongReplies.length)] });
+      answers.push({
+        text: wrongReplies[Math.floor(Math.random() * wrongReplies.length)],
+      });
       answers.push({ text: explanation });
       answers.push({ text: target.trim(), suggestion: true });
     }
@@ -159,7 +179,7 @@ async function getRating(
     answers = [explanation];
   }
 
-  console.log(statementObj)
+  console.log(statementObj);
 
   // SET PROGRESS
   convoState.setValue((cs: any) => ({
@@ -170,10 +190,17 @@ async function getRating(
         idx: statementIdx,
         statement: statementObj.val.text,
         statementCategory: statementObj.val.task_name,
+        // @ts-ignore
+        sentimentGiven: statementObj.val.sentiment,
+        // added these two to track guess + correct boolean
+        sentimentCorrectlyIdentified:
+          cs.currProblemSentimentInfo.sentimentCorrectlyIdentified,
+        sentimentGuessedByUser:
+          cs.currProblemSentimentInfo.sentimentGuessedByUser,
         reply: message,
         explanation: explanation,
-        replyCategory: null,
         goodAnswer: goodAnswer,
+        currentProblemNumber: cs.progress.length + 1,
       },
     ],
   }));
@@ -185,19 +212,19 @@ export async function getStatement(convoState: any) {
   // choose module
   const modules = convoState.value.modules.filter((m: any) => m.active);
   const category = getRandomItem(modules).title;
-  let filtered_problems = pairedProblems.filter((c: any) => c.val.task_name == category);
+  let filtered_problems = pairedProblems.filter(
+    (c: any) => c.val.task_name == category
+  );
   if (convoState.value.questionType == "old") {
     const sentiments = convoState.value.sentiments.filter((s: any) => s.active);
     const sentiment = getRandomItem(sentiments).title;
-    filtered_problems = filtered_problems.filter((c: any) => c.val.sentiment.includes(sentiment));
+    filtered_problems = filtered_problems.filter((c: any) =>
+      c.val.sentiment.includes(sentiment)
+    );
   }
   // await timeout(700);
   // choose statement
-  const statementIdx = getStatementIdx(
-    category,
-    filtered_problems,
-    convoState
-  );
+  const statementIdx = getStatementIdx(category, filtered_problems, convoState);
 
   const statement = pairedProblems[statementIdx];
   convoState.setValue((cs: any) => ({
@@ -210,8 +237,6 @@ export async function getStatement(convoState: any) {
   }
   return { text: statement.val.text };
 }
-
-
 
 function getStatementIdx(
   category: string,
@@ -235,16 +260,17 @@ function getStatementIdx(
     console.log("Exhausted all statements. Resetting.");
     seenIdxs = seenIdxs.slice(
       statementsList.length *
-      Math.floor(seenIdxs.length / statementsList.length),
+        Math.floor(seenIdxs.length / statementsList.length),
       seenIdxs.length
     );
   }
 
   let newRandomIdx = 0;
   while (true) {
-    let possibleIdxs = statementsList.map(c => c.idx);
-    console.log(possibleIdxs)
-    const randomElement = statementsList[Math.floor(Math.random() * possibleIdxs.length)];
+    let possibleIdxs = statementsList.map((c) => c.idx);
+    console.log(possibleIdxs);
+    const randomElement =
+      statementsList[Math.floor(Math.random() * possibleIdxs.length)];
     newRandomIdx = randomElement.idx;
     if (seenIdxs.indexOf(newRandomIdx) == -1) break;
   }

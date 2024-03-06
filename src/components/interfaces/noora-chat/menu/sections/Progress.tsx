@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Progress({ convoState }: any) {
+  // console.log("AHH", convoState.value.progress)
+  const finishedProblemsProgress = convoState.value.progress.filter((p: any) => p.hasOwnProperty('goodAnswer'));
   return (
     <div>
       <div className="mt-2 bg-gray-100 rounded-lg flex flex-col">
@@ -13,13 +15,12 @@ export default function Progress({ convoState }: any) {
           {[
             {
               units: "scenarios",
-              num: convoState.value.progress.length,
+              num: finishedProblemsProgress.length,
               denom: convoState.value.numProblems,
             },
             {
               units: "correct",
-              num: convoState.value.progress.filter((p: any) => p.goodAnswer)
-                .length,
+              num: finishedProblemsProgress.filter((p: any) => p.goodAnswer).length,
               denom: convoState.value.progress.length,
             },
           ].map((x) => (
@@ -35,7 +36,7 @@ export default function Progress({ convoState }: any) {
           ))}
         </div>
       </div>
-      
+
     </div>
   );
 }
