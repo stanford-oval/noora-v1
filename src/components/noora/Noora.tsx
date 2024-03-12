@@ -34,7 +34,7 @@ export default function Noora() {
   // Display a loading indicator while checking the authentication status
   if (user === null) {
     return (
-      <BufferScreen/>
+      <BufferScreen />
     );
   }
 
@@ -47,14 +47,14 @@ export default function Noora() {
             : "Noora"
         }
         desc="Practice social scenarios with Noora. Noora is a conversational AI designed to improve the social conversation of individuals with ASD."
-      > 
-        {user ? (<div> 
+      >
+        {user ? (<div>
           {showPickModuleScreen && <PickModuleScreen open={showPickModuleScreen} setOpen={setShowPickModuleScreen} />}
           {selectedModule ? (
             <div>
-              <Preamble module={selectedModule} focusedMode = {focus} />
+              <Preamble module={selectedModule} focusedMode={focus} />
               <ModuleChat
-                focusedMode = {focus}
+                focusedMode={focus}
                 modules={selectedModule.module == "all"
                   ? Object.values(modules).map((m: any) => {
                     if (m.module == "all") return;
@@ -74,7 +74,7 @@ export default function Noora() {
             </div>
           ) : (
             <div className="h-screen"></div>
-          )})
+          )}
         </div>) : <LogInScreen />}
       </Page>
     </div>
