@@ -8,6 +8,7 @@ export default function InputForm({ query, results, resultsQueue }: any) {
   const inputBox = useRef<HTMLInputElement>(null);
 
   let handleSubmit = async (e: any) => {
+    // TODOX: here is where the timer should start
     e.preventDefault();
     let statement = query.value.slice();
     query.setValue("");

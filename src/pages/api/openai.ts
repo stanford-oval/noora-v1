@@ -19,8 +19,8 @@ export default async function handler(
   await limiter.check(res, 20, "CACHE_TOKEN"); // 20 requests per minute
 
   // print environment variables
-  console.log("AZURE_ENDPOINT: ", process.env.AZURE_ENDPOINT);
-  console.log("AZURE_OPENAI_API_KEY: ", process.env.AZURE_OPENAI_API_KEY);
+  // console.log("AZURE_ENDPOINT: ", process.env.AZURE_ENDPOINT);
+  // console.log("AZURE_OPENAI_API_KEY: ", process.env.AZURE_OPENAI_API_KEY);
 
   const client = new OpenAIClient(
     process.env.AZURE_ENDPOINT,

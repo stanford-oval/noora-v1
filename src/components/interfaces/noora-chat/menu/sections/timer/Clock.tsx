@@ -1,11 +1,9 @@
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, useEffect, useRef } from 'react';
-import useTimer from './useTimer';
-import { faRepeat } from '@fortawesome/free-solid-svg-icons';
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from '../../../../../../firebase';
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../../../../../Authenticate'; // Import the useAuth function
+import { db } from '../../../../../../firebase';
+import useTimer from './useTimer';
+import { writeToFirestore } from "../../../../../../lib/firestoreUtils";
 
 export default function Clock({ convoState }: any) {
     const [user, email] = useAuth();
@@ -18,32 +16,17 @@ export default function Clock({ convoState }: any) {
         console.log("turn was  " + turn + " and now is " + convoState.value.turn)
         if (turn.endsWith("user-answer-noora-reads") || turn.endsWith("user-answer") && convoState.value.turn == "user-answer") {
             if (previousLenRef.current != 0) {
+                // TODOX: here is where pause is handled
                 handlePause();
                 handleReset();
                 console.log("We have paused and reset the timer.")
                 convoState.value.times.push(formatTime(timer));
-                (async () => {
-                    const timestamp = serverTimestamp(); // Get the server timestamp
-                    const toWrite = {
-                        progress: convoState.value.progress.slice(-1)[0],
-                        model: convoState.value.model,
-                        time_taken: convoState.value.times.slice(-1)[0],
-                        audio: convoState.value.audio,
-                        timestamp: timestamp,
-                        sentiments: convoState.value.sentiments,
-                        focused: convoState.value.researchMode.focused,
-                        questionType: convoState.value.questionType,
-                        numProblems: convoState.value.numProblems,
-                        stt: convoState.value.stt,
-                    };
 
-                    console.log("******WRITING TO FIRESTORE******")
-                    console.log(toWrite);
-                    console.log("******WRITING TO FIRESTORE******")
-
-                    const docRef = await addDoc(collection(db, `users/${email}/exercises`), toWrite);
-                    console.log("Document written with ID: ", docRef.id);
-                })();
+                // TODOX: rewrite this to be at the response
+                if (email)
+                    writeToFirestore(convoState, email);
+                else
+                    alert("You are not logged in, so no progress is being saved. Please contact the developer if you are seeing this message.")
 
                 // RESET STT value
                 if (convoState.value.stt) {
@@ -58,6 +41,8 @@ export default function Clock({ convoState }: any) {
 
                 // console.log(`Current state of convoState times: ${convoState.value.times}`)
             }
+
+            // TODOX: move this to onSubmit
             handleStart();
         }
 
