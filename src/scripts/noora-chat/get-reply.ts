@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import formPrompt from "../gpt-3/generate-evaluation-prompt";
 import data from "../../data/statement_bank/data.json";
 import JSConfetti from "js-confetti";
+import { writeToFirestore } from "../../lib/firestoreUtils";
 
 const problems = data.data;
 const wrongReplies = [
@@ -181,29 +182,30 @@ async function getRating(
 
   console.log(statementObj);
 
+  const newProgressItem = {
+    idx: statementIdx,
+    statement: statementObj.val.text,
+    statementCategory: statementObj.val.task_name,
+    // @ts-ignore
+    sentimentGiven: statementObj.val.sentiment,
+    // added these two to track guess + correct boolean
+    sentimentCorrectlyIdentified:
+      convoState.value.currProblemSentimentInfo.sentimentCorrectlyIdentified,
+    sentimentGuessedByUser:
+      convoState.value.currProblemSentimentInfo.sentimentGuessedByUser,
+    reply: message,
+    explanation: explanation,
+    goodAnswer: goodAnswer,
+    currentProblemNumber: convoState.value.progress.length + 1,
+  };
+
   // SET PROGRESS
   convoState.setValue((cs: any) => ({
     ...cs,
-    progress: [
-      ...cs.progress,
-      {
-        idx: statementIdx,
-        statement: statementObj.val.text,
-        statementCategory: statementObj.val.task_name,
-        // @ts-ignore
-        sentimentGiven: statementObj.val.sentiment,
-        // added these two to track guess + correct boolean
-        sentimentCorrectlyIdentified:
-          cs.currProblemSentimentInfo.sentimentCorrectlyIdentified,
-        sentimentGuessedByUser:
-          cs.currProblemSentimentInfo.sentimentGuessedByUser,
-        reply: message,
-        explanation: explanation,
-        goodAnswer: goodAnswer,
-        currentProblemNumber: cs.progress.length + 1,
-      },
-    ],
+    progress: [...cs.progress, newProgressItem],
   }));
+
+  writeToFirestore(convoState, newProgressItem);
 
   return answers;
 }

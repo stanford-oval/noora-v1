@@ -12,6 +12,17 @@ export default function Clock({ convoState }: any) {
     const [turn, setTurn] = useState(convoState.value.turn)
     const previousLenRef = useRef(0);
 
+
+    useEffect(() => {
+        // if email is not set, set it
+        if (email && !convoState.value.EMAIL) {
+            convoState.setValue((cs: any) => ({
+                ...cs,
+                EMAIL: email
+            }));
+        }
+    }, [convoState.value.turn])
+
     useEffect(() => {
         if (convoState.value.PAUSE_TIMER) {
             handlePause();
@@ -28,12 +39,6 @@ export default function Clock({ convoState }: any) {
                 handleReset();
                 console.log("We have paused and reset the timer.")
                 convoState.value.times.push(formatTime(timer));
-
-                // TODOX: rewrite this to be at the response
-                if (email)
-                    writeToFirestore(convoState, email);
-                else
-                    alert("You are not logged in, so no progress is being saved. Please contact the developer if you are seeing this message.")
 
                 // RESET STT value
                 if (convoState.value.stt) {
@@ -73,11 +78,6 @@ export default function Clock({ convoState }: any) {
 
     return (
         <div className="mt-2 bg-gray-100 rounded-lg flex flex-col p-2 text-center">
-            {previousLenRef.current}
-            <br />
-            {convoState.value.progress.length}
-            <br />
-            {convoState.value.turn}
             <div className='space-y-1'>
                 <div>
                     <p className="text-3xl font-bold text-noora-primary">{formatTime(timer)}</p>

@@ -44,7 +44,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       autoPlaying: false,
       shouldAutoPlay: isIOS ? false : true,
     },
-    numProblems: 10,
+    numProblems: 2,
     questionType: questionType,
     clock: {
       currentTimeSpent: 0,
@@ -61,6 +61,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       { title: "negative", active: true },
     ],
     PAUSE_TIMER: false,
+    EMAIL: ""
   });
 
   cs.questionType = questionType;

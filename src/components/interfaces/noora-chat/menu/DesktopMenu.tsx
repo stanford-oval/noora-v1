@@ -43,10 +43,6 @@ export default function DesktopMenu({ convoState }: any) {
           Menu
         </div>
 
-        {convoState.value.turn}
-        <br />
-        {convoState.value.PAUSE_TIMER ? "PAUSED" : "RUNNING"}
-
         {/* <Clock/> */}
 
         {/* Text-only toggle */}

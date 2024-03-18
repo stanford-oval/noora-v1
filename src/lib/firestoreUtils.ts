@@ -1,18 +1,19 @@
 import { db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-export async function writeToFirestore(convoState: any, email?: string) {
-  if (!email || email.length === 0) {
-    alert("No email found. Not saving your progress.");
+export async function writeToFirestore(convoState: any, newProgressItem: any) {
+  if (!convoState.value.EMAIL) {
+    alert(
+      "You are not logged in, so no progress is being saved. Please contact the developer if you are seeing this message."
+    );
     return;
   }
-
   console.log("progress baby", convoState.value.progress);
 
   const timestamp = serverTimestamp(); // Get the server timestamp
 
   const toWrite = {
-    progress: convoState.value.progress.slice(-1)[0],
+    progress: newProgressItem,
     model: convoState.value.model,
     time_taken: convoState.value.clock.currentTimeSpent,
     audio: convoState.value.audio,
@@ -36,7 +37,7 @@ export async function writeToFirestore(convoState: any, email?: string) {
   console.log("******WRITING TO FIRESTORE******");
 
   const docRef = await addDoc(
-    collection(db, `users/${email}/exercises`),
+    collection(db, `users/${convoState.value.EMAIL}/exercises`),
     toWrite
   );
   console.log("Document written with ID: ", docRef.id);
