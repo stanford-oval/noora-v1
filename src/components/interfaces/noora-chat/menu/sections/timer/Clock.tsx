@@ -13,6 +13,13 @@ export default function Clock({ convoState }: any) {
     const previousLenRef = useRef(0);
 
     useEffect(() => {
+        if (convoState.value.PAUSE_TIMER) {
+            handlePause();
+            convoState.setValue((cs: any) => ({ ...cs, PAUSE_TIMER: false }));
+        }
+    }, [convoState.value.PAUSE_TIMER])
+
+    useEffect(() => {
         console.log("turn was  " + turn + " and now is " + convoState.value.turn)
         if (turn.endsWith("user-answer-noora-reads") || turn.endsWith("user-answer") && convoState.value.turn == "user-answer") {
             if (previousLenRef.current != 0) {
@@ -66,6 +73,11 @@ export default function Clock({ convoState }: any) {
 
     return (
         <div className="mt-2 bg-gray-100 rounded-lg flex flex-col p-2 text-center">
+            {previousLenRef.current}
+            <br />
+            {convoState.value.progress.length}
+            <br />
+            {convoState.value.turn}
             <div className='space-y-1'>
                 <div>
                     <p className="text-3xl font-bold text-noora-primary">{formatTime(timer)}</p>

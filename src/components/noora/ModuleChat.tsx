@@ -59,7 +59,8 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       { title: "positive", active: true },
       { title: "neutral", active: true },
       { title: "negative", active: true },
-    ]
+    ],
+    PAUSE_TIMER: false,
   });
 
   cs.questionType = questionType;
