@@ -1,3 +1,5 @@
+> This is an archived repository. The new Noora code can be found [here](https://github.com/stanford-oval/noora).
+
 <p align="center">
     <h1 align="center"><b>Noora</b></h1>
     <p align="center">Use AI to improve your social conversation.</p>
