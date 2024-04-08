@@ -1441,7 +1441,7 @@
       "sentiment": ["neutral"]
     },
     {
-      "text": "I usually go out on Friday nights, but this week I'm staying home to get some more rest so I'm excited.",
+      "text": "I usually go out on Friday nights, but this week I'm staying home to get some more rest, which will be great for a change.",
       "response": "That's sounds like a good plan.",
       "task_type": "old",
       "task_name": "general",
@@ -1480,7 +1480,7 @@
       "response": "That's great, I hope you get one of them!",
       "task_type": "old",
       "task_name": "general",
-      "sentiment": ["neutral"]
+      "sentiment": ["positive"]
     },
     {
       "text": "My brother and I got in an argument last night.",
@@ -1567,7 +1567,7 @@
       "sentiment": ["negative"]
     },
     {
-      "text": "My landlord just the unit so I get to move out early, and find a bigger place, so I'm excited.",
+      "text": "My landlord just sold the unit so I get to move out early, and find a bigger place, so I'm excited.",
       "response": "That's awesome and sounds exciting, do you know where you want to move to? ",
       "task_type": "old",
       "task_name": "general",
@@ -1610,7 +1610,7 @@
       ]
     },
     {
-      "text": "My parents are divorced and it's sometimes hard to juggle between their houses, causing me anguish.",
+      "text": "My parents are divorced and it's hard to juggle between their houses, especially on holidays.",
       "response": "I can imagine that can be challenging. How do you manage your time between them?",
       "task_type": "old",
       "task_name": "general",
@@ -1746,7 +1746,7 @@
       ]
     },
     {
-      "text": "I'm really passionate about fashion and love creating unique outfits, it's been so fun for me.",
+      "text": "I'm really passionate about fashion and love creating unique outfits, it's been fun.",
       "response": "That's so cool! Fashion is a great form of self-expression, and creating unique outfits is a wonderful way to showcase your personal style. Do you follow any fashion influencers for inspiration?",
       "task_type": "old",
       "task_name": "general",
@@ -1892,7 +1892,7 @@
       ]
     },
     {
-      "text": "Have you seen the latest episode of 'Game of Thrones'?",
+      "text": "Have you seen 'Game of Thrones'?",
       "response": "Yes, I have! It was intense. What did you think of it?",
       "task_type": "old",
       "task_name": "general",
@@ -1947,7 +1947,7 @@
       ]
     },
     {
-      "text": "I burnt the cookies I was baking for my family.",
+      "text": "I burned the cookies I was baking for my family.",
       "response": "Oh no! It happens to the best of us. Maybe try again, they'll turn out great next time!",
       "task_type": "old",
       "task_name": "general",
@@ -2056,7 +2056,7 @@
       ]
     },
     {
-      "text": "I joined a yoga class to improve my flexibility and reduce stress, which I'm excited about.",
+      "text": "I joined a yoga class to improve my flexibility and reduce stress, which I'm happy about.",
       "response": "That's a great decision! Yoga is known for its benefits in flexibility and stress reduction. How are you finding the class so far?",
       "task_type": "old",
       "task_name": "general",
@@ -2152,7 +2152,7 @@
       "task_type": "old",
       "task_name": "general",
       "sentiment": [
-        "postiive",
+        "positive",
         "neutral",
         "negative"
       ]
@@ -2610,7 +2610,7 @@
       ]
     },
     {
-      "text": "I've been working on improving my cooking skills, it has been going well.",
+      "text": "I've been working on improving my cooking skills, it's been going well.",
       "response": "That's fantastic! Cooking is a valuable skill to have. Have you tried any new recipes recently?",
       "task_type": "old",
       "task_name": "general",
@@ -2730,7 +2730,7 @@
       ]
     },
     {
-      "text": "I have fond memories of how every summer my family used to go camping in the mountains.",
+      "text": "I have good memories of my family going camping in the mountains.",
       "response": "Camping trips are always so much fun! What was your favorite camping activity?",
       "task_type": "old",
       "task_name": "general",
@@ -2859,7 +2859,7 @@
     },
   
     {
-      "text": "I just received my paycheck, I'm so excited.",
+      "text": "I just got my paycheck, I'm so excited.",
       "response": "That's great! Is there anything new you're excited to purchase?",
       "task_type": "old",
       "task_name": "general",
@@ -2868,7 +2868,7 @@
       ]
     },
     {
-      "text": "I need to pay my rent this month.",
+      "text": "I need to pay my rent this week.",
       "response": "Do you have enough money saved up for it?",
       "task_type": "old",
       "task_name": "general",
@@ -2887,7 +2887,7 @@
       ]
     },
     {
-      "text": "I just received a great tax refund.",
+      "text": "I just received a huge tax refund.",
       "response": "That's awesome! How are you planning to use the money?",
       "task_type": "old",
       "task_name": "general",
@@ -2905,7 +2905,7 @@
       ]
     },
     {
-      "text": "I'm planning to buy a new ca, so excited!",
+      "text": "I'm planning to buy a new car and am so excited!",
       "response": "That's exciting! Have you looked into different financing options?",
       "task_type": "old",
       "task_name": "general",
@@ -2991,7 +2991,7 @@
       ]
     },
     {
-      "text": "I've been saving up to buy my dream car, it's been a great exerise in determination",
+      "text": "I've been saving up to buy my dream car, it's been a great exercise in determination",
       "response": "That's fantastic! I can only imagine the excitement of owning your dream car.",
       "task_type": "old",
       "task_name": "general",
@@ -3000,7 +3000,7 @@
       ]
     },
     {
-      "text": "I'm planning to climb Mount Everest someday, feeling so inspired.",
+      "text": "I'm planning to climb Mount Everest someday, and am feeling so inspired.",
       "response": "Wow, that's quite an ambitious goal! I admire your determination. Just make sure to stay safe and prepared.",
       "task_type": "old",
       "task_name": "general",
@@ -3037,7 +3037,7 @@
       ]
     },
     {
-      "text": "I'm planning to travel to all 7 continents in my lifetime, just you wait!",
+      "text": "I'm planning to travel to all 7 continents in my lifetime, I can't wait!",
       "response": "That's an incredible goal! I hope you get to experience the diverse cultures and landscapes of each continent.",
       "task_type": "old",
       "task_name": "general",
@@ -3213,7 +3213,7 @@
       ]
     },
     {
-      "text": "I'm thinking of trying out a Zumba class, feeling excited.",
+      "text": "I'm feeling excited about trying out a Zumba class.",
       "response": "Zumba is a fun and energetic way to get your heart rate up. Give it a go and enjoy the dance party!",
       "task_type": "old",
       "task_name": "general",
@@ -3314,7 +3314,7 @@
     },
   
     {
-      "text": "I just booked a trip to Paris!",
+      "text": "I just booked a trip to Paris, my favorite city in the world!",
       "response": "That's amazing! Paris is such a beautiful city. Are you excited?",
       "task_type": "old",
       "task_name": "general",
@@ -3350,7 +3350,7 @@
       ]
     },
     {
-      "text": "I'm excitedly planning a road trip across the United States.",
+      "text": "I'm planning an awesome road trip across the United States.",
       "response": "How exciting! The US has so much to see and explore. Which states are you planning to visit?",
       "task_type": "old",
       "task_name": "general",
@@ -3377,7 +3377,7 @@
       ]
     },
     {
-      "text": "I'm thinking of going on a safari in Africa, I'm really looking forward to it.",
+      "text": "I'm thinking of going on a safari in Africa, I've always wanted to travel there.",
       "response": "That sounds like an incredible adventure! Which country or national park are you considering?",
       "task_type": "old",
       "task_name": "general",
@@ -3432,7 +3432,7 @@
       ]
     },
     {
-      "text": "Last night, I attended a live concert by my favorite band. I loved it",
+      "text": "Last night, I attended a live concert by my favorite band and it was awesome",
       "response": "That's amazing! There's something special about experiencing live music. I'm sure the concert was unforgettable and filled with incredible energy.",
       "task_type": "old",
       "task_name": "general",
@@ -3715,7 +3715,7 @@
       ]
     },
     {
-      "text": "I just found out I won the scholarship!",
+      "text": "I just found out I won a scholarship!",
       "response": "That's amazing! Congratulations on your achievement. What is it for?",
       "task_type": "old",
       "task_name": "general",
@@ -4017,7 +4017,7 @@
       ]
     },
     {
-      "text": "I can't believe how hot it is today, it's great!",
+      "text": "I can't believe how warm it is today, it's great!",
       "response": "I know, right? It feels like we're in the middle of summer already.",
       "task_type": "old",
       "task_name": "general",
