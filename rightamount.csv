@@ -1,0 +1,118 @@
+﻿text,response,task_name
+Do you like to read?,"Yes, I love to read, especially horror and romance novels. What type of books do you like?",rightAmount
+Do you have any siblings?,"Yes, I have two sisters. Do you have any siblings?",rightAmount
+Have you seen the latest Marvel movie?,"No, I haven't seen it yet. Are you planning on seeing it?",rightAmount
+Do you like to ski?,"No, I don't like to ski. Do you like to ski?",rightAmount
+Do you like to play video games?,"Yes, I love to play video games. What type of video games do you like to play?",rightAmount
+Do you have any pets?,"No, I don't have any pets. Do you have any pets?",rightAmount
+Did you do anything fun this weekend?,"No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",rightAmount
+Do you like to go hiking?,"No, I don't like to go hiking. Do you like to go hiking?",rightAmount
+Do you have any siblings?,"Yes, I have an older brother and a younger sister. Do you have any siblings?",rightAmount
+Do you like to go out or stay in on your days off?,I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?,rightAmount
+Are you a morning person or a night person?,I'm definitely a night person. I can't function in the morning. How about you?,rightAmount
+Do you like spicy food?,I love spicy food. I can't get enough of it. Do you like spicy food?,rightAmount
+Do you like to cook?,"Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",rightAmount
+Do you have any plans for the weekend?,"Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",rightAmount
+What did you do this morning?,I read my new book and made myself breakfast. How about you,rightAmount
+What did you do last night,"I watched a movie with my friend, do you have Netflix? You should watch it",rightAmount
+Do you have any plans for the weekend?,"Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",rightAmount
+What do you like to do for fun,"I love hikin gin the outdoors or going to the beach, how about you?",rightAmount
+Do you enjoy traveling?,"Yes, I love traveling to new places. Have you traveled anywhere interesting lately?",rightAmount
+Do you play any musical instruments?,I play the guitar. Do you play any instruments?,rightAmount
+Do you like watching sports?,"Yes, I'm a big football fan. What about you? Do you watch any sports?",rightAmount
+Are you interested in art?,"Yes, I love visiting art galleries. Do you have any interest in art?",rightAmount
+Do you prefer coffee or tea?,I'm definitely a coffee person. How about you?,rightAmount
+Do you enjoy gardening?,"Yes, I find gardening very relaxing. Do you like gardening?",rightAmount
+Have you watched any good movies recently?,"Yes, I watched an amazing thriller last week. Have you seen any good movies recently?",rightAmount
+Do you enjoy cooking?,"Absolutely, I love experimenting with new recipes. What about you? Do you like to cook?",rightAmount
+Do you have a favorite season?,I love autumn for its colors. What's your favorite season?,rightAmount
+Do you play any sports?,I play tennis occasionally. How about you? Do you play any sports?,rightAmount
+Do you prefer movies or books?,"I prefer books; they let me imagine things more vividly. What about you, movies or books?",rightAmount
+Do you have a favorite holiday?,"Christmas is my favorite, with all the decorations and family time. What's your favorite holiday?",rightAmount
+Do you like going to concerts?,"Yes, I love the energy of live music. Do you go to concerts often?",rightAmount
+Do you like to dance?,"Not really, I'm a bit shy about dancing. How about you? Do you like to dance?",rightAmount
+Do you prefer working from home or in an office?,I prefer working from home for the flexibility it offers. What about you?,rightAmount
+Do you follow any TV shows currently?,"Yes, I'm watching a great sci-fi series right now. Do you watch any TV shows?",rightAmount
+Do you like to visit museums?,"Yes, I find museums very enlightening. Do you enjoy visiting museums?",rightAmount
+Do you enjoy doing puzzles?,"Yes, especially crossword puzzles. What about you? Do you like puzzles?",rightAmount
+Do you like to swim?,"Yes, swimming is my favorite form of exercise. Do you swim too?",rightAmount
+Do you have any favorite podcasts?,I really enjoy history podcasts. Do you have any favorites?,rightAmount
+Do you like to write?,"Yes, I enjoy writing, especially short stories. Do you write?",rightAmount
+Are you into photography?,I dabble a bit in photography. It's a fun hobby. How about you?,rightAmount
+Do you play board games?,"Yes, I love board games like Settlers of Catan. Do you play any board games?",rightAmount
+Do you prefer the beach or the mountains?,I'm more of a beach person. What about you?,rightAmount
+Do you follow any fashion trends?,"Not really, I prefer comfortable clothes over trendy ones. What about you?",rightAmount
+Do you have a favorite cuisine?,"I love Italian food, especially pasta. What's your favorite cuisine?",rightAmount
+Do you enjoy yoga?,"Yes, it helps me stay flexible and relaxed. Do you practice yoga?",rightAmount
+Do you like to go camping?,"Yes, being in nature is very refreshing. How about you? Do you like camping?",rightAmount
+Are you interested in science?,"Yes, particularly astronomy. The universe fascinates me. What about you?",rightAmount
+Do you enjoy horror movies?,"Not really, they're too scary for me. Do you like horror movies?",rightAmount
+Do you play any online games?,"Yes, I play games like League of Legends. Do you play any online games?",rightAmount
+Do you like to draw?,I enjoy drawing as a relaxing hobby. How about you? Do you like to draw?,rightAmount
+Do you prefer cats or dogs?,"I'm a dog person. Dogs are so loyal and fun. What about you, cats or dogs?",rightAmount
+Do you have a favorite type of music?,I enjoy rock music the most. What's your favorite type of music?,rightAmount
+Do you watch documentaries?,"Yes, I find them very informative and interesting. Do you watch documentaries?",rightAmount
+Do you have a favorite author?,I really like J.K. Rowling. How about you? Do you have a favorite author?,rightAmount
+Do you collect anything?,I collect stamps. It's a bit old-fashioned but really fun. Do you collect anything?,rightAmount
+Do you like to watch comedy shows?,"Yes, I love a good laugh. What about you? Do you watch comedy shows?",rightAmount
+Do you use social media often?,"Not much, I prefer to keep my life more private. What about you?",rightAmount
+Do you enjoy listening to podcasts?,"Yes, especially ones about technology and innovation. Do you listen to any podcasts?",rightAmount
+Do you enjoy baking?,"Yes, I love baking cookies and cakes. How about you?",rightAmount
+Do you play video games?,"Yes, I'm a big fan of action and adventure games. What genres do you like?",rightAmount
+Do you enjoy classical music?,"Absolutely, it's very soothing. Do you like classical music?",rightAmount
+Do you have any hobbies?,I enjoy painting and reading. What hobbies do you have?,rightAmount
+Do you like to go fishing?,"No, I've never really gotten into it. Do you like fishing?",rightAmount
+Do you enjoy watching anime?,"Yes, I find it incredibly creative. Do you watch anime?",rightAmount
+Do you play any sports?,I play basketball occasionally. What about you?,rightAmount
+Do you like to travel?,I love exploring new cultures and cuisines. How about you?,rightAmount
+Do you enjoy hiking?,"Yes, it's one of my favorite activities to stay fit and enjoy nature. Do you hike?",rightAmount
+Do you prefer hot or cold weather?,I prefer cold weather; I love snow. How about you?,rightAmount
+Do you have any favorite TV shows?,I'm really into mystery series. Do you have any favorite TV shows?,rightAmount
+Do you like to attend live theater performances?,"Yes, the experience is irreplaceable. What about you?",rightAmount
+Do you enjoy DIY projects?,"Yes, I love the satisfaction of building something on my own. Do you do any DIY?",rightAmount
+Do you follow any sports teams?,"Yes, I'm a big fan of the local football team. How about you?",rightAmount
+Do you like to garden?,"Yes, I find gardening to be very therapeutic. Do you garden?",rightAmount
+Do you like to watch reality TV?,"Not really, I prefer dramas. Do you watch reality TV?",rightAmount
+Do you have a favorite movie genre?,I love thrillers; they keep me on the edge of my seat. What about you?,rightAmount
+Do you enjoy running?,"Yes, it's a great way to clear my mind. Do you run?",rightAmount
+Do you like to sing?,"I'm not a great singer, but I enjoy it. How about you?",rightAmount
+Do you enjoy painting?,"Yes, especially watercolors. Do you paint?",rightAmount
+Do you play any musical instruments?,I play the piano. What about you?,rightAmount
+Do you like to cook?,"Yes, especially trying out exotic recipes. Do you cook?",rightAmount
+Do you enjoy photography?,"Absolutely, it's a passion of mine. Do you take photos?",rightAmount
+Do you like to build or assemble models?,"Yes, I enjoy model trains. What about you?",rightAmount
+Do you prefer reading fiction or non-fiction?,"I prefer fiction, it's more engaging for me. How about you?",rightAmount
+Do you have a favorite artist or band?,I'm a big fan of The Beatles. What's your favorite?,rightAmount
+Do you enjoy swimming?,"Yes, I love swimming in the summer. Do you swim?",rightAmount
+Do you have a pet?,"Yes, I have a cat named Whiskers. Do you have any pets?",rightAmount
+Do you like to watch foreign films?,"Yes, they offer a different perspective. Do you watch foreign films?",rightAmount
+Do you enjoy scrapbooking?,It's a great way to preserve memories. Do you scrapbook?,rightAmount
+Do you follow fashion trends?,"Not closely, but I like to look current. How about you?",rightAmount
+Do you have any plans for the weekend?,I'm thinking of hiking if the weather's good. What are your plans?,rightAmount
+Do you enjoy playing card games?,"Yes, especially poker. Do you play card games?",rightAmount
+Do you enjoy scrapbooking?,It's a great way to preserve memories. Do you scrapbook?,rightAmount
+Do you follow fashion trends?,"Not closely, but I like to look current. How about you?",rightAmount
+Do you have any plans for the weekend?,I'm thinking of hiking if the weather's good. What are your plans?,rightAmount
+Do you enjoy playing card games?,"Yes, especially poker. Do you play card games?",rightAmount
+Do you like to read comic books?,"Yes, they're a fun escape. Do you read comics?",rightAmount
+Do you play any wind instruments?,I play the flute. Do you play any instruments?,rightAmount
+Do you prefer digital or physical books?,I prefer physical books; I like the feel of them. What about you?,rightAmount
+Do you enjoy watching plays?,"Yes, live performances are captivating. Do you watch plays?",rightAmount
+Do you like to do crafts?,"Yes, especially knitting. Do you do any crafts?",rightAmount
+Do you have a favorite type of dance?,I love salsa dancing. How about you?,rightAmount
+Do you like to take walks?,"Yes, it's a great way to relax. Do you enjoy walking?",rightAmount
+Do you play chess?,"Yes, it's a great mental exercise. Do you play chess?",rightAmount
+Do you enjoy learning new languages?,"Yes, it's a fascinating challenge. Do you learn languages?",rightAmount
+Do you prefer wine or beer?,"I prefer wine, especially red. What about you?",rightAmount
+Do you like to watch documentaries?,"Yes, they're very enlightening. Do you watch documentaries?",rightAmount
+Do you enjoy going to the beach?,"Yes, I love the sand and surf. Do you go to the beach often?",rightAmount
+Do you play any string instruments?,I play the violin. How about you?,rightAmount
+Do you like to watch science fiction movies?,"Yes, they're my favorite genre. Do you like sci-fi movies?",rightAmount
+Do you enjoy kayaking?,I've tried it a few times and loved it. How about you?,rightAmount
+Do you have a green thumb?,I think so; my garden is thriving. Do you garden?,rightAmount
+Do you enjoy writing poetry?,"Yes, it's a great way to express feelings. Do you write poetry?",rightAmount
+Do you like to build things?,"Yes, I enjoy woodworking. How about you?",rightAmount
+Do you enjoy watching sports?,"Yes, especially basketball. What sports do you watch?",rightAmount
+Do you like to go on road trips?,"Absolutely, they're a great adventure. Do you enjoy road trips?",rightAmount
+Do you enjoy sailing?,"Yes, it's peaceful on the water. Do you sail?",rightAmount
+Do you like to meditate?,"Yes, it helps me stay centered. Do you meditate?",rightAmount

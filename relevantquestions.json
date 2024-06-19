@@ -1,0 +1,120 @@
+[{
+    "text": "I'm going to the grocery store, do you need anything?",
+    "response": "Yes, I need milk and eggs. What are you going to get?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "The game was so exciting, I couldn't believe we won.",
+    "response": "That's great! Who was it against?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm going out for lunch with my co-workers, do you want to come?",
+    "response": "Sure, where are you going?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so nervous for my interview tomorrow, I really want this job.",
+    "response": "I'm sure you'll do great. What position are you interviewing for?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm getting a new car tomorrow, I'm so excited!",
+    "response": "That's fantastic! What kind of car are you getting?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I made a cake for my friend's birthday, it was so much fun.",
+    "response": "That sounds like a delicious cake. What kind of cake was it?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "Yesterday was my sister's wedding, it was so beautiful.",
+    "response": "That's wonderful! What did she wear?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm going on vacation next week, I can't wait!",
+    "response": "That sounds like a lot of fun. Where are you going?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so nervous, I have to give a speech in front of the whole school.",
+    "response": "Don't worry, you'll be great. What's the speech about?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so excited for my vacation next week, I'm going to the Caribbean.",
+    "response": "That sounds amazing! What island are you going to be visiting?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm not sure if I'm ready for this new job, it's a lot of responsibility.",
+    "response": "I completely understand. What are you most worried about?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I can't believe it's already December, the year has gone by so fast.",
+    "response": "I know, time seems to be moving faster and faster. What are you doing for the holidays?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so tired, I didn't sleep well last night.",
+    "response": "I'm sorry to hear that. Why didn't you sleep well?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm not sure what I want to do with my life, there are so many options.",
+    "response": "That can be a difficult decision. What do you enjoy doing most?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so excited for my party tomorrow, I've been planning it for weeks.",
+    "response": "That sounds like it will be a lot of fun. What kind of party is it?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm not sure if I'm ready to graduate yet, I'm going to miss college.",
+    "response": "I completely understand. What are you going to miss most about college?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I can't believe it's already summer, it feels like just yesterday it was winter.",
+    "response": "I know, time seems to be moving faster and faster. What are your plans for summer?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm so excited, I'm going to the concert tonight.",
+    "response": "That sounds like a lot of fun. Who's performing?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm going to the park, do you want to come?",
+    "response": "I would love to! What are you going to do there?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  },
+  {
+    "text": "I'm going to the library, do you want to come?",
+    "response": "Sure, what are you planning to do there?",
+    "task_type": "new",
+    "task_name": "relevantQuestions"
+  }]

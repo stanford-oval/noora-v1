@@ -1,0 +1,108 @@
+[{
+    "text": "Oh, look, another meeting! Because there's nothing I enjoy more than endless discussions that go absolutely nowhere and waste everyone's time.",
+    "response": "Haha ... I can completely understand what you mean: too many meetings is never fun.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Wow, the weather today is just perfect for ruining all my plans.",
+    "response": "Absolutely! The universe seems to have a special talent for aligning weather conditions with our plans, doesn't it?",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, great, another email to read and reply to. My favorite pastime!",
+    "response": "I'm sorry you have to play the eternal game of email catch-up. It can be a lot!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "The food tastes delicious and so flavorful: it's almost like it didn't expire three months ago.",
+    "response": "Wow, that sounds disastrous. I hope you don't get sick!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Fantastic! I get to spend my weekend doing household chores. It's the pinnacle of excitement.",
+    "response": "The wonders of dusting, scrubbing, and vacuuming. What a thrill! More seriously though, I'm sorry you have to do this and I hope it's not too painful.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, I absolutely love it when people talk loudly on their phones in public places. It's such a pleasant and soothing experience for everyone around them.",
+    "response": "Ah, the cacophony of everyone talking on their phones in public. That's truly the worst. I hope that didn't happen for too long!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Wonderful, another deadline looming over me like a dark cloud. I thrive under pressure, after all.",
+    "response": "Deadlines are scary! They're like a rollercoaster ride of adrenaline and panic. I hope your deadline goes well!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "How delightful! Waking up to discover my phone battery died overnight. It's the ultimate thrill of uncertainty.",
+    "response": "Ah, I'm sorry to hear that. Waking up with a dead smartphone is always a surprise.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, just what I needed! More paperwork to drown in. Who doesn't love administrative tasks?",
+    "response": "Paperwork is the worst. I hope it's not too painful.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "What a treat! My favorite TV show is on, and my internet decides to take a vacation.",
+    "response": "Oh no, that sucks! I hope it comes back on soon.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Well, this is just fantastic! I love it when my alarm clock decides to take a break and let me oversleep.",
+    "response": "Oh, I can imagine that must have been quite an unexpected start to your day. Oversleeping can throw off our routines. I'm sorry to hear that!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, great, another Monday! Just what I needed to make my week absolutely thrilling.",
+    "response": "Mondays can feel a bit overwhelming, but they also present an opportunity to kick-start the week and set the tone for accomplishing great things. It's the beginning of a new chapter filled with possibilities.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Fantastic! My favorite part of grocery shopping is getting stuck behind the slowest person in the store.",
+    "response": "Hey, waiting in line is never fun. I hope the line isn't too long!.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, wow, a traffic jam! Just what I needed to make my commute an absolute delight.",
+    "response": "Traffic jams can be frustrating for sure! But hey, try listening to your favorite podcast or song to pass the time!",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Isn't it amazing? Another sleepless night! I love staring at the ceiling.",
+    "response": "Ah, sleepless nights, the perfect opportunity for introspection, creative thoughts, and enjoying the quiet beauty of the night sky.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, joy! The joy of searching for misplaced keys in the morning. It's like a daily treasure hunt!",
+    "response": "Hey, I'm sorry to hear that. Did you end up finding your keys?",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Amazing! Another rainy day to indulge in my passion for indoor activities and forgetting what the sun looks like.",
+    "response": "Dang, that sucks. Is it raining tomorrow too?",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  },
+  {
+    "text": "Oh, joy! Another group project at work. Collaborating with colleagues is just the epitome of fun.",
+    "response": "I'm sorry to hear that! I hope it's not too bad.",
+    "task_type": "new",
+    "task_name": "sarcasm"
+  }]

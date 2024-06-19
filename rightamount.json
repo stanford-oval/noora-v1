@@ -1,0 +1,586 @@
+[{
+    "text": "Do you like to read?",
+    "response": "Yes, I love to read, especially horror and romance novels. What type of books do you like?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any siblings?",
+    "response": "Yes, I have two sisters. Do you have any siblings?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Have you seen the latest Marvel movie?",
+    "response": "No, I haven't seen it yet. Are you planning on seeing it?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to ski?",
+    "response": "No, I don't like to ski. Do you like to ski?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to play video games?",
+    "response": "Yes, I love to play video games. What type of video games do you like to play?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any pets?",
+    "response": "No, I don't have any pets. Do you have any pets?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Did you do anything fun this weekend?",
+    "response": "No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to go hiking?",
+    "response": "No, I don't like to go hiking. Do you like to go hiking?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any siblings?",
+    "response": "Yes, I have an older brother and a younger sister. Do you have any siblings?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to go out or stay in on your days off?",
+    "response": "I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Are you a morning person or a night person?",
+    "response": "I'm definitely a night person. I can't function in the morning. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like spicy food?",
+    "response": "I love spicy food. I can't get enough of it. Do you like spicy food?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to cook?",
+    "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any plans for the weekend?",
+    "response": "Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "What did you do this morning?",
+    "response": "I read my new book and made myself breakfast. How about you",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "What did you do last night",
+    "response": "I watched a movie with my friend, do you have Netflix? You should watch it",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any plans for the weekend?",
+    "response": "Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "What do you like to do for fun",
+    "response": "I love hikin gin the outdoors or going to the beach, how about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy traveling?",
+    "response": "Yes, I love traveling to new places. Have you traveled anywhere interesting lately?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any musical instruments?",
+    "response": "I play the guitar. Do you play any instruments?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like watching sports?",
+    "response": "Yes, I'm a big football fan. What about you? Do you watch any sports?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Are you interested in art?",
+    "response": "Yes, I love visiting art galleries. Do you have any interest in art?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer coffee or tea?",
+    "response": "I'm definitely a coffee person. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy gardening?",
+    "response": "Yes, I find gardening very relaxing. Do you like gardening?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Have you watched any good movies recently?",
+    "response": "Yes, I watched an amazing thriller last week. Have you seen any good movies recently?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy cooking?",
+    "response": "Absolutely, I love experimenting with new recipes. What about you? Do you like to cook?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite season?",
+    "response": "I love autumn for its colors. What's your favorite season?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any sports?",
+    "response": "I play tennis occasionally. How about you? Do you play any sports?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer movies or books?",
+    "response": "I prefer books; they let me imagine things more vividly. What about you, movies or books?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite holiday?",
+    "response": "Christmas is my favorite, with all the decorations and family time. What's your favorite holiday?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like going to concerts?",
+    "response": "Yes, I love the energy of live music. Do you go to concerts often?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to dance?",
+    "response": "Not really, I'm a bit shy about dancing. How about you? Do you like to dance?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer working from home or in an office?",
+    "response": "I prefer working from home for the flexibility it offers. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you follow any TV shows currently?",
+    "response": "Yes, I'm watching a great sci-fi series right now. Do you watch any TV shows?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to visit museums?",
+    "response": "Yes, I find museums very enlightening. Do you enjoy visiting museums?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy doing puzzles?",
+    "response": "Yes, especially crossword puzzles. What about you? Do you like puzzles?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to swim?",
+    "response": "Yes, swimming is my favorite form of exercise. Do you swim too?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any favorite podcasts?",
+    "response": "I really enjoy history podcasts. Do you have any favorites?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to write?",
+    "response": "Yes, I enjoy writing, especially short stories. Do you write?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Are you into photography?",
+    "response": "I dabble a bit in photography. It's a fun hobby. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play board games?",
+    "response": "Yes, I love board games like Settlers of Catan. Do you play any board games?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer the beach or the mountains?",
+    "response": "I'm more of a beach person. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you follow any fashion trends?",
+    "response": "Not really, I prefer comfortable clothes over trendy ones. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite cuisine?",
+    "response": "I love Italian food, especially pasta. What's your favorite cuisine?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy yoga?",
+    "response": "Yes, it helps me stay flexible and relaxed. Do you practice yoga?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to go camping?",
+    "response": "Yes, being in nature is very refreshing. How about you? Do you like camping?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Are you interested in science?",
+    "response": "Yes, particularly astronomy. The universe fascinates me. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy horror movies?",
+    "response": "Not really, they're too scary for me. Do you like horror movies?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any online games?",
+    "response": "Yes, I play games like League of Legends. Do you play any online games?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to draw?",
+    "response": "I enjoy drawing as a relaxing hobby. How about you? Do you like to draw?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer cats or dogs?",
+    "response": "I'm a dog person. Dogs are so loyal and fun. What about you, cats or dogs?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite type of music?",
+    "response": "I enjoy rock music the most. What's your favorite type of music?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you watch documentaries?",
+    "response": "Yes, I find them very informative and interesting. Do you watch documentaries?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite author?",
+    "response": "I really like J.K. Rowling. How about you? Do you have a favorite author?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you collect anything?",
+    "response": "I collect stamps. It's a bit old-fashioned but really fun. Do you collect anything?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to watch comedy shows?",
+    "response": "Yes, I love a good laugh. What about you? Do you watch comedy shows?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you use social media often?",
+    "response": "Not much, I prefer to keep my life more private. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy listening to podcasts?",
+    "response": "Yes, especially ones about technology and innovation. Do you listen to any podcasts?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy baking?",
+    "response": "Yes, I love baking cookies and cakes. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play video games?",
+    "response": "Yes, I'm a big fan of action and adventure games. What genres do you like?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy classical music?",
+    "response": "Absolutely, it's very soothing. Do you like classical music?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any hobbies?",
+    "response": "I enjoy painting and reading. What hobbies do you have?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to go fishing?",
+    "response": "No, I've never really gotten into it. Do you like fishing?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy watching anime?",
+    "response": "Yes, I find it incredibly creative. Do you watch anime?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any sports?",
+    "response": "I play basketball occasionally. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to travel?",
+    "response": "I love exploring new cultures and cuisines. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy hiking?",
+    "response": "Yes, it's one of my favorite activities to stay fit and enjoy nature. Do you hike?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer hot or cold weather?",
+    "response": "I prefer cold weather; I love snow. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any favorite TV shows?",
+    "response": "I'm really into mystery series. Do you have any favorite TV shows?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to attend live theater performances?",
+    "response": "Yes, the experience is irreplaceable. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy DIY projects?",
+    "response": "Yes, I love the satisfaction of building something on my own. Do you do any DIY?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you follow any sports teams?",
+    "response": "Yes, I'm a big fan of the local football team. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to garden?",
+    "response": "Yes, I find gardening to be very therapeutic. Do you garden?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to watch reality TV?",
+    "response": "Not really, I prefer dramas. Do you watch reality TV?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite movie genre?",
+    "response": "I love thrillers; they keep me on the edge of my seat. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy running?",
+    "response": "Yes, it's a great way to clear my mind. Do you run?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to sing?",
+    "response": "I'm not a great singer, but I enjoy it. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy painting?",
+    "response": "Yes, especially watercolors. Do you paint?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any musical instruments?",
+    "response": "I play the piano. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to cook?",
+    "response": "Yes, especially trying out exotic recipes. Do you cook?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy photography?",
+    "response": "Absolutely, it's a passion of mine. Do you take photos?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to build or assemble models?",
+    "response": "Yes, I enjoy model trains. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer reading fiction or non-fiction?",
+    "response": "I prefer fiction, it's more engaging for me. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite artist or band?",
+    "response": "I'm a big fan of The Beatles. What's your favorite?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy swimming?",
+    "response": "Yes, I love swimming in the summer. Do you swim?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a pet?",
+    "response": "Yes, I have a cat named Whiskers. Do you have any pets?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to watch foreign films?",
+    "response": "Yes, they offer a different perspective. Do you watch foreign films?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy scrapbooking?",
+    "response": "It's a great way to preserve memories. Do you scrapbook?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you follow fashion trends?",
+    "response": "Not closely, but I like to look current. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any plans for the weekend?",
+    "response": "I'm thinking of hiking if the weather's good. What are your plans?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy playing card games?",
+    "response": "Yes, especially poker. Do you play card games?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy scrapbooking?",
+    "response": "It's a great way to preserve memories. Do you scrapbook?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you follow fashion trends?",
+    "response": "Not closely, but I like to look current. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have any plans for the weekend?",
+    "response": "I'm thinking of hiking if the weather's good. What are your plans?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy playing card games?",
+    "response": "Yes, especially poker. Do you play card games?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to read comic books?",
+    "response": "Yes, they're a fun escape. Do you read comics?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any wind instruments?",
+    "response": "I play the flute. Do you play any instruments?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer digital or physical books?",
+    "response": "I prefer physical books; I like the feel of them. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy watching plays?",
+    "response": "Yes, live performances are captivating. Do you watch plays?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to do crafts?",
+    "response": "Yes, especially knitting. Do you do any crafts?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a favorite type of dance?",
+    "response": "I love salsa dancing. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to take walks?",
+    "response": "Yes, it's a great way to relax. Do you enjoy walking?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play chess?",
+    "response": "Yes, it's a great mental exercise. Do you play chess?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy learning new languages?",
+    "response": "Yes, it's a fascinating challenge. Do you learn languages?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you prefer wine or beer?",
+    "response": "I prefer wine, especially red. What about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to watch documentaries?",
+    "response": "Yes, they're very enlightening. Do you watch documentaries?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy going to the beach?",
+    "response": "Yes, I love the sand and surf. Do you go to the beach often?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you play any string instruments?",
+    "response": "I play the violin. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to watch science fiction movies?",
+    "response": "Yes, they're my favorite genre. Do you like sci-fi movies?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy kayaking?",
+    "response": "I've tried it a few times and loved it. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you have a green thumb?",
+    "response": "I think so; my garden is thriving. Do you garden?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy writing poetry?",
+    "response": "Yes, it's a great way to express feelings. Do you write poetry?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to build things?",
+    "response": "Yes, I enjoy woodworking. How about you?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy watching sports?",
+    "response": "Yes, especially basketball. What sports do you watch?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to go on road trips?",
+    "response": "Absolutely, they're a great adventure. Do you enjoy road trips?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you enjoy sailing?",
+    "response": "Yes, it's peaceful on the water. Do you sail?",
+    "task_name": "rightAmount"
+  },
+  {
+    "text": "Do you like to meditate?",
+    "response": "Yes, it helps me stay centered. Do you meditate?",
+    "task_name": "rightAmount"
+  }
+]

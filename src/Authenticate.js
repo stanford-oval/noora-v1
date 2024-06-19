@@ -11,12 +11,12 @@ export function useAuth() {
       if (authUser) {
         setUser(authUser);
         setEmail(authUser.email); // Update the email state
-        console.log('user is logged in');
-        console.log(email)
+        // console.log('user is logged in');
+        // console.log(email)
       } else {
         setUser(false);
         setEmail(null); // Clear the email state
-        console.log('user is logged out');
+        // console.log('user is logged out');
       }
     });
 

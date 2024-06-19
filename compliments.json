@@ -1,0 +1,120 @@
+[{
+    "text": "I'm just started learning a new language:  Swahili.",
+    "response": "That's so impressive! You're so dedicated.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just scored my first goal ever!",
+    "response": "Way to go! That's awesome!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just finished reading Crime and Punishment by Fyodor Dostoevsky.",
+    "response": "That's fantastic! What was it about?",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just graduated from college. Can't wait to start working!",
+    "response": "That's incredible! Congrats on all your hard work.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I got an early promotion at work.",
+    "response": "That's amazing! Congratulations on your success!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just won my first piano competition.",
+    "response": "Wow, fantastic! I'm so happy for you. How did it feel to win?",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I'm learning to play the guitar.",
+    "response": "You're so multitalented. How do you make the time to do it?",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just started a new business.",
+    "response": "That's wonderful! I'm sure it'll be successful.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just aced the bar exam!",
+    "response": "Great job! I'm so happy for you.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just completed my first marathon.",
+    "response": "Fantastic job! That's an impressive feat.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I finished painting a mural.",
+    "response": "It looks incredible. You have great artistic talent!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just got a promotion.",
+    "response": "Congratulations! That's an impressive accomplishment.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just got my first book published.",
+    "response": "That's amazing! Congratulations on your book!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I just passed my driving test.",
+    "response": "Well done! That's an important milestone.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I built a chess-playing robot in my free time.",
+    "response": "Impressive! You must be so talented.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I got a call back for a play.",
+    "response": "That's wonderful! Break a leg for your audition!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I bought a new car.",
+    "response": "Cool! That must feel great to have a new set of wheels.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I hiked up a mountain.",
+    "response": "Incredible! You must have a lot of stamina.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I graduated college with honors.",
+    "response": "Fantastic! You must have worked really hard to get that accomplishment.",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  },
+  {
+    "text": "I solved a crossword puzzle.",
+    "response": "Good job! You must be a real wordsmith!",
+    "task_type": "new",
+    "task_name": "giveCompliments"
+  }]
