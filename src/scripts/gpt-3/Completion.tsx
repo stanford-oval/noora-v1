@@ -1,5 +1,6 @@
 export default async function Completion(parameters: CompletionParameters) {
   const requestBody = convertPromptToChat(parameters);
+  console.log('the request body is', requestBody)
   console.log("In completion, prompt:")
   console.log(parameters.prompt);
 
