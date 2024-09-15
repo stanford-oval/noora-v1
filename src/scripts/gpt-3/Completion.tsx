@@ -1,13 +1,16 @@
 export default async function Completion(parameters: CompletionParameters) {
   const requestBody = convertPromptToChat(parameters);
-  console.log('the request body is', requestBody)
-  console.log("In completion, prompt:")
+  console.log("the request body is", requestBody);
+  console.log("In completion, prompt:");
   console.log(parameters.prompt);
 
   let reply = await fetch("/api/openai", {
     method: "POST",
     body: JSON.stringify(requestBody),
   }).then((res) => res.json());
+
+  console.log("here is openai reply");
+  console.log(reply);
 
   if (reply) reply = reply.text;
 
@@ -20,7 +23,8 @@ function convertPromptToChat(parameters: CompletionParameters) {
     messages: [
       {
         role: "system",
-        content: "You are a strict but helpful social skills coach that provides feedback on whether my replies are appropriate given what you said. Responses that make no sense, are too short, or are non-sequiturs should be immediately rejected as Bad replies. Provide two to three lines of personalized feedback to help improve the responses. Be as strict as possible. Note typos and grammar mistakes, but do not penalize for them -- if the intent is clear and positive, it should be counted as correct. Important, do not include direct quotes (i.e. of 'better replies'). Only include statements about how I could improve but not a rephrased version.",
+        content:
+          "You are a strict but helpful social skills coach that provides feedback on whether my replies are appropriate given what you said. Responses that make no sense, are too short, or are non-sequiturs should be immediately rejected as Bad replies. Provide two to three lines of personalized feedback to help improve the responses. Be as strict as possible. Note typos and grammar mistakes, but do not penalize for them -- if the intent is clear and positive, it should be counted as correct. Important, do not include direct quotes (i.e. of 'better replies'). Only include statements about how I could improve but not a rephrased version.",
       },
       {
         role: "user",
