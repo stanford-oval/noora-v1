@@ -146,6 +146,8 @@ async function getRating(
     console.log(`stop: "\\n"`);
 
     explanation = output.trim();
+    console.log("explanation:");
+    console.log(output);
 
     if (goodAnswer) {
       answers.push({ text: "Good reply!", sentiment: "positive" });
