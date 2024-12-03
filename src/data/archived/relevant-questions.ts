@@ -1,4 +1,4 @@
-const relevantQuestionsPrompt = `You said, "I had the best time with my friend yesterday, we watched movies and ordered pizza."
+const archivedRQPrompt = `You said, "I had the best time with my friend yesterday, we watched movies and ordered pizza."
 \r\n(1) I replied, "Wow, that sounds fun! What movies did you watch?"
 \r\nFeedback: Good reply. Your response includes a relevant question that keeps our conversation going.
 \r\n(2) I replied, "Cool! What kind of pizza did you get?"
@@ -39,4 +39,4 @@ const relevantQuestionsPrompt = `You said, "I had the best time with my friend y
 \r\n(6) I replied, "Have you ever been to Hawaii?"
 \r\nFeedback: Bad reply. Your question is not related to the main point of our conversation.`;
 
-export default relevantQuestionsPrompt;
+export default archivedRQPrompt;
