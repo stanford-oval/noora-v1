@@ -2546,122 +2546,602 @@
       "task_name": "personalInfo"
     },
     {
-      "text": "I'm just started learning a new language:  Swahili.",
-      "response": "That's so impressive! You're so dedicated.",
+      "text": "I\u2019m just started learning a new language: Swahili.",
+      "response": "That\u2019s amazing! How\u2019s it going so far? Is it challenging?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I just scored my first goal ever!",
-      "response": "Way to go! That's awesome!",
+      "text": " I just scored my first goal ever!",
+      "response": " That\u2019s incredible! You must be so proud\u2014congratulations!",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I just finished reading Crime and Punishment by Fyodor Dostoevsky.",
-      "response": "That's fantastic! What was it about?",
+      "text": " I just finished reading Crime and Punishment by Fyodor Dostoevsky.",
+      "response": " That\u2019s awesome! How did you find it? It\u2019s such a powerful book.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I just graduated from college. Can't wait to start working!",
-      "response": "That's incredible! Congrats on all your hard work.",
+      "text": " I just graduated from college. Can\u2019t wait to start working!",
+      "response": " Congratulations! Do you have a specific type of job in mind?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I got an early promotion at work.",
-      "response": "That's amazing! Congratulations on your success!",
+      "text": " I got an early promotion at work.",
+      "response": " That\u2019s fantastic! Your hard work is definitely paying off.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just won my first piano competition.",
-      "response": "Wow, fantastic! I'm so happy for you. How did it feel to win?",
+      "response": "Wow, congratulations! That\u2019s a huge accomplishment!",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I'm learning to play the guitar.",
-      "response": "You're so multitalented. How do you make the time to do it?",
+      "text": "I\u2019m learning to play the guitar.",
+      "response": "That\u2019s fantastic! Have you learned any songs you\u2019re excited about?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just started a new business.",
-      "response": "That's wonderful! I'm sure it'll be successful.",
+      "response": "That\u2019s incredible! What kind of business are you running?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just aced the bar exam!",
-      "response": "Great job! I'm so happy for you.",
+      "response": "Wow, that\u2019s impressive! You should be so proud\u2014congratulations!",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just completed my first marathon.",
-      "response": "Fantastic job! That's an impressive feat.",
+      "response": "Huge congratulations! What an accomplishment\u2014how did it feel?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I finished painting a mural.",
-      "response": "It looks incredible. You have great artistic talent!",
+      "text": " I finished painting a mural.",
+      "response": " That\u2019s so cool! I\u2019d love to see it.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just got a promotion.",
-      "response": "Congratulations! That's an impressive accomplishment.",
+      "response": "That\u2019s amazing! Congratulations\u2014you\u2019ve definitely earned it.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just got my first book published.",
-      "response": "That's amazing! Congratulations on your book!",
+      "response": "That\u2019s fantastic! I\u2019d love to hear more about it.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I just passed my driving test.",
-      "response": "Well done! That's an important milestone.",
+      "response": "Congratulations! That\u2019s a big milestone.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I built a chess-playing robot in my free time.",
-      "response": "Impressive! You must be so talented.",
+      "response": "Wow, that\u2019s so impressive! How long did it take you?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I got a call back for a play.",
-      "response": "That's wonderful! Break a leg for your audition!",
+      "text": " I got a callback for a play.",
+      "response": " That\u2019s wonderful! Wishing you the best for the next steps.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I bought a new car.",
-      "response": "Cool! That must feel great to have a new set of wheels.",
+      "text": " I bought a new car.",
+      "response": " That\u2019s exciting! What kind did you get?",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
-      "text": "I hiked up a mountain.",
-      "response": "Incredible! You must have a lot of stamina.",
+      "text": " I hiked up a big mountain.",
+      "response": " That\u2019s such an accomplishment! Congratulations\u2014you did it!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": " I graduated college with honors.",
+      "response": " That\u2019s incredible! You must feel so proud\u2014congratulations!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": " I solved a crossword puzzle.",
+      "response": " Nicely done! You must be quick with words.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I graduated college with honors.",
-      "response": "Fantastic! You must have worked really hard to get that accomplishment.",
+      "response": "Congratulations! That\u2019s such an impressive accomplishment.",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
     {
       "text": "I solved a crossword puzzle.",
-      "response": "Good job! You must be a real wordsmith!",
+      "response": "Great job! You must have a sharp mind for words.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019m going to get a new tattoo on my back.",
+      "response": "That\u2019s awesome! What design are you going for?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I am really loving my new coffee machine.",
+      "response": "That\u2019s great to hear! A good coffee machine makes all the difference.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just bought a new pink top.",
+      "response": "Nice choice! Pink really suits you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just made scrambled eggs and ice cream for the first time.",
+      "response": "That\u2019s an interesting combo! How did it turn out?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I am getting engaged to the person I met last month.",
+      "response": "That\u2019s wonderful news! Wishing you both happiness and love.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to knit and made my own scarf.",
+      "response": "That\u2019s fantastic! What\u2019s next on your knitting list?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started a small herb garden on my balcony.",
+      "response": "Sounds lovely! Fresh herbs are such a nice touch for cooking.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I decided to get bangs tomorrow at my haircut.",
+      "response": "Exciting choice! I bet they\u2019ll look amazing.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I completed a marathon last weekend.",
+      "response": "Wow, that\u2019s impressive! You must feel so accomplished.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I redecorated my living room.",
+      "response": "It must feel so refreshing! Changing things up is always fun.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I bought a vintage jacket, but it\u2019s quite worn and has several stains.",
+      "response": "Vintage style is cool! Gives it real character.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019m learning to play the accordion.",
+      "response": "Such a unique instrument! How\u2019s it going so far?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just bought orange knee-high boots.",
+      "response": "They sound amazing! So bold and stylish.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I decided to grow a mustache.",
+      "response": "Nice choice! A mustache will definitely add to your look.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I adopted a hairless cat.",
+      "response": "That\u2019s adorable! What did you name your new friend?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally got out of bed before midday today.",
+      "response": "Nice job! Sometimes it\u2019s the little victories that count.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I passed my test on the 5th try!",
+      "response": "Way to persevere! That must feel so rewarding.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I am going to shave my head.",
+      "response": "Bold move! It\u2019s going to look great on you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been trying out new makeup looks recently.",
+      "response": "Experimenting with makeup is a great way to express creativity!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been practicing yoga every day for a month.",
+      "response": "That\u2019s amazing! You must feel so strong and centered.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally finished writing my novel.",
+      "response": "Congratulations! That\u2019s a huge accomplishment.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve lost 10 pounds this month.",
+      "response": "That\u2019s fantastic! You should be really proud of yourself.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I ran a 5k for charity.",
+      "response": "That\u2019s wonderful! You\u2019re making a difference.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to make sushi at home.",
+      "response": "That\u2019s impressive! You must be talented in the kitchen.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally paid off my student loans.",
+      "response": "That\u2019s an amazing achievement\u2014congratulations!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I bought my first home.",
+      "response": "Congratulations on your new home! Such a huge step.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to swim this summer.",
+      "response": "That\u2019s wonderful! You must feel so accomplished.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got accepted into my dream school.",
+      "response": "That\u2019s incredible! All your hard work paid off.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally quit smoking.",
+      "response": "That\u2019s fantastic! You should be so proud of yourself.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been meditating every morning.",
+      "response": "That\u2019s amazing! You must feel so centered.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got my first tattoo today.",
+      "response": "That\u2019s cool! What design did you get?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to sew my own clothes.",
+      "response": "That\u2019s so creative! You must be proud of your skills.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I built a bookshelf all by myself.",
+      "response": "That\u2019s impressive! Handy skills come in so useful.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started my own blog.",
+      "response": "That\u2019s fantastic! You have so much to share with the world.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I planted my first vegetable garden.",
+      "response": "That\u2019s amazing! Fresh veggies will be so rewarding.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I adopted a parrot.",
+      "response": "How exciting! What\u2019s its name?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I completed my first woodworking project.",
+      "response": "That\u2019s so impressive! You must be proud of your work.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally finished my scrapbook.",
+      "response": "That\u2019s wonderful! Scrapbooks are so fun to look back on.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I joined a local book club.",
+      "response": "That sounds great! Book clubs are a great way to meet people.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally quit drinking soda.",
+      "response": "Good for you! Cutting soda can make a big difference.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started my own podcast.",
+      "response": "That\u2019s awesome! What topics do you cover?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started doing cross-stitching.",
+      "response": "That\u2019s so creative! What designs have you done?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I finally built that model airplane.",
+      "response": "That\u2019s wonderful! Model building takes real patience.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to make candles at home.",
+      "response": "That sounds amazing! Your home must smell lovely.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to make cheese from scratch.",
+      "response": "That\u2019s impressive! Homemade cheese must be delicious.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I joined a local theater group.",
+      "response": "That\u2019s exciting! Theater is such a great community.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I took up birdwatching.",
+      "response": "Birdwatching sounds so peaceful! What birds have you seen?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started brewing my own beer.",
+      "response": "That\u2019s cool! I bet it tastes fantastic.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just finished painting my first mural.",
+      "response": "Wow, can\u2019t wait to see your masterpiece!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to make my own jam.",
+      "response": "That\u2019s fantastic! What flavors did you try?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve started practicing martial arts.",
+      "response": "That\u2019s awesome! How are you enjoying it so far?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019m learning how to play the banjo.",
+      "response": "That\u2019s great! Such a unique instrument!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started DJing.",
+      "response": "You must be the life of the party now!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I learned how to crochet.",
+      "response": "That\u2019s wonderful! Have you made anything yet?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just got my black belt in karate.",
+      "response": "That\u2019s incredible! Such a huge accomplishment.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I took up rollerblading.",
+      "response": "That sounds like so much fun! How\u2019s it going?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started making my own pottery.",
+      "response": "Your pieces must look beautiful!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I started making my own hot sauce.",
+      "response": "That\u2019s cool! How spicy did you make it?",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just got my scuba diving certification.",
+      "response": "That\u2019s fantastic! You must see amazing sights underwater.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I took up archery.",
+      "response": "That\u2019s impressive! Archery takes serious skill.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019m trying out a new lipstick shade.",
+      "response": "Love it! It really complements your complexion.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a new hairstyle.",
+      "response": "It looks amazing! It really suits you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a new pair of glasses.",
+      "response": "They\u2019re perfect! Really suit your face shape.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I tried a new skincare routine.",
+      "response": "Your skin looks radiant! It\u2019s really working.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a new piercing.",
+      "response": "It looks so cool! It really suits your style.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a new pair of shoes.",
+      "response": "They\u2019re super stylish! Great choice.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got my eyebrows threaded.",
+      "response": "They look amazing\u2014so neat and defined!",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I tried a new makeup look.",
+      "response": "That\u2019s stunning! It really brings out your features.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a facial.",
+      "response": "Your skin is glowing! It must feel so refreshed.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I just got my braces off!",
+      "response": "Your smile looks amazing! Bet it feels great.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I got a fresh manicure.",
+      "response": "Your nails look fantastic! Love the color.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I tried a new perfume.",
+      "response": "You smell wonderful! That scent really suits you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been experimenting with different clothing styles.",
+      "response": "Your outfit looks fantastic! It\u2019s fun to mix things up.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been drinking more water and my skin feels so much better.",
+      "response": "Your skin is glowing! Hydration is magic.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been trying to grow out my beard.",
+      "response": "It looks great! Really suits you.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been trying to get more sleep.",
+      "response": "You look refreshed! It\u2019s definitely working.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been hitting the gym more often.",
+      "response": "Your hard work is paying off! You look fit.",
+      "task_type": "new",
+      "task_name": "giveCompliments"
+    },
+    {
+      "text": "I\u2019ve been trying to embrace my natural hair texture more.",
+      "response": "Your natural hair looks gorgeous!",
       "task_type": "new",
       "task_name": "giveCompliments"
     },
