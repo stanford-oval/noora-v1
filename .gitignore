@@ -35,5 +35,7 @@ credentials.json
 # local data files
 /analysis
 
+setRole.js
+
 # typescript
 *.tsbuildinfo
