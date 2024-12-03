@@ -22,8 +22,8 @@ export default function Noora() {
   useEffect(() => {
     const fetchRole = async () => {
       if (user) {
-        const token = await user.getIdTokenResult();
-        const role = token.claims.role || "user"; // Default to "user"
+        const token = await (user as any).getIdTokenResult(); // Simple cast to bypass type issue
+        const role = token.claims.role || "user";
         setUserRole(role);
       }
     };
@@ -33,32 +33,36 @@ export default function Noora() {
 
   // Main logic to check module access
   useEffect(() => {
-    // Wait for router and role readiness
-    if (!router.isReady || !userRole || redirectHandled) return;
+    const checkModuleAccess = async () => {
+      if (!router.isReady || !userRole || redirectHandled) return;
 
-    const key: any =
-      router.query.module ||
-      router.asPath.match(new RegExp(`[&?]module=(.*)(&|$)`));
+      const key: string | undefined =
+        (router.query.module as string) ||
+        router.asPath.match(new RegExp(`[&?]module=(.*)(&|$)`))?.[1];
 
-    if (!key) {
-      setShowPickModuleScreen(true); // Show module picker if no module is in URL
-      return;
-    }
+      if (!key) {
+        setShowPickModuleScreen(true); // Show module picker if no module is in URL
+        return;
+      }
 
-    const accessibleModules = getModulesByRole(userRole); // Get modules allowed for this role
-    console.log("Accessible Modules:", accessibleModules);
-    console.log("User Role:", userRole);
-    console.log("Module Key:", key);
+      const accessibleModules = getModulesByRole(userRole); // Get modules allowed for this role
+      console.log("Accessible Modules:", accessibleModules);
+      console.log("User Role:", userRole);
+      console.log("Module Key:", key);
 
-    if (!accessibleModules[key]) {
-      // Redirect unauthorized users to the general module
-      setRedirectHandled(true); // Prevent multiple redirects
-      router.replace("/noora?module=general");
-    } else {
-      setShowPickModuleScreen(false);
-      setSelectedModule(modules[key as keyof typeof modules]);
-    }
-  }, [router.isReady, router.query.module, userRole, redirectHandled]); // Trigger when these dependencies are ready
+      // Ensure the key is valid and matches one of the module keys
+      if (!(key in accessibleModules)) {
+        // Redirect unauthorized users to the general module
+        setRedirectHandled(true); // Prevent multiple redirects
+        router.replace("/noora?module=general");
+      } else {
+        setShowPickModuleScreen(false);
+        setSelectedModule(modules[key as keyof typeof modules]); // Type assertion ensures TypeScript accepts the key
+      }
+    };
+
+    checkModuleAccess();
+  }, [router.isReady, router.query.module, userRole, redirectHandled]);
 
   let focus = false;
 
