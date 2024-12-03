@@ -145,9 +145,9 @@ async function getRating(
     console.log(`presence_penalty: ${convoState.value.model.presencePenalty}`);
     console.log(`stop: "\\n"`);
 
-    explanation = output.trim();
     console.log("explanation:");
     console.log(output);
+    explanation = output.trim();
 
     if (goodAnswer) {
       answers.push({ text: "Good reply!", sentiment: "positive" });
@@ -189,12 +189,14 @@ async function getRating(
     statement: statementObj.val.text,
     statementCategory: statementObj.val.task_name,
     // @ts-ignore
-    sentimentGiven: statementObj.val.sentiment,
+    sentimentGiven: statementObj.val.sentiment || "none",
     // added these two to track guess + correct boolean
     sentimentCorrectlyIdentified:
-      convoState.value.currProblemSentimentInfo.sentimentCorrectlyIdentified,
+      convoState.value.currProblemSentimentInfo?.sentimentCorrectlyIdentified ||
+      "none",
     sentimentGuessedByUser:
-      convoState.value.currProblemSentimentInfo.sentimentGuessedByUser,
+      convoState.value.currProblemSentimentInfo?.sentimentGuessedByUser ||
+      "none",
     reply: message,
     explanation: explanation,
     goodAnswer: goodAnswer,
