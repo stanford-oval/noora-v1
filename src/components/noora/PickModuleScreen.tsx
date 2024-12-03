@@ -73,27 +73,26 @@ export default function PickModuleScreen({ open, setOpen }: any) {
 
                   <div className="grid sm:grid-cols-3 grid-cols-2 md:flex-row items-stretch justify-center w-full gap-2">
                     {Object.values(visibleModules).map((module) => (
-                      <div key={module.title} className="group relative">
-                        <div className="bg-gray-100 trans-150 p-2 md:p-4 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300 flex flex-row align-middle justify-between space-x-4">
-                          <div className="my-auto text-left">
-                            <h3 className="text-md xs:text-lg md:text-xl font-semibold">
-                              <Link
-                                href={"/noora?module=" + module.module}
-                                onClick={() => setOpen(false)}
-                              >
-                                <a className="text-noora-secondary-light outline-none">
-                                  {module.title}
-                                </a>
-                              </Link>
-                            </h3>
+                      <Link
+                        key={module.title}
+                        href={"/noora?module=" + module.module}
+                        onClick={() => setOpen(false)}
+                      >
+                        <a className="group relative block">
+                          <div className="bg-gray-100 trans-150 p-2 md:p-4 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300 flex flex-row align-middle justify-between space-x-4">
+                            <div className="my-auto text-left">
+                              <h3 className="text-md xs:text-lg md:text-xl font-semibold text-noora-secondary-light">
+                                {module.title}
+                              </h3>
+                            </div>
+                            <div className="w-fit my-auto">
+                              <span className="rounded-lg inline-flex bg-indigo-50 border-2 border-indigo-100 text-indigo-700 p-0.5">
+                                <module.icon className="h-5 w-5 md:h-7 md:w-7" />
+                              </span>
+                            </div>
                           </div>
-                          <div className="w-fit my-auto">
-                            <span className="rounded-lg inline-flex bg-indigo-50 border-2 border-indigo-100 text-indigo-700 p-0.5">
-                              <module.icon className="h-5 w-5 md:h-7 md:w-7" />
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                        </a>
+                      </Link>
                     ))}
                   </div>
 
