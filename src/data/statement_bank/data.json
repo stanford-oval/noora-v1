@@ -2066,32 +2066,8 @@
     },
 
     {
-      "text": "Do you like to read?",
-      "response": "Yes, I love to read, especially horror and romance novels. What type of books do you like?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Do you have any siblings?",
-      "response": "Yes, I have two sisters. Do you have any siblings?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Have you seen the new Marvel movie?",
+      "text": "Have you seen the latest Marvel movie?",
       "response": "No, I haven't seen it yet. Are you planning on seeing it?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "What's your favorite color?",
-      "response": "My favorite color is green. What's your favorite color?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Do you like to ski?",
-      "response": "No, I don't like to ski. Do you like to ski?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
@@ -2108,50 +2084,14 @@
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite music genre?",
-      "response": "My favorite music genre is country. What's your favorite music genre?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Did you do anything fun this weekend?",
-      "response": "No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Do you like to go hiking?",
-      "response": "No, I don't like to go hiking. Do you like to go hiking?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Do you have any siblings?",
-      "response": "Yes, I have an older brother and a younger sister. Do you have any siblings?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
       "text": "What's your favorite animal?",
-      "response": "My favorite animal is a lion. What's your favorite animal?",
+      "response": "I really like dogs. I've always loved dogs growing up. ",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite season?",
-      "response": "My favorite season is winter. I love the snow. What's your favorite season?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Do you like to go out or stay in on your days off?",
-      "response": "I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?",
-      "task_type": "new",
-      "task_name": "rightAmount"
-    },
-    {
-      "text": "Are you a morning person or a night person?",
-      "response": "I'm definitely a night person. I can't function in the morning. How about you?",
+      "text": "I saw the ocean last week",
+      "response": "Did you go to the beach?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
@@ -2162,14 +2102,38 @@
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite TV show?",
-      "response": "My favorite TV show is The Office. It's hilarious. What's your favorite TV show?",
+      "text": "Do you like to cook?",
+      "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to cook?",
-      "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
+      "text": "What did you do this morning?",
+      "response": "I read my new book and made myself breakfast. How about you",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "How was your morning?",
+      "response": "It was alright, I felt really tired and didn't want to get up. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What did you do last night",
+      "response": "I watched a movie with my friend, do you have Netflix? You should watch it",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I just saw this Animal Planet documentary",
+      "response": "I love those. My favorite is the penguins",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I am cooking mushrooms tonight",
+      "response": "How are you cooking them?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
@@ -2180,128 +2144,626 @@
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite movie?",
-      "response": "My favorite movie is The Shawshank Redemption. It has an incredible plotline. What's yours?",
+      "text": "What do you like to do for fun",
+      "response": "I love hiking in the outdoors or going to the beach, how about you?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to read?",
-      "response": "Yes, I love to read, especially horror and romance novels. What type of books do you like?",
+      "text": "Have you ever been to Japan?",
+      "response": "Yes, I love traveling to new places. Have you traveled anywhere interesting lately?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you have any siblings?",
-      "response": "Yes, I have two sisters. Do you have any siblings?",
+      "text": "Oh I just got a new Discord message from my friend",
+      "response": "I love autumn for its colors. What's your favorite season?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Have you seen the new Marvel movie?",
-      "response": "No, I haven't seen it yet. Are you planning on seeing it?",
+      "text": "I have so many apps I use every day like Slack and Discord",
+      "response": "I play tennis occasionally. How about you? Do you play any sports?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite color?",
-      "response": "My favorite color is green. What's your favorite color?",
+      "text": "I love Halloween and dressing up as Darth Vader",
+      "response": "I prefer books; they let me imagine things more vividly. What about you, movies or books?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to ski?",
-      "response": "No, I don't like to ski. Do you like to ski?",
+      "text": "Do you have a favorite holiday?",
+      "response": "Christmas is my favorite, with all the decorations and family time. What's your favorite holiday?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to play video games?",
-      "response": "Yes, I love to play video games. What type of video games do you like to play?",
+      "text": "Do you enjoy doing puzzles?",
+      "response": "Yes, especially crossword puzzles. What about you? Do you like puzzles?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you have any pets?",
-      "response": "No, I don't have any pets. Do you have any pets?",
+      "text": "I did this awesome Escape Room last weekend in Boston",
+      "response": "Wow what was it called?? Did you escape?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite music genre?",
-      "response": "My favorite music genre is country. What's your favorite music genre?",
+      "text": "Are you interested in science? I am majoring in Chemistry",
+      "response": "Yes, particularly astronomy. The universe fascinates me. What about you?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Did you do anything fun this weekend?",
-      "response": "No, I didn't do anything fun this weekend. Did you do anything fun this weekend?",
+      "text": "Do you like to draw?",
+      "response": "I enjoy drawing as a relaxing hobby. How about you? Do you like to draw?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to go hiking?",
-      "response": "No, I don't like to go hiking. Do you like to go hiking?",
+      "text": "A ladybug landed on me in the park, it was lovely",
+      "response": "Wow that's so nice, that's good luck!",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you have any siblings?",
-      "response": "Yes, I have an older brother and a younger sister. Do you have any siblings?",
+      "text": "I like to paint landscapes like mountains",
+      "response": "Can I see one of your final paintings??",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite animal?",
-      "response": "My favorite animal is a lion. What's your favorite animal?",
+      "text": "Do you watch documentaries?",
+      "response": "Yes, I find them very informative and interesting. Do you watch documentaries?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite season?",
-      "response": "My favorite season is winter. I love the snow. What's your favorite season?",
+      "text": "Do you collect anything?",
+      "response": "I collect stamps. It's a bit old-fashioned but really fun. Do you collect anything?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to go out or stay in on your days off?",
-      "response": "I like to stay in on my days off. I do enough running around during the week. What do you like to do on your days off?",
+      "text": "Do you like to watch comedy shows?",
+      "response": "Yes, I love a good laugh. What about you? Do you watch comedy shows?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Are you a morning person or a night person?",
-      "response": "I'm definitely a night person. I can't function in the morning. How about you?",
+      "text": "Do you use social media often?",
+      "response": "Not much, I prefer to keep my life more private. What about you?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like spicy food?",
-      "response": "I love spicy food. I can't get enough of it. Do you like spicy food?",
+      "text": "Do you enjoy listening to podcasts?",
+      "response": "Yes, especially ones about technology and innovation. Do you listen to any podcasts?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite TV show?",
-      "response": "My favorite TV show is The Office. It's hilarious. What's your favorite TV show?",
+      "text": "Do you have any hobbies?",
+      "response": "I enjoy painting and reading. What hobbies do you have?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you like to cook?",
-      "response": "Yes, I love to cook. It's one of my favorite hobbies. Do you like to cook?",
+      "text": "Do you like to go fishing?",
+      "response": "No, I've never really gotten into it. Do you like fishing?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "Do you have any plans for the weekend?",
-      "response": "Not really, but I was thinking of staying in and watching some movies. Do you have any plans?",
+      "text": "Do you enjoy watching anime?",
+      "response": "Yes, I find it incredibly creative. Do you watch anime?",
       "task_type": "new",
       "task_name": "rightAmount"
     },
     {
-      "text": "What's your favorite movie?",
-      "response": "My favorite movie is The Shawshank Redemption. It has an incredible plotline. What's yours?",
+      "text": "My favorite basketball team is the Boston Celtics",
+      "response": "I like the Lakers, but the Celtics are pretty good too. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you play any sports?",
+      "response": "I play basketball occasionally. What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to build or assemble models?",
+      "response": "Yes, I enjoy model trains. What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a pet?",
+      "response": "Yes, I have a cat named Whiskers. Do you have any pets?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I think my boyfriend and I are going to adopt a golden retriever",
+      "response": "Congrats! Why'd you pick a golden retriever? ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to watch foreign films?",
+      "response": "Yes, they offer a different perspective. Do you watch foreign films?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite comic book?",
+      "response": "I'm thinking of hiking if the weather's good. What are your plans?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What was the best day you had this week, why?",
+      "response": "Friday! I went to the mall and got new clothes. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What did you eat for dinner last night, I'm looking for ideas",
+      "response": "I made sliders! They were yummy I can send the recipe. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you enjoy playing card games?",
+      "response": "Yes, especially poker. Do you play card games?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you play any wind instruments?",
+      "response": "I play the flute. Do you play any instruments?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you play chess?",
+      "response": "Yes, it's a great mental exercise. Do you play chess?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you play any string instruments?",
+      "response": "I play the violin. How about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to watch science fiction movies?",
+      "response": "Yes, they're my favorite genre. Do you like sci-fi movies?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you enjoy kayaking?",
+      "response": "I've tried it a few times and loved it. How about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a green thumb?",
+      "response": "I think so; my garden is thriving. Do you garden?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you enjoy writing poetry?",
+      "response": "Yes, it's a great way to express feelings. Do you write poetry?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to build things?",
+      "response": "Yes, I enjoy woodworking. How about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you enjoy watching sports?",
+      "response": "Yes, especially basketball. What sports do you watch?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like to go on road trips?",
+      "response": "Absolutely, they're a great adventure. Do you enjoy road trips?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you enjoy sailing?",
+      "response": "Yes, it's peaceful on the water. Do you sail?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a favorite bug?",
+      "response": "Honestly, I hate bugs. I think they're gross",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a favorite Superhero?",
+      "response": "I love all superheros!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you left-handed or right-handed?",
+      "response": "I\u2019m right-handed, what about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any allergies?",
+      "response": "No thank god I don't they're horrible, do you have them?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you ever broken a bone?",
+      "response": "I broke my wrist last year when I fell of my bike. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Where were you born?",
+      "response": "I was born in Italy, where were you born?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any phobias? ",
+      "response": "I don\u2019t, but I used to be scared of thunder when I was younger. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What are you afraid of?",
+      "response": "I have a fear of spiders",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I have a sphinx cat",
+      "response": "I\u2019m a dog person, I just got a new puppy",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I am collecting seashells every time I go to the beach",
+      "response": "I prefer the taste of tea, what about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I travelled to California last month for my sister's wedding",
+      "response": "Yes, I'm a big football fan. What about you? Do you watch any sports?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I have been listening to a lot of country music. It reminds me of the great outdoors",
+      "response": "I enjoy rock music the most. I'm going to a concert this weekend. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you a fan of comic books?",
+      "response": "Yes, I like comic books. My favorite is Superman",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite meal of the day?",
+      "response": "I like breakfast, its the most important meal of the day!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I hate the rain",
+      "response": "I know me too, its so gloomy!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like listening to music while you work?",
+      "response": "I love listening to music, especially rap, while I work.",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you follow any sports?",
+      "response": "Not really, I follow football a little. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you ever been to a concert?",
+      "response": "I love concerts! I went to the Taylor Swift concert recently!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a favorite season?",
+      "response": "I like Summer because its warm. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite day of the week?",
+      "response": "I like Fridays since the work week is ending. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I want to go to a hike",
+      "response": "Let's go! I heard of a great hike near here.",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I want to go to Chipotle",
+      "response": "I love Chipotle! Let's go!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's the last movie you watched? ",
+      "response": "I just watched Deadpool 3! It was great",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I love reading about history.",
+      "response": "I hate reading about history. I like reading fiction though",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I just went to my first yoga class",
+      "response": "How was it? ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I love Ben and Jerrys Ice cream",
+      "response": "Me too! I love the half baked flavors. What's your favorite?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I just got back from New York",
+      "response": "I've never been to New York",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like roller coasters? ",
+      "response": "I love roller coasters. Do you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I just cooked some steak. ",
+      "response": "Oh wow, can I get the recipe?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like oat milk?",
+      "response": "Yes, I'm lactose intolerant so that's all I drink",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "How's your brother?",
+      "response": "He's good! Just moved into a new place",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I love your jacket",
+      "response": "Thank you! I thrifted it. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you a morning person or a night owl?",
+      "response": "I'm definitely a night owl. What are you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you watched Stranger Things?",
+      "response": "I have not, what's it about?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you drink coffee or tea?",
+      "response": "Yes, I'm a coffee person!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I like this ice cream flavor a lot",
+      "response": "Oh what flavor is that?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I just downloaded TikTok",
+      "response": "I love TikTok! ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I got a girls phone number",
+      "response": "Oh, how'd you meet?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you heard Justin Bieber's new song?",
+      "response": "No, what's it called?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "How was your Halloween?",
+      "response": "It was fun! I dressed as a vampire. What'd you dress as?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "There was so much traffic this morning. ",
+      "response": "When did you leave? It was fine when I left",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What are you making? It smells so good",
+      "response": "I'm baking cookies. Do you want one? ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "My alarm didn't go off this morning",
+      "response": "That sucks, I hate when that happens",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Did you vote?",
+      "response": "Yes, I just mailed my ballot. What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like matcha?",
+      "response": "I love matcha, we should get matcha together sometime!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "It's freezing",
+      "response": "You're right, it is cold. Do you want to borrow a jacket?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I need a haircut",
+      "response": "I usually go to a salon in San Jose, I can send it to you",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "I slept horribly last night",
+      "response": "I'm sorry, do you need coffee?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite subject?",
+      "response": "I like math, what about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "My phone is going to die",
+      "response": "Do you need a charger?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What's your favorite cuisine?",
+      "response": "I love Asian food. What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "How do you feel about our exam?",
+      "response": "I feel as prepared as I can be, but not great. What about you? ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have any weekend plans?",
+      "response": "I was going to rest this weekend. What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What kind of movies do you usually watch?",
+      "response": "I love horror movies. Do want to watch with me?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you excited about any upcoming holidays?",
+      "response": "I'm excited for Thanksgiving! What about you?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you like going to the gym?",
+      "response": "Yes, I usually run on the treadmill. What do you do? ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Have you ever tried journaling?",
+      "response": "No, would you recommend?",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What\u2019s your go-to comfort food?",
+      "response": "I love fries. They are so yummy",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "What\u2019s something on your bucket list?",
+      "response": "I want to go skydiving! What about you",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you have a favorite board game?",
+      "response": "I love Monopoly. We should play!",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Do you prefer sweet or savory snacks?",
+      "response": "I like both. It depends on my mood. ",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Those shoes are so cool!",
+      "response": "Thanks! I just got them, they're New Balances",
+      "task_type": "new",
+      "task_name": "rightAmount"
+    },
+    {
+      "text": "Are you cold?",
+      "response": "A bit, I'm going to get a jacket.",
       "task_type": "new",
       "task_name": "rightAmount"
     },
@@ -2313,25 +2775,25 @@
     },
     {
       "text": "This class is so hard!",
-      "response": "It really is. I find it helpful to read the textbook carefully before coming to lecture.",
+      "response": "I feel you, it's been tough, but we're in it together.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I don't like winter! It's so cold and depressing.",
-      "response": "I can see what you mean:  it can get really cold in this region. That being said, the snow is nice change of scenery!",
+      "response": "Same, but it just makes summer more worth it!",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "My favorite place to go is the beach. How about you?",
-      "response": "The beach is very relaxing, but the mountains take the cake for me. The views are just so breathtaking!",
+      "response": "I love the beach too, but my favourite place to go is to the mountains.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I love dogs; they're just so cute!",
-      "response": "I love dogs too, especially Golden Retrievers. They are the friendliest dogs I've ever met.",
+      "response": "They really are! Do you have any pets yourself?",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
@@ -2343,25 +2805,25 @@
     },
     {
       "text": "I'm so excited for the holidays!",
-      "response": "Me too! I can't wait to spend time with my family and enjoy all the festive activities.",
+      "response": "Me too! I can't wait to spend time with my family and enjoy everything festive.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I'm so stressed about my upcoming exams.",
-      "response": "I understand. Taking breaks and staying organized can really help manage the stress. What do you find helps you the most?",
+      "response": "I hear you, exams can be really stressful. You got this!",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I'm not a fan of spicy food.",
-      "response": "That's totally fine! Everyone has different tastes. What type of food do you like?",
+      "response": "I get that, spicy food isn't for everyone. What types of food do you prefer?",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I hate going to the store; it's so crowded.",
-      "response": "I hear you. Shopping online can be a great alternative—it's much less stressful!",
+      "response": "I hear you. Shopping online can be a great alternative\u2014it's much less stressful!",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
@@ -2372,26 +2834,26 @@
       "task_name": "tactfulResponses"
     },
     {
-      "text": "I'm so ready for summer!",
+      "text": "Summer is my favorite season",
       "response": "I can't wait to enjoy the warm weather, but I think I might still miss the greenery of spring.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I don't like rainy days.",
-      "response": "I can relate. It can be tough to be productive when it's raining, but it can also be a great opportunity to catch up on some reading or cozy up with a movie.",
+      "response": "I can relate. It can be tough to be productive when it's raining, but its also a good chance to catch up on some reading or movies",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "People who like math are nerds.",
-      "response": "I'm not sure that's necessarily true. Math can be a very creative and powerful tool if you put in the effort to understand it.",
+      "response": "I'm not sure that's necessarily true, but maths definitely isn't for everyone. ",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "I hate cleaning the house.",
-      "response": "Nobody enjoys housework, but it's something we all have to do. Maybe make the task into a game or do it with a friend for motivation!",
+      "response": "Cleaning can be quite the chore! Have you tried breaking it down into smaller tasks, it might make it feel a bit more manageable.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
@@ -2403,13 +2865,13 @@
     },
     {
       "text": "Video games are bad for your health.",
-      "response": "It's true that spending too much time playing video games can be unhealthy, but moderation is key. Balance it out with some physical activity and you'll be alright.",
+      "response": "It's true that spending too much time playing video games can be unhealthy, but everything in moderation!",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
     {
       "text": "Reading books is a waste of time.",
-      "response": "I wouldn't say it's a waste of time. Reading can be a great way to develop your imagination and increase knowledge.",
+      "response": "I wouldn't say it's a waste of time, you just need to find the right book for you.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
@@ -2422,6 +2884,924 @@
     {
       "text": "I love fishing:  bagging that next fish makes me feel so happy!",
       "response": "It sounds like you really enjoy fishing! It can be a great hobby and way to connect with nature.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I like pineapple on pizza",
+      "response": "Interesting! Pineapple on pizza is a fun choice.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I made pizza dough with sausage in it last night",
+      "response": "That sounds pretty interesting. How did it taste?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm thinking about texting my ex-girlfriend",
+      "response": "Oh really? What are you thinking of saying?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I wrote a poem about my ex-boyfriend last night",
+      "response": "Writing can be a good outlet. How are you feeling about it?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Broccoli is my favorite food.",
+      "response": "That's unique! Broccoli is definitely a healthy choice.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate chocolate ",
+      "response": "No way! Chocolate is my favorite. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I really dislike ice-cream ",
+      "response": "That's understandable! What's your go to dessert instead?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm not a fan of superhero movies.",
+      "response": "That's fair! Everyone has different tastes when it comes to movies. What kind of movies do you prefer?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer reading e-books over physical books.",
+      "response": "I get that. E-books are definitely convenient ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think video games are a waste of time",
+      "response": "That's okay! Everyone has different opinions on how they like to spend their time.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I just got back from a week-long meditation retreat; it was life-changing",
+      "response": "Wow! I'm glad you had such a good experience. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I've been practicing my stand-up comedy routine; I think I'm getting pretty good.",
+      "response": "That's awesome. I'd love to hear it sometime. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I want pasta for dinner tonight",
+      "response": "Sounds good! What flavor?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm not really into sports.",
+      "response": "That's completely fair! What activities do you enjoy instead?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find museums boring.",
+      "response": "That's understandable. What would you prefer to do?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer rainy days to sunny ones.",
+      "response": "That's interesting! Rainy days can have a cozy feel to them. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm considering changing my career path.",
+      "response": "Oh, that's a big decision! What made you want to explore new career options?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find art galleries boring.",
+      "response": "That's okay! Art appreciation is definitely subjective. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm not a fan of pets.",
+      "response": "I understand. Pets aren't for everyone.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate reality TV shows.",
+      "response": "That's fair. What do you like to watch instead?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think your favorite band is overrated.",
+      "response": "I get that. What music do you prefer?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think morning workouts are the worst.",
+      "response": "Morning workouts can be tough. Finding the right time to exercise is key for everyone.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find classical music really boring.",
+      "response": "It's not everyone's cup of tea. There's a wide variety of music genres to explore.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think yoga is a waste of time.",
+      "response": "It's not for everyone, but some people find it very beneficial for their well-being.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I can't believe people spend so much money on fashion.",
+      "response": "Everyone has their own priorities and interests. Fashion can be a form of self-expression for many.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think celebrity gossip is pointless.",
+      "response": "It can seem trivial, but some people enjoy it as a form of entertainment.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think comic books are for kids.",
+      "response": "It's definitely something that children enjoy, but they are a form of storytelling that many people of all ages enjoy.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I can't believe people still listen to vinyl records.",
+      "response": "Vinyl has a unique sound quality that some music enthusiasts appreciate.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't get why people like running marathons.",
+      "response": "Marathons are challenging but rewarding for some. Fitness routines vary widely.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think decorating for holidays is a waste of time.",
+      "response": "Holiday decorations bring joy to many. It\u2019s all about personal tradition and spirit.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I can't believe people spend so much on coffee.",
+      "response": "Specialty coffee can be quite a treat for some. Everyone spends on what they value.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": " I think golf is the most boring sport.",
+      "response": "Golf can be quite strategic and relaxing for some. Every sport has its fans.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I can't believe people enjoy gardening.",
+      "response": "Gardening is a soothing and rewarding hobby for many. It\u2019s a great way to spend time outdoors.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think reality TV is all scripted.",
+      "response": "It's possible. Some people enjoy the entertainment value regardless.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I believe pineapple on pizza is disgusting.",
+      "response": "It's a divisive topic for sure. Tastes really do vary.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think online education is ineffective.",
+      "response": "Online learning isn't for everyone, but it works well for some.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find modern art to be meaningless.",
+      "response": "Modern art can be quite abstract. It evokes different reactions from different people.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think reading fiction is a waste of time.",
+      "response": "Fiction offers a great escape for many readers. Different genres appeal to different people.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Classical music is outdated.",
+      "response": "Classical music has a timeless quality for many. Musical preferences are diverse.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I can't believe people spend so much money on video games.",
+      "response": "Video games can be a major hobby for some. It's all about what brings joy.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think fast food is disgusting.",
+      "response": "Fast food isn\u2019t for everyone. Some find it convenient and tasty.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Working from home is less productive.",
+      "response": "Productivity can vary. Some people thrive in a home office environment.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Sports are boring to watch.",
+      "response": "Sports viewing isn't for everyone. Many find them exciting and engaging.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Cooking is such a chore.",
+      "response": "Cooking can feel like a chore to some. Others find it a creative and relaxing activity.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Pets should not be allowed in restaurants.",
+      "response": "Pet policies in restaurants vary. Service animals are always a necessity.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I believe that online dating is superficial.",
+      "response": "Online dating can be challenging. It works for a lot of people, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think people who meditate are wasting their time.",
+      "response": "Meditation has many benefits for some. It\u2019s a personal choice.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think people who garden are just playing in the dirt.",
+      "response": "Gardening is a rewarding and therapeutic hobby for many.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think people who love cats are weird.",
+      "response": "Everyone has their own tastes! Cat people just appreciate the quirks of cats.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think winter is the best season.",
+      "response": "Winter has its charm. Do you enjoy any particular winter activities?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy watching movies.",
+      "response": "That's interesting! What do you like to do in your free time?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer reading non-fiction over fiction.",
+      "response": "Non-fiction can be very informative. Do you have a favorite genre?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't like listening to music.",
+      "response": "That\u2019s uncommon! Do you have other hobbies you\u2019re passionate about?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Mornings are the best part of the day.",
+      "response": "Mornings can be very peaceful. What\u2019s your favorite morning routine?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy traveling.",
+      "response": "Traveling isn\u2019t for everyone. What do you like to do for a break?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer working at night.",
+      "response": "That's fair. Nighttime can be very productive for some.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't watch TV shows.",
+      "response": "TV isn\u2019t for everyone. What do you prefer instead?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Cats are better than dogs.",
+      "response": "Cats do have their own unique charm. Do you have any pets?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy celebrating my birthday.",
+      "response": "Birthdays can feel overrated. How do you prefer to spend your special day?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't like drinking coffee.",
+      "response": "Coffee isn\u2019t for everyone. What\u2019s your go-to beverage?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer rainy days over sunny days.",
+      "response": "Rainy days can be very soothing. What do you like to do when it rains?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think online shopping is better than in-store shopping.",
+      "response": "Online shopping is convenient. What\u2019s your favorite online store?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy eating out at restaurants.",
+      "response": "Home-cooked meals can be very comforting. Do you like to cook?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think reading books is boring.",
+      "response": "Reading isn\u2019t for everyone. What hobbies do you enjoy?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think smartphones are unnecessary.",
+      "response": "Smartphones do have their drawbacks. How do you stay connected?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Being a vegetarian is the best diet.",
+      "response": "Vegetarian diets can be very healthy. How long have you been vegetarian?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Movies are better than books. ",
+      "response": "Both have their perks! It just depends on what you enjoy more.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy eating dessert.",
+      "response": "Dessert isn\u2019t for everyone. Do you have a favorite type of snack instead?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate the beach. ",
+      "response": "The beach isn\u2019t for everyone. What kind of outdoor spots do you prefer?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think biking is better than driving.",
+      "response": "Biking is great exercise. Do you bike often?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Eating healthy is more important than eating tasty food.",
+      "response": "Health is very important. Do you have a favorite healthy meal?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Living in a small town is better than living in a big city.",
+      "response": "Small towns have a lot of charm. What do you like most about them?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't like going to theme parks.",
+      "response": "I get that! Theme parks can be overwhelming. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don't enjoy watching animated movies.",
+      "response": "Animated movies aren\u2019t for everyone. What genre do you prefer?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think board games are more fun than video games.",
+      "response": "Board games can be very social and engaging. What's your favorite game?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate fireworks.",
+      "response": "I understand. Fireworks can be loud and overwhelming.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think walking barefoot is better than wearing shoes.",
+      "response": "Cool! Walking barefoot seems very natural. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I'm not a fan live music, it's never as good as it's recorded. ",
+      "response": "That's fair enough! Live music can be overwhelming for some. ",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I hate cooking.",
+      "response": "It\u2019s not for everyone! Some prefer takeout or simple meals.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think cats are overrated.",
+      "response": "Fair enough! Some people just prefer dogs or other pets.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like vacations; they\u2019re too stressful.",
+      "response": "Some do feel that way! A staycation can be a nice alternative.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think working long hours is pointless.",
+      "response": "It\u2019s all about balance! Everyone has a different view on work.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Podcasts are boring.",
+      "response": "They\u2019re not for everyone! Some people find them really engaging.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like group projects.",
+      "response": "A lot of people feel that way! They can be challenging.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I\u2019m not a fan of spicy food.",
+      "response": "It\u2019s definitely not for everyone! Mild flavors can be great too.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like meeting new people.",
+      "response": "That\u2019s totally okay! Everyone has different comfort zones.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like dressing up.",
+      "response": "Not everyone enjoys it! Comfort is more important.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like coffee shops.",
+      "response": "Fair enough! Some people prefer a quiet space at home.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Romantic movies are so cheesy.",
+      "response": "Some people feel that way! Others find them sweet.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like wearing watches.",
+      "response": "They\u2019re not for everyone! Phones are great for the time too.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I\u2019m not a fan of sushi.",
+      "response": "It\u2019s an acquired taste! There are so many foods to enjoy.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think breakfast is the best meal of the day.",
+      "response": "Breakfast foods are so comforting! Do you have a favorite?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love trying new recipes.",
+      "response": "That sounds fun! Cooking new dishes can be so satisfying.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I enjoy listening to classical music while I work.",
+      "response": "That\u2019s such a relaxing choice! Classical music can be really inspiring.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love going for walks in nature.",
+      "response": "That sounds peaceful! Being in nature is so refreshing.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer reading non-fiction over fiction.",
+      "response": "Non-fiction can be really eye-opening! Do you have a favorite topic?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I like to start my day with a workout.",
+      "response": "I think mornings are the best part of the day.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think mornings are the best part of the day.",
+      "response": "Mornings can be so peaceful! They\u2019re great for a fresh start.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I enjoy watching documentaries.",
+      "response": "Documentaries can be so informative! They\u2019re a great way to learn something new.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love going to coffee shops to work.",
+      "response": "Coffee shops are a great vibe! Something about them feels inspiring.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I enjoy listening to podcasts on my commute.",
+      "response": "That\u2019s a productive way to spend your commute! Any recommendations?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think planning is half the fun of a trip.",
+      "response": "That\u2019s true! Planning can build up so much excitement.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer home-cooked meals over eating out.",
+      "response": "Home-cooked meals have a special touch. Do you enjoy cooking?",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think rainy days are cozy.",
+      "response": "Rainy days really do have a charm. Perfect for staying in with a good book.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I enjoy working out every day.",
+      "response": "That\u2019s awesome! I find every other day works better for me, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think doing puzzles is super relaxing.",
+      "response": "They\u2019re fun, but I actually find them a bit stressful sometimes!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love trying new foods as often as possible.",
+      "response": "That sounds exciting! I tend to stick with my favorites, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think gardening is a perfect hobby for relaxation.",
+      "response": "Gardening can be calming, but I\u2019m more of an indoor hobby person.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think weekends are best spent being active.",
+      "response": "That\u2019s a great mindset! I usually like a more laid-back weekend.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love planning things to the last detail.",
+      "response": "It\u2019s great to be thorough! I like leaving room for surprises, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think a daily workout is essential for everyone.",
+      "response": "Exercise is important, but I believe rest days are good, too.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think trying new things every week is so refreshing.",
+      "response": "New experiences are awesome! I do enjoy routines, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think starting work early makes the day better.",
+      "response": "Early starts are nice! I feel more productive starting later, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love listening to audiobooks while I clean.",
+      "response": "Audiobooks are wonderful! I tend to listen to music, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think journaling daily is really beneficial.",
+      "response": "Journaling can be therapeutic! I find weekly journaling works better for me.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think cooking from scratch is always the best option.",
+      "response": "Homemade meals are great! Sometimes, I really enjoy a quick meal, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love experimenting with bold new styles.",
+      "response": "That\u2019s awesome! I usually stick with classic looks, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think meal prepping is the best way to stay on track.",
+      "response": "Meal prep is super helpful! I actually prefer cooking as I go.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think starting projects right away is best.",
+      "response": "Starting early is smart! I sometimes do my best work closer to the deadline.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love organizing everything digitally.",
+      "response": "Digital tools are great! I still love a paper planner, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I love going to live music events often.",
+      "response": "Concerts are amazing! I prefer smaller events, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think vacations are best with a packed itinerary.",
+      "response": "Busy vacations are exciting! I usually like a bit more downtime.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think watching sports is a great way to relax.",
+      "response": "Sports can be really engaging! I\u2019m more into watching movies, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think social media is great for staying connected.",
+      "response": "Social media is useful! I tend to keep my use pretty limited, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think always dressing up makes you feel better.",
+      "response": "Dressing up is fun! I also love the comfort of casual clothes.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think learning new languages is essential.",
+      "response": "Language learning is awesome! I\u2019m happy with the ones I know for now.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t see the point of cooking at home.",
+      "response": "Cooking can feel unnecessary, but it can be really rewarding and relaxing!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "Working out is just exhausting and pointless.",
+      "response": "It can be tiring, but even a short workout can boost your energy and mood.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think reading is a waste of time.",
+      "response": "I get that it\u2019s not for everyone, but reading can be a great way to learn and unwind.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think art is boring.",
+      "response": "Art doesn\u2019t appeal to everyone, but it can be really inspiring and expressive.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find history really boring.",
+      "response": "History can feel dry, but it\u2019s fascinating to see how past events shape the present!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t see the point of journaling.",
+      "response": "Journaling might seem unnecessary, yet it\u2019s a helpful way for some to process their thoughts and experiences.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like trying new foods; it\u2019s too risky.",
+      "response": "Sticking with favorites is great, and trying new flavors can also open up some fun and tasty experiences.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t see the point of wearing nice clothes.",
+      "response": "Comfort is definitely key, and dressing up can be a confidence boost for those who enjoy it.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think online courses aren\u2019t effective.",
+      "response": "Not all courses work for everyone, though many people appreciate the convenience and flexibility.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think spending time on social media is pointless.",
+      "response": "Social media can feel trivial, though it\u2019s also a way for people to connect and stay updated.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think people talk too much at parties.",
+      "response": "It can get a bit loud, but it\u2019s nice to see everyone enjoying themselves!",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t understand why people like spicy food.",
+      "response": "It\u2019s definitely not for everyone! Some people just love that extra kick.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer sticking to routines rather than changing things up.",
+      "response": "Routines bring a lot of comfort! Trying new things can be exciting for some, too.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think people are too obsessed with gadgets these days.",
+      "response": "Technology is everywhere now, isn\u2019t it? Some people find gadgets really helpful, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like trying new foods.",
+      "response": "It\u2019s great to know what you like! Some people just have a taste for adventure.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I find classical music too slow.",
+      "response": "It does have a gentle pace! Some people find it helps them relax and focus.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like souvenirs\u2014they\u2019re just clutter.",
+      "response": "Souvenirs aren\u2019t for everyone! Some people enjoy the memories they bring back.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I don\u2019t like networking events\u2014they\u2019re awkward.",
+      "response": "They can feel a bit forced! For some, though, they\u2019re a way to meet people with similar goals.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "prefer listening to podcasts over music.",
+      "response": "Podcasts are so informative! Music has a special place for a lot of people, though.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer tea over coffee.",
+      "response": "Tea is so calming! Coffee\u2019s bold flavor is what wins some people over.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think walking is the best way to explore a city.",
+      "response": "Walking lets you see so much detail! Some people love the speed and",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer cooking simple meals instead of elaborate ones.",
+      "response": "Simple meals are often the best! Some people just love experimenting with recipes.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I prefer staying in to going out\u2014it\u2019s just so cozy.",
+      "response": "Cozy nights in are unbeatable! Plus, no one can judge my snack choices.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think mornings are the best part of the day.",
+      "response": "Mornings are magical! If I\u2019m up early enough to see one, I feel like I\u2019ve discovered a rare species.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think budgeting is essential for peace of mind",
+      "response": "Budgets are amazing! Mine\u2019s more of a \u201cguideline\u201d that I break for snacks.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think writing by hand helps me stay focused.",
+      "response": "That\u2019s great! I spend more time trying to read my own handwriting than actually writing.",
+      "task_type": "new",
+      "task_name": "tactfulResponses"
+    },
+    {
+      "text": "I think handwritten to-do lists are more effective.",
+      "response": "Handwritten lists are classic! Mine end up looking like a scavenger hunt of my half-done ideas.",
       "task_type": "new",
       "task_name": "tactfulResponses"
     },
