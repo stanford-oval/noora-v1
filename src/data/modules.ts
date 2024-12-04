@@ -10,6 +10,7 @@ import {
   FlagIcon,
   FireIcon,
   ScaleIcon,
+  StarIcon,
 } from "@heroicons/react/outline";
 
 const modules = {
@@ -84,6 +85,14 @@ const modules = {
     selectedDesc:
       "When others ask for your opinion or are unsure about a situation, they are looking for your help. Offer kind, helpful advice on what they can do in their situation.",
     icon: ScaleIcon,
+  },
+  preferences: {
+    title: "Preferences",
+    module: "preferences",
+    desc: "In this module, you will learn how to say an explicit preference.",
+    selectedDesc:
+      "When others ask for if you prefer one thing over another, it is helpful to be clear that you have a preference. While your preferences might change based on small details of a situation, it is helpful to still have a general preference.",
+    icon: StarIcon,
   },
   stayOnTrack: {
     title: "Stay on Track",
