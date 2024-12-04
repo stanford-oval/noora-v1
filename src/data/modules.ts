@@ -9,6 +9,7 @@ import {
   HeartIcon,
   FlagIcon,
   FireIcon,
+  ScaleIcon,
 } from "@heroicons/react/outline";
 
 const modules = {
@@ -75,6 +76,14 @@ const modules = {
     selectedDesc:
       "Always make an effort to give compliments and congratulations to others. They are the easiest way to spread happiness to others and even yourself.",
     icon: HeartIcon,
+  },
+  giveAdvice: {
+    title: "Give Advice",
+    module: "giveAdvice",
+    desc: "In this module, you will learn how to give advice to others.",
+    selectedDesc:
+      "When others ask for your opinion or are unsure about a situation, they are looking for your help. Offer kind, helpful advice on what they can do in their situation.",
+    icon: ScaleIcon,
   },
   stayOnTrack: {
     title: "Stay on Track",

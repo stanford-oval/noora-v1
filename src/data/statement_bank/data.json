@@ -4754,6 +4754,900 @@
       "task_name": "sarcasm"
     },
     {
+      "text": "I'm not too sure what to do at the airport later today",
+      "response": "What part aren't you sure about? Finding your gate or checking in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not too sure what classes to take next quarter",
+      "response": "Are there any subjects that you're interested in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don't know which job offer to accept. One offer is in New York with my friends, and one is at home in California \u2014\u00a0and I don't know where I want to be",
+      "response": "That's a tough choice. Do you enjoy being with friends or with family more?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm stressed about my work and I don't know what to do",
+      "response": "Feeling stressed about work is rough. Have you thought about talking to your manager about how you're feeling?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don't know what to do this weekend",
+      "response": "Have you been to the new museum?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm struggling with my relationship right now.",
+      "response": "I'm sorry to hear that. what's going on?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I just lost my job, and I'm not sure what to do next.",
+      "response": " I'm sorry to hear that. what happened? ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm struggling to balance my schoolwork and social life.",
+      "response": "It's important to find a balance that works for you. Maybe you can try setting aside specific times to hang out with friends. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start eating healthier but I'm not sure how. ",
+      "response": "That's great! Maybe start with small changes. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m considering starting my own business, but I\u2019m unsure if I have enough experience or resources. ",
+      "response": "Amazing! What type of business?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I have the opportunity to travel abroad for a year, but I\u2019m hesitant to leave my family and friends. ",
+      "response": "Where would you be going?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m torn between pursuing my passion for art or choosing a more stable career path.",
+      "response": "What kind of other career are you considering?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "My parents want me to pursue a conventional career path, but I'd rather pursue my passion for music. ",
+      "response": " That's an interesting decision. What do you think would make you happier?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m considering moving to a new city for better job opportunities, but I\u2019m nervous about leaving my support system behind. ",
+      "response": "It's always daunting moving cities. What's the job opportunity?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to spend the holidays with my family but my partner wants me to spend them with their family. ",
+      "response": "That sounds like a tricky situation. Have you considered compromising by alternating between families each holiday?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m unsure whether to move in with roommates or live alone. ",
+      "response": "That's a big decision! Living with roommates can be a great way to save money and have companionship, but it depends on how much privacy you want. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m trying to decide if I should go vegan, but I\u2019m worried about the dietary changes.",
+      "response": "Maybe start by incorporating more plant-based meals into your diet gradually to see how you feel. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m thinking about getting a piercing, but I\u2019m worried about the pain and healing process.",
+      "response": " Yeah, that's understandable. Which piercing would you get?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m debating whether to confront my friend about something that\u2019s been bothering me.",
+      "response": "It's definitely important to address these issues, what happened?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling lost and unsure about my future.",
+      "response": "It's normal to feel uncertain about the future. What specific areas are you feeling lost in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm having trouble staying motivated to pursue my goals.",
+      "response": "Finding motivation can be tough. What are some of the goals you're working towards",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start exercising regularly, but I don't know where to begin.",
+      "response": "Have you thought about what types of activities you enjoy?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm dealing with a difficult family member and don't know how to handle the situation.",
+      "response": "That's tricky. What's going on?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm experiencing writer's block and can't seem to get started on my project.",
+      "response": "Oh no. What do you usually do to get inspired?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering traveling solo for the first time and need tips for staying safe.",
+      "response": "Sounds exciting! Where are you planning on going?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm dealing with a difficult neighbor and need advice on how to handle the situation.",
+      "response": "That's annoying! Have you tried talking to your neighbor about the problem directly?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm trying to break a bad habit, but I keep falling back into it.",
+      "response": "Breaking a habit can be difficult. Have you thought about of finding healthier alternative to replace the habit?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm having trouble managing my time at work.",
+      "response": "Have you tried making a daily schedule or to-do list?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don\u2019t know how to ask for a raise.",
+      "response": "Maybe start by listing your accomplishments and practicing your pitch.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m struggling with my new workout routine.",
+      "response": "What part of the routine is the most challenging for you?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m not sure how to approach my boss about taking a vacation.",
+      "response": "How about preparing your request in advance and proposing a plan to cover your tasks?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to learn a new language but don\u2019t know which one to choose.",
+      "response": "What languages are you most interested in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don\u2019t know how to save more money each month.",
+      "response": "Have you tried creating a budget to track your expenses?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m finding it hard to stay motivated to exercise.",
+      "response": "Maybe setting specific goals or finding a workout buddy could help.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to make new friends but don\u2019t know where to start.",
+      "response": "How about joining clubs or groups that align with your interests?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m not sure if I should move to a new city for school.",
+      "response": "What are the pros and cons of moving versus staying?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m struggling with my current relationship.",
+      "response": "Sorry to here that. Have you tried having an open and honest conversation with your mother?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I need help deciding on a major in college.",
+      "response": "What subjects are you most passionate about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to get better at cooking but don\u2019t know where to start.",
+      "response": "Have you tried taking a cooking class?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m feeling stressed about my upcoming exams.",
+      "response": "Have you considered creating a study schedule to manage your time better?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m having trouble sleeping at night.",
+      "response": "Have you tried establishing a consistent bedtime routine?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don\u2019t know how to ask someone out on a date.",
+      "response": "Maybe start with a casual conversation and see where it leads.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to volunteer but don\u2019t know where to begin.",
+      "response": "What causes or organizations are you passionate about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m having difficulty managing my stress.",
+      "response": "What has been making you feel stressed recently? Have you tried anything to reduce this stress?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m not sure how to decorate my new apartment.",
+      "response": "Have you looked for inspiration online or in magazines?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m not sure how to deal with my difficult coworker.",
+      "response": "Have you tried addressing the issue directly or seeking advice from HR?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start a new hobby but don\u2019t know what to choose.",
+      "response": "What activities have you always been curious about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m having trouble finding a job.",
+      "response": "Have you tried networking or updating your resume?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I need help improving my writing skills.",
+      "response": "Have you considered joining a writing group or taking a class?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m having trouble making friends in a new city.",
+      "response": "Joining local groups or clubs can be a great way to meet new people.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to be more environmentally conscious but don\u2019t know where to start.",
+      "response": "Making small changes like reducing plastic use and recycling can make a big impact.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m not sure how to prepare for a job interview.",
+      "response": "Researching the company and practicing common interview questions can boost your confidence.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm hesitant about buying my first car.",
+      "response": "What's making you feel unsure about buying a new car?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure how to support a friend going through a tough time.",
+      "response": "Sometimes it's great to let them know that you are here for them.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I've been invited to a work event but don't know what to wear.",
+      "response": "Have you checked the dress code for the event? ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure how to plan a budget for my upcoming trip.",
+      "response": "Where are you planning on travelling to?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide which book to read next.",
+      "response": "What kind of books are you interested in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling really stressed about work.",
+      "response": " I'm sorry to hear that. What has been making you feel stressed?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I don't know what to cook for dinner tonight.",
+      "response": "What are you in the mood for?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling a bit lonely lately.",
+      "response": "What has been making you feel lonely?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to learn a new language but don't know where to start.",
+      "response": "Have you tried using a language learning app?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling unmotivated.",
+      "response": "What usually inspires you?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": " I'm thinking about adopting a pet.",
+      "response": "That's wonderful! Have you decided on what kind of pet?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling anxious about an upcoming presentation.",
+      "response": "Have you thought about practicing beforehand in front of others?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm nervous about meeting new people.",
+      "response": "How about starting with small social gatherings?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start a blog but don't know where to begin.",
+      "response": "What topics are you passionate about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to travel but don't know where to go.",
+      "response": "What kind of vacation are you looking for?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start meditating but don't know how.",
+      "response": "There are some great apps that can guide you.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm struggling with a difficult decision.",
+      "response": "Have you listed out the pros and cons?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I need help planning a surprise party.",
+      "response": "What theme are you thinking of?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling a bit uninspired creatively.",
+      "response": "Maybe try visiting a gallery or museum?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling nervous about my first day at a new job.",
+      "response": "First days are always scary. You've got this!",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start a garden but don't know where to start.",
+      "response": "What kind of plants are you interested in growing?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling really homesick.",
+      "response": "Maybe you could try to recreate some of your favorite home meals?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm worried about an upcoming exam.",
+      "response": "What subject is it for?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start a podcast but don't know how.",
+      "response": "What topics are you passionate about discussing?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm feeling overwhelmed by social media.",
+      "response": "Have you thought about taking a break from it?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to learn to play an instrument.",
+      "response": "Which instrument are you interested in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure what career path to take.",
+      "response": "What are your interests and strengths?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start reading more books.",
+      "response": "What genre interests you the most?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure how to ask for feedback at work.",
+      "response": "Maybe try setting up a meeting with your supervisor?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure how to decorate my new apartment.",
+      "response": "You should check out some interior design magazines for inspiration. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide what movie to watch tonight.",
+      "response": "Have you checked out the new releases?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm bored with my usual weekend routine.",
+      "response": "Maybe try exploring a new park or hiking trail?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure what to make for breakfast tomorrow.",
+      "response": "What do you usually enjoy eating for breakfast?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm trying to drink more water but keep forgetting.",
+      "response": "Have you tried using a water-tracking app?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start a new TV series but can't decide which one.",
+      "response": "I just watched a new series on Netflix, you might like it. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m thinking about changing my hairstyle.",
+      "response": "What kind of look are you going for?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure what to do for my birthday.",
+      "response": "What do you usually do for your birthday?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I need to find a good place to eat out this weekend.",
+      "response": "Have you looked at reviews on Yelp?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to spend more time outdoors.",
+      "response": "How about planning a weekend camping trip?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I\u2019m looking for a new podcast to listen to.",
+      "response": "What genres do you enjoy?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start collecting something but don't know what.",
+      "response": "What are some things that you find fascinating or beautiful?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm struggling to keep my houseplants alive.",
+      "response": "What types of houseplants do you have?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about switching to a more sustainable lifestyle but I don't know where to start.",
+      "response": "Have you looked into easy swaps like reusable bags and bottles?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure what kind of volunteer work I should do.",
+      "response": "What causes are you passionate about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm looking for a new hobby to help me relax.",
+      "response": "I find things like knitting or painting really relaxing. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm struggling to stay active but I don't want to join a gym. ",
+      "response": "Have you tried following home workout videos?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm trying to cut down on screen time.",
+      "response": "Maybe try setting specific time limits for your devices. ",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about adopting a pet, but I'm not sure if I'm ready for the responsibility.",
+      "response": "Having a pet is a big commitment. Have you considered starting with fostering to see how it feels?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide whether to go back to school for a master's degree.",
+      "response": " That's a big decision. What are your goals for further education?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should invest in the stock market right now.",
+      "response": "Investing can be risky. Maybe consult a financial advisor to help you decide.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to learn a new language but don't know which one to choose.",
+      "response": "Are there any cultures or countries you're particularly interested in?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering getting a tattoo, but I'm worried I'll regret it later.",
+      "response": "That's understandable. Maybe think about a design that's meaningful to you.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I feel like I'm stuck in my current job but afraid to make a change.",
+      "response": "Change can be scary, but it might lead to new opportunities. What would you like to do instead?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to buy a car or keep using public transportation.",
+      "response": "What are the pros and cons for you of owning a car versus public transit?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start exercising but don't know where to begin.",
+      "response": "Maybe start with something simple like daily walks or try out a beginner's class.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about moving in with my partner but worried it's too soon.",
+      "response": "Have you talked to your partner about your concerns?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should tell my friend that I have feelings for them.",
+      "response": "That's a tough situation. How do you think they might react?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should quit my job to travel the world.",
+      "response": "Traveling sounds amazing. Do you have a plan for when you return?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering deleting my social media accounts but worried I'll feel disconnected.",
+      "response": "Maybe try taking a short break first to see how it feels.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm torn between buying a house or continuing to rent.",
+      "response": "Have you weighed the financial implications of both options?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to learn to play an instrument but don't know which one.",
+      "response": "What kind of music do you enjoy? That might help you choose.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should switch to a plant-based diet.",
+      "response": "Perhaps you could try incorporating more plant-based meals gradually.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about cutting off contact with a toxic friend.",
+      "response": "It might be tough, but your well-being is important. Have you considered talking to them about how you feel?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should take a gap year before college.",
+      "response": "What do you hope to gain from a gap year?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to accept a promotion that requires relocating.",
+      "response": "That's a big move. How do you feel about living in a new place?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start my own podcast but don't know where to start.",
+      "response": "Maybe begin by planning out topics you're passionate about.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should keep pursuing a hobby I'm no longer passionate about.",
+      "response": "If it doesn't bring you joy anymore, it might be okay to take a break or try something new.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about getting back together with my ex.",
+      "response": "Have you thought about why you broke up in the first place?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide whether to stay in the city or move to the countryside.",
+      "response": "What are you looking for in your living environment?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm unsure if I should lend money to a friend who hasn't repaid me before.",
+      "response": "It's important to consider your own financial situation and the potential risks.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to tell my boss I'm unhappy with my workload.",
+      "response": "It might help to have an open conversation about your concerns.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to adopt a healthier lifestyle but don't know where to start.",
+      "response": "Maybe start with small changes like more fruits and veggies and regular exercise.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should forgive someone who hurt me.",
+      "response": "Forgiveness can be difficult. Do you think it would help you move forward?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should learn to cook or keep ordering takeout.",
+      "response": "Cooking can be fun and healthier. Maybe try starting with simple recipes.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering dyeing my hair a bold color but worried about others' opinions.",
+      "response": "What about other's opinions make you worried?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to volunteer but don't know which cause to support.",
+      "response": "Are there any issues you're particularly passionate about?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to get a roommate to save money.",
+      "response": "Living with someone can help financially but consider if you're comfortable sharing your space.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should tell my parents about a mistake I made.",
+      "response": "Honesty might be the best approach. How do you think they will react?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about starting yoga but feel intimidated.",
+      "response": "Everyone starts somewhere. Maybe try a beginner's class or online videos.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to write a book but doubt anyone would read it.",
+      "response": "If writing makes you happy, it's worth doing. You never know who might connect with your story.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should get involved in office politics.",
+      "response": "It might be best to stay neutral and focus on your work. Have you thought about why you might want to get involved?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering changing my major but worried it's too late.",
+      "response": "It's important to study something you enjoy. Have you talked to an academic advisor?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should sign up for that marathon.",
+      "response": "If you're up for the challenge, it could be a great experience. How's your training going?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to buy the latest tech gadget or save my money.",
+      "response": "Do you really need it, or can you wait until the price drops?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to reconnect with an old friend but feel awkward about it.",
+      "response": "Reaching out can be hard, but they might be happy to hear from you.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should report a coworker who is behaving unethically.",
+      "response": "That's a difficult position. Do you have a trusted HR person you can talk to?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about learning to drive but feel anxious about it.",
+      "response": "Many people feel that way at first. Maybe start with lessons in a quiet area.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide whether to attend my high school reunion.",
+      "response": "Do you feel like reconnecting with old classmates? It could be fun.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm considering proposing to my partner but not sure if it's the right time.",
+      "response": "How do you feel about your relationship right now?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm unsure if I should take on more responsibilities at work.",
+      "response": "Consider whether it aligns with your career goals and if you can manage the workload.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to start painting but feel like I'm not talented enough.",
+      "response": "Art is about expression. Maybe give it a try and see how you enjoy it.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to get a prenuptial agreement.",
+      "response": "Have you discussed it with your partner?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I can't decide if I should pursue online dating.",
+      "response": "It can be a great way to meet new people. Are you open to giving it a try?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm thinking about getting a pet snake but my family isn't supportive.",
+      "response": "Maybe have a conversation with them about their concerns.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm not sure if I should participate in that protest.",
+      "response": "Do you feel strongly about the cause? Safety is also important to consider.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I want to take singing lessons but feel self-conscious.",
+      "response": "Everyone starts somewhere. If it's something you enjoy, it's worth trying.",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
+      "text": "I'm debating whether to sell my car and switch to biking everywhere.",
+      "response": "That's a big lifestyle change. Have you thought about how it would impact your daily routine?",
+      "task_type": "new",
+      "task_name": "giveAdvice"
+    },
+    {
       "text": "I love hiking.",
       "response": "Hiking is a great way to get some exercise.",
       "task_type": "old",
