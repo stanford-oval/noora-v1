@@ -110,11 +110,27 @@ const modules = {
       "Identifying sarcastic statements can be hard! If you think someone is being sarcastic to you, try either acknowledging the sarcasm and being humorous back or just responding empathetically.",
     icon: FireIcon,
   },
+  internalRelevantQuestions: {
+    title: "[Internal] Relevant Questions",
+    module: "internalRelevantQuestions",
+    desc: "In this module, you will learn how to reply to statements with relevant questions.",
+    selectedDesc:
+      "If someone brings up a topic, it helps keep the conversation going if you can stay on that same topic and ask a question that is directly related to the main point. It also helps the conversational partner feel that you are taking an interest in them.",
+    icon: ChatIcon,
+  },
 };
 
 export const getModulesByRole = (role: string) => {
-  if (role == "tester") {
-    return modules; // Show all modules
+  if (role == "full") {
+    return modules; // Exclude "internalRelevantQuestions"
+  } else if (role == "tester") {
+    const { internalRelevantQuestions, ...restModules } = modules;
+    return restModules; // Exclude "internalRelevantQuestions"
+  } else if (role == "internal") {
+    return {
+      general: modules.general,
+      internalRelevantQuestions: modules.internalRelevantQuestions,
+    }; // Only "internalRelevantQuestions"
   }
   // Default role: "user" sees only the general module
   return { general: modules.general };
