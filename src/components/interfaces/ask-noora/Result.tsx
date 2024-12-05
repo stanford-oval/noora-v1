@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 export default function Result({
   statement,
   explanation,
+  success,
   reply,
   id,
   results,
@@ -40,16 +41,20 @@ export default function Result({
           </span>
         )}
       </div>
-      {reply ? (
-        <div className="text-center mt-3 text-lg text-gray-600 max-w-4xl mx-auto">
-          {explanation} <br />
-          For example: <span className="text-noora-primary font-bold inline-block mt-1">“{reply}”</span>
-        </div>
-      ) : (
-        <div className="text-center text-slate-500">
+      {reply ? 
+        (<div className="text-center mt-3 text-lg text-gray-600 max-w-4xl mx-auto">
+            {success ?
+            <>
+              {explanation} <br />
+              For example: <span className="text-noora-primary font-bold inline-block mt-1">“{reply}”</span>
+            </>
+             : 
+            <span className="text-noora font-bold inline-block mt-1">{reply}</span>}
+        </div>) 
+      : (<div className="text-center text-slate-500">
           Give Noora a few seconds to think...
-        </div>
-      )}
+        </div>)
+      }
     </div>
   );
 }
@@ -58,6 +63,7 @@ type ResultProps = {
   statement: string;
   explanation: string;
   reply: string;
+  success: boolean;
   id: number;
   results: any;
 };
