@@ -1,25 +1,47 @@
 import React from "react";
+import { useEffect, useState, Fragment } from "react";
 import Link from "next/link";
-import modules from "../../data/modules";
+import { getModulesByRole } from "../../data/modules"; // Import getModulesByRole
+import { getIdTokenResult } from "firebase/auth";
+import { useAuth } from "../../Authenticate"; // Import your custom authentication hook
 
-export default function ModulesInfo() {
+export default function ModulesInfo({}) {
+  // Get accessible modules for the current user role
+  const [user, email] = useAuth(); // Use your custom hook to get the current user
+  const [userRole, setUserRole] = useState<string>("user");
+  const [visibleModules, setVisibleModules] = useState(
+    getModulesByRole("user")
+  );
+
+  useEffect(() => {
+    const fetchRole = async () => {
+      if (user) {
+        const token = await getIdTokenResult(user); // Fetch token
+        const role =
+          typeof token.claims.role === "string" ? token.claims.role : "user"; // Ensure role is a string
+        setUserRole(role); // Set the role
+        setVisibleModules(getModulesByRole(role)); // Update modules based on role
+      }
+    };
+    fetchRole();
+  }, [user]); // Runs whenever the user changes
+
   return (
     <div id="modules">
       <div className="pb-4 text-slate-700 flex flex-col gap-y-2">
         <h1 className="inline font-bold text-noora-secondary font-display text-3xl tracking-tight">
-          Choose from our{" "}
-          <span className="special-underline">modules</span>.
+          Choose from our <span className="special-underline">modules</span>.
         </h1>
         <p>
-          The goal is that after successfully completing these modules, you
-          will <b>respond well during social conversation</b> and will{" "}
+          The goal is that after successfully completing these modules, you will{" "}
+          <b>respond well during social conversation</b> and will{" "}
           <b>feel more comfortable and confident</b> when they come up in
           everyday situations.
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 flex-col md:flex-row items-stretch justify-center w-full gap-2">
-        {Object.values(modules).map((module) => (
+        {Object.values(visibleModules).map((module) => (
           <div key={module.title} className="group relative">
             <div className="bg-gray-100 trans-150 p-6 rounded-md border-2 h-full border-gray-200 group-hover:border-gray-300">
               <div>
