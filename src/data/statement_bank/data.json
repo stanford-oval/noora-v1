@@ -9921,12 +9921,7 @@
       "task_type": "new",
       "task_name": "internalRelevantQuestions"
     },
-    {
-      "text": "Hey! I just finished the first half of my day. I'm planning on going out for lunch with my co-workers. You up for joining? DUPLICATE",
-      "response": "Sure, where are you going?",
-      "task_type": "new",
-      "task_name": "internalRelevantQuestions"
-    },
+
     {
       "text": "I'm thinking of watching a movie tonight.",
       "response": "What do you think you'll watch?",
@@ -10041,12 +10036,7 @@
       "task_type": "new",
       "task_name": "internalRelevantQuestions"
     },
-    {
-      "text": "I stumbled on this fantastic new restaurant recently. DUPLICATE",
-      "response": "I love trying new places. What kind of food is it?",
-      "task_type": "new",
-      "task_name": "internalRelevantQuestions"
-    },
+
     {
       "text": "Had an interesting chat yesterday\u2014got me thinking.",
       "response": "Oh wow. Who was it with?",
@@ -10059,12 +10049,7 @@
       "task_type": "new",
       "task_name": "internalRelevantQuestions"
     },
-    {
-      "text": "Managed to get a flat tire today\u2014just my luck! DUPLICATE",
-      "response": "Oh no, what a bummer. Were you able to change it or did you have to get towed?",
-      "task_type": "new",
-      "task_name": "internalRelevantQuestions"
-    },
+
     {
       "text": "Thinking I might bake some cookies later. Sounds like a good idea, right?",
       "response": "Yeah, that sounds awesome! What kind of cookies?",
