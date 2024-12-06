@@ -115,6 +115,8 @@ async function getRating(
       presence_penalty: 0,
     });
 
+    console.log(output);
+
     if (output.split(" ")[0] === "Good") {
       classification = "Good reply.";
       goodAnswer = true;
