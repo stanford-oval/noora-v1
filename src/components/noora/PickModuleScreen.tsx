@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { getIdTokenResult } from "firebase/auth";
-import { useAuth } from "../../Authenticate"; // Import your custom authentication hook
+import { useAuth } from "../../Authenticate";
 import modules, { getModulesByRole } from "../../data/modules";
 
 export default function PickModuleScreen({ open, setOpen }: any) {
@@ -94,29 +94,6 @@ export default function PickModuleScreen({ open, setOpen }: any) {
                         </a>
                       </Link>
                     ))}
-                  </div>
-
-                  <div className="w-full">
-                    <Link
-                      href={
-                        "/noora?module=" +
-                        modules[
-                          Object.keys(visibleModules)[
-                            (Object.keys(visibleModules).length *
-                              Math.random()) <<
-                              0
-                          ] as keyof typeof visibleModules
-                        ].module
-                      }
-                    >
-                      <button className="rounded-lg py-2 outline-none bg-noora-primary hover:bg-noora-primary-dark text-white mx-auto mt-4 w-full text-lg font-medium flex justify-center">
-                        <FontAwesomeIcon
-                          icon={faShuffle}
-                          className="w-5 h-5 mt-1 mr-2"
-                        />{" "}
-                        Choose for me
-                      </button>
-                    </Link>
                   </div>
                 </div>
               </Dialog.Panel>
