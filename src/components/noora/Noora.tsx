@@ -11,7 +11,8 @@ import { useAuth } from "../../Authenticate"; // Import the useAuth function
 export default function Noora() {
   const router = useRouter();
 
-  const [selectedModule, setSelectedModule] = useState(modules["general"]);
+  const firstModuleKey = Object.keys(modules)[0] as keyof typeof modules;
+  const [selectedModule, setSelectedModule] = useState(modules[firstModuleKey]);
   const [showPickModuleScreen, setShowPickModuleScreen] = useState(false);
   const [redirectHandled, setRedirectHandled] = useState(false); // Prevent multiple redirects
 
@@ -52,9 +53,9 @@ export default function Noora() {
 
       // Ensure the key is valid and matches one of the module keys
       if (!(key in accessibleModules)) {
-        // Redirect unauthorized users to the general module
+        // Redirect unauthorized users to module selection
         setRedirectHandled(true); // Prevent multiple redirects
-        router.replace("/noora?module=general");
+        router.replace("/noora");
       } else {
         setShowPickModuleScreen(false);
         setSelectedModule(modules[key as keyof typeof modules]); // Type assertion ensures TypeScript accepts the key

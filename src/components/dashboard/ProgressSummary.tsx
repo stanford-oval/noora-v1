@@ -12,20 +12,18 @@ export default function ProgressSummary() {
           <span className="special-underline">social conversation</span>.
         </h1>
         <p>
-          Noora helps you practice challenging aspects of social conversation, such as{" "}
-          <b>responding empathetically and positively to others</b>.
+          Noora helps you practice challenging aspects of social conversation,
+          such as <b>responding empathetically and positively to others</b>.
         </p>
       </div>
       <div id="progress" className="grid grid-cols-12">
         <div className="col-span-12 flex flex-col sm:flex-row gap-y-4 text-center sm:text-left justify-between items-center text-white  px-5 py-6 bg-noora-primary rounded-lg bg-gradient-to-br from-noora-primary-light via-noora-primary to-noora-secondary-bright">
           <div>
             <h1 className="text-2xl font-bold">Up Next</h1>
-            <p className="text-lg">
-              Practice responding to <b>Empathy</b> statements.
-            </p>
+            <p className="text-lg">Practice responding to more statements.</p>
           </div>
           <div>
-            <Link href="/noora?module=general">
+            <Link href="/noora">
               <button className="pulse-button-light uppercase rounded-full outline-none px-5 py-3 flex text-md text-noora-secondary bg-white hover:bg-gray-100 font-medium">
                 Practice
                 <ArrowSmRightIcon className="h-6 w-6 ml-1.5" />
