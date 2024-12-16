@@ -1,9 +1,26 @@
 import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getIdTokenResult } from "firebase/auth";
+import { useAuth } from "../../../../Authenticate";
 
 export default function Footer({ convoState, history }: any) {
+  const [user] = useAuth(); // Get current user
+  const [numProblems, setNumProblems] = useState(10); // Default to 10
+
+  useEffect(() => {
+    const fetchRole = async () => {
+      if (user) {
+        const token = await getIdTokenResult(user);
+        const role =
+          typeof token.claims.role === "string" ? token.claims.role : "user";
+        setNumProblems(role === "rq-study" ? 20 : 10);
+      }
+    };
+    fetchRole();
+  }, [user]);
+
   return (
     <div className="bg-gray-100 border-2 border-gray-400 rounded-b-lg py-4 text-center flex gap-2 justify-center">
       <Link href="/dashboard#progress">
@@ -19,7 +36,7 @@ export default function Footer({ convoState, history }: any) {
             ...cs,
             draft: "",
             turn: "user-answer-start",
-            numProblems: 10,
+            numProblems: numProblems, // Dynamically set numProblems
             progress: [],
           }));
         }}
