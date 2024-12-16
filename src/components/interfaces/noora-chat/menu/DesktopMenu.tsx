@@ -122,7 +122,7 @@ export default function DesktopMenu({ convoState }: any) {
 
       <div className="px-2 py-1">
         {sections.map((section) => (
-          <Disclosure key={section.title} defaultOpen={!section.defaultHide}>
+          <Disclosure key={section.title}>
             {({ open }) => {
               const isDisabled =
                 section.title === "Progress" || section.title === "Time Taken";
