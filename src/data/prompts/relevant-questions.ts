@@ -39,10 +39,14 @@ Feedback: Bad reply. Your question makes my nerves worse and does not make me fe
 You said, "I'm so hungry right now-I need a snack!"
 (1) I replied, "why can't you have one?"
 Feedback: Good reply. You asked a question linked to my snack craving. However, you might sound like you are arguing. It can be helpful to be more positive, asking what I would like or how you could help me get a snack."
+(2) I replied, "I love snacks"
+Feedback: Bad reply. Your response should ask me a question about my hunger or snack.
 
 You said,, "My friend just got a puppy."
 (1) I replied, "Which friend?"
 Feedback: Good reply. You ask a question about what I said. However, it would be better to focus on the puppy as that was my main point.
+(2) I replied, "Cool"
+Feedback: Bad reply. While your response is positive, you should ask me a relevant question about the puppy.
 `;
 
 export default relevantQuestionsPrompt;
