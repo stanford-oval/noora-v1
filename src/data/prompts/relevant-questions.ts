@@ -1,47 +1,46 @@
 const relevantQuestionsPrompt = `
 
-You said, "I had the best time with my friend yesterday, we watched movies and ordered pizza."
-(1) I replied, "Wow, that sounds fun! What movies did you watch?"
+You said, "Wow, the game last night was so exciting!"
+(1) I replied, "What game did you watch? Did your team win?"
 Feedback: Good reply. Your question is directly related to what I shared and keeps our conversation flowing.
-(2) I replied, "Cool! What kind of pizza did you get?"
-Feedback: Good reply. You stayed on topic and asked about something I mentioned, which keeps the interaction engaging.
-(3) I replied, "I love pizza and movie nights. Where did you order the pizza from?"
-Feedback: Good reply. You added a personal touch about pizza nights and kept the question relevant.
-(4) I replied, "Oh. How old is your friend?"
-Feedback: Bad reply. Off-topic. This question doesn’t connect well with the main focus of our conversation and feels out of place.
-(5) I replied, "I didn’t do anything yesterday. Why did you?"
-Feedback: Bad reply. This question is off-topic and could feel dismissive. Keeping the conversation positive helps build connection.
-(6) I replied, "Where does your friend live?"
-Feedback:  Bad reply. Irrelevant question. This detail isn’t necessary for the conversation and takes focus away from what I shared.
+(2) I replied, "I don't like sports."
+Feedback: Bad reply. You did ask a question about my situation.
+(3) I replied, "I didn't do anything last night."
+Feedback: Bad reply. You did not ask me a question about what I said.
+(4) I replied, "Did you have snacks at the game? "
+Feedback: Bad reply. Your question is off-topic and does not connect well with how excited I was about the game.
+(5) I replied, "Do you get excited when you play video games?"
+Feedback: Bad reply. This question is very unrelated to the game I was talking about. Keeping the conversation positive helps build connection.
 
-You said, "It’s a nice warm day today, I think I’m going to go to the beach."
-(1) I replied, "Yes, the weather is great. What beach are you planning to go to?"
-Feedback: Good reply. You acknowledged the weather and asked a related question that keeps us talking.
-(2) I replied, "What do you usually like to do at the beach?"
-Feedback: Good reply. This helps me share more about my plans and keeps the conversation moving naturally.
-(3) I replied, "It is. Do you like to go in the ocean when it’s this warm?"
-Feedback: Good reply. This is a fun, related question that invites more conversation.
-(4) I replied, "Did you know that every year, 140 million babies are born?"
-Feedback: Bad reply. Off-topic. This fact is unrelated and doesn’t fit with the conversation’s theme.
-(5) I replied, "It's always warm this time of year. In fact, did you know that the average temperature this month is 80 degrees?"
-Feedback: Bad reply. This response is overly factual and doesn’t add to our conversation. Staying personal and light is more engaging.
-(6) I replied, "When was the first time you went to the beach?"
-Feedback: Bad reply. Off-topic. This doesn’t follow the flow of the conversation and can feel random.
+You said, "I'm going out to a good restaurant with my co-workers."
+(1) I replied, "What restaurant are you going to?"
+Feedback: Good reply. You acknowledged my plans and asked a follow-up question to keep the conversation going.
+(2) I replied, "Are you excited to tries the food"
+Feedback: Good reply. Your question shows that you are listening to me and interested about what I am saying. Please note, it would be better to say "to try the food" than "to tries the food" to be less confusing.
+(3) I replied, "I tried a new restaurant last week."
+Feedback: Bad reply. You did not ask a question about my plans for the restaurant.
+(4) I replied, "Cool"
+Feedback: Bad reply. While your response is positive, it does not ask me a relevant question.
+(5) I replied, "Have you ever gotten food poisoning from a restaurant?"
+Feedback: Bad reply. This question is not appropriate. You should ask more about how I am feeling about this upcoming experience.
 
-You said, "It was so stressful getting home from my trip, my flights kept getting delayed."
-(1) I replied, "Oh no, I’m so sorry! What time did you end up getting home?"
-Feedback: Good reply. Your question shows empathy and keeps us on the topic of travel delays.
-(2) I replied, "Traveling can be stressful. Were you able to relax once you got home?"
-Feedback: Good reply. You’re empathizing and showing interest in how I felt afterward, which builds connection.
-(3) I replied, "Did you miss any connections?"
-Feedback: Good reply. Relevant question! You’re keeping the conversation focused on my trip and potential delays.
-(4) I replied, "Wow, that sounds fun! What movies did you watch on the plane?"
-Feedback: Bad reply. Off-topic. This question doesn’t match my experience and feels out of context.
-(5) I replied, "What was the name of your hotel?"
-Feedback: Bad reply. Off-topic and lacks empathy. A question focused on my experience would be more supportive here.
-(6) I replied, "Have you ever been to Hawaii?"
-Feedback: Bad reply. This doesn’t connect with what I shared and can feel random or confusing.
+You said, "I'm so nervous, I have to give a speech in front of the whole class."
+(1) I replied, "Don't worry, you'll be great. What's the speech about?"
+Feedback: Good reply. Your question shows empathy and keeps us on the topic of my speech.
+(2) I replied, "Yikes"
+Feedback: Bad reply. Your response can be seen as dismissive of my nerves, and you did not ask me a relevant question.
+(3) I replied, "Ya, speeches can be scary"
+Feedback: Bad reply. While you response is empathetic, it does not ask me a relevant question.
+(4) I replied, "Are you afraid people will make fun of you?"
+Feedback: Bad reply. Your question makes my nerves worse and does not make me feel listened to. It is not relevant or appropriate.
 
+You said, "I'm so hungry right now-I need a snack!"
+(1) I replied, "why can't you have one?"
+Feedback: Good reply. You asked a question linked to my snack craving. However, you might sound like you are arguing. It can be helpful to be more positive, asking what I would like or how you could help me get a snack."
+
+You said,, "My friend just got a puppy."
+(1) I replied, "Which friend?"
+Feedback: Good reply. You ask a question about what I said. However, it would be better to focus on the puppy as that was my main point.
 `;
 
 export default relevantQuestionsPrompt;
