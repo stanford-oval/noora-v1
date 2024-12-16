@@ -30,14 +30,14 @@ const modules = {
       "Noora is your co-worker and you will practice replying to statements you might hear in a workplace.",
     icon: BriefcaseIcon,
   },
-  relevantQuestions: {
-    title: "Relevant Questions",
-    module: "relevantQuestions",
-    desc: "In this module, you will learn how to reply to statements with relevant questions.",
-    selectedDesc:
-      "If someone brings up a topic, it helps keep the conversation going if you can stay on that same topic and ask a question that is directly related to the main point. It also helps the conversational partner feel that you are taking an interest in them.",
-    icon: ChatIcon,
-  },
+  // relevantQuestions: {
+  //   title: "Relevant Questions",
+  //   module: "relevantQuestions",
+  //   desc: "In this module, you will learn how to reply to statements with relevant questions.",
+  //   selectedDesc:
+  //     "If someone brings up a topic, it helps keep the conversation going if you can stay on that same topic and ask a question that is directly related to the main point. It also helps the conversational partner feel that you are taking an interest in them.",
+  //   icon: ChatIcon,
+  // },
   listenAndRespond: {
     title: "Listen and Respond",
     module: "listenAndRespond",
@@ -110,9 +110,9 @@ const modules = {
       "Identifying sarcastic statements can be hard! If you think someone is being sarcastic to you, try either acknowledging the sarcasm and being humorous back or just responding empathetically.",
     icon: FireIcon,
   },
-  internalRelevantQuestions: {
-    title: "[Internal] Relevant Questions",
-    module: "internalRelevantQuestions",
+  relevantQuestions: {
+    title: "Relevant Questions",
+    module: "relevantQuestions",
     desc: "In this module, you will learn how to reply to statements with relevant questions.",
     selectedDesc:
       "If someone brings up a topic, it helps keep the conversation going if you can stay on that same topic and ask a question that is directly related to the main point. It also helps the conversational partner feel that you are taking an interest in them.",
@@ -124,13 +124,15 @@ export const getModulesByRole = (role: string) => {
   if (role == "full") {
     return modules; // Exclude "internalRelevantQuestions"
   } else if (role == "tester") {
-    const { internalRelevantQuestions, ...restModules } = modules;
+    const { relevantQuestions, ...restModules } = modules;
     return restModules; // Exclude "internalRelevantQuestions"
   } else if (role == "internal") {
     return {
       general: modules.general,
-      internalRelevantQuestions: modules.internalRelevantQuestions,
+      internalRelevantQuestions: modules.relevantQuestions,
     }; // Only "internalRelevantQuestions"
+  } else if (role == "rq-study") {
+    return { relevantQuestions: modules.relevantQuestions };
   }
   // Default role: "user" sees only the general module
   return { general: modules.general };
