@@ -18,13 +18,6 @@ type ModuleChatProps = {
 export default function ModuleChat(input_modules: ModuleChatProps) {
   let focusedMode = input_modules.focusedMode;
   const [h, setH] = useState([]);
-  const active_modules = input_modules.modules.filter((m: any) => m.active);
-  let questionType = NEW;
-  console.log("EH OH");
-  if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
-    questionType = OLD;
-  }
-
   const [user, email] = useAuth(); // Use your custom hook to get the current user
   const [userRole, setUserRole] = useState<string>("user");
   const [visibleModules, setVisibleModules] = useState(
@@ -50,7 +43,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
       shouldAutoPlay: isIOS ? false : true,
     },
     numProblems: 10, // Default value
-    questionType: questionType,
+    questionType: NEW, // Default to NEW
     clock: {
       currentTimeSpent: 0,
       prevTimeSpent: 0,
@@ -79,6 +72,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
     setValue: setCs,
   };
 
+  // Fetch user role and update visible modules and numProblems
   useEffect(() => {
     const fetchRole = async () => {
       if (user) {
@@ -87,18 +81,37 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
           typeof token.claims.role === "string" ? token.claims.role : "user";
         setUserRole(role);
         setVisibleModules(getModulesByRole(role));
+
         const newNumProblems = role === "rq-study" ? 20 : 10;
-        setCs((prevCs) => ({ ...prevCs, numProblems: newNumProblems }));
+        setCs((prevCs) => ({
+          ...prevCs,
+          numProblems: newNumProblems,
+        }));
       }
     };
     fetchRole();
   }, [user]);
 
+  // Dynamically update modules and recalculate questionType
   useEffect(() => {
-    if (input_modules.modules)
-      setCs((c: any) => {
-        return { ...c, modules: input_modules.modules };
-      });
+    if (input_modules.modules) {
+      const active_modules = input_modules.modules.filter((m: any) => m.active);
+
+      // Recalculate questionType
+      let questionType = NEW;
+      if (
+        active_modules.length > 0 &&
+        ["general", "work"].includes(active_modules[0]?.title)
+      ) {
+        questionType = OLD;
+      }
+
+      setCs((c: any) => ({
+        ...c,
+        modules: input_modules.modules,
+        questionType: questionType, // Update questionType dynamically
+      }));
+    }
   }, [input_modules.modules]);
 
   return (
