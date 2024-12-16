@@ -20,6 +20,7 @@ export default function ModuleChat(input_modules: ModuleChatProps) {
   const [h, setH] = useState([]);
   const active_modules = input_modules.modules.filter((m: any) => m.active);
   let questionType = NEW;
+  console.log("EH OH");
   if (active_modules && ["general", "work"].includes(active_modules[0].title)) {
     questionType = OLD;
   }
