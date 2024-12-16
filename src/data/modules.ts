@@ -129,7 +129,7 @@ export const getModulesByRole = (role: string) => {
   } else if (role == "internal") {
     return {
       general: modules.general,
-      internalRelevantQuestions: modules.relevantQuestions,
+      relevantQuestions: modules.relevantQuestions,
     }; // Only "internalRelevantQuestions"
   } else if (role == "rq-study") {
     return { relevantQuestions: modules.relevantQuestions };
